@@ -19,9 +19,10 @@
                             </div>
                             <div class="nk-block-head-content">
                                 <ul class="d-flex">
-                                    <li><a href="{{route("product.index")}}" class="btn btn-primary btn-md d-md-none"><em
+                                    <li><a href="{{ route('product.index') }}" class="btn btn-primary btn-md d-md-none"><em
                                                 class="icon ni ni-eye"></em><span>View</span></a></li>
-                                    <li><a href="{{route("product.index")}}" class="btn btn-primary d-none d-md-inline-flex"><em
+                                    <li><a href="{{ route('product.index') }}"
+                                            class="btn btn-primary d-none d-md-inline-flex"><em
                                                 class="icon ni ni-eye"></em><span>View Products</span></a>
                                     </li>
                                 </ul>
@@ -29,14 +30,7 @@
                         </div>
                     </div>
                     <div class="nk-block">
-                        @if ($errors->any())
-                            <ul>
-                                @foreach ($errors->all() as $error)
-                                    <li style="color: red">{{ $error }}</li>
-                                @endforeach
-                            </ul>
-                        @endif
-                        <form method="POST" action="{{ route('product.store') }}">
+                        <form method="POST" enctype="multipart/form-data" action="{{ route('product.store') }}">
                             @csrf
                             <div class="row g-gs">
                                 <div class="col-xxl-9">
@@ -52,6 +46,11 @@
                                                                     <input type="text" class="form-control"
                                                                         id="productname" placeholder="Product Name"
                                                                         name="name">
+                                                                    @error('name')
+                                                                        <div class="alert alert-danger mt-1 mb-1">
+                                                                            {{ $message }}
+                                                                        </div>
+                                                                    @enderror
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -62,6 +61,11 @@
                                                                     <input type="text" class="form-control"
                                                                         id="baseprice" placeholder="Product price"
                                                                         name="price">
+                                                                    @error('price')
+                                                                        <div class="alert alert-danger mt-1 mb-1">
+                                                                            {{ $message }}
+                                                                        </div>
+                                                                    @enderror
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -72,15 +76,22 @@
                                                                     <input type="text" class="form-control"
                                                                         name="sku" id="sku"
                                                                         placeholder="SKU number">
+                                                                    @error('sku')
+                                                                        <div class="alert alert-danger mt-1 mb-1">
+                                                                            {{ $message }}
+                                                                        </div>
+                                                                    @enderror
                                                                 </div>
                                                             </div>
                                                         </div>
                                                         <div class="col-lg-6">
                                                             <div class="form-group"><label for="barcode"
                                                                     class="form-label">Barcode</label>
-                                                                <div class="form-control-wrap"><input type="text"
-                                                                        class="form-control" id="barcode"
-                                                                        placeholder="Barcode number"></div>
+                                                                <div class="form-control-wrap">
+                                                                    <input type="text" class="form-control"
+                                                                        id="barcode" placeholder="Barcode number">
+
+                                                                </div>
                                                             </div>
                                                         </div>
                                                         <div class="col-lg-6">
@@ -90,6 +101,10 @@
                                                                     <div class="form-control-wrap">
                                                                         <input type="number" class="form-control"
                                                                             name="quantity" placeholder="On shelf">
+                                                                        @error('quantity')
+                                                                            <div class="alert alert-danger mt-1 mb-1">
+                                                                                {{ $message }}</div>
+                                                                        @enderror
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -98,18 +113,27 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="gap-col">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <input type="file" name="nameImage" placeholder="Choose image">
+                                                @error('image')
+                                                    <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
+                                                @enderror
+                                            </div>
+                                        </div>
+                                        {{-- <div class="gap-col">
                                             <div class="card card-gutter-md">
                                                 <div class="card-body">
-                                                    <div class="form-group"><label class="form-label">Upload
-                                                            Media</label>
+                                                    <div class="form-group"><label class="form-label">
+                                                            Upload Media</label>
                                                         <div class="form-control-wrap">
                                                             <div class="js-upload" id="dropzoneFile1"
                                                                 data-message-icon="img">
                                                                 <div class="dz-message" data-dz-message>
                                                                     <div class="dz-message-icon"></div><span
-                                                                        class="dz-message-text">Drop files
-                                                                        here or click to upload.</span>
+                                                                        class="dz-message-text">
+                                                                        Drop files here or click to upload.
+                                                                    </span>
                                                                     <div class="dz-message-btn mt-2"><button
                                                                             class="btn btn-md btn-primary">Upload</button>
                                                                     </div>
@@ -121,7 +145,10 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
+                                        </div> --}}
+
+
+
                                         <div class="gap-col">
                                             <ul class="d-flex align-items-center gap g-3">
                                                 <li><button type="submit" class="btn btn-primary">Save
@@ -205,5 +232,4 @@
             </div>
         </div>
     </div>
-
 @endsection

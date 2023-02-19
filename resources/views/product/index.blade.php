@@ -49,8 +49,8 @@
                             </td>
                             <td class="tb-col">
                                 <div class="media-group">
-                                    <div class="media media-md media-middle"><img
-                                            src="{{ asset('admin/images/product/a.jpg') }}" alt="product">
+                                    <div class="media media-md media-middle">
+                                        <img src="{{ asset('admin/images/product/a.jpg') }}" alt="product">
                                     </div>
                                     <div class="media-text">
                                         <a href="{{ route('product.edit', ['id' => $product->id]) }}"

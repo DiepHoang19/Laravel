@@ -23,7 +23,9 @@ class StoreProductRequest extends FormRequest
     {
         return [
             'name' => 'required|string',
-            'price' => 'required|numeric|gt:0'
+            'price' => 'required|numeric|gt:0',
+            'sku' => 'required|string',
+            'quantity' => 'required|string',
         ];
     }
 
@@ -34,6 +36,8 @@ class StoreProductRequest extends FormRequest
             'price.required' => 'Bắt buộc nhập giá',
             'price.numeric' => 'Price phải là số',
             'price.gt' => 'Price phải là số dương',
+            'sku.required' => 'Bắt buộc nhập mã sản phẩm',
+            'quantity.required' => 'Bắt buộc nhập số lượng',
         ];
     }
 }

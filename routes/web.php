@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\UploadImageController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,9 +15,12 @@ use App\Http\Controllers\ProductController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-Route::controller(HomeController::class)->group(function() {
+
+Route::controller(HomeController::class)->group(function () {
     Route::get('/', 'index')->name('index');
 });
+Route::get('/upload', [UploadImageController::class, 'index'])->name('upload.image');
+Route::post('/save', [UploadImageController::class, 'save']);
 Route::prefix('products')->controller(ProductController::class)->name('product.')->group(function () {
     Route::get('/', 'index')->name('index');
     Route::get('/create', 'create')->name('create');

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreProductRequest;
+use App\Models\Photo;
 use App\Models\Product;
 use Illuminate\Http\Request;
 
@@ -10,7 +11,7 @@ class ProductController extends Controller
 {
     public function index()
     {
-        $products = Product::all();
+        $products = Product::latest()->get();
         return view('product.index', [
             'products' => $products
         ]);
@@ -37,8 +38,19 @@ class ProductController extends Controller
             'price' => $request->price,
             'sku' => $request->sku,
             'quantity' => $request->quantity,
+            'nameImage' => $request->nameImage,
+
         ]);
-        return redirect()->route('product.index');
+
+        $validateData = $request->validate([
+            'image' => 'required|image|mimes:jpg,png,jpeg,gif,svg,|max:2048'
+        ]);
+
+        $nameImage = $request->file('image')->getClientOriginalName();
+        $path = $request->file('image')->store('public/thumbnail');
+        $save = new Photo();
+        $save->nameImage = $nameImage;
+        return redirect()->route('product.index')->with('upload image success!');
     }
 
     public function edit($id)
@@ -57,6 +69,7 @@ class ProductController extends Controller
             'price' => $request->price,
             'sku' => $request->sku,
             'quantity' => $request->quantity,
+            'nameImage' => $request->nameImage,
         ]);
         return redirect()->route('product.index');
     }
