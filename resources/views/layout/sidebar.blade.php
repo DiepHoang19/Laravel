@@ -1,6 +1,6 @@
 <div class="nk-sidebar nk-sidebar-fixed is-theme" id="sidebar">
     <div class="nk-sidebar-element nk-sidebar-head">
-        <div class="nk-sidebar-brand"><a href="index.html" class="logo-link">
+        <div class="nk-sidebar-brand"><a href="{{ route('product.index') }}" class="logo-link">
                 <div class="logo-wrap"><svg class="logo-svg" viewBox="0 0 174 34" fill="none"
                         xmlns="http://www.w3.org/2000/svg">
                         <g class="logo-text">
@@ -43,8 +43,9 @@
         <div class="nk-sidebar-content">
             <div class="nk-sidebar-menu" data-simplebar>
                 <ul class="nk-menu">
-                    <li class="nk-menu-item has-sub"><a href="#" class="nk-menu-link nk-menu-toggle"><span
-                                class="nk-menu-icon"><em class="icon ni ni-dashboard"></em></span><span
+                    <li class="nk-menu-item has-sub"><a href="{{ route('product.index') }}"
+                            class="nk-menu-link nk-menu-toggle"><span class="nk-menu-icon"><em
+                                    class="icon ni ni-dashboard"></em></span><span
                                 class="nk-menu-text">Dashboard</span></a>
                     </li>
                     <li class="nk-menu-heading">

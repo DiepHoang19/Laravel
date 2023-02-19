@@ -35,6 +35,8 @@ class ProductController extends Controller
         $product = Product::create([
             'name' => $request->name,
             'price' => $request->price,
+            'sku' => $request->sku,
+            'quantity' => $request->quantity,
         ]);
         return redirect()->route('product.index');
     }
@@ -52,7 +54,9 @@ class ProductController extends Controller
         $product = Product::findOrFail($id);
         $product->update([
             'name' => $request->name,
-            'price' => $request->price
+            'price' => $request->price,
+            'sku' => $request->sku,
+            'quantity' => $request->quantity,
         ]);
         return redirect()->route('product.index');
     }
