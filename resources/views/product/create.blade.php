@@ -10,13 +10,11 @@
 
 <body>
     @if ($errors->any())
-        <div class="alert alert-danger">
-            <ul>
-                @foreach ($errors->all() as $error)
-                    <li style="color: red">{{ $error }}</li>
-                @endforeach
-            </ul>
-        </div>
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li style="color: red">{{ $error }}</li>
+            @endforeach
+        </ul>
     @endif
     <form method="POST" action="{{ route('product.store') }}">
         @csrf

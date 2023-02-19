@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,10 +14,14 @@ use App\Http\Controllers\HomeController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
-Route::get('/', [HomeController::class, 'index'])->name('home');
-Route::get('/products/create', [HomeController::class, 'create'])->name('product.create');
-Route::post('/products', [HomeController::class, 'store'])->name('product.store');
-Route::get('/products/{id}/edit', [HomeController::class, 'edit'])->name('product.edit');
-Route::post('/products/{id}/update', [HomeController::class, 'update'])->name('product.update');
-Route::get('/products/{id}/trash', [HomeController::class, 'trash'])->name('product.trash');
+Route::controller(HomeController::class)->group(function() {
+    Route::get('/', 'index')->name('index');
+});
+Route::prefix('products')->controller(ProductController::class)->name('product.')->group(function () {
+    Route::get('/', 'index')->name('index');
+    Route::get('/create', 'create')->name('create');
+    Route::post('/store', 'store')->name('store');
+    Route::get('/{id}/edit', 'edit')->name('edit');
+    Route::post('/{id}/update', 'update')->name('update');
+    Route::get('/{id}/trash', 'trash')->name('trash');
+});
