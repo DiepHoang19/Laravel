@@ -19,14 +19,16 @@
             <div class="card-header text-center font-weight-bold">
                 <h2>Laravel 10 Upload Image Tutorial</h2>
             </div>
-            @foreach ($ImageList as $Images)
+            @foreach ($photos as $photo)
                 <ul>
                     <li>
-                        <img src="{{ $image->name }}" />
+                        {{ $photo->path }}
+                        <img src="{{ $photo->path }}" width="200" />
+                    </li>
                 </ul>
             @endforeach
             <div class="card-body">
-                <form method="POST" enctype="multipart/form-data" id="upload-image" action="{{ url('save') }}">
+                <form method="POST" enctype="multipart/form-data" id="upload-image" action="{{ route('upload.save') }}">
                     @csrf
                     <div class="row">
                         <div class="col-md-12">

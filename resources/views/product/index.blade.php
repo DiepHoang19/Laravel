@@ -24,6 +24,10 @@
     </div>
     <div class="nk-block">
         <div class="card">
+            <form method="GET" action="">
+                <input name="keyword" placeholder="Search by name" />
+                <button>Submit</button>
+            </form>
             <table class="datatable-init table" data-nk-container="table-responsive">
                 <thead class="table-light">
                     <tr>
@@ -50,7 +54,8 @@
                             <td class="tb-col">
                                 <div class="media-group">
                                     <div class="media media-md media-middle">
-                                        <img src="{{ asset('admin/images/product/a.jpg') }}" alt="product">
+                                        {{-- <img src="{{ asset('admin/images/product/a.jpg') }}" alt="product"> --}}
+                                        <img src="{{ $product->path }}" alt="{{ $product->path }}">
                                     </div>
                                     <div class="media-text">
                                         <a href="{{ route('product.edit', ['id' => $product->id]) }}"
@@ -94,6 +99,16 @@
                     @endforeach
                 </tbody>
             </table>
+            {{ $products->links('vendor.pagination.bootstrap-5') }}
+            <form method="GET" action="">
+                <select name="limit">
+                    <option value=""> Limit </option>
+                    <option value="10" @if(request()->get('limit') == 10) selected @endif>10</option>
+                    <option value="20" @if(request()->get('limit') == 20) selected @endif>20</option>
+                    <option value="30" @if(request()->get('limit') == 30) selected @endif>30</option>
+                </select>
+                <button>Submit</button>
+            </form>
         </div>
     </div>
 @endsection

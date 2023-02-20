@@ -30,7 +30,8 @@
                         </div>
                     </div>
                     <div class="nk-block">
-                        <form method="POST" enctype="multipart/form-data" action="{{ route('product.store') }}">
+                        <form method="POST" enctype="multipart/form-data" action="{{ route('product.store') }}"
+                            id="upload-image">
                             @csrf
                             <div class="row g-gs">
                                 <div class="col-xxl-9">
@@ -116,6 +117,7 @@
                                         <div class="col-md-12">
                                             <div class="form-group">
                                                 <input type="file" name="nameImage" placeholder="Choose image">
+                                                <input type="text" name="path" placeholder="Choose image">
                                                 @error('image')
                                                     <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
                                                 @enderror

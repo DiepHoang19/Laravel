@@ -20,7 +20,7 @@ Route::controller(HomeController::class)->group(function () {
     Route::get('/', 'index')->name('index');
 });
 Route::get('/upload', [UploadImageController::class, 'index'])->name('upload.image');
-Route::post('/save', [UploadImageController::class, 'save']);
+Route::post('/save', [UploadImageController::class, 'save'])->name('upload.save');
 Route::prefix('products')->controller(ProductController::class)->name('product.')->group(function () {
     Route::get('/', 'index')->name('index');
     Route::get('/create', 'create')->name('create');

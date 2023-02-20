@@ -13,7 +13,10 @@ return new class extends Migration
     {
         Schema::table('products', function (Blueprint $table) {
             if (!Schema::hasColumn('products', 'nameImage')) {
-                $table->string('nameImage')->after('quantity');
+                $table->string('nameImage')->after('sku');
+            }
+            if (!Schema::hasColumn('products', 'path')) {
+                $table->string('path')->after('nameImage');
             }
         });
     }

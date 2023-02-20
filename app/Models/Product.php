@@ -15,5 +15,14 @@ class Product extends Model
         'sku',
         'quantity',
         'nameImage',
+        'path'
     ];
+
+    public function scopeSearchByKeyword($query, $keyword)
+    {
+        if($keyword) {
+            return $query->where('name', 'LIKE', '%' . $keyword . '%');
+        }
+        return $query;
+    }
 }

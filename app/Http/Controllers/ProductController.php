@@ -9,9 +9,14 @@ use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $products = Product::latest()->get();
+        $products = Product::latest()
+            // ->when($request->keyword, function($query) use($request){
+            //     $query->where('name', 'LIKE', '%' . $request->keyword . '%');
+            // })
+            ->searchByKeyword($request->keyword)
+            ->paginate($request->limit);
         return view('product.index', [
             'products' => $products
         ]);
@@ -50,6 +55,8 @@ class ProductController extends Controller
         $path = $request->file('image')->store('public/thumbnail');
         $save = new Photo();
         $save->nameImage = $nameImage;
+        $save->path = $path;
+        $save->save();
         return redirect()->route('product.index')->with('upload image success!');
     }
 
@@ -70,6 +77,7 @@ class ProductController extends Controller
             'sku' => $request->sku,
             'quantity' => $request->quantity,
             'nameImage' => $request->nameImage,
+
         ]);
         return redirect()->route('product.index');
     }
