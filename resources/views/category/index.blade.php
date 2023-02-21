@@ -52,22 +52,23 @@
                             <td class="tb-col">
                                 <div class="media-group">
                                     <div class="media-text">
-                                        <a href="{{ route('product.edit', ['id' => $category->id]) }}"
+                                        <a href="{{ route('category.edit', ['id' => $category->id]) }}"
                                             class="title">{{ $category->name }}</a>
                                     </div>
                                 </div>
                             </td>
-                            <td class="tb-col"><span class="badge text-bg-success-soft">{{ $category->parent?->name }}</span></td>
+                            <td class="tb-col"><span
+                                    class="badge text-bg-success-soft">{{ $category->parent?->name }}</span></td>
                             <td class="tb-col tb-col-end">
                                 <div class="dropdown"><a href="#" class="btn btn-sm btn-icon btn-zoom me-n1"
                                         data-bs-toggle="dropdown"><em class="icon ni ni-more-v"></em></a>
                                     <div class="dropdown-menu dropdown-menu-sm dropdown-menu-end">
                                         <div class="dropdown-content py-1">
                                             <ul class="link-list link-list-hover-bg-primary link-list-md">
-                                                <li><a href="{{ route('product.edit', ['id' => $category->id]) }}"><em
+                                                <li><a href="{{ route('category.edit', ['id' => $category->id]) }}"><em
                                                             class="icon ni ni-edit"></em><span>Edit</span></a>
                                                 </li>
-                                                <li><a href="{{ route('product.trash', ['id' => $category->id]) }}"><em
+                                                <li><a href="{{ route('category.trash', ['id' => $category->id]) }}"><em
                                                             class="icon ni ni-trash"></em><span>Delete</span></a>
                                                 </li>
                                                 <li><a href="#"><em class="icon ni ni-eye"></em><span>View

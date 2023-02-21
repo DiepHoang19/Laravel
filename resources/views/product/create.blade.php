@@ -55,6 +55,27 @@
                                                                 </div>
                                                             </div>
                                                         </div>
+                                                        <div class="col-12">
+                                                            <div class="form-group">
+                                                                <label class="form-label">Parent</label>
+                                                                <div class="form-control-wrap">
+                                                                    <select class="js-select" data-search="true"
+                                                                        data-sort="false" name="category_id">
+                                                                        <option value="">Select an category</option>
+                                                                        @foreach ($categories as $category)
+                                                                            <option value="{{ $category->id }}"
+                                                                                @selected($category->id)>
+                                                                                {{ $category->name }}</option>
+                                                                        @endforeach
+                                                                    </select>
+                                                                    @error('category_id')
+                                                                        <div class="alert alert-danger mt-1 mb-1">
+                                                                            {{ $message }}
+                                                                        </div>
+                                                                    @enderror
+                                                                </div>
+                                                            </div>
+                                                        </div>
                                                         <div class="col-lg-6">
                                                             <div class="form-group"><label for="baseprice"
                                                                     class="form-label">Price</label>
@@ -145,7 +166,8 @@
                                             <ul class="d-flex align-items-center gap g-3">
                                                 <li><button type="submit" class="btn btn-primary">Save
                                                         Changes</button></li>
-                                                <li><a href="{{ route('product.index') }}" class="btn border-0">Cancel</a>
+                                                <li><a href="{{ route('product.index') }}"
+                                                        class="btn border-0">Cancel</a>
                                                 </li>
                                             </ul>
                                         </div>

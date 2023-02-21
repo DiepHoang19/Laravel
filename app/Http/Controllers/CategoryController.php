@@ -53,4 +53,31 @@ class CategoryController extends Controller
         ]);
         return redirect()->route('category.index');
     }
+
+    public function update($id, Request $request)
+    {
+        $categories = Category::findOrFail($id);
+        $categories->update([
+            'name' => $request->name,
+            'parent_id' => $request->parent_id,
+        ]);
+        return redirect()->route('category.index');
+    }
+
+
+    public function trash($id)
+    {
+        $categories = Category::findOrFail($id)->delete();
+        return back();
+    }
+
+
+    public function edit($id)
+    {
+        $categories = Category::findOrFail($id);
+
+        return view('category.edit', [
+            'categories' => $categories,
+        ]);
+    }
 }

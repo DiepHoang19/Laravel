@@ -330,7 +330,7 @@
                             </div>
                             <div class="dropdown-content dropdown-content-x-lg py-3 border-bottom border-light">
                                 <ul class="link-list">
-                                    <li><a href="profile.html"><em class="icon ni ni-user"></em>
+                                    <li><a href="{{ route('account.profile') }}"><em class="icon ni ni-user"></em>
                                             <span>My Profile</span></a></li>
                                     <li><a href="user-manage/user-cards.html"><em class="icon ni ni-contact"></em>
                                             <span>My
@@ -342,8 +342,9 @@
                             </div>
                             <div class="dropdown-content dropdown-content-x-lg py-3">
                                 <ul class="link-list">
-                                    <li><a href="#"><em class="icon ni ni-signout"></em> <span>Log
-                                                Out</span></a></li>
+                                    <li><a href="{{ route('account.login') }}"><em class="icon ni ni-signout"></em>
+                                            <span>LogOut</span>
+                                        </a></li>
                                 </ul>
                             </div>
                         </div>

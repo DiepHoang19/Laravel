@@ -28,7 +28,15 @@ class ProductController extends Controller
 
     public function create()
     {
-        return view('product.create');
+        $categories = Category::with(['children'])
+            ->where('parent_id', 0)
+            ->get()
+            ->toArray();
+        $options = $this->renderCategoryOption($categories);
+        
+        return view('product.create', [
+            "categories" => $options,
+        ]);
     }
 
     public function store(StoreProductRequest $request)
@@ -57,6 +65,7 @@ class ProductController extends Controller
             'sku' => $request->sku,
             'quantity' => $request->quantity,
             'nameImage' => $photo->path,
+            'category_id' => $request->category_id
         ]);
 
 
