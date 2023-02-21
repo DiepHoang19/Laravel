@@ -23,7 +23,14 @@
         </div>
     </div>
     <div class="nk-block">
+        @if (Session::has('message'))
+            <div class="alert alert-success mt-1 mb-1">
+                {!! \Session::get('message') !!}
+            </div>
+        @endif
+
         <div class="card">
+
             <div class="col-lg-3">
                 <form method="GET" action="">
                     <input name="keyword" placeholder="Search by name" class="form-control"
@@ -38,6 +45,7 @@
                             <div class="form-check"><input class="form-check-input" type="checkbox" value=""></div>
                         </th>
                         <th class="tb-col"><span class="overline-title">products</span></th>
+                        <th class="tb-col"><span class="overline-title">category</span></th>
                         <th class="tb-col tb-col-md"><span class="overline-title">sku</span>
                         </th>
                         <th class="tb-col"><span class="overline-title">qty</span></th>
@@ -65,6 +73,7 @@
                                     </div>
                                 </div>
                             </td>
+                            <td class="tb-col tb-col-md"><span>{{ $product->category?->name }}</span></td>
                             <td class="tb-col tb-col-md"><span>{{ $product->sku }}</span></td>
                             <td class="tb-col"><span>{{ $product->quantity }}</span></td>
                             <td class="tb-col tb-col-md"><span>{{ $product->price }}</span></td>
@@ -102,15 +111,42 @@
                 </tbody>
             </table>
             {{ $products->links('vendor.pagination.bootstrap-5') }}
-            <form method="GET" action="">
-                <select name="limit">
+            <form method="GET" action="" id="limit-form">
+                <select name="limit" id="limit-select">
                     <option value=""> Limit </option>
                     <option value="10" @if (request()->get('limit') == 10) selected @endif>10</option>
                     <option value="20" @if (request()->get('limit') == 20) selected @endif>20</option>
                     <option value="30" @if (request()->get('limit') == 30) selected @endif>30</option>
                 </select>
-                <button>Submit</button>
             </form>
         </div>
     </div>
 @endsection
+@push('scripts')
+    <script>
+        $(document).ready(function() {
+            $('#limit-select').change(function(e) {
+                e.preventDefault();
+                $('#limit-form').submit();
+            })
+        })
+
+
+        @if (Session::has('message'))
+            Toastify({
+                text: "{{ Session::get('message') }}",
+                duration: 1000,
+                destination: "#",
+                newWindow: true,
+                close: true,
+                gravity: "top", // `top` or `bottom`
+                position: "right", // `left`, `center` or `right`
+                stopOnFocus: true, // Prevents dismissing of toast on hover
+                style: {
+                    background: "linear-gradient(to right, #00b09b, #96c93d)",
+                },
+                onClick: function() {} // Callback after click
+            }).showToast();
+        @endif
+    </script>
+@endpush

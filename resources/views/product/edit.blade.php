@@ -50,6 +50,27 @@
                                                                 </div>
                                                             </div>
                                                         </div>
+                                                        <div class="col-12">
+                                                            <div class="form-group">
+                                                                <label class="form-label">Parent</label>
+                                                                <div class="form-control-wrap">
+                                                                    <select class="js-select" data-search="true"
+                                                                        data-sort="false" name="category_id">
+                                                                        <option value="">Select an category</option>
+                                                                        @foreach ($categories as $category)
+                                                                            <option value="{{ $category->id }}"
+                                                                                @selected($product->category_id == $category->id)>
+                                                                                {{ $category->name }}</option>
+                                                                        @endforeach
+                                                                    </select>
+                                                                    @error('category_id')
+                                                                        <div class="alert alert-danger mt-1 mb-1">
+                                                                            {{ $message }}
+                                                                        </div>
+                                                                    @enderror
+                                                                </div>
+                                                            </div>
+                                                        </div>
                                                         <div class="col-lg-6">
                                                             <div class="form-group"><label for="baseprice"
                                                                     class="form-label">Price</label>
@@ -99,7 +120,8 @@
                                             <ul class="d-flex align-items-center gap g-3">
                                                 <li><button type="submit" class="btn btn-primary">Save
                                                         Changes</button></li>
-                                                <li><a href="{{ route('product.index') }}" class="btn border-0">Cancel</a>
+                                                <li><a href="{{ route('product.index') }}"
+                                                        class="btn border-0">Cancel</a>
                                                 </li>
                                             </ul>
                                         </div>
@@ -118,6 +140,7 @@
                                                                     <img id="image-result" class="w-100 h-100"
                                                                         src="{{ asset($product->nameImage) }}"
                                                                         alt="avatar">
+
                                                                 </div>
                                                                 <div class="pt-3">
                                                                     <input class="upload-image" name="thumbnail"
@@ -128,29 +151,17 @@
                                                                 </div>
                                                             </div>
                                                         </div>
+                                                        @error('thumbnail')
+                                                            <div class="alert alert-danger mt-1 mb-1">
+                                                                {{ $message }}
+                                                            </div>
+                                                        @enderror
                                                         <div class="form-note mt-3">Set the product
                                                             thumbnail image. Only *.png, *.jpg and *.jpeg
                                                             image files are accepted.</div>
                                                     </div>
                                                 </div>
-                                                <div class="col-12">
-                                                    <div class="form-group">
-                                                        <label class="form-label">Categories</label>
-                                                        <div class="form-control-wrap"><select class="js-select" multiple
-                                                                data-search="true" data-sort="false">
-                                                                <option value="">Select an option</option>
-                                                                <option value="1">Computers</option>
-                                                                <option value="2">Watches</option>
-                                                                <option value="3">Headphones</option>
-                                                                <option value="4">Footwear</option>
-                                                                <option value="5">Cameras</option>
-                                                                <option value="6">Shirts</option>
-                                                                <option value="7">Household</option>
-                                                                <option value="8">Handbags</option>
-                                                                <option value="9">Wines</option>
-                                                            </select></div>
-                                                    </div>
-                                                </div>
+
                                                 <div class="col-12">
                                                     <div class="form-group"><label class="form-label">Tags</label>
                                                         <div class="form-control-wrap"><input class="js-tags"

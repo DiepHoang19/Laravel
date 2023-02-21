@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreProductRequest;
+use App\Http\Requests\UpdateProductRequest;
+use App\Models\Category;
 use App\Models\Photo;
 use App\Models\Product;
 use Illuminate\Http\Request;
@@ -16,6 +18,7 @@ class ProductController extends Controller
             // ->when($request->keyword, function($query) use($request){
             //     $query->where('name', 'LIKE', '%' . $request->keyword . '%');
             // })
+            ->with(['category'])
             ->searchByKeyword($request->keyword)
             ->paginate($request->limit);
         return view('product.index', [
@@ -56,33 +59,67 @@ class ProductController extends Controller
             'nameImage' => $photo->path,
         ]);
 
+
+
         return redirect()->route('product.index');
+    }
+
+
+    private function renderCategoryOption($categories, $formatted = '-------')
+    {
+        $options = [];
+        foreach ($categories as $cate) {
+            $option = (object)[
+                'id' => $cate['id'],
+                'name' => $cate['name']
+            ];
+            if ($cate['parent_id'] != 0) {
+                $option->name = $formatted . $cate['name'];
+            }
+            $options[] = $option;
+            $options = array_merge($options, $this->renderCategoryOption($cate['children'], $formatted . '---------'));
+        }
+        return $options;
     }
 
     public function edit($id)
     {
         $product = Product::findOrFail($id);
+        $categories = Category::with(['children'])
+            ->where('parent_id', 0)
+            ->get()
+            ->toArray();
+        $options = $this->renderCategoryOption($categories);
         return view('product.edit', [
-            'product' => $product
+            'product' => $product,
+            'categories' => $options,
         ]);
     }
 
-    public function update($id, StoreProductRequest $request)
+    public function update($id, UpdateProductRequest $request)
     {
         $product = Product::findOrFail($id);
-        if ($product->nameImage) {
-            File::delete(public_path($product->nameImage));
+        if ($request->file('thumbnail')) {
+            if ($product->nameImage) {
+                File::delete(public_path($product->nameImage));
+            }
+            $nameImage = time() . '.' . $request->file('thumbnail')->extension();
+            $path = $request->file('thumbnail')->move(public_path('thumbnails'), $nameImage);
+            $product->update([
+                'nameImage' => 'thumbnails/' . $nameImage,
+            ]);
         }
-        $nameImage = time() . '.' . $request->file('thumbnail')->extension();
-        $path = $request->file('thumbnail')->move(public_path('thumbnails'), $nameImage);
+
         $product->update([
             'name' => $request->name,
             'price' => $request->price,
             'sku' => $request->sku,
             'quantity' => $request->quantity,
-            'nameImage' => 'thumbnails/' . $nameImage,
+            'category_id' => $request->category_id,
         ]);
-        return redirect()->route('product.index');
+        return redirect()->route('product.index')->with([
+            'message' => 'Update successfully !'
+        ]);
     }
 
     public function trash($id)

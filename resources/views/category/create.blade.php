@@ -63,10 +63,8 @@
                                                                         data-sort="false" name="parent_id">
                                                                         <option value="">Select an category</option>
                                                                         @foreach ($categories as $category)
-                                                                            <option value="{{ $category->id }}">{{ $category->name }}</option>
-                                                                            @foreach ($category->children as $childCate)
-                                                                                <option value="{{ $childCate->id }}"> ---- {{ $childCate->name }}</option>
-                                                                            @endforeach
+                                                                            <option value="{{ $category->id }}">
+                                                                                {{ $category->name }}</option>
                                                                         @endforeach
                                                                     </select>
                                                                     @error('parent_id')

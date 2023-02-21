@@ -16,11 +16,32 @@ class CategoryController extends Controller
         ]);
     }
 
+    private function renderCategoryOption($categories, $formatted = '-------')
+    {
+        $options = [];
+        foreach ($categories as $cate) {
+            $option = (object)[
+                'id' => $cate['id'],
+                'name' => $cate['name']
+            ];
+            if ($cate['parent_id'] != 0) {
+                $option->name = $formatted . $cate['name'];
+            }
+            $options[] = $option;
+            $options = array_merge($options, $this->renderCategoryOption($cate['children'], $formatted . '---------'));
+        }
+        return $options;
+    }
+
     public function create()
     {
-        $categories = Category::where('parent_id', 0)->get();
+        $categories = Category::with(['children'])
+            ->where('parent_id', 0)
+            ->get()
+            ->toArray();
+        $options = $this->renderCategoryOption($categories);
         return view('category.create', [
-            'categories' => $categories
+            'categories' => $options
         ]);
     }
 

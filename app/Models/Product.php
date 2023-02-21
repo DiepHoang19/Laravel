@@ -15,7 +15,8 @@ class Product extends Model
         'sku',
         'quantity',
         'nameImage',
-        'path'
+        'path',
+        'category_id'
     ];
 
     public function scopeSearchByKeyword($query, $keyword)
@@ -24,5 +25,10 @@ class Product extends Model
             return $query->where('name', 'LIKE', '%' . $keyword . '%');
         }
         return $query;
+    }
+
+    public function category()
+    {
+        return $this->belongsTo(Category::class, 'category_id', 'id');
     }
 }
