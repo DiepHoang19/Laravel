@@ -6,6 +6,7 @@ use App\Http\Requests\StoreProductRequest;
 use App\Models\Photo;
 use App\Models\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 
 class ProductController extends Controller
 {
@@ -38,26 +39,24 @@ class ProductController extends Controller
         //     'price.numeric' => 'Price phải là số',
         //     'price.gt' => 'Price phải là số dương',
         // ]);
+
+
+        $nameImage = time() . '.' . $request->file('thumbnail')->extension();
+        $path = $request->file('thumbnail')->move(public_path('thumbnails'), $nameImage);
+        $photo = new Photo();
+        $photo->name = $nameImage;
+        $photo->path = 'thumbnails/' . $nameImage;
+        $photo->save();
+
         $product = Product::create([
             'name' => $request->name,
             'price' => $request->price,
             'sku' => $request->sku,
             'quantity' => $request->quantity,
-            'nameImage' => $request->nameImage,
-
+            'nameImage' => $photo->path,
         ]);
 
-        $validateData = $request->validate([
-            'image' => 'required|image|mimes:jpg,png,jpeg,gif,svg,|max:2048'
-        ]);
-
-        $nameImage = $request->file('image')->getClientOriginalName();
-        $path = $request->file('image')->store('public/thumbnail');
-        $save = new Photo();
-        $save->nameImage = $nameImage;
-        $save->path = $path;
-        $save->save();
-        return redirect()->route('product.index')->with('upload image success!');
+        return redirect()->route('product.index');
     }
 
     public function edit($id)
@@ -68,23 +67,31 @@ class ProductController extends Controller
         ]);
     }
 
-    public function update($id, Request $request)
+    public function update($id, StoreProductRequest $request)
     {
         $product = Product::findOrFail($id);
+        if ($product->nameImage) {
+            File::delete(public_path($product->nameImage));
+        }
+        $nameImage = time() . '.' . $request->file('thumbnail')->extension();
+        $path = $request->file('thumbnail')->move(public_path('thumbnails'), $nameImage);
         $product->update([
             'name' => $request->name,
             'price' => $request->price,
             'sku' => $request->sku,
             'quantity' => $request->quantity,
-            'nameImage' => $request->nameImage,
-
+            'nameImage' => 'thumbnails/' . $nameImage,
         ]);
         return redirect()->route('product.index');
     }
 
     public function trash($id)
     {
-        Product::findOrFail($id)->delete();
+        $product = Product::findOrFail($id);
+        if ($product->nameImage) {
+            File::delete(public_path($product->nameImage));
+        }
+        $product->delete();
         return back();
     }
 }

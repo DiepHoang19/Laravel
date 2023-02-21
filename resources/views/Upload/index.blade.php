@@ -22,7 +22,6 @@
             @foreach ($photos as $photo)
                 <ul>
                     <li>
-                        {{ $photo->path }}
                         <img src="{{ $photo->path }}" width="200" />
                     </li>
                 </ul>

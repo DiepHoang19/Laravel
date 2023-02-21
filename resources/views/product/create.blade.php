@@ -114,43 +114,33 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-md-12">
+                                        <div class="col-12">
                                             <div class="form-group">
-                                                <input type="file" name="nameImage" placeholder="Choose image">
-                                                <input type="text" name="path" placeholder="Choose image">
-                                                @error('image')
-                                                    <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
-                                                @enderror
+                                                <label class="form-label">Thumbnail</label>
+                                                <div class="form-control-wrap">
+                                                    <div class="image-upload-wrap d-flex flex-column align-items-center">
+                                                        <div style="width: 500px">
+                                                            <img id="image-result">
+                                                        </div>
+                                                        <div class="pt-3">
+                                                            <input class="upload-image" data-target="image-result"
+                                                                name="thumbnail" id="change-avatar" type="file"
+                                                                max="1" hidden>
+
+                                                            <label for="change-avatar"
+                                                                class="btn btn-md btn-primary">Upload</label>
+                                                        </div>
+                                                    </div>
+                                                    @error('image')
+                                                        <div class="alert alert-danger mt-1 mb-1">
+                                                            {{ $message }}</div>
+                                                    @enderror
+                                                </div>
+                                                <div class="form-note mt-3">Set the product
+                                                    thumbnail image. Only *.png, *.jpg and *.jpeg
+                                                    image files are accepted.</div>
                                             </div>
                                         </div>
-                                        {{-- <div class="gap-col">
-                                            <div class="card card-gutter-md">
-                                                <div class="card-body">
-                                                    <div class="form-group"><label class="form-label">
-                                                            Upload Media</label>
-                                                        <div class="form-control-wrap">
-                                                            <div class="js-upload" id="dropzoneFile1"
-                                                                data-message-icon="img">
-                                                                <div class="dz-message" data-dz-message>
-                                                                    <div class="dz-message-icon"></div><span
-                                                                        class="dz-message-text">
-                                                                        Drop files here or click to upload.
-                                                                    </span>
-                                                                    <div class="dz-message-btn mt-2"><button
-                                                                            class="btn btn-md btn-primary">Upload</button>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="form-note mt-3">Set the product media
-                                                            gallery.</div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div> --}}
-
-
-
                                         <div class="gap-col">
                                             <ul class="d-flex align-items-center gap g-3">
                                                 <li><button type="submit" class="btn btn-primary">Save

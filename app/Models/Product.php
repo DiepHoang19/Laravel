@@ -20,7 +20,7 @@ class Product extends Model
 
     public function scopeSearchByKeyword($query, $keyword)
     {
-        if($keyword) {
+        if ($keyword) {
             return $query->where('name', 'LIKE', '%' . $keyword . '%');
         }
         return $query;

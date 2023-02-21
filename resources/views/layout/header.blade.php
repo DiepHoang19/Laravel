@@ -2,8 +2,7 @@
     <div class="container-fluid">
         <div class="nk-header-wrap">
             <div class="nk-header-logo ms-n1">
-                <div class="nk-sidebar-toggle"><button
-                        class="btn btn-sm btn-icon btn-zoom sidebar-toggle d-sm-none"><em
+                <div class="nk-sidebar-toggle"><button class="btn btn-sm btn-icon btn-zoom sidebar-toggle d-sm-none"><em
                             class="icon ni ni-menu"></em></button><button
                         class="btn btn-md btn-icon btn-zoom sidebar-toggle d-none d-sm-inline-flex"><em
                             class="icon ni ni-menu"></em></button></div>
@@ -11,8 +10,7 @@
                         class="btn btn-sm btn-icon btn-zoom navbar-toggle d-sm-none"><em
                             class="icon ni ni-menu-right"></em></button><button
                         class="btn btn-md btn-icon btn-zoom navbar-toggle d-none d-sm-inline-flex"><em
-                            class="icon ni ni-menu-right"></em></button></div><a href="index.html"
-                    class="logo-link">
+                            class="icon ni ni-menu-right"></em></button></div><a href="index.html" class="logo-link">
                     <div class="logo-wrap"><svg class="logo-svg" viewBox="0 0 174 34" fill="none"
                             xmlns="http://www.w3.org/2000/svg">
                             <g class="logo-text">
@@ -29,9 +27,8 @@
                                     fill="url(#paint1_linear_3467_17210)" />
                             </g>
                             <defs>
-                                <linearGradient id="paint0_linear_3467_17210" x1="11.615"
-                                    y1="-2.58227e-08" x2="2.49215" y2="29.5115"
-                                    gradientUnits="userSpaceOnUse">
+                                <linearGradient id="paint0_linear_3467_17210" x1="11.615" y1="-2.58227e-08"
+                                    x2="2.49215" y2="29.5115" gradientUnits="userSpaceOnUse">
                                     <stop stop-color="var(--logo-sym-secondary-2,#17C5EB)" />
                                     <stop offset="1" stop-color="var(--logo-sym-secondary-1,#0080FF)" />
                                 </linearGradient>
@@ -49,14 +46,13 @@
                     <li class="nk-nav-item has-sub"><a href="#" class="nk-nav-link nk-nav-toggle"><span
                                 class="nk-nav-text">Dashboards</span></a>
                         <ul class="nk-nav-sub nk-nav-sub-lg">
-                            <li class="nk-nav-item"><a href="index.html"
-                                    class="nk-nav-link bg-primary-soft-hover">
+                            <li class="nk-nav-item"><a href="index.html" class="nk-nav-link bg-primary-soft-hover">
                                     <div class="media-group flex-grow-1">
                                         <div
                                             class="media media-md media-middle media-border text-bg-primary-soft-outline">
-                                            <em class="icon ni ni-dashboard-fill"></em></div>
-                                        <div class="media-text flex-grow-1"><span
-                                                class="title">Default</span><span
+                                            <em class="icon ni ni-dashboard-fill"></em>
+                                        </div>
+                                        <div class="media-text flex-grow-1"><span class="title">Default</span><span
                                                 class="sub-text d-block">Website Analytics</span></div>
                                     </div>
                                 </a></li>
@@ -65,9 +61,9 @@
                                     <div class="media-group flex-grow-1">
                                         <div
                                             class="media media-md media-middle media-border text-bg-secondary-soft-outline">
-                                            <em class="icon ni ni-cart-fill"></em></div>
-                                        <div class="media-text flex-grow-1"><span
-                                                class="title">eCommerce</span><span
+                                            <em class="icon ni ni-cart-fill"></em>
+                                        </div>
+                                        <div class="media-text flex-grow-1"><span class="title">eCommerce</span><span
                                                 class="sub-text d-block">Sales reports</span></div>
                                     </div>
                                 </a></li>
@@ -76,9 +72,9 @@
                                     <div class="media-group flex-grow-1">
                                         <div
                                             class="media media-md media-middle media-border text-bg-success-soft-outline">
-                                            <em class="icon ni ni-link-group"></em></div>
-                                        <div class="media-text flex-grow-1"><span
-                                                class="title">Project</span><span
+                                            <em class="icon ni ni-link-group"></em>
+                                        </div>
+                                        <div class="media-text flex-grow-1"><span class="title">Project</span><span
                                                 class="sub-text d-block">Tasts, graphs & charts</span>
                                         </div>
                                     </div>
@@ -86,23 +82,21 @@
                             <li class="nk-nav-item"><a href="index-marketing.html"
                                     class="nk-nav-link bg-info-soft-hover">
                                     <div class="media-group flex-grow-1">
-                                        <div
-                                            class="media media-md media-middle media-border text-bg-info-soft-outline">
-                                            <em class="icon ni ni-growth-fill"></em></div>
-                                        <div class="media-text flex-grow-1"><span
-                                                class="title">Marketing</span><span
+                                        <div class="media media-md media-middle media-border text-bg-info-soft-outline">
+                                            <em class="icon ni ni-growth-fill"></em>
+                                        </div>
+                                        <div class="media-text flex-grow-1"><span class="title">Marketing</span><span
                                                 class="sub-text d-block">Campaings & conversions</span>
                                         </div>
                                     </div>
                                 </a></li>
-                            <li class="nk-nav-item"><a href="index-nft.html"
-                                    class="nk-nav-link bg-danger-soft-hover">
+                            <li class="nk-nav-item"><a href="index-nft.html" class="nk-nav-link bg-danger-soft-hover">
                                     <div class="media-group flex-grow-1">
                                         <div
                                             class="media media-md media-middle media-border text-bg-danger-soft-outline">
-                                            <em class="icon ni ni-img-fill"></em></div>
-                                        <div class="media-text flex-grow-1"><span
-                                                class="title">NFT</span><span
+                                            <em class="icon ni ni-img-fill"></em>
+                                        </div>
+                                        <div class="media-text flex-grow-1"><span class="title">NFT</span><span
                                                 class="sub-text d-block">Sell &amp; Create your own
                                                 NFTs</span></div>
                                     </div>
@@ -112,19 +106,17 @@
                     <li class="nk-nav-item has-sub"><a href="#" class="nk-nav-link nk-nav-toggle"><span
                                 class="nk-nav-text">Pages</span></a>
                         <ul class="nk-nav-sub">
-                            <li class="nk-nav-item has-sub"><a href="#"
-                                    class="nk-nav-link nk-nav-toggle"> Applications </a>
+                            <li class="nk-nav-item has-sub"><a href="#" class="nk-nav-link nk-nav-toggle">
+                                    Applications </a>
                                 <ul class="nk-nav-sub">
                                     <li class="nk-nav-item"><a href="apps/fullcalendar/calendar.html"
                                             class="nk-nav-link"> Calendar </a></li>
                                     <li class="nk-nav-item has-sub"><a href="#"
                                             class="nk-nav-link nk-nav-toggle"> Kanban board </a>
                                         <ul class="nk-nav-sub">
-                                            <li class="nk-nav-item"><a
-                                                    href="apps/kanban/kanban-basic.html"
+                                            <li class="nk-nav-item"><a href="apps/kanban/kanban-basic.html"
                                                     class="nk-nav-link"> Basic </a></li>
-                                            <li class="nk-nav-item"><a
-                                                    href="apps/kanban/kanban-custom-board.html"
+                                            <li class="nk-nav-item"><a href="apps/kanban/kanban-custom-board.html"
                                                     class="nk-nav-link"> Custom Board </a></li>
                                         </ul>
                                     </li>
@@ -133,11 +125,9 @@
                                         <ul class="nk-nav-sub">
                                             <li class="nk-nav-item"><a href="user-manage/user-list.html"
                                                     class="nk-nav-link"> Users List </a></li>
-                                            <li class="nk-nav-item"><a
-                                                    href="user-manage/user-cards.html"
+                                            <li class="nk-nav-item"><a href="user-manage/user-cards.html"
                                                     class="nk-nav-link"> Users Cards </a></li>
-                                            <li class="nk-nav-item"><a
-                                                    href="user-manage/user-profile.html"
+                                            <li class="nk-nav-item"><a href="user-manage/user-profile.html"
                                                     class="nk-nav-link"> Users Profile </a></li>
                                             <li class="nk-nav-item"><a href="user-manage/user-edit.html"
                                                     class="nk-nav-link"> Users Edit </a></li>
@@ -152,27 +142,24 @@
                                                     class="nk-nav-link"> Categories </a></li>
                                             <li class="nk-nav-item"><a href="ecommerce/add-product.html"
                                                     class="nk-nav-link"> Add Product </a></li>
-                                            <li class="nk-nav-item"><a
-                                                    href="ecommerce/edit-product.html"
+                                            <li class="nk-nav-item"><a href="ecommerce/edit-product.html"
                                                     class="nk-nav-link"> Edit Product </a></li>
-                                            <li class="nk-nav-item"><a
-                                                    href="ecommerce/add-category.html"
+                                            <li class="nk-nav-item"><a href="ecommerce/add-category.html"
                                                     class="nk-nav-link"> Add Category </a></li>
-                                            <li class="nk-nav-item"><a
-                                                    href="ecommerce/edit-category.html"
+                                            <li class="nk-nav-item"><a href="ecommerce/edit-category.html"
                                                     class="nk-nav-link"> Edit Category </a></li>
                                         </ul>
                                     </li>
                                 </ul>
                             </li>
-                            <li class="nk-nav-item"><a href="components/data-tables.html"
-                                    class="nk-nav-link"> Data tables </a></li>
+                            <li class="nk-nav-item"><a href="components/data-tables.html" class="nk-nav-link"> Data
+                                    tables </a></li>
                             <li class="nk-nav-item"><a href="components/chart.html" class="nk-nav-link">
                                     Chart </a></li>
-                            <li class="nk-nav-item"><a href="components/sweet-alert.html"
-                                    class="nk-nav-link"> Sweetalert </a></li>
-                            <li class="nk-nav-item"><a href="auths/auth-register.html"
-                                    class="nk-nav-link" target="_blank"> Auth Register </a></li>
+                            <li class="nk-nav-item"><a href="components/sweet-alert.html" class="nk-nav-link">
+                                    Sweetalert </a></li>
+                            <li class="nk-nav-item"><a href="auths/auth-register.html" class="nk-nav-link"
+                                    target="_blank"> Auth Register </a></li>
                             <li class="nk-nav-item"><a href="auths/auth-login.html" class="nk-nav-link"
                                     target="_blank"> Auth Login </a></li>
                             <li class="nk-nav-item"><a href="auths/auth-reset.html" class="nk-nav-link"
@@ -238,8 +225,9 @@
                                         <li><a href="utilities/misc.html">Miscellaneous</a></li>
                                     </ul>
                                 </div>
-                                <div class="nk-nav-col nk-nav-media"><img src="{{ asset('/admin/images/thumb/a.jpg') }}"
-                                        alt="" class="rounded-3"></div>
+                                <div class="nk-nav-col nk-nav-media"><img
+                                        src="{{ asset('/admin/images/thumb/a.jpg') }}" alt=""
+                                        class="rounded-3"></div>
                             </div>
                         </div>
                     </li>
@@ -250,15 +238,13 @@
                     <li class="dropdown"><button class="btn btn-icon btn-sm btn-zoom d-sm-none"
                             data-bs-toggle="dropdown" data-bs-auto-close="outside"><em
                                 class="icon ni ni-search"></em></button><button
-                            class="btn btn-icon btn-md btn-zoom d-none d-sm-inline-flex"
-                            data-bs-toggle="dropdown" data-bs-auto-close="outside"><em
-                                class="icon ni ni-search"></em></button>
+                            class="btn btn-icon btn-md btn-zoom d-none d-sm-inline-flex" data-bs-toggle="dropdown"
+                            data-bs-auto-close="outside"><em class="icon ni ni-search"></em></button>
                         <div class="dropdown-menu dropdown-menu-lg">
                             <div class="dropdown-content dropdown-content-x-lg py-1">
                                 <div class="search-inline">
-                                    <div class="form-control-wrap flex-grow-1"><input
-                                            placeholder="Type Query" type="text"
-                                            class="form-control-plaintext"></div><em
+                                    <div class="form-control-wrap flex-grow-1"><input placeholder="Type Query"
+                                            type="text" class="form-control-plaintext"></div><em
                                         class="icon icon-sm ni ni-search"></em>
                                 </div>
                             </div>
@@ -270,9 +256,9 @@
                                 <ul class="dropdown-list gap gy-2">
                                     <li>
                                         <div class="media-group">
-                                            <div
-                                                class="media media-md media-middle media-circle text-bg-light">
-                                                <em class="icon ni ni-clock"></em></div>
+                                            <div class="media media-md media-middle media-circle text-bg-light">
+                                                <em class="icon ni ni-clock"></em>
+                                            </div>
                                             <div class="media-text">
                                                 <div class="lead-text">Styled Doughnut Chart</div><span
                                                     class="sub-text">1 days ago</span>
@@ -284,9 +270,9 @@
                                     </li>
                                     <li>
                                         <div class="media-group">
-                                            <div
-                                                class="media media-md media-middle media-circle text-bg-light">
-                                                <em class="icon ni ni-clock"></em></div>
+                                            <div class="media media-md media-middle media-circle text-bg-light">
+                                                <em class="icon ni ni-clock"></em>
+                                            </div>
                                             <div class="media-text">
                                                 <div class="lead-text">Custom Select Input</div><span
                                                     class="sub-text">07 Aug</span>
@@ -298,9 +284,9 @@
                                     </li>
                                     <li>
                                         <div class="media-group">
-                                            <div
-                                                class="media media-md media-middle media-circle text-bg-light">
-                                                <img src="{{ asset('/admin/images/avatar/a.jpg') }}" alt=""></div>
+                                            <div class="media media-md media-middle media-circle text-bg-light">
+                                                <img src="{{ asset('/admin/images/avatar/a.jpg') }}" alt="">
+                                            </div>
                                             <div class="media-text">
                                                 <div class="lead-text">Sharon Walker</div><span
                                                     class="sub-text">Admin</span>
@@ -314,45 +300,43 @@
                             </div>
                         </div>
                     </li>
-                    <li><button class="btn btn-icon btn-sm btn-zoom d-sm-none"
-                            data-bs-toggle="offcanvas" data-bs-target="#notificationOffcanvas"><em
-                                class="icon ni ni-bell"></em></button><button
-                            class="btn btn-icon btn-md btn-zoom d-none d-sm-inline-flex"
-                            data-bs-toggle="offcanvas" data-bs-target="#notificationOffcanvas"><em
-                                class="icon ni ni-bell"></em></button></li>
+                    <li><button class="btn btn-icon btn-sm btn-zoom d-sm-none" data-bs-toggle="offcanvas"
+                            data-bs-target="#notificationOffcanvas"><em class="icon ni ni-bell"></em></button><button
+                            class="btn btn-icon btn-md btn-zoom d-none d-sm-inline-flex" data-bs-toggle="offcanvas"
+                            data-bs-target="#notificationOffcanvas"><em class="icon ni ni-bell"></em></button></li>
                     <li class="dropdown"><a href="#" data-bs-toggle="dropdown">
                             <div class="d-sm-none">
-                                <div class="media media-md media-circle"><img src="{{ asset('/admin/images/avatar/a.jpg') }}"
-                                        alt="" class="img-thumbnail"></div>
+                                <div class="media media-md media-circle"><img
+                                        src="{{ asset('/admin/images/avatar/a.jpg') }}" alt=""
+                                        class="img-thumbnail"></div>
                             </div>
                             <div class="d-none d-sm-block">
-                                <div class="media media-circle"><img src="{{ asset('/admin/images/avatar/a.jpg') }}" alt=""
-                                        class="img-thumbnail"></div>
+                                <div class="media media-circle"><img src="{{ asset('/admin/images/avatar/a.jpg') }}"
+                                        alt="" class="img-thumbnail"></div>
                             </div>
                         </a>
                         <div class="dropdown-menu dropdown-menu-md">
-                            <div
-                                class="dropdown-content dropdown-content-x-lg py-3 border-bottom border-light">
+                            <div class="dropdown-content dropdown-content-x-lg py-3 border-bottom border-light">
                                 <div class="media-group">
                                     <div class="media media-xl media-middle media-circle"><img
-                                            src="{{ asset('admin/images/avatar/a.jpg') }}" alt="" class="img-thumbnail">
+                                            src="{{ asset('admin/images/avatar/a.jpg') }}" alt=""
+                                            class="img-thumbnail">
                                     </div>
                                     <div class="media-text">
-                                        <div class="lead-text">Wesley Burland</div><span
-                                            class="sub-text">Owner & Founder</span>
+                                        <div class="lead-text">Wesley Burland</div><span class="sub-text">Owner &
+                                            Founder</span>
                                     </div>
                                 </div>
                             </div>
-                            <div
-                                class="dropdown-content dropdown-content-x-lg py-3 border-bottom border-light">
+                            <div class="dropdown-content dropdown-content-x-lg py-3 border-bottom border-light">
                                 <ul class="link-list">
                                     <li><a href="profile.html"><em class="icon ni ni-user"></em>
                                             <span>My Profile</span></a></li>
-                                    <li><a href="user-manage/user-cards.html"><em
-                                                class="icon ni ni-contact"></em> <span>My
+                                    <li><a href="user-manage/user-cards.html"><em class="icon ni ni-contact"></em>
+                                            <span>My
                                                 Contacts</span></a></li>
-                                    <li><a href="profile-edit.html"><em
-                                                class="icon ni ni-setting-alt"></em> <span>Account
+                                    <li><a href="profile-edit.html"><em class="icon ni ni-setting-alt"></em>
+                                            <span>Account
                                                 Settings</span></a></li>
                                 </ul>
                             </div>

@@ -30,7 +30,8 @@
                         </div>
                     </div>
                     <div class="nk-block">
-                        <form method="POST" action="{{ route('product.update', ['id' => $product->id]) }}">
+                        <form method="POST" action="{{ route('product.update', ['id' => $product->id]) }}"
+                            enctype="multipart/form-data">
                             @csrf
                             <div class="row g-gs">
                                 <div class="col-xxl-9">
@@ -70,6 +71,18 @@
                                                             </div>
                                                         </div>
                                                         <div class="col-lg-6">
+                                                            <div class="form-group"><label
+                                                                    class="form-label">Quantity</label>
+                                                                <div class="row g-gs">
+                                                                    <div class="form-control-wrap">
+                                                                        <input type="text" class="form-control"
+                                                                            value="{{ $product->quantity }}" name="quantity"
+                                                                            placeholder="On shelf">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-6">
                                                             <div class="form-group"><label for="barcode"
                                                                     class="form-label">Barcode</label>
                                                                 <div class="form-control-wrap"><input type="text"
@@ -77,42 +90,7 @@
                                                                         placeholder="Barcode number"></div>
                                                             </div>
                                                         </div>
-                                                        <div class="col-lg-6">
-                                                            <div class="form-group"><label
-                                                                    class="form-label">Quantity</label>
-                                                                <div class="row g-gs">
-                                                                    <div class="form-control-wrap">
-                                                                        <input type="number" class="form-control"
-                                                                            value="{{ $product->quantity }} name="quantity"
-                                                                            placeholder="On shelf">
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="gap-col">
-                                            <div class="card card-gutter-md">
-                                                <div class="card-body">
-                                                    <div class="form-group"><label class="form-label">Upload
-                                                            Media</label>
-                                                        <div class="form-control-wrap">
-                                                            <div class="js-upload" id="dropzoneFile1"
-                                                                data-message-icon="img">
-                                                                <div class="dz-message" data-dz-message>
-                                                                    <div class="dz-message-icon"></div><span
-                                                                        class="dz-message-text">Drop files
-                                                                        here or click to upload.</span>
-                                                                    <div class="dz-message-btn mt-2"><button
-                                                                            class="btn btn-md btn-primary">Upload</button>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="form-note mt-3">Set the product media
-                                                            gallery.</div>
+
                                                     </div>
                                                 </div>
                                             </div>
@@ -136,11 +114,13 @@
                                                         <div class="form-control-wrap">
                                                             <div
                                                                 class="image-upload-wrap d-flex flex-column align-items-center">
-                                                                <div class="media media-huge border"><img
-                                                                        id="image-result" class="w-100 h-100"
-                                                                        src="../images/avatar/avatar-placeholder.jpg"
-                                                                        alt="avatar"></div>
-                                                                <div class="pt-3"><input class="upload-image"
+                                                                <div class="media media-huge border">
+                                                                    <img id="image-result" class="w-100 h-100"
+                                                                        src="{{ asset($product->nameImage) }}"
+                                                                        alt="avatar">
+                                                                </div>
+                                                                <div class="pt-3">
+                                                                    <input class="upload-image" name="thumbnail"
                                                                         data-target="image-result" id="change-avatar"
                                                                         type="file" max="1" hidden><label
                                                                         for="change-avatar"
@@ -154,7 +134,8 @@
                                                     </div>
                                                 </div>
                                                 <div class="col-12">
-                                                    <div class="form-group"><label class="form-label">Categories</label>
+                                                    <div class="form-group">
+                                                        <label class="form-label">Categories</label>
                                                         <div class="form-control-wrap"><select class="js-select" multiple
                                                                 data-search="true" data-sort="false">
                                                                 <option value="">Select an option</option>

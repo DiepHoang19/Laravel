@@ -13,8 +13,6 @@ class UploadImageController extends Controller
         return view('Upload.index', [
             'photos' => $photos
         ]);
-
-        // return view('Upload.index');
     }
 
     public function save(Request $request)

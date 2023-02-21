@@ -57,7 +57,7 @@
                         <ul class="nk-menu-sub">
                             <li class="nk-menu-item"><a href="{{ route('product.index') }}" class="nk-menu-link"><span
                                         class="nk-menu-text">Products</span></a></li>
-                            <li class="nk-menu-item"><a href="ecommerce/categories.html" class="nk-menu-link"><span
+                            <li class="nk-menu-item"><a href="{{ route('category.index') }}"" class="nk-menu-link"><span
                                         class="nk-menu-text">Categories</span></a>
                             </li>
                             <li class="nk-menu-item"><a href="ecommerce/add-product.html" class="nk-menu-link"><span

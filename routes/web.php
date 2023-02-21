@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CategoryController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductController;
@@ -28,4 +29,10 @@ Route::prefix('products')->controller(ProductController::class)->name('product.'
     Route::get('/{id}/edit', 'edit')->name('edit');
     Route::post('/{id}/update', 'update')->name('update');
     Route::get('/{id}/trash', 'trash')->name('trash');
+});
+
+Route::prefix('categories')->controller(CategoryController::class)->name('category.')->group(function () {
+    Route::get('/', 'index')->name('index');
+    Route::get('/create', 'create')->name('create');
+    Route::post('/store', 'store')->name('store');
 });
