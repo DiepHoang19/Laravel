@@ -136,12 +136,9 @@
                                                         <div class="form-control-wrap">
                                                             <div
                                                                 class="image-upload-wrap d-flex flex-column align-items-center">
-                                                                <div class="media media-huge border">
-                                                                    <img id="image-result" class="w-100 h-100"
-                                                                        src="{{ asset($product->nameImage) }}"
-                                                                        alt="avatar">
-
-                                                                </div>
+                                                                <img id="image-result" class="w-100 h-100"
+                                                                    src="{{ asset($product->nameImage) }}"
+                                                                    alt="avatar">
                                                                 <div class="pt-3">
                                                                     <input class="upload-image" name="thumbnail"
                                                                         data-target="image-result" id="change-avatar"

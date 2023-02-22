@@ -7,7 +7,7 @@
                 <div class="col-lg-5">
                     <div class="card card-gutter-lg rounded-4 card-auth">
                         <div class="card-body">
-                            <div class="brand-logo mb-4"><a href="../index.html" class="logo-link">
+                            <div class="brand-logo mb-4"><a href="{{ route('index') }}" class="logo-link">
                                     <div class="logo-wrap"><svg class="logo-svg" viewBox="0 0 174 34" fill="none"
                                             xmlns="http://www.w3.org/2000/svg">
                                             <g class="logo-text">
@@ -63,7 +63,7 @@
                                         <div class="form-group">
                                             <label for="password" class="form-label">Password</label>
                                             <div class="form-control-wrap">
-                                                <input type="text" class="form-control" id="password" name="password"
+                                                <input type="password" class="form-control" id="password" name="password"
                                                     placeholder="Enter password">
                                                 @if ($errors->has('password'))
                                                     <span class="text-danger">{{ $errors->first('password') }}</span>
@@ -101,7 +101,7 @@
                             </div>
                             <div class="text-center mt-4">
                                 <p class="small">Don't have an account? <a
-                                        href="{{ route('account.register') }}">Register</a></p>
+                                        href="{{ route('account.registration') }}">Register</a></p>
                             </div>
                         </div>
                     </div>

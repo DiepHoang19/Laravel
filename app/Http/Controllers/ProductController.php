@@ -33,7 +33,7 @@ class ProductController extends Controller
             ->get()
             ->toArray();
         $options = $this->renderCategoryOption($categories);
-        
+
         return view('product.create', [
             "categories" => $options,
         ]);

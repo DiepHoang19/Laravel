@@ -12,6 +12,13 @@ class AuthController extends Controller
 {
     public function index()
     {
+        $accounts = User::all();
+        return view('user-manager.index', [
+            'accounts' => $accounts,
+        ]);
+    }
+    public function login()
+    {
         return view('auth.login');
     }
 
@@ -20,6 +27,8 @@ class AuthController extends Controller
         return view('auth.registration');
     }
 
+
+    // đăng nhập tài khoản
     public function postLogin(Request $request)
     {
         $request->validate([
@@ -30,11 +39,13 @@ class AuthController extends Controller
         $credentials = $request->only('email', 'password');
         if (Auth::attempt($credentials)) {
             return redirect()->route('index')
-                ->with('You have Successfully loggedin');
+                ->with('status', 'You have Successfully loggedin');
         }
 
         return redirect()->route('account.login')->with('Oppes! You have entered invalid credentials');
     }
+
+    // đăng ký tài khoản
     public function postRegistration(Request $request)
     {
         $request->validate([
@@ -44,8 +55,29 @@ class AuthController extends Controller
         ]);
         $data = $request->all();
         $check = $this->create($data);
-        return redirect()->route('index')->with('Great! You have Successfully loggedin');
+        return redirect()->route('index')->with('status', 'Great! You have Successfully loggedin');
     }
+
+    // tạo mới tài khoản trong admin
+    public function register(Request $request)
+    {
+        $request->validate([
+            'name' => 'required',
+            'email' => 'required|email|unique:users',
+            'password' => 'required|min:6',
+        ]);
+        $data = $request->all();
+        $check = $this->create($data);
+        return redirect()->route('account.index')->with('status', 'Great! You have Successfully loggedin');
+    }
+
+
+
+    public function store()
+    {
+        return view('user-manager.create');
+    }
+
     public function dashboard()
     {
         if (Auth::check()) {
@@ -53,6 +85,8 @@ class AuthController extends Controller
         }
         return redirect()->route('account.login')->with('Opps! You do not have access');
     }
+
+
     public function create(array $data)
     {
         return User::create([
@@ -72,5 +106,28 @@ class AuthController extends Controller
     public function profile()
     {
         return view('user-manager.profile');
+    }
+
+
+    public function edit($id)
+    {
+        $account = User::findOrFail($id);
+        return view('user-manager.edit', [
+            'account' => $account,
+        ]);
+    }
+    public function update($id, Request $request)
+    {
+        $account = User::findOrFail($id);
+        $account->update([
+            'name' => $request->name,
+            'email' => $request->email,
+        ]);
+        return redirect()->route('account.index');
+    }
+    public function trash($id)
+    {
+        $account = User::findOrFail($id)->delete();
+        return back();
     }
 }

@@ -7,13 +7,13 @@
                     <div class="nk-block-head">
                         <div class="nk-block-head-between flex-wrap gap g-2">
                             <div class="nk-block-head-content">
-                                <h2 class="nk-block-title">Edit Categories</h1>
+                                <h2 class="nk-block-title">Edit Account</h1>
                                     <nav>
                                         <ol class="breadcrumb breadcrumb-arrow mb-0">
                                             <li class="breadcrumb-item"><a href="#">Home</a></li>
                                             <li class="breadcrumb-item"><a href="#">ecommerce</a></li>
                                             <li class="breadcrumb-item active" aria-current="page">Edit
-                                                Categories</li>
+                                                Account</li>
                                         </ol>
                                     </nav>
                             </div>
@@ -23,14 +23,14 @@
                                                 class="icon ni ni-eye"></em><span>View</span></a></li>
                                     <li><a href="{{ route('category.index') }}"
                                             class="btn btn-primary d-none d-md-inline-flex"><em
-                                                class="icon ni ni-eye"></em><span>View Categories</span></a>
+                                                class="icon ni ni-eye"></em><span>View Account</span></a>
                                     </li>
                                 </ul>
                             </div>
                         </div>
                     </div>
                     <div class="nk-block">
-                        <form method="POST" action="{{ route('category.update', ['id' => $categories->id]) }}">
+                        <form method="POST" action="{{ route('account.update', ['id' => $account->id]) }}">
                             @csrf
                             <div class="row g-gs">
                                 <div class="col-xxl-9">
@@ -41,25 +41,26 @@
                                                     <div class="row g-gs">
                                                         <div class="col-lg-12">
                                                             <div class="form-group"><label for="productname"
-                                                                    class="form-label">Category Name</label>
+                                                                    class="form-label"> username</label>
                                                                 <div class="form-control-wrap">
                                                                     <input type="text" class="form-control"
                                                                         id="productname" placeholder="Product Name"
-                                                                        value="{{ $categories->name }}" name="name">
+                                                                        value="{{ $account->name }}" name="name">
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                        {{-- <div class="col-lg-6">
-                                                            <div class="form-group"><label for="baseprice"
-                                                                    class="form-label">Parent</label>
+                                                    </div>
+                                                    <div class="row g-gs">
+                                                        <div class="col-lg-12">
+                                                            <div class="form-group"><label for="productname"
+                                                                    class="form-label">Email</label>
                                                                 <div class="form-control-wrap">
                                                                     <input type="text" class="form-control"
-                                                                        id="baseprice" placeholder="Parent"
-                                                                        value="{{ $categories->parent_id }}"
-                                                                        name="parent_id">
+                                                                        id="productname" placeholder="Product Name"
+                                                                        value="{{ $account->email }}" name="email">
                                                                 </div>
                                                             </div>
-                                                        </div> --}}
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -68,7 +69,7 @@
                                             <ul class="d-flex align-items-center gap g-3">
                                                 <li><button type="submit" class="btn btn-primary">Save
                                                         Changes</button></li>
-                                                <li><a href="{{ route('category.index') }}" class="btn border-0">Cancel</a>
+                                                <li><a href="{{ route('account.index') }}" class="btn border-0">Cancel</a>
                                                 </li>
                                             </ul>
                                         </div>

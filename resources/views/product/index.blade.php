@@ -30,12 +30,10 @@
         @endif
 
         <div class="card">
-
             <div class="col-lg-3">
-                <form method="GET" action="">
-                    <input name="keyword" placeholder="Search by name" class="form-control"
+                <form method="GET" action="" id="search-input" class="form-search" style="margin:20px">
+                    <input name="keyword" placeholder="Search by name" class="form-control" id="form-submi"
                         value="{{ request()->get('keyword') }}" />
-                    <button class="btn btn-primary d-none d-md-inline-flex">Search</button>
                 </form>
             </div>
             <table class="datatable-init table" data-nk-container="table-responsive">
@@ -111,8 +109,8 @@
                 </tbody>
             </table>
             {{ $products->links('vendor.pagination.bootstrap-5') }}
-            <form method="GET" action="" id="limit-form">
-                <select name="limit" id="limit-select">
+            <form method="GET" action="" id="limit-form" class="col-2">
+                <select name="limit" id="limit-select" class="dataTable-selector" style="margin:20px">
                     <option value=""> Limit </option>
                     <option value="10" @if (request()->get('limit') == 10) selected @endif>10</option>
                     <option value="20" @if (request()->get('limit') == 20) selected @endif>20</option>
@@ -128,6 +126,11 @@
             $('#limit-select').change(function(e) {
                 e.preventDefault();
                 $('#limit-form').submit();
+            })
+
+            $('#search-input').change(function(e) {
+                e.preventDefault();
+                $('#form-submit').submit();
             })
         })
 

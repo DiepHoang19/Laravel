@@ -72,7 +72,7 @@
                                     <div class="col-12">
                                         <div class="form-group"><label for="password" class="form-label">Password</label>
                                             <div class="form-control-wrap">
-                                                <input type="text" class="form-control" id="password" name="password"
+                                                <input type="password" class="form-control" id="password" name="password"
                                                     placeholder="Enter password">
                                                 @if ($errors->has('password'))
                                                     <span class="text-danger">{{ $errors->first('password') }}</span>

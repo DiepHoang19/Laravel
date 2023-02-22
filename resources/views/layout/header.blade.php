@@ -233,6 +233,19 @@
                     </li>
                 </ul>
             </nav>
+            {{-- @guest
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('account.login') }}">Login</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('account.register') }}">Register</a>
+                </li>
+            @else
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('account.logout') }}">Logout</a>
+                </li>
+            @endguest --}}
+
             <div class="nk-header-tools">
                 <ul class="nk-quick-nav ms-2">
                     <li class="dropdown"><button class="btn btn-icon btn-sm btn-zoom d-sm-none"
@@ -300,10 +313,12 @@
                             </div>
                         </div>
                     </li>
-                    <li><button class="btn btn-icon btn-sm btn-zoom d-sm-none" data-bs-toggle="offcanvas"
+                    <li>
+                        <button class="btn btn-icon btn-sm btn-zoom d-sm-none" data-bs-toggle="offcanvas"
                             data-bs-target="#notificationOffcanvas"><em class="icon ni ni-bell"></em></button><button
                             class="btn btn-icon btn-md btn-zoom d-none d-sm-inline-flex" data-bs-toggle="offcanvas"
-                            data-bs-target="#notificationOffcanvas"><em class="icon ni ni-bell"></em></button></li>
+                            data-bs-target="#notificationOffcanvas"><em class="icon ni ni-bell"></em></button>
+                    </li>
                     <li class="dropdown"><a href="#" data-bs-toggle="dropdown">
                             <div class="d-sm-none">
                                 <div class="media media-md media-circle"><img

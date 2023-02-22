@@ -59,7 +59,6 @@ class CategoryController extends Controller
         $categories = Category::findOrFail($id);
         $categories->update([
             'name' => $request->name,
-            'parent_id' => $request->parent_id,
         ]);
         return redirect()->route('category.index');
     }

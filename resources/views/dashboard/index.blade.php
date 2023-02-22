@@ -1,26 +1,8 @@
 @extends('layout.master')
 @section('content')
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-8">
-                <div class="card">
-                    <div class="card-header">{{ __('Dashboard') }}</div>
-
-                    <div class="card-body">
-                        @if (session('success'))
-                            <div class="alert alert-success" role="alert">
-                                {{ session('success') }}
-                            </div>
-                        @endif
-
-                        You are Logged In
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
+    @if (Session::has('status'))
+    
+    @endif
     <div class="row g-gs">
         <div class="col-sm-6 col-xl-6 col-xxl-3">
             <div class="card h-100">
@@ -499,3 +481,23 @@
         </div>
     </div>
 @endsection
+@push('scripts')
+    <script>
+        @if (Session::has('status'))
+            Toastify({
+                text: "{{ Session::get('status') }}",
+                duration: 2000,
+                destination: "#",
+                newWindow: true,
+                close: true,
+                gravity: "top", // `top` or `bottom`
+                position: "right", // `left`, `center` or `right`
+                stopOnFocus: true, // Prevents dismissing of toast on hover
+                style: {
+                    background: "linear-gradient(to right, #00b09b, #96c93d)",
+                },
+                onClick: function() {} // Callback after click
+            }).showToast();
+        @endif
+    </script>
+@endpush
