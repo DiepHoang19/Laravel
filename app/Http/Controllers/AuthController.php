@@ -12,7 +12,7 @@ class AuthController extends Controller
 {
     public function index()
     {
-        $accounts = User::all();
+        $accounts = User::paginate(10);
         return view('user-manager.index', [
             'accounts' => $accounts,
         ]);
@@ -32,7 +32,7 @@ class AuthController extends Controller
     public function postLogin(Request $request)
     {
         $request->validate([
-            'email' => 'required',
+            'email' => 'required|email|exists:users,email',
             'password' => 'required',
         ]);
 
@@ -42,7 +42,9 @@ class AuthController extends Controller
                 ->with('status', 'You have Successfully loggedin');
         }
 
-        return redirect()->route('account.login')->with('Oppes! You have entered invalid credentials');
+        return redirect()->route('login')->with([
+            'error' => 'Oppes! You have entered invalid credentials'
+        ]);
     }
 
     // đăng ký tài khoản
@@ -50,12 +52,13 @@ class AuthController extends Controller
     {
         $request->validate([
             'name' => 'required',
-            'email' => 'required|email|unique:users',
-            'password' => 'required|min:6',
+            'email' => 'required|email|unique:users,email',
+            'password' => 'required|min:6|confirmed',
+            'password_confirmation' => 'required_with:password'
         ]);
         $data = $request->all();
         $check = $this->create($data);
-        return redirect()->route('index')->with('status', 'Great! You have Successfully loggedin');
+        return redirect()->route('login')->with('status', 'Great! You have successfully register');
     }
 
     // tạo mới tài khoản trong admin
@@ -71,8 +74,6 @@ class AuthController extends Controller
         return redirect()->route('account.index')->with('status', 'Great! You have Successfully loggedin');
     }
 
-
-
     public function store()
     {
         return view('user-manager.create');
@@ -83,7 +84,7 @@ class AuthController extends Controller
         if (Auth::check()) {
             return redirect()->route('index');
         }
-        return redirect()->route('account.login')->with('Opps! You do not have access');
+        return redirect()->route('login')->with('Opps! You do not have access');
     }
 
 
@@ -95,12 +96,12 @@ class AuthController extends Controller
             'password' => Hash::make($data['password'])
         ]);
     }
+
     public function logout()
     {
         Session::flush();
         Auth::logout();
-
-        return redirect()->route('account.login');
+        return redirect()->route('login');
     }
 
     public function profile()

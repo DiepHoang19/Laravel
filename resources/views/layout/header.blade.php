@@ -357,7 +357,7 @@
                             </div>
                             <div class="dropdown-content dropdown-content-x-lg py-3">
                                 <ul class="link-list">
-                                    <li><a href="{{ route('account.login') }}"><em class="icon ni ni-signout"></em>
+                                    <li><a href="{{ route('account.logout') }}"><em class="icon ni ni-signout"></em>
                                             <span>LogOut</span>
                                         </a></li>
                                 </ul>

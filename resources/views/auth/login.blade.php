@@ -1,5 +1,8 @@
 @extends('layout.main')
 @section('content')
+    @if (Session::has('status'))
+
+    @endif
     <div class="nk-wrap align-items-center justify-content-center has-mask">
         <div class="mask mask-3"></div>
         <div class="container p-2 p-sm-4">
@@ -44,7 +47,15 @@
                                     <p class="small">Please sign-in to your account and start the adventure.</p>
                                 </div>
                             </div>
-                            <form action="{{ route('account.postLogin') }}" method="POST">
+                            @if (Session::has('error'))
+                                <div class="alert alert-danger mt-1 mb-1">
+                                    <ul>
+                                        <li>{{ Session::get('error') }}</li>
+                                    </ul>
+                                </div>
+                            @endif
+
+                            <form action="{{ route('postLogin') }}" method="POST">
                                 @csrf
                                 <div class="row gy-3">
                                     <div class="col-12">
@@ -52,10 +63,10 @@
                                             </label>
                                             <div class="form-control-wrap">
                                                 <input type="text" class="form-control" id="username" name="email"
-                                                    placeholder="Enter username">
-                                                @if ($errors->has('email'))
-                                                    <span class="text-danger">{{ $errors->first('email') }}</span>
-                                                @endif
+                                                    placeholder="Enter username" value="{{ old('email') }}">
+                                                @error('email')
+                                                    <span class="text-danger">{{ $message }}</span>
+                                                @enderror
                                             </div>
                                         </div>
                                     </div>
@@ -65,9 +76,9 @@
                                             <div class="form-control-wrap">
                                                 <input type="password" class="form-control" id="password" name="password"
                                                     placeholder="Enter password">
-                                                @if ($errors->has('password'))
-                                                    <span class="text-danger">{{ $errors->first('password') }}</span>
-                                                @endif
+                                                @error('password')
+                                                    <span class="text-danger">{{ $message }}</span>
+                                                @enderror
                                             </div>
                                         </div>
                                     </div>
@@ -101,7 +112,7 @@
                             </div>
                             <div class="text-center mt-4">
                                 <p class="small">Don't have an account? <a
-                                        href="{{ route('account.registration') }}">Register</a></p>
+                                        href="{{ route('registration') }}">Register</a></p>
                             </div>
                         </div>
                     </div>
@@ -134,3 +145,23 @@
         </div>
     </div>
 @endsection
+@push('scripts')
+    <script>
+        @if (Session::has('status'))
+            Toastify({
+                text: "{{ Session::get('status') }}",
+                duration: 2000,
+                destination: "#",
+                newWindow: true,
+                close: true,
+                gravity: "top", // `top` or `bottom`
+                position: "right", // `left`, `center` or `right`
+                stopOnFocus: true, // Prevents dismissing of toast on hover
+                style: {
+                    background: "linear-gradient(to right, #00b09b, #96c93d)",
+                },
+                onClick: function() {} // Callback after click
+            }).showToast();
+        @endif
+    </script>
+@endpush

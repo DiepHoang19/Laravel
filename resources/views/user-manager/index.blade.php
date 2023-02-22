@@ -76,7 +76,7 @@
                     @endforeach
                 </tbody>
             </table>
-            {{-- {{ $accounts->links('vendor.pagination.bootstrap-5') }} --}}
+            {{ $accounts->links('vendor.pagination.bootstrap-5') }}
             <form method="GET" action="" id="limit-form" class="col-2">
                 <select name="limit" id="limit-select" class="dataTable-selector" style="margin:20px">
                     <option value=""> Limit </option>

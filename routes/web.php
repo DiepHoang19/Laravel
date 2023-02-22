@@ -17,61 +17,52 @@ use App\Http\Controllers\ProductController;
 |
 */
 
-Route::controller(HomeController::class)->group(function () {
-    Route::get('/', 'index')->name('index');
+Route::prefix('admin')->middleware('auth')->group(function () {
+    Route::controller(HomeController::class)->group(function () {
+        Route::get('/dashboard', 'index')->name('index');
+    });
+
+    Route::prefix('products')->controller(ProductController::class)->name('product.')->group(function () {
+        Route::get('/', 'index')->name('index');
+        Route::get('/create', 'create')->name('create');
+        Route::post('/store', 'store')->name('store');
+        Route::get('/{id}/edit', 'edit')->name('edit');
+        Route::post('/{id}/update', 'update')->name('update');
+        Route::get('/{id}/trash', 'trash')->name('trash');
+    });
+
+    Route::prefix('categories')->controller(CategoryController::class)->name('category.')->group(function () {
+        Route::get('/', 'index')->name('index');
+        Route::get('/create', 'create')->name('create');
+        Route::post('/store', 'store')->name('store');
+        Route::post('/{id}/update', 'update')->name('update');
+        Route::get('/{id}/trash', 'trash')->name('trash');
+        Route::get('/{id}/edit', 'edit')->name('edit');
+    });
+
+
+    Route::prefix('accounts')->controller(AuthController::class)->name('account.')->group(function () {
+        Route::get('/', 'index')->name('index');
+
+        Route::get('/store',  'store')->name('store');
+        Route::post('/register',  'register')->name('register');
+
+        Route::get('/{id}/edit', 'edit')->name('edit');
+        Route::post('/{id}/update', 'update')->name('update');
+
+        Route::get('/{id}/trash', 'trash')->name('trash');
+
+        Route::get('/dashboard', 'dashboard')->name('dashboard');
+        Route::get('/logout', 'logout')->name('logout');
+
+        Route::get('/profile', 'profile')->name('profile');
+    });
 });
 
-Route::prefix('products')->controller(ProductController::class)->name('product.')->group(function () {
-    Route::get('/', 'index')->name('index');
-    Route::get('/create', 'create')->name('create');
-    Route::post('/store', 'store')->name('store');
-    Route::get('/{id}/edit', 'edit')->name('edit');
-    Route::post('/{id}/update', 'update')->name('update');
-    Route::get('/{id}/trash', 'trash')->name('trash');
-});
-
-Route::prefix('accounts')->controller(AuthController::class)->name('account.')->group(function () {
-    // giao diện table account
-    Route::get('/', 'index')->name('index');
-    // end
-
-    // giao diện đăng nhập và đăng nhập tài khoản
+Route::controller(AuthController::class)->group(function () {
     Route::get('/login', 'login')->name('login');
     Route::post('/post-login',  'postLogin')->name('postLogin');
-    // end
 
-    // giao diện đăng ký tài khoản và đăng ký tài khoản
     Route::get('/registration',  'registration')->name('registration');
     Route::post('/post-registration',  'postRegistration')->name('postRegistration');
-    // end
-
-    // giao diện tạo mới tài khoản trong admin và tạo tài khoản trong admin
-    Route::get('/store',  'store')->name('store');
-    Route::post('/register',  'register')->name('register');
-    // end
-
-    // giao diện và chỉnh sửa thông tin tài khoản
-    Route::get('/{id}/edit', 'edit')->name('edit');
-    Route::post('/{id}/update', 'update')->name('update');
-    //end
-
-    // xóa tài khoản
-    Route::get('/{id}/trash', 'trash')->name('trash');
-    //end
-
-    Route::get('/dashboard', 'dashboard')->name('dashboard');
-    Route::get('/logout', 'logout')->name('logout');
-
-    // giao diện profile
-    Route::get('/profile', 'profile')->name('profile');
-    //end
-});
-
-Route::prefix('categories')->controller(CategoryController::class)->name('category.')->group(function () {
-    Route::get('/', 'index')->name('index');
-    Route::get('/create', 'create')->name('create');
-    Route::post('/store', 'store')->name('store');
-    Route::post('/{id}/update', 'update')->name('update');
-    Route::get('/{id}/trash', 'trash')->name('trash');
-    Route::get('/{id}/edit', 'edit')->name('edit');
 });
