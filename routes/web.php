@@ -17,7 +17,7 @@ use App\Http\Controllers\ProductController;
 |
 */
 
-Route::prefix('admin')->middleware('auth')->group(function () {
+Route::prefix('admin')->middleware(['auth', 'verified.custom'])->group(function () {
     Route::controller(HomeController::class)->group(function () {
         Route::get('/dashboard', 'index')->name('index');
     });
@@ -56,6 +56,7 @@ Route::prefix('admin')->middleware('auth')->group(function () {
         Route::get('/logout', 'logout')->name('logout');
 
         Route::get('/profile', 'profile')->name('profile');
+
     });
 });
 
@@ -65,4 +66,5 @@ Route::controller(AuthController::class)->group(function () {
 
     Route::get('/registration',  'registration')->name('registration');
     Route::post('/post-registration',  'postRegistration')->name('postRegistration');
+    Route::get('/verify-account', 'verifyAccount')->name('verify_account');
 });

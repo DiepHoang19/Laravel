@@ -1,7 +1,6 @@
 @extends('layout.main')
 @section('content')
     @if (Session::has('status'))
-
     @endif
     <div class="nk-wrap align-items-center justify-content-center has-mask">
         <div class="mask mask-3"></div>
@@ -54,7 +53,13 @@
                                     </ul>
                                 </div>
                             @endif
-
+                            @if (Session::has('verify_alert'))
+                            <div class="alert alert-warning mt-1 mb-1">
+                                <ul>
+                                    <li>{{ Session::get('verify_alert') }}</li>
+                                </ul>
+                            </div>
+                        @endif
                             <form action="{{ route('postLogin') }}" method="POST">
                                 @csrf
                                 <div class="row gy-3">
@@ -128,14 +133,18 @@
                         </div>
                         <div class="mt-5 pt-4">
                             <div class="media-group media-group-overlap">
-                                <div class="media media-sm media-circle media-border border-white"><img
-                                        src="../images/avatar/a.jpg" alt=""></div>
-                                <div class="media media-sm media-circle media-border border-white"><img
-                                        src="../images/avatar/b.jpg" alt=""></div>
-                                <div class="media media-sm media-circle media-border border-white"><img
-                                        src="../images/avatar/c.jpg" alt=""></div>
-                                <div class="media media-sm media-circle media-border border-white"><img
-                                        src="../images/avatar/d.jpg" alt=""></div>
+                                <div class="media media-sm media-circle media-border border-white">
+                                    <img src="{{ asset('admin/images/avatar/a.jpg') }}" alt="">
+                                </div>
+                                <div class="media media-sm media-circle media-border border-white">
+                                    <img src="{{ asset('admin/images/avatar/b.jpg') }}" alt="">
+                                </div>
+                                <div class="media media-sm media-circle media-border border-white">
+                                    <img src="{{ asset('admin/images/avatar/c.jpg') }}" alt="">
+                                </div>
+                                <div class="media media-sm media-circle media-border border-white">
+                                    <img src="{{ asset('admin/images/avatar/d.jpg') }}" alt="">
+                                </div>
                             </div>
                             <p class="small mt-2">More than 2k people joined us, it's your turn</p>
                         </div>

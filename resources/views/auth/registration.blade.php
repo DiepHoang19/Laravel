@@ -81,12 +81,14 @@
                                         </div>
                                     </div>
                                     <div class="col-12">
-                                        <div class="form-group"><label for="password" class="form-label">Confirm Password</label>
+                                        <div class="form-group"><label for="password" class="form-label">Confirm
+                                                Password</label>
                                             <div class="form-control-wrap">
-                                                <input type="password" class="form-control" id="password" name="password_confirmation"
-                                                    placeholder="Enter password">
+                                                <input type="password" class="form-control" id="password"
+                                                    name="password_confirmation" placeholder="Enter password">
                                                 @if ($errors->has('password_confirmation'))
-                                                    <span class="text-danger">{{ $errors->first('password_confirmation') }}</span>
+                                                    <span
+                                                        class="text-danger">{{ $errors->first('password_confirmation') }}</span>
                                                 @endif
                                             </div>
                                         </div>
@@ -95,7 +97,8 @@
                                         <div class="form-check form-check-sm"><input class="form-check-input"
                                                 type="checkbox" value="" id="iAgree"><label
                                                 class="form-check-label" for="iAgree"> I agree to <a
-                                                    href="#">privacy policy</a> & <a href="#">terms</a></label>
+                                                    href="#">privacy policy</a> & <a
+                                                    href="#">terms</a></label>
                                         </div>
                                     </div>
                                     <div class="col-12">
@@ -109,15 +112,14 @@
                             </div>
                             <div class="row g-2">
                                 <div class="col-sm-6"><a href="#" class="btn btn-outline-light w-100"><img
-                                            src="../images/icon/d.png" alt="" class="icon"><span
-                                            class="fw-medium">With Google</span></a></div>
+                                            src="{{ asset('admin/images/icon/d.png') }}" alt=""
+                                            class="icon"><span class="fw-medium">With Google</span></a></div>
                                 <div class="col-sm-6"><a href="#" class="btn btn-outline-light w-100"><img
-                                            src="../images/icon/b.png" alt="" class="icon"><span
-                                            class="fw-medium">With Facebook</span></a></div>
+                                            src="{{ asset('admin/images/icon/b.png') }}" alt=""
+                                            class="icon"><span class="fw-medium">With Facebook</span></a></div>
                             </div>
                             <div class="text-center mt-4">
-                                <p class="small">Already have an account? <a
-                                        href="{{ route('login') }}">Login</a></p>
+                                <p class="small">Already have an account? <a href="{{ route('login') }}">Login</a></p>
                             </div>
                         </div>
                     </div>
@@ -133,14 +135,18 @@
                         </div>
                         <div class="mt-5 pt-4">
                             <div class="media-group media-group-overlap">
-                                <div class="media media-sm media-circle media-border border-white"><img
-                                        src="../images/avatar/a.jpg" alt=""></div>
-                                <div class="media media-sm media-circle media-border border-white"><img
-                                        src="../images/avatar/b.jpg" alt=""></div>
-                                <div class="media media-sm media-circle media-border border-white"><img
-                                        src="../images/avatar/c.jpg" alt=""></div>
-                                <div class="media media-sm media-circle media-border border-white"><img
-                                        src="../images/avatar/d.jpg" alt=""></div>
+                                <div class="media media-sm media-circle media-border border-white">
+                                    <img src="{{ asset('admin/images/avatar/a.jpg') }}" alt="">
+                                </div>
+                                <div class="media media-sm media-circle media-border border-white">
+                                    <img src="{{ asset('admin/images/avatar/b.jpg') }}" alt="">
+                                </div>
+                                <div class="media media-sm media-circle media-border border-white">
+                                    <img src="{{ asset('admin/images/avatar/c.jpg') }}" alt="">
+                                </div>
+                                <div class="media media-sm media-circle media-border border-white">
+                                    <img src="{{ asset('admin/images/avatar/d.jpg') }}" alt="">
+                                </div>
                             </div>
                             <p class="small mt-2">More than 2k people joined us, it's your turn</p>
                         </div>

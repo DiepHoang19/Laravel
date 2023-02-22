@@ -2,11 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\SendVerifyCode;
 use App\Models\User;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Str;
 
 class AuthController extends Controller
 {
@@ -57,8 +61,19 @@ class AuthController extends Controller
             'password_confirmation' => 'required_with:password'
         ]);
         $data = $request->all();
-        $check = $this->create($data);
-        return redirect()->route('login')->with('status', 'Great! You have successfully register');
+        $verifyCode = Str::random(255);
+        $user = User::create([
+            'name' => $data['name'],
+            'email' => $data['email'],
+            'password' => Hash::make($data['password']),
+            'verify_code' => $verifyCode,
+            'send_verify_at' => Carbon::now(),
+        ]);
+        Mail::to($user->email)->send(new SendVerifyCode($user));
+        return redirect()->route('login')->with([
+            'status', 'Great! You have successfully register',
+            'verify_alert' => 'Please check your email to verify account !'
+        ]);
     }
 
     // tạo mới tài khoản trong admin
@@ -130,5 +145,23 @@ class AuthController extends Controller
     {
         $account = User::findOrFail($id)->delete();
         return back();
+    }
+
+    public function verifyAccount(Request $request)
+    {
+        $verifyCode = $request->verifyCode;
+        $user = User::where('verify_code', $verifyCode)->firstOrFail();
+        $minutes = Carbon::now()->diffInMinutes($user->send_verify_at);
+        if($minutes > 1) {
+            return redirect()->route('login')->with([
+                'error' => 'Invalid verify code'
+            ]);
+        }
+        $user->update([
+            'email_verified_at' => Carbon::now(),
+        ]);
+        return redirect()->route('login')->with([
+            'status' => 'Verify account succcesfully !'
+        ]);
     }
 }
