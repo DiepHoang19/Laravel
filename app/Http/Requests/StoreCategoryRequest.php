@@ -30,7 +30,7 @@ class StoreCategoryRequest extends FormRequest
     public function messages()
     {
         return [
-            'name.required' => 'Bắt buộc nhập tên',
+            'name.required' => 'Bắt buộc nhập Categories',
         ];
     }
 }

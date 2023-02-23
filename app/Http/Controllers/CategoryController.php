@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreCategoryRequest;
+use App\Http\Requests\UpdateCategoriesRequest;
 use App\Models\Category;
 use Illuminate\Http\Request;
 
@@ -11,7 +12,7 @@ class CategoryController extends Controller
     public function index()
     {
         $categories = Category::paginate(10);
-        return view('category.index', [
+        return view('admin.category.index', [
             'categories' => $categories
         ]);
     }
@@ -40,7 +41,7 @@ class CategoryController extends Controller
             ->get()
             ->toArray();
         $options = $this->renderCategoryOption($categories);
-        return view('category.create', [
+        return view('admin.category.create', [
             'categories' => $options
         ]);
     }
@@ -54,11 +55,12 @@ class CategoryController extends Controller
         return redirect()->route('category.index');
     }
 
-    public function update($id, Request $request)
+    public function update($id, UpdateCategoriesRequest $request)
     {
         $categories = Category::findOrFail($id);
         $categories->update([
             'name' => $request->name,
+            'parent_id' => $request->parent_id,
         ]);
         return redirect()->route('category.index');
     }
@@ -66,16 +68,19 @@ class CategoryController extends Controller
 
     public function trash($id)
     {
-        $categories = Category::findOrFail($id)->delete();
-        return back();
+        $categories = Category::findOrFail($id);
+        $categories->children()->update([
+            'parent_id' => 0
+        ]);
+        $categories->delete();
+        return back()->with('status', 'Delete success!');
     }
 
 
     public function edit($id)
     {
         $categories = Category::findOrFail($id);
-
-        return view('category.edit', [
+        return view('admin.category.edit', [
             'categories' => $categories,
         ]);
     }

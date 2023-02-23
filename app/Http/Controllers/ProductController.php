@@ -21,7 +21,7 @@ class ProductController extends Controller
             ->with(['category'])
             ->searchByKeyword($request->keyword)
             ->paginate($request->limit);
-        return view('product.index', [
+        return view('admin.product.index', [
             'products' => $products
         ]);
     }
@@ -34,7 +34,7 @@ class ProductController extends Controller
             ->toArray();
         $options = $this->renderCategoryOption($categories);
 
-        return view('product.create', [
+        return view('admin.product.create', [
             "categories" => $options,
         ]);
     }
@@ -99,7 +99,7 @@ class ProductController extends Controller
             ->get()
             ->toArray();
         $options = $this->renderCategoryOption($categories);
-        return view('product.edit', [
+        return view('admin.product.edit', [
             'product' => $product,
             'categories' => $options,
         ]);

@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\ClientController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductController;
@@ -43,28 +44,25 @@ Route::prefix('admin')->middleware(['auth', 'verified.custom'])->group(function 
 
     Route::prefix('accounts')->controller(AuthController::class)->name('account.')->group(function () {
         Route::get('/', 'index')->name('index');
-
         Route::get('/store',  'store')->name('store');
         Route::post('/register',  'register')->name('register');
-
         Route::get('/{id}/edit', 'edit')->name('edit');
         Route::post('/{id}/update', 'update')->name('update');
-
         Route::get('/{id}/trash', 'trash')->name('trash');
-
         Route::get('/dashboard', 'dashboard')->name('dashboard');
         Route::get('/logout', 'logout')->name('logout');
-
         Route::get('/profile', 'profile')->name('profile');
-
     });
 });
 
 Route::controller(AuthController::class)->group(function () {
     Route::get('/login', 'login')->name('login');
     Route::post('/post-login',  'postLogin')->name('postLogin');
-
     Route::get('/registration',  'registration')->name('registration');
     Route::post('/post-registration',  'postRegistration')->name('postRegistration');
     Route::get('/verify-account', 'verifyAccount')->name('verify_account');
+});
+
+Route::prefix('public')->controller(ClientController::class)->name('client.')->group(function () {
+    Route::get('/', 'index')->name('index');
 });

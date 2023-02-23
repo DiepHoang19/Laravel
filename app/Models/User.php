@@ -44,4 +44,12 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function scopeSearchNameByKeyword($query, $keyword)
+    {
+        if ($keyword) {
+            return $query->where('name', 'LIKE', '%' . $keyword . '%');
+        }
+        return $query;
+    }
 }

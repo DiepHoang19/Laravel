@@ -14,21 +14,21 @@ use Illuminate\Support\Str;
 
 class AuthController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $accounts = User::paginate(10);
-        return view('user-manager.index', [
+        $accounts = User::paginate($request->limit);
+        return view('admin.user-manager.index', [
             'accounts' => $accounts,
         ]);
     }
     public function login()
     {
-        return view('auth.login');
+        return view('admin.auth.login');
     }
 
     public function registration()
     {
-        return view('auth.registration');
+        return view('admin.auth.registration');
     }
 
 
@@ -91,7 +91,7 @@ class AuthController extends Controller
 
     public function store()
     {
-        return view('user-manager.create');
+        return view('admin.user-manager.create');
     }
 
     public function dashboard()
@@ -121,7 +121,7 @@ class AuthController extends Controller
 
     public function profile()
     {
-        return view('user-manager.profile');
+        return view('admin.user-manager.profile');
     }
 
 
@@ -152,7 +152,7 @@ class AuthController extends Controller
         $verifyCode = $request->verifyCode;
         $user = User::where('verify_code', $verifyCode)->firstOrFail();
         $minutes = Carbon::now()->diffInMinutes($user->send_verify_at);
-        if($minutes > 1) {
+        if ($minutes > 1) {
             return redirect()->route('login')->with([
                 'error' => 'Invalid verify code'
             ]);
