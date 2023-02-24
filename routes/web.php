@@ -63,6 +63,11 @@ Route::controller(AuthController::class)->group(function () {
     Route::get('/verify-account', 'verifyAccount')->name('verify_account');
 });
 
-Route::prefix('public')->controller(ClientController::class)->name('client.')->group(function () {
+Route::prefix('/')->controller(ClientController::class)->name('client.')->group(function () {
     Route::get('/', 'index')->name('index');
+    Route::get('/shopping-card', 'shoppingcard')->name('shoppingcard');
+    Route::get('/blog', 'blog')->name('blog');
+    Route::get('/about-us', 'about')->name('about');
+    Route::get('/contact-us', 'contact')->name('contact');
+    Route::get('/checkout', 'checkout')->name('checkout');
 });

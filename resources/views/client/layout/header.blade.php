@@ -159,8 +159,9 @@
                         </div>
 
                         <div class="cart-action">
-                            <a href="cart.html" class="btn btn-dark btn-outline btn-rounded">View Cart</a>
-                            <a href="checkout.html" class="btn btn-primary  btn-rounded">Checkout</a>
+                            <a href="{{ route('client.shoppingcard') }}"
+                                class="btn btn-dark btn-outline btn-rounded">View Cart</a>
+                            <a href="{{ route('client.checkout') }}" class="btn btn-primary  btn-rounded">Checkout</a>
                         </div>
                     </div>
                     <!-- End of Dropdown Box -->
@@ -228,7 +229,7 @@
                                         <li>
                                             <div class="banner-fixed menu-banner menu-banner2">
                                                 <figure>
-                                                    <img src="{{ asset('client/') }}assets/images/menu/banner-2.jpg"
+                                                    <img src="{{ asset('client/assets/images/menu/banner-2.jpg') }}"
                                                         alt="Menu Banner" width="235" height="347" />
                                                 </figure>
                                                 <div class="banner-content">
@@ -310,7 +311,7 @@
                                         <li>
                                             <div class="menu-banner banner-fixed menu-banner3">
                                                 <figure>
-                                                    <img src="{{ asset('client/') }}assets/images/menu/banner-3.jpg"
+                                                    <img src="{{ asset('client/assets/images/menu/banner-3.jpg') }}"
                                                         alt="Menu Banner" width="235" height="461" />
                                                 </figure>
                                                 <div class="banner-content">
@@ -393,7 +394,7 @@
                                         <li>
                                             <div class="menu-banner banner-fixed menu-banner4">
                                                 <figure>
-                                                    <img src="{{ asset('client/') }}assets/images/menu/banner-4.jpg"
+                                                    <img src="{{ asset('client/assets/images/menu/banner-4.jpg') }}"
                                                         alt="Menu Banner" width="235" height="433" />
                                                 </figure>
                                                 <div class="banner-content">
@@ -482,7 +483,7 @@
                                             <div class="col-6">
                                                 <div class="banner banner-fixed menu-banner5 br-xs">
                                                     <figure>
-                                                        <img src="{{ asset('client/') }}assets/images/menu/banner-5.jpg"
+                                                        <img src="{{ asset('client/assets/images/menu/banner-5.jpg') }}"
                                                             alt="Banner" width="410" height="123"
                                                             style="background-color: #D2D2D2;" />
                                                     </figure>
@@ -501,7 +502,7 @@
                                             <div class="col-6">
                                                 <div class="banner banner-fixed menu-banner5 br-xs">
                                                     <figure>
-                                                        <img src="{{ asset('client/') }}assets/images/menu/banner-6.jpg"
+                                                        <img src="{{ asset('client/assets/images/menu/banner-6.jpg') }}"
                                                             alt="Banner" width="410" height="123"
                                                             style="background-color: #9F9888;" />
                                                     </figure>
@@ -663,7 +664,7 @@
                                 </ul>
                             </li>
                             <li>
-                                <a href="blog.html">Blog</a>
+                                <a href="{{ route('client.blog') }}">Blog</a>
                                 <ul>
                                     <li><a href="blog.html">Classic</a></li>
                                     <li><a href="blog-listing.html">Listing</a></li>
@@ -698,18 +699,18 @@
                                 </ul>
                             </li>
                             <li>
-                                <a href="about-us.html">Pages</a>
+                                <a href="#">Pages</a>
                                 <ul>
 
-                                    <li><a href="about-us.html">About Us</a></li>
+                                    <li><a href="{{ route('client.about') }}">About Us</a></li>
                                     <li><a href="become-a-vendor.html">Become A Vendor</a></li>
-                                    <li><a href="contact-us.html">Contact Us</a></li>
+                                    <li><a href="{{ route('client.contact') }}">Contact Us</a></li>
                                     <li><a href="faq.html">FAQs</a></li>
                                     <li><a href="error-404.html">Error 404</a></li>
                                     <li><a href="coming-soon.html">Coming Soon</a></li>
                                     <li><a href="wishlist.html">Wishlist</a></li>
-                                    <li><a href="cart.html">Cart</a></li>
-                                    <li><a href="checkout.html">Checkout</a></li>
+                                    <li><a href="{{ route('client.shoppingcard') }}">Cart</a></li>
+                                    <li><a href="{{ route('client.checkout') }}">Checkout</a></li>
                                     <li><a href="my-account.html">My Account</a></li>
                                     <li><a href="compare.html">Compare</a></li>
                                 </ul>

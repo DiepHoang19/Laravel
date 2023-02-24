@@ -10,4 +10,29 @@ class ClientController extends Controller
     {
         return view('client.home.index');
     }
+
+    public function shoppingcard()
+    {
+        return view('client.pages.card');
+    }
+
+    public function blog()
+    {
+        return view('client.pages.blog');
+    }
+
+    public function about()
+    {
+        return view('client.pages.about');
+    }
+
+    public function contact()
+    {
+        return view('client.pages.contact-us');
+    }
+
+    public function checkout()
+    {
+        return view('client.pages.checkout');
+    }
 }

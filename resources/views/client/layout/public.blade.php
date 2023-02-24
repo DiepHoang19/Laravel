@@ -24,7 +24,7 @@
         (function(d) {
             var wf = d.createElement('script'),
                 s = d.scripts[0];
-            wf.src = 'assets/js/webfont.js';
+            wf.src = '{{ asset('client/assets/js/webfont.js') }}';
             wf.async = true;
             s.parentNode.insertBefore(wf, s);
         })(document);
@@ -53,6 +53,10 @@
     <!-- Default CSS -->
     <link rel="stylesheet" type="text/css" href="{{ asset('client/assets/css/demo1.min.css') }}">
 
+
+
+
+    
 </head>
 
 <body class="home">
@@ -78,7 +82,7 @@
     <script src="{{ asset('client/assets/vendor/imagesloaded/imagesloaded.pkgd.min.js') }}"></script>
     <script src="{{ asset('client/assets/vendor/zoom/jquery.zoom.js') }}"></script>
     <script src="{{ asset('client/assets/vendor/jquery.countdown/jquery.countdown.min.js') }}"></script>
-    <script src="{{ asset('client/assets/vendor/magnific-popup/jquery.magnific-popup.min.js') }}"></script>
+    {{-- <script src="{{ asset('client/assets/vendor/magnific-popup/jquery.magnific-popup.min.js') }}"></script> --}}
     <script src="{{ asset('client/assets/vendor/skrollr/skrollr.min.js') }}"></script>
     <!-- Swiper JS -->
     <script src="{{ asset('client/assets/vendor/swiper/swiper-bundle.min.js') }}"></script>

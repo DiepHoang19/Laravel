@@ -846,7 +846,7 @@
             <!-- End of Deals Wrapper -->
         </div> --}}
 
-        <section class="category-section top-category bg-grey pt-10 pb-10 appear-animate">
+        {{-- <section class="category-section top-category bg-grey pt-10 pb-10 appear-animate">
             <div class="container pb-2">
                 <h2 class="title justify-content-center pt-1 ls-normal mb-5">Top Categories Of The Month</h2>
                 <div class="swiper">
@@ -935,7 +935,7 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section> --}}
         <!-- End of .category-section top-category -->
 
         <div class="container">
