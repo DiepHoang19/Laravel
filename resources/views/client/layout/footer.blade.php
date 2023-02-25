@@ -1,186 +1,225 @@
-<footer class="footer appear-animate" data-animation-options="{
-    'name': 'fadeIn' }">
-    <div class="footer-newsletter bg-primary">
+<footer class="main">
+    <section class="newsletter wow fadeIn animated mb-15">
         <div class="container">
-            <div class="row justify-content-center align-items-center">
-                <div class="col-xl-5 col-lg-6">
-                    <div class="icon-box icon-box-side text-white">
-                        <div class="icon-box-icon d-inline-flex">
-                            <i class="w-icon-envelop3"></i>
-                        </div>
-                        <div class="icon-box-content">
-                            <h4 class="icon-box-title text-white text-uppercase font-weight-bold">Subscribe To
-                                Our Newsletter</h4>
-                            <p class="text-white">Get all the latest information on Events, Sales and Offers.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-7 col-lg-6 col-md-9 mt-4 mt-lg-0 ">
-                    <form action="#" method="get"
-                        class="input-wrapper input-wrapper-inline input-wrapper-rounded">
-                        <input type="email" class="form-control mr-2 bg-white" name="email" id="email"
-                            placeholder="Your E-mail Address" />
-                        <button class="btn btn-dark btn-rounded" type="submit">Subscribe<i
-                                class="w-icon-long-arrow-right"></i></button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="container">
-        <div class="footer-top">
             <div class="row">
-                <div class="col-lg-4 col-sm-6">
-                    <div class="widget widget-about">
-                        <a href="demo1.html" class="logo-footer">
-                            <img src="{{ asset('client/assets/images/logo_footer.png') }}" alt="logo-footer"
-                                width="144" height="45" />
-                        </a>
-                        <div class="widget-body">
-                            <p class="widget-about-title">Got Question? Call us 24/7</p>
-                            <a href="tel:18005707777" class="widget-about-call">1-800-570-7777</a>
-                            <p class="widget-about-desc">Register now to get updates on pronot get up icons
-                                & coupons ster now toon.
+                <div class="col-lg-12">
+                    <div class="position-relative newsletter-inner">
+                        <div class="newsletter-content">
+                            <h2 class="mb-20">Stay home & get your daily <br> needs from our shop</h2>
+                            <p class="mb-45">Start You'r Daily Shopping with <span class="text-brand">Nest Mart</span>
                             </p>
-
-                            <div class="social-icons social-icons-colored">
-                                <a href="#" class="social-icon social-facebook w-icon-facebook"></a>
-                                <a href="#" class="social-icon social-twitter w-icon-twitter"></a>
-                                <a href="#" class="social-icon social-instagram w-icon-instagram"></a>
-                                <a href="#" class="social-icon social-youtube w-icon-youtube"></a>
-                                <a href="#" class="social-icon social-pinterest w-icon-pinterest"></a>
-                            </div>
+                            <form class="form-subcriber d-flex">
+                                <input type="email" placeholder="Your emaill address">
+                                <button class="btn" type="submit">Subscribe</button>
+                            </form>
+                        </div>
+                        <img src="{{ asset('client/assets/imgs/banner/banner-9.png') }}" alt="newsletter">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="featured wow fadeIn animated section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-1-5 col-md-4 col-12 col-sm-6 mb-md-4 mb-xl-0">
+                    <div class="banner-left-icon d-flex align-items-center wow fadeIn  animated">
+                        <div class="banner-icon">
+                            <img src="{{ asset('client/assets/imgs/theme/icons/icon-1.svg') }}" alt="">
+                        </div>
+                        <div class="banner-text">
+                            <h3 class="icon-box-title">Best prices & offers</h3>
+                            <p>Orders $50 or more</p>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3 col-sm-6">
-                    <div class="widget">
-                        <h3 class="widget-title">Company</h3>
-                        <ul class="widget-body">
-                            <li><a href="about-us.html">About Us</a></li>
-                            <li><a href="#">Team Member</a></li>
-                            <li><a href="#">Career</a></li>
-                            <li><a href="contact-us.html">Contact Us</a></li>
-                            <li><a href="#">Affilate</a></li>
-                            <li><a href="#">Order History</a></li>
-                        </ul>
+                <div class="col-lg-1-5 col-md-4 col-12 col-sm-6">
+                    <div class="banner-left-icon d-flex align-items-center wow fadeIn  animated">
+                        <div class="banner-icon">
+                            <img src="{{ asset('client/assets/imgs/theme/icons/icon-2.svg') }}" alt="">
+                        </div>
+                        <div class="banner-text">
+                            <h3 class="icon-box-title">Free delivery</h3>
+                            <p>24/7 amazing services</p>
+                        </div>
                     </div>
                 </div>
-                <div class="col-lg-3 col-sm-6">
-                    <div class="widget">
-                        <h4 class="widget-title">My Account</h4>
-                        <ul class="widget-body">
-                            <li><a href="#">Track My Order</a></li>
-                            <li><a href="cart.html">View Cart</a></li>
-                            <li><a href="login.html">Sign In</a></li>
-                            <li><a href="#">Help</a></li>
-                            <li><a href="wishlist.html">My Wishlist</a></li>
-                            <li><a href="#">Privacy Policy</a></li>
-                        </ul>
+                <div class="col-lg-1-5 col-md-4 col-12 col-sm-6">
+                    <div class="banner-left-icon d-flex align-items-center wow fadeIn  animated">
+                        <div class="banner-icon">
+                            <img src="{{ asset('client/assets/imgs/theme/icons/icon-3.svg') }}" alt="">
+                        </div>
+                        <div class="banner-text">
+                            <h3 class="icon-box-title">Great daily deal</h3>
+                            <p>When you sign up</p>
+                        </div>
                     </div>
                 </div>
-                <div class="col-lg-3 col-sm-6">
-                    <div class="widget">
-                        <h4 class="widget-title">Customer Service</h4>
-                        <ul class="widget-body">
-                            <li><a href="#">Payment Methods</a></li>
-                            <li><a href="#">Money-back guarantee!</a></li>
-                            <li><a href="#">Product Returns</a></li>
-                            <li><a href="#">Support Center</a></li>
-                            <li><a href="#">Shipping</a></li>
-                            <li><a href="#">Term and Conditions</a></li>
-                        </ul>
+                <div class="col-lg-1-5 col-md-4 col-12 col-sm-6">
+                    <div class="banner-left-icon d-flex align-items-center wow fadeIn  animated">
+                        <div class="banner-icon">
+                            <img src="{{ asset('client/assets/imgs/theme/icons/icon-4.svg') }}" alt="">
+                        </div>
+                        <div class="banner-text">
+                            <h3 class="icon-box-title">Wide assortment</h3>
+                            <p>Mega Discounts</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-1-5 col-md-4 col-12 col-sm-6">
+                    <div class="banner-left-icon d-flex align-items-center wow fadeIn  animated">
+                        <div class="banner-icon">
+                            <img src="{{ asset('client/assets/imgs/theme/icons/icon-5.svg') }}" alt="">
+                        </div>
+                        <div class="banner-text">
+                            <h3 class="icon-box-title">Easy returns</h3>
+                            <p>Within 30 days</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-1-5 col-md-4 col-12 col-sm-6 d-xl-none">
+                    <div class="banner-left-icon d-flex align-items-center wow fadeIn  animated">
+                        <div class="banner-icon">
+                            <img src="{{ asset('client/assets/imgs/theme/icons/icon-6.svg') }}" alt="">
+                        </div>
+                        <div class="banner-text">
+                            <h3 class="icon-box-title">Safe delivery</h3>
+                            <p>Within 30 days</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="footer-middle">
-            <div class="widget widget-category">
-                <div class="category-box">
-                    <h6 class="category-name">Consumer Electric:</h6>
-                    <a href="#">TV Television</a>
-                    <a href="#">Air Condition</a>
-                    <a href="#">Refrigerator</a>
-                    <a href="#">Washing Machine</a>
-                    <a href="#">Audio Speaker</a>
-                    <a href="#">Security Camera</a>
-                    <a href="#">View All</a>
+    </section>
+    <section class="section-padding footer-mid">
+        <div class="container pt-15 pb-20">
+            <div class="row">
+                <div class="col">
+                    <div class="widget-about font-md mb-md-3 mb-lg-3 mb-xl-0">
+                        <div class="logo wow fadeIn animated mb-30">
+                            <a href="index.html" class="mb-15"><img
+                                    src="{{ asset('client/assets/imgs/theme/logo.svg') }}
+                                    "alt="logo"></a>
+                            <p class="font-lg text-heading">Awesome grocery store website template</p>
+                        </div>
+                        <ul class="contact-infor">
+                            <li><img src="{{ asset('client/assets/imgs/theme/icons/icon-location.svg') }}"
+                                    alt=""><strong>Address:
+                                </strong> <span>5171 W Campbell Ave undefined Kent, Utah 53127 United States</span></li>
+                            <li><img src="{{ asset('client/assets/imgs/theme/icons/icon-contact.svg') }}"
+                                    alt=""><strong>Call
+                                    Us:</strong><span>(+91) - 540-025-124553</span></li>
+                            <li><img src="{{ asset('client/assets/imgs/theme/icons/icon-email') }}-2.svg"
+                                    alt=""><strong>Email:</strong><span><a
+                                        href="https://demosc.chinaz.net/cdn-cgi/l/email-protection" class="__cf_email__"
+                                        data-cfemail="1261737e77525c7761663c717d7f">[email&#160;protected]</a></span>
+                            </li>
+                            <li><img src="{{ asset('client/assets/imgs/theme/icons/icon-clock.svg') }}"
+                                    alt=""><strong>Hours:</strong><span>10:00 - 18:00, Mon - Sat</span></li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="category-box">
-                    <h6 class="category-name">Clothing & Apparel:</h6>
-                    <a href="#">Men's T-shirt</a>
-                    <a href="#">Dresses</a>
-                    <a href="#">Men's Sneacker</a>
-                    <a href="#">Leather Backpack</a>
-                    <a href="#">Watches</a>
-                    <a href="#">Jeans</a>
-                    <a href="#">Sunglasses</a>
-                    <a href="#">Boots</a>
-                    <a href="#">Rayban</a>
-                    <a href="#">Acccessories</a>
+                <div class="footer-link-widget col">
+                    <h4 class="widget-title wow fadeIn animated">Company</h4>
+                    <ul class="footer-list wow fadeIn animated mb-sm-5 mb-md-0">
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Delivery Information</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms &amp; Conditions</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Support Center</a></li>
+                        <li><a href="#">Careers</a></li>
+                    </ul>
                 </div>
-                <div class="category-box">
-                    <h6 class="category-name">Home, Garden & Kitchen:</h6>
-                    <a href="#">Sofa</a>
-                    <a href="#">Chair</a>
-                    <a href="#">Bed Room</a>
-                    <a href="#">Living Room</a>
-                    <a href="#">Cookware</a>
-                    <a href="#">Utensil</a>
-                    <a href="#">Blender</a>
-                    <a href="#">Garden Equipments</a>
-                    <a href="#">Decor</a>
-                    <a href="#">Library</a>
+                <div class="footer-link-widget col">
+                    <h4 class="widget-title wow fadeIn animated">Account</h4>
+                    <ul class="footer-list wow fadeIn animated mb-sm-5 mb-md-0">
+                        <li><a href="#">Sign In</a></li>
+                        <li><a href="#">View Cart</a></li>
+                        <li><a href="#">My Wishlist</a></li>
+                        <li><a href="#">Track My Order</a></li>
+                        <li><a href="#">Help Ticket</a></li>
+                        <li><a href="#">Shipping Details</a></li>
+                        <li><a href="#">Compare products</a></li>
+                    </ul>
                 </div>
-                <div class="category-box">
-                    <h6 class="category-name">Health & Beauty:</h6>
-                    <a href="#">Skin Care</a>
-                    <a href="#">Body Shower</a>
-                    <a href="#">Makeup</a>
-                    <a href="#">Hair Care</a>
-                    <a href="#">Lipstick</a>
-                    <a href="#">Perfume</a>
-                    <a href="#">View all</a>
+                <div class="footer-link-widget col">
+                    <h4 class="widget-title wow fadeIn animated">Corporate</h4>
+                    <ul class="footer-list wow fadeIn animated mb-sm-5 mb-md-0">
+                        <li><a href="#">Become a Vendor</a></li>
+                        <li><a href="#">Affiliate Program</a></li>
+                        <li><a href="#">Farm Business</a></li>
+                        <li><a href="#">Farm Careers</a></li>
+                        <li><a href="#">Our Suppliers</a></li>
+                        <li><a href="#">Accessibility</a></li>
+                        <li><a href="#">Promotions</a></li>
+                    </ul>
                 </div>
-                <div class="category-box">
-                    <h6 class="category-name">Jewelry & Watches:</h6>
-                    <a href="#">Necklace</a>
-                    <a href="#">Pendant</a>
-                    <a href="#">Diamond Ring</a>
-                    <a href="#">Silver Earing</a>
-                    <a href="#">Leather Watcher</a>
-                    <a href="#">Rolex</a>
-                    <a href="#">Gucci</a>
-                    <a href="#">Australian Opal</a>
-                    <a href="#">Ammolite</a>
-                    <a href="#">Sun Pyrite</a>
+                <div class="footer-link-widget col">
+                    <h4 class="widget-title wow fadeIn animated">Popular</h4>
+                    <ul class="footer-list wow fadeIn animated mb-sm-5 mb-md-0">
+                        <li><a href="#">Milk & Flavoured Milk</a></li>
+                        <li><a href="#">Butter and Margarine</a></li>
+                        <li><a href="#">Eggs Substitutes</a></li>
+                        <li><a href="#">Marmalades</a></li>
+                        <li><a href="#">Sour Cream and Dips</a></li>
+                        <li><a href="#">Tea & Kombucha</a></li>
+                        <li><a href="#">Cheese</a></li>
+                    </ul>
                 </div>
-                <div class="category-box">
-                    <h6 class="category-name">Computer & Technologies:</h6>
-                    <a href="#">Laptop</a>
-                    <a href="#">iMac</a>
-                    <a href="#">Smartphone</a>
-                    <a href="#">Tablet</a>
-                    <a href="#">Apple</a>
-                    <a href="#">Asus</a>
-                    <a href="#">Drone</a>
-                    <a href="#">Wireless Speaker</a>
-                    <a href="#">Game Controller</a>
-                    <a href="#">View all</a>
+                <div class="footer-link-widget widget-install-app col">
+                    <h4 class="widget-title wow fadeIn animated">Install App</h4>
+                    <p class="wow fadeIn animated">From App Store or Google Play</p>
+                    <div class="download-app wow fadeIn animated">
+                        <a href="#" class="hover-up mb-sm-2 mb-lg-0"><img class="active"
+                                src="{{ asset('client/assets/imgs/theme/app-store.jpg') }}" alt=""></a>
+                        <a href="#" class="hover-up mb-sm-2"><img
+                                src="{{ asset('client/assets/imgs/theme/google-play.jpg') }}" alt=""></a>
+                    </div>
+                    <p class="mb-20 wow fadeIn animated">Secured Payment Gateways</p>
+                    <img class="wow fadeIn animated" src="{{ asset('client/assets/imgs/theme/payment-method.png') }}"
+                        alt="">
                 </div>
             </div>
         </div>
-        <div class="footer-bottom">
-            <div class="footer-left">
-                <p class="copyright">Copyright © 2021 Wolmart Store. All Rights Reserved.</p>
+    </section>
+    <div class="container pb-30 wow fadeIn animated">
+        <div class="row align-items-center">
+            <div class="col-12 mb-30">
+                <div class="footer-bottom"></div>
             </div>
-            <div class="footer-right">
-                <span class="payment-label mr-lg-8">We're using safe payment for</span>
-                <figure class="payment">
-                    <img src="{{ asset('client/assets/images/payment.png') }}" alt="payment" width="159"
-                        height="25" />
-                </figure>
+            <div class="col-xl-4 col-lg-6 col-md-6">
+                <p class="font-sm mb-0">Copyright &copy; 2021.Company name All rights reserved.<a target="_blank"
+                        href="https://sc.chinaz.com/moban/">&#x7F51;&#x9875;&#x6A21;&#x677F;</a></p>
+            </div>
+            <div class="col-xl-4  col-lg-6 text-center d-none d-xl-block">
+                <div class="hotline d-lg-inline-flex mr-30">
+                    <img src="{{ asset('client/assets/imgs/theme/icons/phone-call.svg') }}" alt="hotline">
+                    <p>1900 - 6666<span>Working 8:00 - 22:00</span></p>
+                </div>
+                <div class="hotline d-lg-inline-flex">
+                    <img src="{{ asset('client/assets/imgs/theme/icons/phone-call.svg') }}" alt="hotline">
+                    <p>1900 - 8888<span>24/7 Support Center</span></p>
+                </div>
+            </div>
+            <div class="col-xl-4  col-lg-6  col-md-6 text-end d-none d-md-block">
+                <div class="mobile-social-icon">
+                    <h6>Follow Us </h6>
+                    <a href="#"><img
+                            src="{{ asset('client/assets/imgs/theme/icons/icon-facebook-white.svg') }}"
+                            alt=""></a>
+                    <a href="#"><img src="{{ asset('client/assets/imgs/theme/icons/icon-twitter-white.svg') }}"
+                            alt=""></a>
+                    <a href="#"><img
+                            src="{{ asset('client/assets/imgs/theme/icons/icon-instagram-white.svg') }}"
+                            alt=""></a>
+                    <a href="#"><img
+                            src="{{ asset('client/assets/imgs/theme/icons/icon-pinterest-white.svg') }}"
+                            alt=""></a>
+                    <a href="#"><img src="{{ asset('client/assets/imgs/theme/icons/icon-youtube-white.svg') }}"
+                            alt=""></a>
+                </div>
+                <p class="font-sm">Up to 15% discount on your first subscribe</p>
             </div>
         </div>
     </div>
