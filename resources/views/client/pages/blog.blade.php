@@ -1,373 +1,465 @@
 @extends('client.layout.public')
 @section('content')
-    <div class="page-content">
-        <div class="container">
-            <div class="row gutter-lg mb-10">
-                <div class="main-content">
-                    <article class="post post-classic overlay-zoom mb-4">
-                        <figure class="post-media br-sm">
-                            <a href="post-single.html">
-                                <img src="{{ asset('client/assets/images/blog/classic/1.jpg') }}" width="930" height="500"
-                                    alt="blog">
-                            </a>
-                        </figure>
-                        <div class="post-details">
-                            <div class="post-cats text-primary">
-                                <a href="#">Fashion</a>
-                            </div>
-                            <h4 class="post-title">
-                                <a href="post-single.html">New found the men dress for summer</a>
-                            </h4>
-                            <div class="post-content">
-                                <p>Sed pretium, ligula sollicitudin laoreet viverra, tortor libero sodales leo,
-                                    eget blandit nunc tortor eu nibh. Suspendisse potenti.Sed egstas, ant at
-                                    vulputate volutpat, uctus metus libero eu augue, vitae luctus…</p>
-                                <a href="post-single.html" class="btn btn-link btn-primary">(read more)</a>
-                            </div>
-                            <div class="post-meta">
-                                by <a href="#" class="post-author">John Doe</a>
-                                - <a href="#" class="post-date">03.05.2021</a>
+    <main class="main">
+        <div class="page-header mt-30 mb-75">
+            <div class="container">
+                <div class="archive-header">
+                    <div class="row align-items-center">
+                        <div class="col-xl-3">
+                            <h1 class="mb-15">Blog & News</h1>
+                            <div class="breadcrumb">
+                                <a href="index.html" rel="nofollow"><i class="fi-rs-home mr-5"></i>Home</a>
+                                <span></span> Blog & News
                             </div>
                         </div>
-                    </article>
-                    <article class="post post-classic overlay-zoom mb-4">
-                        <figure class="post-media br-sm">
-                            <a href="post-single.html">
-                                <img src="{{ asset('client/assets/images/blog/classic/2.jpg') }}" width="930"
-                                    height="500" alt="blog">
-                            </a>
-                        </figure>
-                        <div class="post-details">
-                            <div class="post-cats text-primary">
-                                <a href="#">Others</a>,
-                                <a href="#">Technology</a>
-                            </div>
-                            <h4 class="post-title">
-                                <a href="post-single.html">Recognitory the needs is primary condition for
-                                    design</a>
-                            </h4>
-                            <div class="post-content">
-                                <p>Sed pretium, ligula sollicitudin laoreet viverra, tortor libero sodales leo,
-                                    eget blandit nunc tortor eu nibh. Suspendisse potenti.Sed egstas, ant at
-                                    vulputate volutpat, uctus metus libero eu augue, vitae luctus…</p>
-                                <a href="post-single.html" class="btn btn-link btn-primary">(read more)</a>
-                            </div>
-                            <div class="post-meta">
-                                by <a href="#" class="post-author">John Doe</a>
-                                - <a href="#" class="post-date">03.05.2021</a>
-                            </div>
+                        <div class="col-xl-9 text-end d-none d-xl-block">
+                            <ul class="tags-list">
+                                <li class="hover-up"><a href="blog-category-grid.html"><i
+                                            class="fi-rs-cross mr-10"></i>Shopping</a></li>
+                                <li class="hover-up active"><a href="blog-category-grid.html"><i
+                                            class="fi-rs-cross mr-10"></i>Recips</a></li>
+                                <li class="hover-up"><a href="blog-category-grid.html"><i
+                                            class="fi-rs-cross mr-10"></i>Kitchen</a></li>
+                                <li class="hover-up"><a href="blog-category-grid.html"><i
+                                            class="fi-rs-cross mr-10"></i>News</a></li>
+                                <li class="hover-up mr-0"><a href="blog-category-grid.html"><i
+                                            class="fi-rs-cross mr-10"></i>Food</a></li>
+                            </ul>
                         </div>
-                    </article>
-                    <article class="post post-classic overlay-zoom mb-4">
-                        <figure class="post-media br-sm">
-                            <a href="post-single.html">
-                                <img src="{{ asset('client/assets/images/blog/classic/3.jpg') }}" width="930"
-                                    height="500" alt="blog">
-                            </a>
-                        </figure>
-                        <div class="post-details">
-                            <div class="post-cats text-primary">
-                                <a href="#">Clothes</a>
-                            </div>
-                            <h4 class="post-title">
-                                <a href="post-single.html">New found the women’s shirt for summer season</a>
-                            </h4>
-                            <div class="post-content">
-                                <p>Sed pretium, ligula sollicitudin laoreet viverra, tortor libero sodales leo,
-                                    eget blandit nunc tortor eu nibh. Suspendisse potenti.Sed egstas, ant at
-                                    vulputate volutpat, uctus metus libero eu augue, vitae luctus…</p>
-                                <a href="post-single.html" class="btn btn-link btn-primary">(read more)</a>
-                            </div>
-                            <div class="post-meta">
-                                by <a href="#" class="post-author">John Doe</a>
-                                - <a href="#" class="post-date">03.05.2021</a>
-                            </div>
-                        </div>
-                    </article>
-                    <article class="post post-classic overlay-zoom mb-4">
-                        <figure class="post-media br-sm">
-                            <a href="post-single.html">
-                                <img src="{{ asset('client/assets/images/blog/classic/4.jpg') }}" width="930"
-                                    height="500" alt="blog">
-                            </a>
-                        </figure>
-                        <div class="post-details">
-                            <div class="post-cats text-primary">
-                                <a href="#">Lifestyle</a>
-                            </div>
-                            <h4 class="post-title">
-                                <a href="post-single.html">We want to be different and fashion gives to me that
-                                    outlet</a>
-                            </h4>
-                            <div class="post-content">
-                                <p>Sed pretium, ligula sollicitudin laoreet viverra, tortor libero sodales leo,
-                                    eget blandit nunc tortor eu nibh. Suspendisse potenti.Sed egstas, ant at
-                                    vulputate volutpat, uctus metus libero eu augue, vitae luctus…</p>
-                                <a href="post-single.html" class="btn btn-link btn-primary">(read more)</a>
-                            </div>
-                            <div class="post-meta">
-                                by <a href="#" class="post-author">John Doe</a>
-                                - <a href="#" class="post-date">03.05.2021</a>
-                            </div>
-                        </div>
-                    </article>
-                    <article class="post post-classic overlay-zoom mb-4">
-                        <figure class="post-media br-sm">
-                            <a href="post-single.html">
-                                <img src="{{ asset('client/assets/images/blog/classic/5.jpg') }}" width="930"
-                                    height="500" alt="blog">
-                            </a>
-                        </figure>
-                        <div class="post-details">
-                            <div class="post-cats text-primary">
-                                <a href="#">Entertainment</a>,
-                                <a href="#">Lifestyle</a>,
-                                <a href="#">Others</a>
-                            </div>
-                            <h4 class="post-title">
-                                <a href="post-single.html">Comes a cool blog post with Images</a>
-                            </h4>
-                            <div class="post-content">
-                                <p>Sed pretium, ligula sollicitudin laoreet viverra, tortor libero sodales leo,
-                                    eget blandit nunc tortor eu nibh. Suspendisse potenti.Sed egstas, ant at
-                                    vulputate volutpat, uctus metus libero eu augue, vitae luctus…</p>
-                                <a href="post-single.html" class="btn btn-link btn-primary">(read more)</a>
-                            </div>
-                            <div class="post-meta">
-                                by <a href="#" class="post-author">John Doe</a>
-                                - <a href="#" class="post-date">03.05.2021</a>
-                            </div>
-                        </div>
-                    </article>
-                    <article class="post post-classic overlay-zoom mb-2">
-                        <figure class="post-media br-sm">
-                            <a href="post-single.html">
-                                <img src="{{ asset('client/assets/images/blog/classic/6.jpg') }}" width="930"
-                                    height="500" alt="blog">
-                            </a>
-                        </figure>
-                        <div class="post-details">
-                            <div class="post-cats text-primary">
-                                <a href="#">Fashion</a>,
-                                <a href="#">Technology</a>
-                            </div>
-                            <h4 class="post-title">
-                                <a href="post-single.html">Fusce lacinia arcuet nulla</a>
-                            </h4>
-                            <div class="post-content">
-                                <p>Sed pretium, ligula sollicitudin laoreet viverra, tortor libero sodales leo,
-                                    eget blandit nunc tortor eu nibh. Suspendisse potenti.Sed egstas, ant at
-                                    vulputate volutpat, uctus metus libero eu augue, vitae luctus…</p>
-                                <a href="post-single.html" class="btn btn-link btn-primary">(read more)</a>
-                            </div>
-                            <div class="post-meta">
-                                by <a href="#" class="post-author">John Doe</a>
-                                - <a href="#" class="post-date">03.05.2021</a>
-                            </div>
-                        </div>
-                    </article>
-                    <ul class="pagination justify-content-center pb-2">
-                        <li class="prev disabled">
-                            <a href="#" aria-label="Previous" tabindex="-1" aria-disabled="true">
-                                <i class="w-icon-long-arrow-left"></i>Prev
-                            </a>
-                        </li>
-                        <li class="page-item active">
-                            <a class="page-link" href="#">1</a>
-                        </li>
-                        <li class="page-item">
-                            <a class="page-link" href="#">2</a>
-                        </li>
-                        <li class="next">
-                            <a href="#" aria-label="Next">
-                                Next<i class="w-icon-long-arrow-right"></i>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-                <aside class="sidebar right-sidebar blog-sidebar sidebar-fixed sticky-sidebar-wrapper">
-                    <div class="sidebar-overlay">
-                        <a href="#" class="sidebar-close">
-                            <i class="close-icon"></i>
-                        </a>
                     </div>
-                    <a href="#" class="sidebar-toggle">
-                        <i class="fas fa-chevron-left"></i>
-                    </a>
-                    <div class="sidebar-content">
-                        <div class="sticky-sidebar">
-                            <div class="widget widget-search-form">
-                                <div class="widget-body">
-                                    <form action="#" method="GET" class="input-wrapper input-wrapper-inline">
-                                        <input type="text" class="form-control" placeholder="Search in Blog"
-                                            autocomplete="off" required>
-                                        <button class="btn btn-search"><i class="w-icon-search"></i></button>
+                </div>
+            </div>
+        </div>
+        <div class="page-content mb-50">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-9">
+                        <div class="shop-product-fillter mb-50 pr-30">
+                            <div class="totall-product">
+                                <h2>
+                                    <img class="w-36px mr-10"
+                                        src="{{ asset('client/assets/imgs/theme/icons/category-1') }}.svg" alt="">
+                                    Kitchen Articles
+                                </h2>
+                            </div>
+                            <div class="sort-by-product-area">
+                                <div class="sort-by-cover mr-10">
+                                    <div class="sort-by-product-wrap">
+                                        <div class="sort-by">
+                                            <span><i class="fi-rs-apps"></i>Show:</span>
+                                        </div>
+                                        <div class="sort-by-dropdown-wrap">
+                                            <span> 50 <i class="fi-rs-angle-small-down"></i></span>
+                                        </div>
+                                    </div>
+                                    <div class="sort-by-dropdown">
+                                        <ul>
+                                            <li><a class="active" href="#">50</a></li>
+                                            <li><a href="#">100</a></li>
+                                            <li><a href="#">150</a></li>
+                                            <li><a href="#">200</a></li>
+                                            <li><a href="#">All</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="sort-by-cover">
+                                    <div class="sort-by-product-wrap">
+                                        <div class="sort-by">
+                                            <span><i class="fi-rs-apps-sort"></i>Sort:</span>
+                                        </div>
+                                        <div class="sort-by-dropdown-wrap">
+                                            <span>Featured <i class="fi-rs-angle-small-down"></i></span>
+                                        </div>
+                                    </div>
+                                    <div class="sort-by-dropdown">
+                                        <ul>
+                                            <li><a class="active" href="#">Featured</a></li>
+                                            <li><a href="#">Newest</a></li>
+                                            <li><a href="#">Most comments</a></li>
+                                            <li><a href="#">Release Date</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="loop-grid loop-list pr-30 mb-50">
+                            <article class="wow fadeIn animated hover-up mb-30 animated">
+                                <div class="post-thumb" style="background-image: url(assets/imgs/blog/blog-1.png);">
+                                    <div class="entry-meta">
+                                        <a class="entry-meta meta-2" href="blog-category-grid.html"><i
+                                                class="fi-rs-play-alt"></i></a>
+                                    </div>
+                                </div>
+                                <div class="entry-content-2 pl-50">
+                                    <h3 class="post-title mb-20">
+                                        <a href="blog-post-right.html">9 Tasty Ideas That Will Inspire You to Grow a Home
+                                            Herb Garden Today</a>
+                                    </h3>
+                                    <p class="post-exerpt mb-40">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                                        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+                                        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                                        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+                                        dolore eu fugiat nulla pariatur. </p>
+                                    <div class="entry-meta meta-1 font-xs color-grey mt-10 pb-10">
+                                        <div>
+                                            <span class="post-on">25 April 2021</span>
+                                            <span class="hit-count has-dot">126k Views</span>
+                                        </div>
+                                        <a href="blog-post-right.html" class="text-brand font-heading font-weight-bold">Read
+                                            more <i class="fi-rs-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </article>
+                            <article class="wow fadeIn animated hover-up mb-30 animated">
+                                <div class="post-thumb" style="background-image: url(assets/imgs/blog/blog-2.png);">
+                                </div>
+                                <div class="entry-content-2 pl-50">
+                                    <h3 class="post-title mb-20">
+                                        <a href="blog-post-right.html">The Easy Italian Chicken Dinner I Make Over and Over
+                                            Again</a>
+                                    </h3>
+                                    <p class="post-exerpt mb-40">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                                        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+                                        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                                        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+                                        dolore eu fugiat nulla pariatur. </p>
+                                    <div class="entry-meta meta-1 font-xs color-grey mt-10 pb-10">
+                                        <div>
+                                            <span class="post-on">25 April 2021</span>
+                                            <span class="hit-count has-dot">126k Views</span>
+                                        </div>
+                                        <a href="blog-post-right.html" class="text-brand font-heading font-weight-bold">Read
+                                            more <i class="fi-rs-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </article>
+                            <article class="wow fadeIn animated hover-up mb-30 animated">
+                                <div class="post-thumb" style="background-image: url(assets/imgs/blog/blog-3.png);">
+                                    <div class="entry-meta">
+                                        <a class="entry-meta meta-2" href="blog-category-grid.html"><i
+                                                class="fi-rs-picture"></i></a>
+                                    </div>
+                                </div>
+                                <div class="entry-content-2 pl-50">
+                                    <h3 class="post-title mb-20">
+                                        <a href="blog-post-right.html">I Tried 38 Different Bottles of Mustard — These Are
+                                            the Ones I’ll Buy Again</a>
+                                    </h3>
+                                    <p class="post-exerpt mb-40">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                                        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+                                        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                                        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+                                        dolore eu fugiat nulla pariatur. </p>
+                                    <div class="entry-meta meta-1 font-xs color-grey mt-10 pb-10">
+                                        <div>
+                                            <span class="post-on">25 April 2021</span>
+                                            <span class="hit-count has-dot">126k Views</span>
+                                        </div>
+                                        <a href="blog-post-right.html"
+                                            class="text-brand font-heading font-weight-bold">Read more <i
+                                                class="fi-rs-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </article>
+                            <article class="wow fadeIn animated hover-up mb-30 animated">
+                                <div class="post-thumb" style="background-image: url(assets/imgs/blog/blog-4.png);">
+                                    <div class="entry-meta">
+                                        <a class="entry-meta meta-2" href="blog-category-grid.html"><i
+                                                class="fi-rs-play-alt"></i></a>
+                                    </div>
+                                </div>
+                                <div class="entry-content-2 pl-50">
+                                    <h3 class="post-title mb-20">
+                                        <a href="blog-post-right.html">How I Prep a Week of Absolutely Simple Summer Meals
+                                            in Just 1 Hour</a>
+                                    </h3>
+                                    <p class="post-exerpt mb-40">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                                        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+                                        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                                        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+                                        dolore eu fugiat nulla pariatur. </p>
+                                    <div class="entry-meta meta-1 font-xs color-grey mt-10 pb-10">
+                                        <div>
+                                            <span class="post-on">25 April 2021</span>
+                                            <span class="hit-count has-dot">126k Views</span>
+                                        </div>
+                                        <a href="blog-post-right.html"
+                                            class="text-brand font-heading font-weight-bold">Read more <i
+                                                class="fi-rs-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </article>
+                            <article class="wow fadeIn animated hover-up mb-30 animated">
+                                <div class="post-thumb" style="background-image: url(assets/imgs/blog/blog-5.png);">
+                                    <div class="entry-meta">
+                                        <a class="entry-meta meta-2" href="blog-category-grid.html"><i
+                                                class="fi-rs-heart"></i></a>
+                                    </div>
+                                </div>
+                                <div class="entry-content-2 pl-50">
+                                    <h3 class="post-title mb-20">
+                                        <a href="blog-post-right.html">Jenny Rosenstrach Has a Game Plan for the Weekday
+                                            Vegetarian</a>
+                                    </h3>
+                                    <p class="post-exerpt mb-40">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                                        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+                                        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                                        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+                                        dolore eu fugiat nulla pariatur. </p>
+                                    <div class="entry-meta meta-1 font-xs color-grey mt-10 pb-10">
+                                        <div>
+                                            <span class="post-on">25 April 2021</span>
+                                            <span class="hit-count has-dot">126k Views</span>
+                                        </div>
+                                        <a href="blog-post-right.html"
+                                            class="text-brand font-heading font-weight-bold">Read more <i
+                                                class="fi-rs-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </article>
+                            <article class="wow fadeIn animated hover-up mb-30 animated">
+                                <div class="post-thumb" style="background-image: url(assets/imgs/blog/blog-6.png);">
+                                </div>
+                                <div class="entry-content-2 pl-50">
+                                    <h3 class="post-title mb-20">
+                                        <a href="blog-post-right.html">Prime Day Is Here and These Are the Best Kitchen
+                                            Deals to Shop ASAP</a>
+                                    </h3>
+                                    <p class="post-exerpt mb-40">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                                        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+                                        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                                        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+                                        dolore eu fugiat nulla pariatur. </p>
+                                    <div class="entry-meta meta-1 font-xs color-grey mt-10 pb-10">
+                                        <div>
+                                            <span class="post-on">25 April 2021</span>
+                                            <span class="hit-count has-dot">126k Views</span>
+                                        </div>
+                                        <a href="blog-post-right.html"
+                                            class="text-brand font-heading font-weight-bold">Read more <i
+                                                class="fi-rs-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </article>
+                            <article class="wow fadeIn animated hover-up mb-30 animated">
+                                <div class="post-thumb" style="background-image: url(assets/imgs/blog/blog-1.png);">
+                                </div>
+                                <div class="entry-content-2 pl-50">
+                                    <h3 class="post-title mb-20">
+                                        <a href="blog-post-right.html">9 Tasty Ideas That Will Inspire You to Grow a Home
+                                            Herb Garden Today</a>
+                                    </h3>
+                                    <p class="post-exerpt mb-40">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                                        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+                                        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                                        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+                                        dolore eu fugiat nulla pariatur. </p>
+                                    <div class="entry-meta meta-1 font-xs color-grey mt-10 pb-10">
+                                        <div>
+                                            <span class="post-on">25 April 2021</span>
+                                            <span class="hit-count has-dot">126k Views</span>
+                                        </div>
+                                        <a href="blog-post-right.html"
+                                            class="text-brand font-heading font-weight-bold">Read more <i
+                                                class="fi-rs-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </article>
+                            <article class="wow fadeIn animated hover-up mb-30 animated">
+                                <div class="post-thumb" style="background-image: url(assets/imgs/blog/blog-7.png);">
+                                    <div class="entry-meta">
+                                        <a class="entry-meta meta-2" href="blog-category-grid.html"><i
+                                                class="fi-rs-headset"></i></a>
+                                    </div>
+                                </div>
+                                <div class="entry-content-2 pl-50">
+                                    <h3 class="post-title mb-20">
+                                        <a href="blog-post-right.html">How I Prep a Week of Absolutely Simple Summer Meals
+                                            in Just 1 Hour</a>
+                                    </h3>
+                                    <p class="post-exerpt mb-40">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                                        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+                                        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                                        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+                                        dolore eu fugiat nulla pariatur. </p>
+                                    <div class="entry-meta meta-1 font-xs color-grey mt-10 pb-10">
+                                        <div>
+                                            <span class="post-on">25 April 2021</span>
+                                            <span class="hit-count has-dot">126k Views</span>
+                                        </div>
+                                        <a href="blog-post-right.html"
+                                            class="text-brand font-heading font-weight-bold">Read more <i
+                                                class="fi-rs-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                        <div class="pagination-area mt-15 mb-sm-5 mb-lg-0">
+                            <nav aria-label="Page navigation example">
+                                <ul class="pagination justify-content-start">
+                                    <li class="page-item"><a class="page-link" href="#"><i
+                                                class="fi-rs-arrow-small-left"></i></a></li>
+                                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                    <li class="page-item active"><a class="page-link" href="#">2</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                    <li class="page-item"><a class="page-link dot" href="#">...</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">6</a></li>
+                                    <li class="page-item"><a class="page-link" href="#"><i
+                                                class="fi-rs-arrow-small-right"></i></a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 primary-sidebar sticky-sidebar">
+                        <div class="widget-area">
+                            <div class="sidebar-widget-2 widget_search mb-50">
+                                <div class="search-form">
+                                    <form action="#">
+                                        <input type="text" placeholder="Search…">
+                                        <button type="submit"> <i class="fi-rs-search"></i> </button>
                                     </form>
                                 </div>
                             </div>
-                            <!-- End of Widget search form -->
-                            <div class="widget widget-categories">
-                                <h3 class="widget-title bb-no mb-0">Categories</h3>
-                                <ul class="widget-body filter-items search-ul">
-                                    <li><a href="blog.html">Clothes</a></li>
-                                    <li><a href="blog.html">Entertainment</a></li>
-                                    <li><a href="blog.html">Fashion</a></li>
-                                    <li><a href="blog.html">Lifestyle</a></li>
-                                    <li><a href="blog.html">Others</a></li>
-                                    <li><a href="blog.html">Shoes</a></li>
-                                    <li><a href="blog.html">Technology</a></li>
+                            <div class="sidebar-widget widget-category-2 mb-50">
+                                <h5 class="section-title style-1 mb-30 wow fadeIn animated">Category</h5>
+                                <ul>
+                                    <li><a href="shop-grid-right.html"> <img
+                                                src="{{ asset('client/assets/imgs/theme/icons/category-1') }}.svg"
+                                                alt="">Milks & Dairies</a><span class="count">30</span></li>
+                                    <li><a href="shop-grid-right.html"> <img
+                                                src="{{ asset('client/assets/imgs/theme/icons/category-2') }}.svg"
+                                                alt="">Clothing</a><span class="count">35</span></li>
+                                    <li><a href="shop-grid-right.html"> <img
+                                                src="{{ asset('client/assets/imgs/theme/icons/category-3') }}.svg"
+                                                alt="">Pet Foods </a><span class="count">42</span></li>
+                                    <li><a href="shop-grid-right.html"> <img
+                                                src="{{ asset('client/assets/imgs/theme/icons/category-4') }}.svg"
+                                                alt="">Baking material</a><span class="count">68</span></li>
+                                    <li><a href="shop-grid-right.html"> <img
+                                                src="{{ asset('client/assets/imgs/theme/icons/category-5') }}.svg"
+                                                alt="">Fresh Fruit</a><span class="count">87</span></li>
                                 </ul>
                             </div>
-                            <!-- End of Widget categories -->
-                            <div class="widget widget-posts">
-                                <h3 class="widget-title bb-no">Popular Posts</h3>
-                                <div class="widget-body">
-                                    <div class="swiper">
-                                        <div class="swiper-container swiper-theme nav-top"
-                                            data-swiper-options="{
-                                        'spaceBetween': 20,
-                                        'slidesPerView': 1
-                                    }">
-                                            <div class="swiper-wrapper row cols-1">
-                                                <div class="swiper-slide widget-col">
-                                                    <div class="post-widget mb-4">
-                                                        <figure class="post-media br-sm">
-                                                            <img src="{{ asset('client/assets/images/blog/sidebar/1.jpg') }}"
-                                                                alt="150" height="150" />
-                                                        </figure>
-                                                        <div class="post-details">
-                                                            <div class="post-meta">
-                                                                <a href="#" class="post-date">March 1, 2021</a>
-                                                            </div>
-                                                            <h4 class="post-title">
-                                                                <a href="post-single.html">Fashion tells about
-                                                                    who you are from external point</a>
-                                                            </h4>
-                                                        </div>
-                                                    </div>
-                                                    <div class="post-widget mb-4">
-                                                        <figure class="post-media br-sm">
-                                                            <img src="{{ asset('client/assets/images/blog/sidebar/2.jpg') }}"
-                                                                alt="150" height="150" />
-                                                        </figure>
-                                                        <div class="post-details">
-                                                            <div class="post-meta">
-                                                                <a href="#" class="post-date">March 5, 2021</a>
-                                                            </div>
-                                                            <h4 class="post-title">
-                                                                <a href="post-single.html">New found the men
-                                                                    dress for summer</a>
-                                                            </h4>
-                                                        </div>
-                                                    </div>
-                                                    <div class="post-widget mb-2">
-                                                        <figure class="post-media br-sm">
-                                                            <img src="{{ asset('client/assets/images/blog/sidebar/3.jpg') }}"
-                                                                alt="150" height="150" />
-                                                        </figure>
-                                                        <div class="post-details">
-                                                            <div class="post-meta">
-                                                                <a href="#" class="post-date">March 1, 2021</a>
-                                                            </div>
-                                                            <h4 class="post-title">
-                                                                <a href="post-single.html">Cras ornare tristique
-                                                                    elit</a>
-                                                            </h4>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="swiper-slide widget-col">
-                                                    <div class="post-widget mb-4">
-                                                        <figure class="post-media br-sm">
-                                                            <img src="{{ asset('client/assets/images/blog/sidebar/4.jpg') }}"
-                                                                alt="150" height="150" />
-                                                        </figure>
-                                                        <div class="post-details">
-                                                            <div class="post-meta">
-                                                                <a href="#" class="post-date">March 1, 2021</a>
-                                                            </div>
-                                                            <h4 class="post-title">
-                                                                <a href="post-single.html">Vivamus vestibulum
-                                                                    ntulla nec ante</a>
-                                                            </h4>
-                                                        </div>
-                                                    </div>
-                                                    <div class="post-widget mb-4">
-                                                        <figure class="post-media br-sm">
-                                                            <img src="{{ asset('client/assets/images/blog/sidebar/5.jpg') }}"
-                                                                alt="150" height="150" />
-                                                        </figure>
-                                                        <div class="post-details">
-                                                            <div class="post-meta">
-                                                                <a href="#" class="post-date">March 5, 2021</a>
-                                                            </div>
-                                                            <h4 class="post-title">
-                                                                <a href="post-single.html">Fusce lacinia arcuet
-                                                                    nulla</a>
-                                                            </h4>
-                                                        </div>
-                                                    </div>
-                                                    <div class="post-widget mb-2">
-                                                        <figure class="post-media br-sm">
-                                                            <img src="{{ asset('client/assets/images/blog/sidebar/6.jpg') }}"
-                                                                alt="150" height="150" />
-                                                        </figure>
-                                                        <div class="post-details">
-                                                            <div class="post-meta">
-                                                                <a href="#" class="post-date">March 1, 2021</a>
-                                                            </div>
-                                                            <h4 class="post-title">
-                                                                <a href="post-single.html">Comes a cool blog
-                                                                    post with Images</a>
-                                                            </h4>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="swiper-button-next"></div>
-                                            <div class="swiper-button-prev"></div>
+                            <!-- Product sidebar Widget -->
+                            <div class="sidebar-widget product-sidebar  mb-50 p-30 bg-grey border-radius-10">
+                                <h5 class="section-title style-1 mb-30 wow fadeIn animated">Trending Now</h5>
+                                <div class="single-post clearfix">
+                                    <div class="image">
+                                        <img src="{{ asset('client/assets/imgs/shop/thumbnail-3.jpg') }}" alt="#">
+                                    </div>
+                                    <div class="content pt-10">
+                                        <h5><a href="shop-product-detail.html">Chen Cardigan</a></h5>
+                                        <p class="price mb-0 mt-5">$99.50</p>
+                                        <div class="product-rate">
+                                            <div class="product-rating" style="width:90%"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="single-post clearfix">
+                                    <div class="image">
+                                        <img src="{{ asset('client/assets/imgs/shop/thumbnail-4.jpg') }}" alt="#">
+                                    </div>
+                                    <div class="content pt-10">
+                                        <h6><a href="shop-product-detail.html">Chen Sweater</a></h6>
+                                        <p class="price mb-0 mt-5">$89.50</p>
+                                        <div class="product-rate">
+                                            <div class="product-rating" style="width:80%"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="single-post clearfix">
+                                    <div class="image">
+                                        <img src="{{ asset('client/assets/imgs/shop/thumbnail-5.jpg') }}" alt="#">
+                                    </div>
+                                    <div class="content pt-10">
+                                        <h6><a href="shop-product-detail.html">Colorful Jacket</a></h6>
+                                        <p class="price mb-0 mt-5">$25</p>
+                                        <div class="product-rate">
+                                            <div class="product-rating" style="width:60%"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="single-post clearfix">
+                                    <div class="image">
+                                        <img src="{{ asset('client/assets/imgs/shop/thumbnail-6.jpg') }}" alt="#">
+                                    </div>
+                                    <div class="content pt-10">
+                                        <h6><a href="shop-product-detail.html">Lorem, ipsum</a></h6>
+                                        <p class="price mb-0 mt-5">$25</p>
+                                        <div class="product-rate">
+                                            <div class="product-rating" style="width:60%"></div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <!-- End of Widget posts -->
-                            <div class="widget widget-custom-block">
-                                <h3 class="widget-title bb-no">Custom Block</h3>
-                                <div class="widget-body">
-                                    <p class="text-default mb-0">Fringilla urna porttitor rhoncus dolor purus.
-                                        Luctus veneneratis lectus magna fring.
-                                        Suspendisse potenti. Sed egestas, ante et
-                                        vulputate volutpat, uctus metus libero.</p>
+                            <div class="sidebar-widget widget_instagram wow fadeInUp animated mb-50">
+                                <h5 class="section-title style-1 mb-30 wow fadeIn animated">Gallery</h5>
+                                <div class="instagram-gellay">
+                                    <ul class="insta-feed">
+                                        <li>
+                                            <a href="#"><img class="border-radius-5"
+                                                    src="{{ asset('client/assets/imgs/shop/thumbnail-1.jpg') }}"
+                                                    alt=""></a>
+                                        </li>
+                                        <li>
+                                            <a href="#"><img class="border-radius-5"
+                                                    src="{{ asset('client/assets/imgs/shop/thumbnail-2.jpg') }}"
+                                                    alt=""></a>
+                                        </li>
+                                        <li>
+                                            <a href="#"><img class="border-radius-5"
+                                                    src="{{ asset('client/assets/imgs/shop/thumbnail-3.jpg') }}"
+                                                    alt=""></a>
+                                        </li>
+                                        <li>
+                                            <a href="#"><img class="border-radius-5"
+                                                    src="{{ asset('client/assets/imgs/shop/thumbnail-4.jpg') }}"
+                                                    alt=""></a>
+                                        </li>
+                                        <li>
+                                            <a href="#"><img class="border-radius-5"
+                                                    src="{{ asset('client/assets/imgs/shop/thumbnail-5.jpg') }}"
+                                                    alt=""></a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <img class="border-radius-5"
+                                                    src="{{ asset('client/assets/imgs/shop/thumbnail-6.jpg') }}"
+                                                    alt="">
+                                            </a>
+                                        </li>
+                                    </ul>
                                 </div>
                             </div>
-                            <!-- End of Widget custom block -->
-                            <div class="widget widget-tags">
-                                <h3 class="widget-title bb-no">Browse Tags</h3>
-                                <div class="widget-body tags">
-                                    <a href="#" class="tag">Fashion</a>
-                                    <a href="#" class="tag">Style</a>
-                                    <a href="#" class="tag">Travel</a>
-                                    <a href="#" class="tag">Women</a>
-                                    <a href="#" class="tag">Men</a>
-                                    <a href="#" class="tag">Hobbies</a>
-                                    <a href="#" class="tag">Shopping</a>
-                                    <a href="#" class="tag">Photography</a>
-                                </div>
+                            <!--Tags-->
+                            <div class="sidebar-widget widget-tags mb-50 pb-10">
+                                <h5 class="section-title style-1 mb-30 wow fadeIn animated">Popular Tags</h5>
+                                <ul class="tags-list">
+                                    <li class="hover-up"><a href="blog-category-grid.html"><i
+                                                class="fi-rs-cross mr-10"></i>Cabbage</a></li>
+                                    <li class="hover-up"><a href="blog-category-grid.html"><i
+                                                class="fi-rs-cross mr-10"></i>Broccoli</a></li>
+                                    <li class="hover-up"><a href="blog-category-grid.html"><i
+                                                class="fi-rs-cross mr-10"></i>Smoothie</a></li>
+                                    <li class="hover-up"><a href="blog-category-grid.html"><i
+                                                class="fi-rs-cross mr-10"></i>Fruit</a></li>
+                                    <li class="hover-up mr-0"><a href="blog-category-grid.html"><i
+                                                class="fi-rs-cross mr-10"></i>Salad</a></li>
+                                    <li class="hover-up mr-0"><a href="blog-category-grid.html"><i
+                                                class="fi-rs-cross mr-10"></i>Appetizer</a></li>
+                                </ul>
                             </div>
-                            <div class="widget widget-calendar">
-                                <h3 class="widget-title bb-no">Calendar</h3>
-                                <div class="widget-body">
-                                    <div class="calendar-container"
-                                        data-calendar-options="{
-                                    'dayExcerpt': 1
-                                }">
-                                    </div>
+                            <div class="banner-img wow fadeIn mb-50 animated d-lg-block d-none">
+                                <img src="{{ asset('client/assets/imgs/banner/banner-11.png') }}" alt="">
+                                <div class="banner-text">
+                                    <span>Oganic</span>
+                                    <h4>Save 17% <br> on <span class="text-brand">Oganic</span><br> Juice</h4>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </aside>
+                </div>
             </div>
         </div>
-    </div>
+    </main>
 @endsection

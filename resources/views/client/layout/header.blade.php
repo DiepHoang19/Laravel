@@ -64,7 +64,8 @@
         <div class="container">
             <div class="header-wrap">
                 <div class="logo logo-width-1">
-                    <a href="index.html"><img src="{{ asset('client/assets/imgs/theme/logo.svg') }}" alt="logo"></a>
+                    <a href="{{ route('client.index') }}"><img src="{{ asset('client/assets/imgs/theme/logo.svg') }}"
+                            alt="logo"></a>
                 </div>
                 <div class="header-right">
                     <div class="search-style-2">
@@ -108,7 +109,7 @@
                                 </form>
                             </div>
                             <div class="header-action-icon-2">
-                                <a href="page-account.html">
+                                <a href="{{ route('client.account') }}">
                                     <img class="svgInject" alt="Nest"
                                         src="{{ asset('client/assets/imgs/theme/icons/icon-user.svg') }}">
                                 </a>
@@ -123,7 +124,7 @@
                                 <span class="lable">Wishlist</span>
                             </div>
                             <div class="header-action-icon-2">
-                                <a class="mini-cart-icon" href="shop-cart.html">
+                                <a class="mini-cart-icon" href="{{ route('client.cart') }}">
                                     <img alt="Nest"
                                         src="{{ asset('client/assets/imgs/theme/icons/icon-cart.svg') }}">
                                     <span class="pro-count blue">2</span>
@@ -269,7 +270,11 @@
                                 <li class="hot-deals"><img
                                         src="{{ asset('client/assets/imgs/theme/icons/icon-hot.svg') }}"
                                         alt="hot deals"><a href="shop-grid-right.html">Hot Deals</a></li>
-                                <li><a class="active" href="index.html">Home <i class="fi-rs-angle-down"></i></a>
+                                <li>
+                                    <a class="active" href="index.html">Home
+                                        <i class="fi-rs-angle-down">
+                                        </i>
+                                    </a>
                                     <ul class="sub-menu">
                                         <li><a href="index.html">Home 1</a></li>
                                         <li><a href="index-2.html">Home 2</a></li>
@@ -278,7 +283,7 @@
                                     </ul>
                                 </li>
                                 <li>
-                                    <a href="page-about.html">About</a>
+                                    <a href="{{ route('client.about') }}">About</a>
                                 </li>
                                 <li><a href="shop-grid-right.html">Shop <i class="fi-rs-angle-down"></i></a>
                                     <ul class="sub-menu">
@@ -362,7 +367,7 @@
                                         </li>
                                     </ul>
                                 </li>
-                                <li><a href="blog-category-grid.html">Blog <i class="fi-rs-angle-down"></i></a>
+                                <li><a href="{{ route('client.blog') }}">Blog <i class="fi-rs-angle-down"></i></a>
                                     <ul class="sub-menu">
                                         <li><a href="blog-category-grid.html">Blog Category Grid</a></li>
                                         <li><a href="blog-category-list.html">Blog Category List</a></li>
@@ -379,11 +384,11 @@
                                 </li>
                                 <li><a href="#">Pages <i class="fi-rs-angle-down"></i></a>
                                     <ul class="sub-menu">
-                                        <li><a href="page-about.html">About Us</a></li>
-                                        <li><a href="page-contact.html">Contact</a></li>
-                                        <li><a href="page-account.html">My Account</a></li>
-                                        <li><a href="page-login.html">Login</a></li>
-                                        <li><a href="page-register.html">Register</a></li>
+                                        <li><a href="{{ route('client.about') }}">About Us</a></li>
+                                        <li><a href="{{ route('client.contact') }}">Contact</a></li>
+                                        <li><a href="{{ route('client.account') }}">My Account</a></li>
+                                        <li><a href="{{ route('client.login') }}">Login</a></li>
+                                        <li><a href="{{ route('client.register') }}">Register</a></li>
                                         <li><a href="page-purchase-guide.html">Purchase Guide</a></li>
                                         <li><a href="page-privacy-policy.html">Privacy Policy</a></li>
                                         <li><a href="page-terms.html">Terms of Service</a></li>
@@ -391,7 +396,7 @@
                                     </ul>
                                 </li>
                                 <li>
-                                    <a href="page-contact.html">Contact</a>
+                                    <a href="{{ route('client.contact') }}">Contact</a>
                                 </li>
                             </ul>
                         </nav>

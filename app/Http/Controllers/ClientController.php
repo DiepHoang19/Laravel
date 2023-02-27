@@ -35,4 +35,20 @@ class ClientController extends Controller
     {
         return view('client.pages.checkout');
     }
+    public function login()
+    {
+        return view('client.auth.login');
+    }
+    public function register()
+    {
+        return view('client.auth.register');
+    }
+    public function account()
+    {
+        return view('client.auth.account');
+    }
+    public function cart()
+    {
+        return view('client.pages.shop-cart');
+    }
 }

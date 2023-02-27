@@ -70,4 +70,8 @@ Route::prefix('/')->controller(ClientController::class)->name('client.')->group(
     Route::get('/about-us', 'about')->name('about');
     Route::get('/contact-us', 'contact')->name('contact');
     Route::get('/checkout', 'checkout')->name('checkout');
+    Route::get('/auth-login', 'login')->name('login');
+    Route::get('/auth-register', 'register')->name('register');
+    Route::get('/account-manager', 'account')->name('account');
+    Route::get('/shop-cart', 'cart')->name('cart');
 });

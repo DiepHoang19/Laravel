@@ -1,205 +1,154 @@
 @extends('client.layout.public')
 @section('content')
-    <main class="main">
-        <!-- Start of Page Header -->
-        <div class="page-header">
+    <main class="main pages">
+        <div class="page-header breadcrumb-wrap">
             <div class="container">
-                <h1 class="page-title mb-0">Contact Us</h1>
+                <div class="breadcrumb">
+                    <a href="index.html" rel="nofollow"><i class="fi-rs-home mr-5"></i>Home</a>
+                    <span></span> Pages
+                    <span></span> Contact
+                </div>
             </div>
         </div>
-        <!-- End of Page Header -->
-
-        <!-- Start of Breadcrumb -->
-        <nav class="breadcrumb-nav mb-10 pb-1">
+        <div class="page-content pt-50">
             <div class="container">
-                <ul class="breadcrumb">
-                    <li><a href="demo1.html">Home</a></li>
-                    <li>Contact Us</li>
-                </ul>
+                <div class="row">
+                    <div class="col-xl-10 col-lg-12 m-auto">
+                        <section class="row align-items-end mb-50">
+                            <div class="col-lg-4 mb-lg-0 mb-md-5 mb-sm-5">
+                                <h4 class="mb-20 text-brand">How can help you ?</h4>
+                                <h1 class="mb-30">Let us know how we can help you</h1>
+                                <p class="mb-20">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus,
+                                    luctus nec ullamcorper mattis, pulvinar dapibus leo.</p>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec
+                                    ullamcorper mattis, pulvinar dapibus leo.</p>
+                            </div>
+                            <div class="col-lg-8">
+                                <div class="row">
+                                    <div class="col-lg-6 mb-4">
+                                        <h5 class="mb-20">01. Visit Feedback</h5>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus
+                                            nec ullamcorper mattis, pulvinar dapibus leo.</p>
+                                    </div>
+                                    <div class="col-lg-6 mb-4">
+                                        <h5 class="mb-20">02. Employer Services</h5>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus
+                                            nec ullamcorper mattis, pulvinar dapibus leo.</p>
+                                    </div>
+                                    <div class="col-lg-6 mb-lg-0 mb-4">
+                                        <h5 class="mb-20 text-brand">03. Billing Inquiries</h5>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus
+                                            nec ullamcorper mattis, pulvinar dapibus leo.</p>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <h5 class="mb-20">04.General Inquiries</h5>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus
+                                            nec ullamcorper mattis, pulvinar dapibus leo.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
             </div>
-        </nav>
-        <!-- End of Breadcrumb -->
-
-        <!-- Start of PageContent -->
-        <div class="page-content contact-us">
+            <section class="container mb-50 d-none d-md-block">
+                <div class="border-radius-15 overflow-hidden">
+                    <div id='map-panes' class="leaflet-map"></div>
+                </div>
+            </section>
             <div class="container">
-                <section class="content-title-section mb-10">
-                    <h3 class="title title-center mb-3">Contact
-                        Information
-                    </h3>
-                    <p class="text-center">Lorem ipsum dolor sit amet,
-                        consectetur
-                        adipiscing elit, sed do eiusmod tempor incididunt ut</p>
-                </section>
-                <!-- End of Contact Title Section -->
-
-                <section class="contact-information-section mb-10">
-                    <div class=" swiper-container swiper-theme "
-                        data-swiper-options="{
-                    'spaceBetween': 20,
-                    'slidesPerView': 1,
-                    'breakpoints': {
-                        '480': {
-                            'slidesPerView': 2
-                        },
-                        '768': {
-                            'slidesPerView': 3
-                        },
-                        '992': {
-                            'slidesPerView': 4
-                        }
-                    }
-                }">
-                        <div class="swiper-wrapper row cols-xl-4 cols-md-3 cols-sm-2 cols-1">
-                            <div class="swiper-slide icon-box text-center icon-box-primary">
-                                <span class="icon-box-icon icon-email">
-                                    <i class="w-icon-envelop-closed"></i>
-                                </span>
-                                <div class="icon-box-content">
-                                    <h4 class="icon-box-title">E-mail Address</h4>
-                                    <p>mail@example.com</p>
+                <div class="row">
+                    <div class="col-xl-10 col-lg-12 m-auto">
+                        <section class="mb-50">
+                            <div class="row mb-60">
+                                <div class="col-md-4 mb-4 mb-md-0">
+                                    <h4 class="mb-15 text-brand">Office</h4>
+                                    205 North Michigan Avenue, Suite 810<br>
+                                    Chicago, 60601, USA<br>
+                                    <abbr title="Phone">Phone:</abbr> (123) 456-7890<br>
+                                    <abbr title="Email">Email: </abbr><a
+                                        href="https://demosc.chinaz.net/cdn-cgi/l/email-protection" class="__cf_email__"
+                                        data-cfemail="fd9e9293899c9e89bdb88b9c8f9cd39e9290">[email&#160;protected]</a><br>
+                                    <a
+                                        class="btn btn-sm font-weight-bold text-white  mt-20 border-radius-5 btn-shadow-brand hover-up"><i
+                                            class="fi-rs-marker mr-5"></i>View map</a>
+                                </div>
+                                <div class="col-md-4 mb-4 mb-md-0">
+                                    <h4 class="mb-15 text-brand">Studio</h4>
+                                    205 North Michigan Avenue, Suite 810<br>
+                                    Chicago, 60601, USA<br>
+                                    <abbr title="Phone">Phone:</abbr> (123) 456-7890<br>
+                                    <abbr title="Email">Email: </abbr><a
+                                        href="https://demosc.chinaz.net/cdn-cgi/l/email-protection" class="__cf_email__"
+                                        data-cfemail="cfaca0a1bbaeacbb8f8ab9aebdaee1aca0a2">[email&#160;protected]</a><br>
+                                    <a
+                                        class="btn btn-sm font-weight-bold text-white  mt-20 border-radius-5 btn-shadow-brand hover-up"><i
+                                            class="fi-rs-marker mr-5"></i>View map</a>
+                                </div>
+                                <div class="col-md-4">
+                                    <h4 class="mb-15 text-brand">Shop</h4>
+                                    205 North Michigan Avenue, Suite 810<br>
+                                    Chicago, 60601, USA<br>
+                                    <abbr title="Phone">Phone:</abbr> (123) 456-7890<br>
+                                    <abbr title="Email">Email: </abbr><a
+                                        href="https://demosc.chinaz.net/cdn-cgi/l/email-protection" class="__cf_email__"
+                                        data-cfemail="ff9c90918b9e9c8bbfba899e8d9ed19c9092">[email&#160;protected]</a><br>
+                                    <a
+                                        class="btn btn-sm font-weight-bold text-white  mt-20 border-radius-5 btn-shadow-brand hover-up"><i
+                                            class="fi-rs-marker mr-5"></i>View map</a>
                                 </div>
                             </div>
-                            <div class="swiper-slide icon-box text-center icon-box-primary">
-                                <span class="icon-box-icon icon-headphone">
-                                    <i class="w-icon-headphone"></i>
-                                </span>
-                                <div class="icon-box-content">
-                                    <h4 class="icon-box-title">Phone Number</h4>
-                                    <p>(123) 456-7890 / (123) 456-9870</p>
+                            <div class="row">
+                                <div class="col-xl-8">
+                                    <div class="contact-from-area padding-20-row-col wow FadeInUp animated">
+                                        <h5 class="text-brand mb-10">Contact form</h5>
+                                        <h2 class="mb-10">Drop Us a Line</h2>
+                                        <p class="text-muted mb-30 font-sm">Your email address will not be published.
+                                            Required fields are marked *</p>
+                                        <form class="contact-form-style mt-30" id="contact-form" action="#"
+                                            method="post">
+                                            <div class="row">
+                                                <div class="col-lg-6 col-md-6">
+                                                    <div class="input-style mb-20">
+                                                        <input name="name" placeholder="First Name" type="text">
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-6 col-md-6">
+                                                    <div class="input-style mb-20">
+                                                        <input name="email" placeholder="Your Email" type="email">
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-6 col-md-6">
+                                                    <div class="input-style mb-20">
+                                                        <input name="telephone" placeholder="Your Phone" type="tel">
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-6 col-md-6">
+                                                    <div class="input-style mb-20">
+                                                        <input name="subject" placeholder="Subject" type="text">
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-12 col-md-12">
+                                                    <div class="textarea-style mb-30">
+                                                        <textarea name="message" placeholder="Message"></textarea>
+                                                    </div>
+                                                    <button class="submit submit-auto-width" type="submit">Send
+                                                        message</button>
+                                                </div>
+                                            </div>
+                                        </form>
+                                        <p class="form-messege"></p>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 pl-50 d-lg-block d-none">
+                                    <img class="border-radius-15 mt-50" src="{{asset('client/assets/imgs/page/contact-2.png')}}"
+                                        alt="">
                                 </div>
                             </div>
-                            <div class="swiper-slide icon-box text-center icon-box-primary">
-                                <span class="icon-box-icon icon-map-marker">
-                                    <i class="w-icon-map-marker"></i>
-                                </span>
-                                <div class="icon-box-content">
-                                    <h4 class="icon-box-title">Address</h4>
-                                    <p>Lawrence, NY 11345, USA</p>
-                                </div>
-                            </div>
-                            <div class="swiper-slide icon-box text-center icon-box-primary">
-                                <span class="icon-box-icon icon-fax">
-                                    <i class="w-icon-fax"></i>
-                                </span>
-                                <div class="icon-box-content">
-                                    <h4 class="icon-box-title">Fax</h4>
-                                    <p>1-800-570-7777</p>
-                                </div>
-                            </div>
-                        </div>
+                        </section>
                     </div>
-                </section>
-                <!-- End of Contact Information section -->
-
-                <hr class="divider mb-10 pb-1">
-
-                <section class="contact-section">
-                    <div class="row gutter-lg pb-3">
-                        <div class="col-lg-6 mb-8">
-                            <h4 class="title mb-3">People usually ask these</h4>
-                            <div class="accordion accordion-bg accordion-gutter-md accordion-border">
-                                <div class="card">
-                                    <div class="card-header">
-                                        <a href="#collapse1" class="collapse">How can I cancel my order?</a>
-                                    </div>
-                                    <div id="collapse1" class="card-body expanded">
-                                        <p class="mb-0">
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod temp
-                                            orincid
-                                            idunt ut labore et dolore magna aliqua. Venenatis tellus in metus vulp utate eu
-                                            sceler
-                                            isque felis. Vel pretium.
-                                        </p>
-                                    </div>
-                                </div>
-
-                                <div class="card">
-                                    <div class="card-header">
-                                        <a href="#collapse2" class="expand">Why is my registration delayed?</a>
-                                    </div>
-                                    <div id="collapse2" class="card-body collapsed">
-                                        <p class="mb-0">
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod temp
-                                            orincid
-                                            idunt ut labore et dolore magna aliqua. Venenatis tellus in metus vulp utate eu
-                                            sceler
-                                            isque felis. Vel pretium.
-                                        </p>
-                                    </div>
-                                </div>
-
-                                <div class="card">
-                                    <div class="card-header">
-                                        <a href="#collapse3" class="expand">What do I need to buy products?</a>
-                                    </div>
-                                    <div id="collapse3" class="card-body collapsed">
-                                        <p class="mb-0">
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod temp
-                                            orincid
-                                            idunt ut labore et dolore magna aliqua. Venenatis tellus in metus vulp utate eu
-                                            sceler
-                                            isque felis. Vel pretium.
-                                        </p>
-                                    </div>
-                                </div>
-
-                                <div class="card">
-                                    <div class="card-header">
-                                        <a href="#collapse4" class="expand">How can I track an order?</a>
-                                    </div>
-                                    <div id="collapse4" class="card-body collapsed">
-                                        <p class="mb-0">
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod temp
-                                            orincid
-                                            idunt ut labore et dolore magna aliqua. Venenatis tellus in metus vulp utate eu
-                                            sceler
-                                            isque felis. Vel pretium.
-                                        </p>
-                                    </div>
-                                </div>
-
-                                <div class="card">
-                                    <div class="card-header">
-                                        <a href="#collapse5" class="expand">How can I get money back?</a>
-                                    </div>
-                                    <div id="collapse5" class="card-body collapsed">
-                                        <p class="mb-0">
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                                            temp orincid idunt ut labore et dolore magna aliqua. Venenatis tellus in
-                                            metus vulp utate eu sceler isque felis. Vel pretium.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 mb-8">
-                            <h4 class="title mb-3">Send Us a Message</h4>
-                            <form class="form contact-us-form" action="#" method="post">
-                                <div class="form-group">
-                                    <label for="username">Your Name</label>
-                                    <input type="text" id="username" name="username" class="form-control">
-                                </div>
-                                <div class="form-group">
-                                    <label for="email_1">Your Email</label>
-                                    <input type="email" id="email_1" name="email_1" class="form-control">
-                                </div>
-                                <div class="form-group">
-                                    <label for="message">Your Message</label>
-                                    <textarea id="message" name="message" cols="30" rows="5" class="form-control"></textarea>
-                                </div>
-                                <button type="submit" class="btn btn-dark btn-rounded">Send Now</button>
-                            </form>
-                        </div>
-                    </div>
-                </section>
-                <!-- End of Contact Section -->
+                </div>
             </div>
-
-            <!-- Google Maps - Go to the bottom of the page to change settings and map location. -->
-            <div class="google-map contact-google-map" id="googlemaps"></div>
-            <!-- End Map Section -->
         </div>
-        <!-- End of PageContent -->
     </main>
 @endsection
