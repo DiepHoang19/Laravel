@@ -8,7 +8,7 @@ class ClientController extends Controller
 {
     public function index()
     {
-        return view('client.home.index');
+        return view('client.home.index',);
     }
 
     public function shoppingcard()
@@ -50,5 +50,13 @@ class ClientController extends Controller
     public function cart()
     {
         return view('client.pages.shop-cart');
+    }
+    public function wishlist()
+    {
+        return view('client.pages.shop-wishlist');
+    }
+    public function detail()
+    {
+        return view('client.pages.product-detail');
     }
 }

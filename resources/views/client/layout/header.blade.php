@@ -116,7 +116,7 @@
                                 <span class="lable ml-0">Account</span>
                             </div>
                             <div class="header-action-icon-2">
-                                <a href="shop-wishlist.html">
+                                <a href="{{route('client.wishlist')}}">
                                     <img class="svgInject" alt="Nest"
                                         src="{{ asset('client/assets/imgs/theme/icons/icon-heart.svg') }}">
                                     <span class="pro-count blue">6</span>

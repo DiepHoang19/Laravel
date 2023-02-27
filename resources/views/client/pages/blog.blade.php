@@ -38,7 +38,7 @@
                             <div class="totall-product">
                                 <h2>
                                     <img class="w-36px mr-10"
-                                        src="{{ asset('client/assets/imgs/theme/icons/category-1') }}.svg" alt="">
+                                        src="{{ asset('client/assets/imgs/theme/icons/category-1.svg') }}" alt="">
                                     Kitchen Articles
                                 </h2>
                             </div>
@@ -84,7 +84,8 @@
                         </div>
                         <div class="loop-grid loop-list pr-30 mb-50">
                             <article class="wow fadeIn animated hover-up mb-30 animated">
-                                <div class="post-thumb" style="background-image: url(assets/imgs/blog/blog-1.png);">
+                                <div class="post-thumb"
+                                    style="background-image: url({{ asset('client/assets/imgs/blog/blog-1.png') }});">
                                     <div class="entry-meta">
                                         <a class="entry-meta meta-2" href="blog-category-grid.html"><i
                                                 class="fi-rs-play-alt"></i></a>
@@ -111,7 +112,8 @@
                                 </div>
                             </article>
                             <article class="wow fadeIn animated hover-up mb-30 animated">
-                                <div class="post-thumb" style="background-image: url(assets/imgs/blog/blog-2.png);">
+                                <div class="post-thumb"
+                                    style="background-image: url({{ asset('client/assets/imgs/blog/blog-2.png') }});">
                                 </div>
                                 <div class="entry-content-2 pl-50">
                                     <h3 class="post-title mb-20">
@@ -134,7 +136,8 @@
                                 </div>
                             </article>
                             <article class="wow fadeIn animated hover-up mb-30 animated">
-                                <div class="post-thumb" style="background-image: url(assets/imgs/blog/blog-3.png);">
+                                <div class="post-thumb"
+                                    style="background-image: url({{ asset('client/assets/imgs/blog/blog-3.png') }});">
                                     <div class="entry-meta">
                                         <a class="entry-meta meta-2" href="blog-category-grid.html"><i
                                                 class="fi-rs-picture"></i></a>
@@ -162,7 +165,8 @@
                                 </div>
                             </article>
                             <article class="wow fadeIn animated hover-up mb-30 animated">
-                                <div class="post-thumb" style="background-image: url(assets/imgs/blog/blog-4.png);">
+                                <div class="post-thumb"
+                                    style="background-image: url({{ asset('client/assets/imgs/blog/blog-4.png') }});">
                                     <div class="entry-meta">
                                         <a class="entry-meta meta-2" href="blog-category-grid.html"><i
                                                 class="fi-rs-play-alt"></i></a>
@@ -190,7 +194,8 @@
                                 </div>
                             </article>
                             <article class="wow fadeIn animated hover-up mb-30 animated">
-                                <div class="post-thumb" style="background-image: url(assets/imgs/blog/blog-5.png);">
+                                <div class="post-thumb"
+                                    style="background-image: url({{ asset('client/assets/imgs/blog/blog-5.png') }});">
                                     <div class="entry-meta">
                                         <a class="entry-meta meta-2" href="blog-category-grid.html"><i
                                                 class="fi-rs-heart"></i></a>
@@ -218,7 +223,8 @@
                                 </div>
                             </article>
                             <article class="wow fadeIn animated hover-up mb-30 animated">
-                                <div class="post-thumb" style="background-image: url(assets/imgs/blog/blog-6.png);">
+                                <div class="post-thumb"
+                                    style="background-image: url({{ asset('client/assets/imgs/blog/blog-6.png') }});">
                                 </div>
                                 <div class="entry-content-2 pl-50">
                                     <h3 class="post-title mb-20">
@@ -242,7 +248,8 @@
                                 </div>
                             </article>
                             <article class="wow fadeIn animated hover-up mb-30 animated">
-                                <div class="post-thumb" style="background-image: url(assets/imgs/blog/blog-1.png);">
+                                <div class="post-thumb"
+                                    style="background-image: url({{ asset('client/assets/imgs/blog/blog-1.png') }});">
                                 </div>
                                 <div class="entry-content-2 pl-50">
                                     <h3 class="post-title mb-20">
@@ -266,7 +273,8 @@
                                 </div>
                             </article>
                             <article class="wow fadeIn animated hover-up mb-30 animated">
-                                <div class="post-thumb" style="background-image: url(assets/imgs/blog/blog-7.png);">
+                                <div class="post-thumb"
+                                    style="background-image: url({{ asset('client/assets/imgs/blog/blog-7.png') }});">
                                     <div class="entry-meta">
                                         <a class="entry-meta meta-2" href="blog-category-grid.html"><i
                                                 class="fi-rs-headset"></i></a>
