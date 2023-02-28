@@ -1,8 +1,10 @@
 <?php
 
+use App\Http\Controllers\AccountController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\CartController;
 use App\Http\Controllers\CategoryController;
-use App\Http\Controllers\ClientController;
+use App\Http\Controllers\PageController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductController;
@@ -63,17 +65,22 @@ Route::controller(AuthController::class)->group(function () {
     Route::get('/verify-account', 'verifyAccount')->name('verify_account');
 });
 
-Route::prefix('/')->controller(ClientController::class)->name('client.')->group(function () {
+Route::prefix('/')->controller(PageController::class)->name('page.')->group(function () {
     Route::get('/', 'index')->name('index');
-    Route::get('/shopping-cart', 'shoppingcard')->name('shoppingcard');
     Route::get('/blog', 'blog')->name('blog');
     Route::get('/about-us', 'about')->name('about');
     Route::get('/contact-us', 'contact')->name('contact');
-    Route::get('/checkout', 'checkout')->name('checkout');
-    Route::get('/auth-login', 'login')->name('login');
+});
+
+Route::prefix('/')->controller(AccountController::class)->name('authen.')->group(function () {
     Route::get('/auth-register', 'register')->name('register');
-    Route::get('/account-manager', 'account')->name('account');
-    Route::get('/shop-cart', 'cart')->name('cart');
+    Route::get('/auth-login', 'login')->name('login');
+    Route::get('/auth-manager', 'manager')->name('manager');
+});
+
+Route::prefix('/')->controller(CartController::class)->name('store.')->group(function () {
+    Route::get('/shopping-cart', 'shoppingCart')->name('shoppingCart');
+    Route::get('/checkout', 'checkout')->name('checkout');
     Route::get('/shop-wishlist', 'wishlist')->name('wishlist');
     Route::get('/product-detail', 'detail')->name('detail');
 });

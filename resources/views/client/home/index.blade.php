@@ -85,7 +85,7 @@
                                             <div class="product-cart-wrap mb-30" style="height: 90%">
                                                 <div class="product-img-action-wrap">
                                                     <div class="product-img product-img-zoom">
-                                                        <a href="{{ route('client.detail') }}">
+                                                        <a href="{{ route('store.detail') }}">
                                                             <img class="default-img"
                                                                 src="{{ asset($product->nameImage) }}" alt=""
                                                                 height="180px">
@@ -95,7 +95,7 @@
                                                     </div>
                                                     <div class="product-action-1">
                                                         <a aria-label="Add To Wishlist" class="action-btn"
-                                                            href="{{ ROUTE('client.wishlist') }}"><i
+                                                            href="{{ route('store.wishlist') }}"><i
                                                                 class="fi-rs-heart"></i></a>
                                                         {{-- <a aria-label="Compare" class="action-btn"
                                                             href="shop-compare.html"><i class="fi-rs-shuffle"></i></a> --}}
@@ -112,7 +112,7 @@
                                                         <a href="shop-grid-right.html">Snack</a>
                                                     </div> --}}
                                                     <h2>
-                                                        <a href="{{ route('client.detail',['id' => 1]) }}">
+                                                        <a href="{{ route('store.detail') }}">
                                                             {{ $product->name }}
                                                         </a>
                                                     </h2>
@@ -132,7 +132,7 @@
                                                             {{-- <span class="old-price">$32.8</span> --}}
                                                         </div>
                                                         <div class="add-cart">
-                                                            <a class="add" href="{{ route('client.cart') }}"><i
+                                                            <a class="add" href="{{ route('store.shoppingCart') }}"><i
                                                                     class="fi-rs-shopping-cart mr-5"></i>Add </a>
                                                         </div>
                                                     </div>
@@ -150,7 +150,7 @@
                                         <div class="product-cart-wrap mb-30">
                                             <div class="product-img-action-wrap">
                                                 <div class="product-img product-img-zoom">
-                                                    <a href="{{ route('client.detail') }}">
+                                                    <a href="{{ route('store.detail') }}">
                                                         <img class="default-img"
                                                             src="{{ asset('client/assets/imgs/shop/product-10-1.jpg') }}"
                                                             alt="">
@@ -175,7 +175,7 @@
                                                 <div class="product-category">
                                                     <a href="shop-grid-right.html">Snack</a>
                                                 </div>
-                                                <h2><a href="{{ route('client.detail') }}">Seeds of Change Organic Quinoa,
+                                                <h2><a href="{{ route('store.detail') }}">Seeds of Change Organic Quinoa,
                                                         Brown, & Red Rice</a></h2>
                                                 <div class="product-rate-cover">
                                                     <div class="product-rate d-inline-block">
@@ -205,7 +205,7 @@
                                         <div class="product-cart-wrap mb-30">
                                             <div class="product-img-action-wrap">
                                                 <div class="product-img product-img-zoom">
-                                                    <a href="{{ route('client.detail') }}">
+                                                    <a href="{{ route('store.detail') }}">
                                                         <img class="default-img"
                                                             src="{{ asset('client/assets/imgs/shop/product-12-1.jpg') }}"
                                                             alt="">
@@ -230,7 +230,7 @@
                                                 <div class="product-category">
                                                     <a href="shop-grid-right.html">Hodo Foods</a>
                                                 </div>
-                                                <h2><a href="{{ route('client.detail') }}">All Natural Italian-Style
+                                                <h2><a href="{{ route('store.detail') }}">All Natural Italian-Style
                                                         Chicken
                                                         Meatballs</a></h2>
                                                 <div class="product-rate-cover">
@@ -261,7 +261,7 @@
                                         <div class="product-cart-wrap mb-30">
                                             <div class="product-img-action-wrap">
                                                 <div class="product-img product-img-zoom">
-                                                    <a href="{{ route('client.detail') }}">
+                                                    <a href="{{ route('store.detail') }}">
                                                         <img class="default-img"
                                                             src="{{ asset('client/assets/imgs/shop/product-13-1.jpg') }}"
                                                             alt="">
@@ -286,7 +286,7 @@
                                                 <div class="product-category">
                                                     <a href="shop-grid-right.html">Snack</a>
                                                 </div>
-                                                <h2><a href="{{ route('client.detail') }}">Angie’s Boomchickapop Sweet &
+                                                <h2><a href="{{ route('store.detail') }}">Angie’s Boomchickapop Sweet &
                                                         Salty
                                                         Kettle Corn</a></h2>
                                                 <div class="product-rate-cover">
@@ -317,7 +317,7 @@
                                         <div class="product-cart-wrap mb-30">
                                             <div class="product-img-action-wrap">
                                                 <div class="product-img product-img-zoom">
-                                                    <a href="{{ route('client.detail') }}">
+                                                    <a href="{{ route('store.detail') }}">
                                                         <img class="default-img"
                                                             src="{{ asset('client/assets/imgs/shop/product-14-1.jpg') }}"
                                                             alt="">
@@ -339,7 +339,7 @@
                                                 <div class="product-category">
                                                     <a href="shop-grid-right.html">Vegetables</a>
                                                 </div>
-                                                <h2><a href="{{ route('client.detail') }}">Foster Farms Takeout Crispy
+                                                <h2><a href="{{ route('store.detail') }}">Foster Farms Takeout Crispy
                                                         Classic
                                                         Buffalo Wings</a></h2>
                                                 <div class="product-rate-cover">
@@ -370,7 +370,7 @@
                                         <div class="product-cart-wrap mb-30">
                                             <div class="product-img-action-wrap">
                                                 <div class="product-img product-img-zoom">
-                                                    <a href="{{ route('client.detail') }}">
+                                                    <a href="{{ route('store.detail') }}">
                                                         <img class="default-img"
                                                             src="{{ asset('client/assets/imgs/shop/product-15-1.jpg') }}"
                                                             alt="">
@@ -395,7 +395,7 @@
                                                 <div class="product-category">
                                                     <a href="shop-grid-right.html">Pet Foods</a>
                                                 </div>
-                                                <h2><a href="{{ route('client.detail') }}">Blue Diamond Almonds Lightly
+                                                <h2><a href="{{ route('store.detail') }}">Blue Diamond Almonds Lightly
                                                         Salted
                                                         Vegetables</a></h2>
                                                 <div class="product-rate-cover">
@@ -426,7 +426,7 @@
                                         <div class="product-cart-wrap">
                                             <div class="product-img-action-wrap">
                                                 <div class="product-img product-img-zoom">
-                                                    <a href="{{ route('client.detail') }}">
+                                                    <a href="{{ route('store.detail') }}">
                                                         <img class="default-img"
                                                             src="{{ asset('client/assets/imgs/shop/product-16-1.jpg') }}"
                                                             alt="">
@@ -448,7 +448,7 @@
                                                 <div class="product-category">
                                                     <a href="shop-grid-right.html">Hodo Foods</a>
                                                 </div>
-                                                <h2><a href="{{ route('client.detail') }}">Chobani Complete Vanilla Greek
+                                                <h2><a href="{{ route('store.detail') }}">Chobani Complete Vanilla Greek
                                                         Yogurt</a></h2>
                                                 <div class="product-rate-cover">
                                                     <div class="product-rate d-inline-block">
@@ -478,7 +478,7 @@
                                         <div class="product-cart-wrap">
                                             <div class="product-img-action-wrap">
                                                 <div class="product-img product-img-zoom">
-                                                    <a href="{{ route('client.detail') }}">
+                                                    <a href="{{ route('store.detail') }}">
                                                         <img class="default-img"
                                                             src="{{ asset('client/assets/imgs/shop/product-7-1.jpg') }}"
                                                             alt="">
@@ -500,7 +500,7 @@
                                                 <div class="product-category">
                                                     <a href="shop-grid-right.html">Meats</a>
                                                 </div>
-                                                <h2><a href="{{ route('client.detail') }}">Canada Dry Ginger Ale – 2 L
+                                                <h2><a href="{{ route('store.detail') }}">Canada Dry Ginger Ale – 2 L
                                                         Bottle -
                                                         200ml - 400g</a></h2>
                                                 <div class="product-rate-cover">
@@ -531,7 +531,7 @@
                                         <div class="product-cart-wrap">
                                             <div class="product-img-action-wrap">
                                                 <div class="product-img product-img-zoom">
-                                                    <a href="{{ route('client.detail') }}">
+                                                    <a href="{{ route('store.detail') }}">
                                                         <img class="default-img"
                                                             src="{{ asset('client/assets/imgs/shop/product-8-1.jpg') }}"
                                                             alt="">
@@ -556,7 +556,7 @@
                                                 <div class="product-category">
                                                     <a href="shop-grid-right.html">Snack</a>
                                                 </div>
-                                                <h2><a href="{{ route('client.detail') }}">Encore Seafoods Stuffed Alaskan
+                                                <h2><a href="{{ route('store.detail') }}">Encore Seafoods Stuffed Alaskan
                                                         Salmon</a></h2>
                                                 <div class="product-rate-cover">
                                                     <div class="product-rate d-inline-block">
@@ -586,7 +586,7 @@
                                         <div class="product-cart-wrap">
                                             <div class="product-img-action-wrap">
                                                 <div class="product-img product-img-zoom">
-                                                    <a href="{{ route('client.detail') }}">
+                                                    <a href="{{ route('store.detail') }}">
                                                         <img class="default-img"
                                                             src="{{ asset('client/assets/imgs/shop/product-9-1.jpg') }}"
                                                             alt="">
@@ -611,7 +611,7 @@
                                                 <div class="product-category">
                                                     <a href="shop-grid-right.html">Coffes</a>
                                                 </div>
-                                                <h2><a href="{{ route('client.detail') }}">Gorton’s Beer Battered Fish
+                                                <h2><a href="{{ route('store.detail') }}">Gorton’s Beer Battered Fish
                                                         Fillets
                                                         with soft paper</a></h2>
                                                 <div class="product-rate-cover">
@@ -642,7 +642,7 @@
                                         <div class="product-cart-wrap">
                                             <div class="product-img-action-wrap">
                                                 <div class="product-img product-img-zoom">
-                                                    <a href="{{ route('client.detail') }}">
+                                                    <a href="{{ route('store.detail') }}">
                                                         <img class="default-img"
                                                             src="{{ asset('client/assets/imgs/shop/product-10-1.jpg') }}"
                                                             alt="">
@@ -664,7 +664,7 @@
                                                 <div class="product-category">
                                                     <a href="shop-grid-right.html">Cream</a>
                                                 </div>
-                                                <h2><a href="{{ route('client.detail') }}">Haagen-Dazs Caramel Cone Ice
+                                                <h2><a href="{{ route('store.detail') }}">Haagen-Dazs Caramel Cone Ice
                                                         Cream
                                                         Ketchup</a></h2>
                                                 <div class="product-rate-cover">
@@ -701,7 +701,7 @@
                                         <div class="product-cart-wrap mb-30">
                                             <div class="product-img-action-wrap">
                                                 <div class="product-img product-img-zoom">
-                                                    <a href="{{ route('client.detail') }}">
+                                                    <a href="{{ route('store.detail') }}">
                                                         <img class="default-img"
                                                             src="{{ asset('cient/assets/imgs/shop/product-9-1.jpg') }}"
                                                             alt="">
@@ -726,7 +726,7 @@
                                                 <div class="product-category">
                                                     <a href="shop-grid-right.html">Snack</a>
                                                 </div>
-                                                <h2><a href="{{ route('client.detail') }}">Seeds of Change Organic
+                                                <h2><a href="{{ route('store.detail') }}">Seeds of Change Organic
                                                         Quinoa,
                                                         Brown, & Red Rice</a></h2>
                                                 <div class="product-rate-cover">
@@ -757,7 +757,7 @@
                                         <div class="product-cart-wrap mb-30">
                                             <div class="product-img-action-wrap">
                                                 <div class="product-img product-img-zoom">
-                                                    <a href="{{ route('client.detail') }}">
+                                                    <a href="{{ route('store.detail') }}">
                                                         <img class="default-img"
                                                             src="{{ asset('client/assets/imgs/shop/product-8-1.jpg') }}"
                                                             alt="">
@@ -782,7 +782,7 @@
                                                 <div class="product-category">
                                                     <a href="shop-grid-right.html">Hodo Foods</a>
                                                 </div>
-                                                <h2><a href="{{ route('client.detail') }}">All Natural Italian-Style
+                                                <h2><a href="{{ route('store.detail') }}">All Natural Italian-Style
                                                         Chicken
                                                         Meatballs</a></h2>
                                                 <div class="product-rate-cover">
@@ -813,7 +813,7 @@
                                         <div class="product-cart-wrap mb-30">
                                             <div class="product-img-action-wrap">
                                                 <div class="product-img product-img-zoom">
-                                                    <a href="{{ route('client.detail') }}">
+                                                    <a href="{{ route('store.detail') }}">
                                                         <img class="default-img"
                                                             src="{{ asset('client/assets/imgs/shop/product-7-1.jpg') }}"
                                                             alt="">
@@ -838,7 +838,7 @@
                                                 <div class="product-category">
                                                     <a href="shop-grid-right.html">Snack</a>
                                                 </div>
-                                                <h2><a href="{{ route('client.detail') }}">Angie’s Boomchickapop Sweet &
+                                                <h2><a href="{{ route('store.detail') }}">Angie’s Boomchickapop Sweet &
                                                         Salty
                                                         Kettle Corn</a></h2>
                                                 <div class="product-rate-cover">
@@ -869,7 +869,7 @@
                                         <div class="product-cart-wrap mb-30">
                                             <div class="product-img-action-wrap">
                                                 <div class="product-img product-img-zoom">
-                                                    <a href="{{ route('client.detail') }}">
+                                                    <a href="{{ route('store.detail') }}">
                                                         <img class="default-img"
                                                             src="{{ asset('client/assets/imgs/shop/product-6-1.jpg') }}"
                                                             alt="">
@@ -891,7 +891,7 @@
                                                 <div class="product-category">
                                                     <a href="shop-grid-right.html">Vegetables</a>
                                                 </div>
-                                                <h2><a href="{{ route('client.detail') }}">Foster Farms Takeout Crispy
+                                                <h2><a href="{{ route('store.detail') }}">Foster Farms Takeout Crispy
                                                         Classic
                                                         Buffalo Wings</a></h2>
                                                 <div class="product-rate-cover">
@@ -922,7 +922,7 @@
                                         <div class="product-cart-wrap mb-30">
                                             <div class="product-img-action-wrap">
                                                 <div class="product-img product-img-zoom">
-                                                    <a href="{{ route('client.detail') }}">
+                                                    <a href="{{ route('store.detail') }}">
                                                         <img class="default-img"
                                                             src="{{ asset('client/assets/imgs/shop/product-5-1.jpg') }}"
                                                             alt="">
@@ -947,7 +947,7 @@
                                                 <div class="product-category">
                                                     <a href="shop-grid-right.html">Pet Foods</a>
                                                 </div>
-                                                <h2><a href="{{ route('client.detail') }}">Blue Diamond Almonds Lightly
+                                                <h2><a href="{{ route('store.detail') }}">Blue Diamond Almonds Lightly
                                                         Salted
                                                         Vegetables</a></h2>
                                                 <div class="product-rate-cover">
@@ -978,7 +978,7 @@
                                         <div class="product-cart-wrap">
                                             <div class="product-img-action-wrap">
                                                 <div class="product-img product-img-zoom">
-                                                    <a href="{{ route('client.detail') }}">
+                                                    <a href="{{ route('store.detail') }}">
                                                         <img class="default-img"
                                                             src="{{ asset('client/assets/imgs/shop/product-4-1.jpg') }}"
                                                             alt="">
@@ -1000,7 +1000,7 @@
                                                 <div class="product-category">
                                                     <a href="shop-grid-right.html">Hodo Foods</a>
                                                 </div>
-                                                <h2><a href="{{ route('client.detail') }}">Chobani Complete Vanilla
+                                                <h2><a href="{{ route('store.detail') }}">Chobani Complete Vanilla
                                                         Greek
                                                         Yogurt</a></h2>
                                                 <div class="product-rate-cover">
@@ -1031,7 +1031,7 @@
                                         <div class="product-cart-wrap">
                                             <div class="product-img-action-wrap">
                                                 <div class="product-img product-img-zoom">
-                                                    <a href="{{ route('client.detail') }}">
+                                                    <a href="{{ route('store.detail') }}">
                                                         <img class="default-img"
                                                             src="{{ asset('client/assets/imgs/shop/product-3-1.jpg') }}"
                                                             alt="">
@@ -1053,7 +1053,7 @@
                                                 <div class="product-category">
                                                     <a href="shop-grid-right.html">Meats</a>
                                                 </div>
-                                                <h2><a href="{{ route('client.detail') }}">Canada Dry Ginger Ale – 2 L
+                                                <h2><a href="{{ route('store.detail') }}">Canada Dry Ginger Ale – 2 L
                                                         Bottle -
                                                         200ml - 400g</a></h2>
                                                 <div class="product-rate-cover">
@@ -1084,7 +1084,7 @@
                                         <div class="product-cart-wrap">
                                             <div class="product-img-action-wrap">
                                                 <div class="product-img product-img-zoom">
-                                                    <a href="{{ route('client.detail') }}">
+                                                    <a href="{{ route('store.detail') }}">
                                                         <img class="default-img"
                                                             src="{{ asset('client/assets/imgs/shop/product-2-1.jpg') }}"
                                                             alt="">
@@ -1109,7 +1109,7 @@
                                                 <div class="product-category">
                                                     <a href="shop-grid-right.html">Snack</a>
                                                 </div>
-                                                <h2><a href="{{ route('client.detail') }}">Encore Seafoods Stuffed
+                                                <h2><a href="{{ route('store.detail') }}">Encore Seafoods Stuffed
                                                         Alaskan
                                                         Salmon</a></h2>
                                                 <div class="product-rate-cover">
@@ -1140,7 +1140,7 @@
                                         <div class="product-cart-wrap">
                                             <div class="product-img-action-wrap">
                                                 <div class="product-img product-img-zoom">
-                                                    <a href="{{ route('client.detail') }}">
+                                                    <a href="{{ route('store.detail') }}">
                                                         <img class="default-img"
                                                             src="{{ asset('client/assets/imgs/shop/product-9-1.jpg') }}"
                                                             alt="">
@@ -1165,7 +1165,7 @@
                                                 <div class="product-category">
                                                     <a href="shop-grid-right.html">Coffes</a>
                                                 </div>
-                                                <h2><a href="{{ route('client.detail') }}">Gorton’s Beer Battered Fish
+                                                <h2><a href="{{ route('store.detail') }}">Gorton’s Beer Battered Fish
                                                         Fillets
                                                         with soft paper</a></h2>
                                                 <div class="product-rate-cover">
@@ -1196,7 +1196,7 @@
                                         <div class="product-cart-wrap">
                                             <div class="product-img-action-wrap">
                                                 <div class="product-img product-img-zoom">
-                                                    <a href="{{ route('client.detail') }}">
+                                                    <a href="{{ route('store.detail') }}">
                                                         <img class="default-img"
                                                             src="{{ asset('client/assets/imgs/shop/product-1-1.jpg') }}"
                                                             alt="">
@@ -1219,7 +1219,7 @@
                                                 <div class="product-category">
                                                     <a href="shop-grid-right.html">Cream</a>
                                                 </div>
-                                                <h2><a href="{{ route('client.detail') }}">Haagen-Dazs Caramel Cone Ice
+                                                <h2><a href="{{ route('store.detail') }}">Haagen-Dazs Caramel Cone Ice
                                                         Cream
                                                         Ketchup</a></h2>
                                                 <div class="product-rate-cover">
@@ -1256,7 +1256,7 @@
                                         <div class="product-cart-wrap mb-30">
                                             <div class="product-img-action-wrap">
                                                 <div class="product-img product-img-zoom">
-                                                    <a href="{{ route('client.detail') }}">
+                                                    <a href="{{ route('store.detail') }}">
                                                         <img class="default-img"
                                                             src="{{ asset('client/assets/imgs/shop/product-6-1.jpg') }}"
                                                             alt="">
@@ -1282,7 +1282,7 @@
                                                 <div class="product-category">
                                                     <a href="shop-grid-right.html">Snack</a>
                                                 </div>
-                                                <h2><a href="{{ route('client.detail') }}">Seeds of Change Organic
+                                                <h2><a href="{{ route('store.detail') }}">Seeds of Change Organic
                                                         Quinoa,
                                                         Brown, & Red Rice</a></h2>
                                                 <div class="product-rate-cover">
@@ -1313,7 +1313,7 @@
                                         <div class="product-cart-wrap mb-30">
                                             <div class="product-img-action-wrap">
                                                 <div class="product-img product-img-zoom">
-                                                    <a href="{{ route('client.detail') }}">
+                                                    <a href="{{ route('store.detail') }}">
                                                         <img class="default-img"
                                                             src="{{ asset('client/assets/imgs/shop/product-7-1.jpg') }}"
                                                             alt="">
@@ -1339,7 +1339,7 @@
                                                 <div class="product-category">
                                                     <a href="shop-grid-right.html">Hodo Foods</a>
                                                 </div>
-                                                <h2><a href="{{ route('client.detail') }}">All Natural Italian-Style
+                                                <h2><a href="{{ route('store.detail') }}">All Natural Italian-Style
                                                         Chicken
                                                         Meatballs</a></h2>
                                                 <div class="product-rate-cover">
@@ -1370,7 +1370,7 @@
                                         <div class="product-cart-wrap mb-30">
                                             <div class="product-img-action-wrap">
                                                 <div class="product-img product-img-zoom">
-                                                    <a href="{{ route('client.detail') }}">
+                                                    <a href="{{ route('store.detail') }}">
                                                         <img class="default-img"
                                                             src="{{ asset('client/assets/imgs/shop/product-8-1.jpg') }}"
                                                             alt="">
@@ -1396,7 +1396,7 @@
                                                 <div class="product-category">
                                                     <a href="shop-grid-right.html">Snack</a>
                                                 </div>
-                                                <h2><a href="{{ route('client.detail') }}">Angie’s Boomchickapop Sweet &
+                                                <h2><a href="{{ route('store.detail') }}">Angie’s Boomchickapop Sweet &
                                                         Salty
                                                         Kettle Corn</a></h2>
                                                 <div class="product-rate-cover">
@@ -1427,7 +1427,7 @@
                                         <div class="product-cart-wrap mb-30">
                                             <div class="product-img-action-wrap">
                                                 <div class="product-img product-img-zoom">
-                                                    <a href="{{ route('client.detail') }}">
+                                                    <a href="{{ route('store.detail') }}">
                                                         <img class="default-img"
                                                             src="{{ asset('client/assets/imgs/shop/product-9-1.jpg') }}"
                                                             alt="">
@@ -1450,7 +1450,7 @@
                                                 <div class="product-category">
                                                     <a href="shop-grid-right.html">Vegetables</a>
                                                 </div>
-                                                <h2><a href="{{ route('client.detail') }}">Foster Farms Takeout Crispy
+                                                <h2><a href="{{ route('store.detail') }}">Foster Farms Takeout Crispy
                                                         Classic
                                                         Buffalo Wings</a></h2>
                                                 <div class="product-rate-cover">
@@ -1481,7 +1481,7 @@
                                         <div class="product-cart-wrap mb-30">
                                             <div class="product-img-action-wrap">
                                                 <div class="product-img product-img-zoom">
-                                                    <a href="{{ route('client.detail') }}">
+                                                    <a href="{{ route('store.detail') }}">
                                                         <img class="default-img"
                                                             src="{{ asset('client/assets/imgs/shop/product-4-1.jpg') }}"
                                                             alt="">
@@ -1507,7 +1507,7 @@
                                                 <div class="product-category">
                                                     <a href="shop-grid-right.html">Pet Foods</a>
                                                 </div>
-                                                <h2><a href="{{ route('client.detail') }}">Blue Diamond Almonds Lightly
+                                                <h2><a href="{{ route('store.detail') }}">Blue Diamond Almonds Lightly
                                                         Salted
                                                         Vegetables</a></h2>
                                                 <div class="product-rate-cover">
@@ -1538,7 +1538,7 @@
                                         <div class="product-cart-wrap mb-30">
                                             <div class="product-img-action-wrap">
                                                 <div class="product-img product-img-zoom">
-                                                    <a href="{{ route('client.detail') }}">
+                                                    <a href="{{ route('store.detail') }}">
                                                         <img class="default-img"
                                                             src="{{ asset('client/assets/imgs/shop/product-3-1.jpg') }}"
                                                             alt="">
@@ -1561,7 +1561,7 @@
                                                 <div class="product-category">
                                                     <a href="shop-grid-right.html">Hodo Foods</a>
                                                 </div>
-                                                <h2><a href="{{ route('client.detail') }}">Chobani Complete Vanilla
+                                                <h2><a href="{{ route('store.detail') }}">Chobani Complete Vanilla
                                                         Greek
                                                         Yogurt</a></h2>
                                                 <div class="product-rate-cover">
@@ -1592,7 +1592,7 @@
                                         <div class="product-cart-wrap">
                                             <div class="product-img-action-wrap">
                                                 <div class="product-img product-img-zoom">
-                                                    <a href="{{ route('client.detail') }}">
+                                                    <a href="{{ route('store.detail') }}">
                                                         <img class="default-img"
                                                             src="{{ asset('client/assets/imgs/shop/product-2-1.jpg') }}"
                                                             alt="">
@@ -1615,7 +1615,7 @@
                                                 <div class="product-category">
                                                     <a href="shop-grid-right.html">Meats</a>
                                                 </div>
-                                                <h2><a href="{{ route('client.detail') }}">Canada Dry Ginger Ale – 2 L
+                                                <h2><a href="{{ route('store.detail') }}">Canada Dry Ginger Ale – 2 L
                                                         Bottle -
                                                         200ml - 400g</a></h2>
                                                 <div class="product-rate-cover">
@@ -1646,7 +1646,7 @@
                                         <div class="product-cart-wrap">
                                             <div class="product-img-action-wrap">
                                                 <div class="product-img product-img-zoom">
-                                                    <a href="{{ route('client.detail') }}">
+                                                    <a href="{{ route('store.detail') }}">
                                                         <img class="default-img"
                                                             src="{{ asset('client/assets/imgs/shop/product-1-1.jpg') }}"
                                                             alt="">
@@ -1672,7 +1672,7 @@
                                                 <div class="product-category">
                                                     <a href="shop-grid-right.html">Snack</a>
                                                 </div>
-                                                <h2><a href="{{ route('client.detail') }}">Encore Seafoods Stuffed
+                                                <h2><a href="{{ route('store.detail') }}">Encore Seafoods Stuffed
                                                         Alaskan
                                                         Salmon</a></h2>
                                                 <div class="product-rate-cover">
@@ -1703,7 +1703,7 @@
                                         <div class="product-cart-wrap">
                                             <div class="product-img-action-wrap">
                                                 <div class="product-img product-img-zoom">
-                                                    <a href="{{ route('client.detail') }}">
+                                                    <a href="{{ route('store.detail') }}">
                                                         <img class="default-img"
                                                             src="{{ asset('client/assets/imgs/shop/product-11-1.jpg') }}"
                                                             alt="">
@@ -1729,7 +1729,7 @@
                                                 <div class="product-category">
                                                     <a href="shop-grid-right.html">Coffes</a>
                                                 </div>
-                                                <h2><a href="{{ route('client.detail') }}">Gorton’s Beer Battered Fish
+                                                <h2><a href="{{ route('store.detail') }}">Gorton’s Beer Battered Fish
                                                         Fillets
                                                         with soft paper</a></h2>
                                                 <div class="product-rate-cover">
@@ -1760,7 +1760,7 @@
                                         <div class="product-cart-wrap">
                                             <div class="product-img-action-wrap">
                                                 <div class="product-img product-img-zoom">
-                                                    <a href="{{ route('client.detail') }}">
+                                                    <a href="{{ route('store.detail') }}">
                                                         <img class="default-img"
                                                             src="{{ asset('client/assets/imgs/shop/product-12-1.jpg') }}"
                                                             alt="">
@@ -1783,7 +1783,7 @@
                                                 <div class="product-category">
                                                     <a href="shop-grid-right.html">Cream</a>
                                                 </div>
-                                                <h2><a href="{{ route('client.detail') }}">Haagen-Dazs Caramel Cone Ice
+                                                <h2><a href="{{ route('store.detail') }}">Haagen-Dazs Caramel Cone Ice
                                                         Cream
                                                         Ketchup</a></h2>
                                                 <div class="product-rate-cover">
@@ -1820,7 +1820,7 @@
                                         <div class="product-cart-wrap mb-30">
                                             <div class="product-img-action-wrap">
                                                 <div class="product-img product-img-zoom">
-                                                    <a href="{{ route('client.detail') }}">
+                                                    <a href="{{ route('store.detail') }}">
                                                         <img class="default-img"
                                                             src="{{ asset('client/assets/imgs/shop/product-12-1.jpg') }}"
                                                             alt="">
@@ -1846,7 +1846,7 @@
                                                 <div class="product-category">
                                                     <a href="shop-grid-right.html">Snack</a>
                                                 </div>
-                                                <h2><a href="{{ route('client.detail') }}">Seeds of Change Organic
+                                                <h2><a href="{{ route('store.detail') }}">Seeds of Change Organic
                                                         Quinoa,
                                                         Brown, & Red Rice</a></h2>
                                                 <div class="product-rate-cover">
@@ -1877,7 +1877,7 @@
                                         <div class="product-cart-wrap mb-30">
                                             <div class="product-img-action-wrap">
                                                 <div class="product-img product-img-zoom">
-                                                    <a href="{{ route('client.detail') }}">
+                                                    <a href="{{ route('store.detail') }}">
                                                         <img class="default-img"
                                                             src="{{ asset('client/assets/imgs/shop/product-13-1.jpg') }}"
                                                             alt="">
@@ -1903,7 +1903,7 @@
                                                 <div class="product-category">
                                                     <a href="shop-grid-right.html">Hodo Foods</a>
                                                 </div>
-                                                <h2><a href="{{ route('client.detail') }}">All Natural Italian-Style
+                                                <h2><a href="{{ route('store.detail') }}">All Natural Italian-Style
                                                         Chicken
                                                         Meatballs</a></h2>
                                                 <div class="product-rate-cover">
@@ -1934,7 +1934,7 @@
                                         <div class="product-cart-wrap mb-30">
                                             <div class="product-img-action-wrap">
                                                 <div class="product-img product-img-zoom">
-                                                    <a href="{{ route('client.detail') }}">
+                                                    <a href="{{ route('store.detail') }}">
                                                         <img class="default-img"
                                                             src="{{ asset('client/assets/imgs/shop/product-14-1.jpg') }}"
                                                             alt="">
@@ -1960,7 +1960,7 @@
                                                 <div class="product-category">
                                                     <a href="shop-grid-right.html">Snack</a>
                                                 </div>
-                                                <h2><a href="{{ route('client.detail') }}">Angie’s Boomchickapop Sweet &
+                                                <h2><a href="{{ route('store.detail') }}">Angie’s Boomchickapop Sweet &
                                                         Salty
                                                         Kettle Corn</a></h2>
                                                 <div class="product-rate-cover">
@@ -1991,7 +1991,7 @@
                                         <div class="product-cart-wrap mb-30">
                                             <div class="product-img-action-wrap">
                                                 <div class="product-img product-img-zoom">
-                                                    <a href="{{ route('client.detail') }}">
+                                                    <a href="{{ route('store.detail') }}">
                                                         <img class="default-img"
                                                             src="{{ asset('client/assets/imgs/shop/product-15-1.jpg') }}"
                                                             alt="">
@@ -2014,7 +2014,7 @@
                                                 <div class="product-category">
                                                     <a href="shop-grid-right.html">Vegetables</a>
                                                 </div>
-                                                <h2><a href="{{ route('client.detail') }}">Foster Farms Takeout Crispy
+                                                <h2><a href="{{ route('store.detail') }}">Foster Farms Takeout Crispy
                                                         Classic
                                                         Buffalo Wings</a></h2>
                                                 <div class="product-rate-cover">
@@ -2045,7 +2045,7 @@
                                         <div class="product-cart-wrap mb-30">
                                             <div class="product-img-action-wrap">
                                                 <div class="product-img product-img-zoom">
-                                                    <a href="{{ route('client.detail') }}">
+                                                    <a href="{{ route('store.detail') }}">
                                                         <img class="default-img"
                                                             src="{{ asset('client/assets/imgs/shop/product-16-1.jpg') }}"
                                                             alt="">
@@ -2071,7 +2071,7 @@
                                                 <div class="product-category">
                                                     <a href="shop-grid-right.html">Pet Foods</a>
                                                 </div>
-                                                <h2><a href="{{ route('client.detail') }}">Blue Diamond Almonds Lightly
+                                                <h2><a href="{{ route('store.detail') }}">Blue Diamond Almonds Lightly
                                                         Salted
                                                         Vegetables</a></h2>
                                                 <div class="product-rate-cover">
@@ -2102,7 +2102,7 @@
                                         <div class="product-cart-wrap">
                                             <div class="product-img-action-wrap">
                                                 <div class="product-img product-img-zoom">
-                                                    <a href="{{ route('client.detail') }}">
+                                                    <a href="{{ route('store.detail') }}">
                                                         <img class="default-img"
                                                             src="{{ asset('client/assets/imgs/shop/product-5-1.jpg') }}"
                                                             alt="">
@@ -2125,7 +2125,7 @@
                                                 <div class="product-category">
                                                     <a href="shop-grid-right.html">Hodo Foods</a>
                                                 </div>
-                                                <h2><a href="{{ route('client.detail') }}">Chobani Complete Vanilla
+                                                <h2><a href="{{ route('store.detail') }}">Chobani Complete Vanilla
                                                         Greek
                                                         Yogurt</a></h2>
                                                 <div class="product-rate-cover">
@@ -2156,7 +2156,7 @@
                                         <div class="product-cart-wrap">
                                             <div class="product-img-action-wrap">
                                                 <div class="product-img product-img-zoom">
-                                                    <a href="{{ route('client.detail') }}">
+                                                    <a href="{{ route('store.detail') }}">
                                                         <img class="default-img"
                                                             src="{{ asset('client/assets/imgs/shop/product-7-1.jpg') }}"
                                                             alt="">
@@ -2179,7 +2179,7 @@
                                                 <div class="product-category">
                                                     <a href="shop-grid-right.html">Meats</a>
                                                 </div>
-                                                <h2><a href="{{ route('client.detail') }}">Canada Dry Ginger Ale – 2 L
+                                                <h2><a href="{{ route('store.detail') }}">Canada Dry Ginger Ale – 2 L
                                                         Bottle -
                                                         200ml - 400g</a></h2>
                                                 <div class="product-rate-cover">
@@ -2210,7 +2210,7 @@
                                         <div class="product-cart-wrap">
                                             <div class="product-img-action-wrap">
                                                 <div class="product-img product-img-zoom">
-                                                    <a href="{{ route('client.detail') }}">
+                                                    <a href="{{ route('store.detail') }}">
                                                         <img class="default-img"
                                                             src="{{ asset('client/assets/imgs/shop/product-8-1.jpg') }}"
                                                             alt="">
@@ -2236,7 +2236,7 @@
                                                 <div class="product-category">
                                                     <a href="shop-grid-right.html">Snack</a>
                                                 </div>
-                                                <h2><a href="{{ route('client.detail') }}">Encore Seafoods Stuffed
+                                                <h2><a href="{{ route('store.detail') }}">Encore Seafoods Stuffed
                                                         Alaskan
                                                         Salmon</a></h2>
                                                 <div class="product-rate-cover">
@@ -2267,7 +2267,7 @@
                                         <div class="product-cart-wrap">
                                             <div class="product-img-action-wrap">
                                                 <div class="product-img product-img-zoom">
-                                                    <a href="{{ route('client.detail') }}">
+                                                    <a href="{{ route('store.detail') }}">
                                                         <img class="default-img"
                                                             src="{{ asset('client/assets/imgs/shop/product-9-1.jpg') }}"
                                                             alt="">
@@ -2293,7 +2293,7 @@
                                                 <div class="product-category">
                                                     <a href="shop-grid-right.html">Coffes</a>
                                                 </div>
-                                                <h2><a href="{{ route('client.detail') }}">Gorton’s Beer Battered Fish
+                                                <h2><a href="{{ route('store.detail') }}">Gorton’s Beer Battered Fish
                                                         Fillets
                                                         with soft paper</a></h2>
                                                 <div class="product-rate-cover">
@@ -2324,7 +2324,7 @@
                                         <div class="product-cart-wrap">
                                             <div class="product-img-action-wrap">
                                                 <div class="product-img product-img-zoom">
-                                                    <a href="{{ route('client.detail') }}">
+                                                    <a href="{{ route('store.detail') }}">
                                                         <img class="default-img"
                                                             src="{{ asset('client/assets/imgs/shop/product-10-1.jpg') }}"
                                                             alt="">
@@ -2347,7 +2347,7 @@
                                                 <div class="product-category">
                                                     <a href="shop-grid-right.html">Cream</a>
                                                 </div>
-                                                <h2><a href="{{ route('client.detail') }}">Haagen-Dazs Caramel Cone Ice
+                                                <h2><a href="{{ route('store.detail') }}">Haagen-Dazs Caramel Cone Ice
                                                         Cream
                                                         Ketchup</a></h2>
                                                 <div class="product-rate-cover">
@@ -2384,7 +2384,7 @@
                                         <div class="product-cart-wrap mb-30">
                                             <div class="product-img-action-wrap">
                                                 <div class="product-img product-img-zoom">
-                                                    <a href="{{ route('client.detail') }}">
+                                                    <a href="{{ route('store.detail') }}">
                                                         <img class="default-img"
                                                             src="{{ asset('client/assets/imgs/shop/product-4-1.jpg') }}"
                                                             alt="">
@@ -2410,7 +2410,7 @@
                                                 <div class="product-category">
                                                     <a href="shop-grid-right.html">Snack</a>
                                                 </div>
-                                                <h2><a href="{{ route('client.detail') }}">Seeds of Change Organic
+                                                <h2><a href="{{ route('store.detail') }}">Seeds of Change Organic
                                                         Quinoa,
                                                         Brown, & Red Rice</a></h2>
                                                 <div class="product-rate-cover">
@@ -2441,7 +2441,7 @@
                                         <div class="product-cart-wrap mb-30">
                                             <div class="product-img-action-wrap">
                                                 <div class="product-img product-img-zoom">
-                                                    <a href="{{ route('client.detail') }}">
+                                                    <a href="{{ route('store.detail') }}">
                                                         <img class="default-img"
                                                             src="{{ asset('client/assets/imgs/shop/product-6-1.jpg') }}"
                                                             alt="">
@@ -2467,7 +2467,7 @@
                                                 <div class="product-category">
                                                     <a href="shop-grid-right.html">Hodo Foods</a>
                                                 </div>
-                                                <h2><a href="{{ route('client.detail') }}">All Natural Italian-Style
+                                                <h2><a href="{{ route('store.detail') }}">All Natural Italian-Style
                                                         Chicken
                                                         Meatballs</a></h2>
                                                 <div class="product-rate-cover">
@@ -2498,7 +2498,7 @@
                                         <div class="product-cart-wrap mb-30">
                                             <div class="product-img-action-wrap">
                                                 <div class="product-img product-img-zoom">
-                                                    <a href="{{ route('client.detail') }}">
+                                                    <a href="{{ route('store.detail') }}">
                                                         <img class="default-img"
                                                             src="{{ asset('client/assets/imgs/shop/product-8-1.jpg') }}"
                                                             alt="">
@@ -2524,7 +2524,7 @@
                                                 <div class="product-category">
                                                     <a href="shop-grid-right.html">Snack</a>
                                                 </div>
-                                                <h2><a href="{{ route('client.detail') }}">Angie’s Boomchickapop Sweet &
+                                                <h2><a href="{{ route('store.detail') }}">Angie’s Boomchickapop Sweet &
                                                         Salty
                                                         Kettle Corn</a></h2>
                                                 <div class="product-rate-cover">
@@ -2555,7 +2555,7 @@
                                         <div class="product-cart-wrap mb-30">
                                             <div class="product-img-action-wrap">
                                                 <div class="product-img product-img-zoom">
-                                                    <a href="{{ route('client.detail') }}">
+                                                    <a href="{{ route('store.detail') }}">
                                                         <img class="default-img"
                                                             src="{{ asset('client/assets/imgs/shop/product-9-1.jpg') }}"
                                                             alt="">
@@ -2578,7 +2578,7 @@
                                                 <div class="product-category">
                                                     <a href="shop-grid-right.html">Vegetables</a>
                                                 </div>
-                                                <h2><a href="{{ route('client.detail') }}">Foster Farms Takeout Crispy
+                                                <h2><a href="{{ route('store.detail') }}">Foster Farms Takeout Crispy
                                                         Classic
                                                         Buffalo Wings</a></h2>
                                                 <div class="product-rate-cover">
@@ -2609,7 +2609,7 @@
                                         <div class="product-cart-wrap mb-30">
                                             <div class="product-img-action-wrap">
                                                 <div class="product-img product-img-zoom">
-                                                    <a href="{{ route('client.detail') }}">
+                                                    <a href="{{ route('store.detail') }}">
                                                         <img class="default-img"
                                                             src="{{ asset('client/assets/imgs/shop/product-5-1.jpg') }}"
                                                             alt="">
@@ -2635,7 +2635,7 @@
                                                 <div class="product-category">
                                                     <a href="shop-grid-right.html">Pet Foods</a>
                                                 </div>
-                                                <h2><a href="{{ route('client.detail') }}">Blue Diamond Almonds Lightly
+                                                <h2><a href="{{ route('store.detail') }}">Blue Diamond Almonds Lightly
                                                         Salted
                                                         Vegetables</a></h2>
                                                 <div class="product-rate-cover">
@@ -2666,7 +2666,7 @@
                                         <div class="product-cart-wrap">
                                             <div class="product-img-action-wrap">
                                                 <div class="product-img product-img-zoom">
-                                                    <a href="{{ route('client.detail') }}">
+                                                    <a href="{{ route('store.detail') }}">
                                                         <img class="default-img"
                                                             src="{{ asset('client/assets/imgs/shop/product-6-1.jpg') }}"
                                                             alt="">
@@ -2689,7 +2689,7 @@
                                                 <div class="product-category">
                                                     <a href="shop-grid-right.html">Hodo Foods</a>
                                                 </div>
-                                                <h2><a href="{{ route('client.detail') }}">Chobani Complete Vanilla
+                                                <h2><a href="{{ route('store.detail') }}">Chobani Complete Vanilla
                                                         Greek
                                                         Yogurt</a></h2>
                                                 <div class="product-rate-cover">
@@ -2720,7 +2720,7 @@
                                         <div class="product-cart-wrap">
                                             <div class="product-img-action-wrap">
                                                 <div class="product-img product-img-zoom">
-                                                    <a href="{{ route('client.detail') }}">
+                                                    <a href="{{ route('store.detail') }}">
                                                         <img class="default-img"
                                                             src="{{ asset('client/assets/imgs/shop/product-7-1.jpg') }}"
                                                             alt="">
@@ -2743,7 +2743,7 @@
                                                 <div class="product-category">
                                                     <a href="shop-grid-right.html">Meats</a>
                                                 </div>
-                                                <h2><a href="{{ route('client.detail') }}">Canada Dry Ginger Ale – 2 L
+                                                <h2><a href="{{ route('store.detail') }}">Canada Dry Ginger Ale – 2 L
                                                         Bottle -
                                                         200ml - 400g</a></h2>
                                                 <div class="product-rate-cover">
@@ -2774,7 +2774,7 @@
                                         <div class="product-cart-wrap">
                                             <div class="product-img-action-wrap">
                                                 <div class="product-img product-img-zoom">
-                                                    <a href="{{ route('client.detail') }}">
+                                                    <a href="{{ route('store.detail') }}">
                                                         <img class="default-img"
                                                             src="{{ asset('client/assets/imgs/shop/product-8-1.jpg') }}"
                                                             alt="">
@@ -2800,7 +2800,7 @@
                                                 <div class="product-category">
                                                     <a href="shop-grid-right.html">Snack</a>
                                                 </div>
-                                                <h2><a href="{{ route('client.detail') }}">Encore Seafoods Stuffed
+                                                <h2><a href="{{ route('store.detail') }}">Encore Seafoods Stuffed
                                                         Alaskan
                                                         Salmon</a></h2>
                                                 <div class="product-rate-cover">
@@ -2831,7 +2831,7 @@
                                         <div class="product-cart-wrap">
                                             <div class="product-img-action-wrap">
                                                 <div class="product-img product-img-zoom">
-                                                    <a href="{{ route('client.detail') }}">
+                                                    <a href="{{ route('store.detail') }}">
                                                         <img class="default-img"
                                                             src="{{ asset('client/assets/imgs/shop/product-9-1.jpg') }}"
                                                             alt="">
@@ -2857,7 +2857,7 @@
                                                 <div class="product-category">
                                                     <a href="shop-grid-right.html">Coffes</a>
                                                 </div>
-                                                <h2><a href="{{ route('client.detail') }}">Gorton’s Beer Battered Fish
+                                                <h2><a href="{{ route('store.detail') }}">Gorton’s Beer Battered Fish
                                                         Fillets
                                                         with soft paper</a></h2>
                                                 <div class="product-rate-cover">
@@ -2888,7 +2888,7 @@
                                         <div class="product-cart-wrap">
                                             <div class="product-img-action-wrap">
                                                 <div class="product-img product-img-zoom">
-                                                    <a href="{{ route('client.detail') }}">
+                                                    <a href="{{ route('store.detail') }}">
                                                         <img class="default-img"
                                                             src="{{ asset('client/assets/imgs/shop/product-10-1.jpg') }}"
                                                             alt="">
@@ -2911,7 +2911,7 @@
                                                 <div class="product-category">
                                                     <a href="shop-grid-right.html">Cream</a>
                                                 </div>
-                                                <h2><a href="{{ route('client.detail') }}">Haagen-Dazs Caramel Cone Ice
+                                                <h2><a href="{{ route('store.detail') }}">Haagen-Dazs Caramel Cone Ice
                                                         Cream
                                                         Ketchup</a></h2>
                                                 <div class="product-rate-cover">
@@ -2948,7 +2948,7 @@
                                         <div class="product-cart-wrap mb-30">
                                             <div class="product-img-action-wrap">
                                                 <div class="product-img product-img-zoom">
-                                                    <a href="{{ route('client.detail') }}">
+                                                    <a href="{{ route('store.detail') }}">
                                                         <img class="default-img"
                                                             src="{{ asset('client/assets/imgs/shop/product-5-1.jpg') }}"
                                                             alt="">
@@ -2974,7 +2974,7 @@
                                                 <div class="product-category">
                                                     <a href="shop-grid-right.html">Snack</a>
                                                 </div>
-                                                <h2><a href="{{ route('client.detail') }}">Seeds of Change Organic
+                                                <h2><a href="{{ route('store.detail') }}">Seeds of Change Organic
                                                         Quinoa,
                                                         Brown, & Red Rice</a></h2>
                                                 <div class="product-rate-cover">
@@ -3005,7 +3005,7 @@
                                         <div class="product-cart-wrap mb-30">
                                             <div class="product-img-action-wrap">
                                                 <div class="product-img product-img-zoom">
-                                                    <a href="{{ route('client.detail') }}">
+                                                    <a href="{{ route('store.detail') }}">
                                                         <img class="default-img"
                                                             src="{{ asset('client/assets/imgs/shop/product-3-1.jpg') }}"
                                                             alt="">
@@ -3031,7 +3031,7 @@
                                                 <div class="product-category">
                                                     <a href="shop-grid-right.html">Hodo Foods</a>
                                                 </div>
-                                                <h2><a href="{{ route('client.detail') }}">All Natural Italian-Style
+                                                <h2><a href="{{ route('store.detail') }}">All Natural Italian-Style
                                                         Chicken
                                                         Meatballs</a></h2>
                                                 <div class="product-rate-cover">
@@ -3062,7 +3062,7 @@
                                         <div class="product-cart-wrap mb-30">
                                             <div class="product-img-action-wrap">
                                                 <div class="product-img product-img-zoom">
-                                                    <a href="{{ route('client.detail') }}">
+                                                    <a href="{{ route('store.detail') }}">
                                                         <img class="default-img"
                                                             src="{{ asset('client/assets/imgs/shop/product-7-1.jpg') }}"
                                                             alt="">
@@ -3088,7 +3088,7 @@
                                                 <div class="product-category">
                                                     <a href="shop-grid-right.html">Snack</a>
                                                 </div>
-                                                <h2><a href="{{ route('client.detail') }}">Angie’s Boomchickapop Sweet &
+                                                <h2><a href="{{ route('store.detail') }}">Angie’s Boomchickapop Sweet &
                                                         Salty
                                                         Kettle Corn</a></h2>
                                                 <div class="product-rate-cover">
@@ -3119,7 +3119,7 @@
                                         <div class="product-cart-wrap mb-30">
                                             <div class="product-img-action-wrap">
                                                 <div class="product-img product-img-zoom">
-                                                    <a href="{{ route('client.detail') }}">
+                                                    <a href="{{ route('store.detail') }}">
                                                         <img class="default-img"
                                                             src="{{ asset('client/assets/imgs/shop/product-9-1.jpg') }}"
                                                             alt="">
@@ -3142,7 +3142,7 @@
                                                 <div class="product-category">
                                                     <a href="shop-grid-right.html">Vegetables</a>
                                                 </div>
-                                                <h2><a href="{{ route('client.detail') }}">Foster Farms Takeout Crispy
+                                                <h2><a href="{{ route('store.detail') }}">Foster Farms Takeout Crispy
                                                         Classic
                                                         Buffalo Wings</a></h2>
                                                 <div class="product-rate-cover">
@@ -3173,7 +3173,7 @@
                                         <div class="product-cart-wrap mb-30">
                                             <div class="product-img-action-wrap">
                                                 <div class="product-img product-img-zoom">
-                                                    <a href="{{ route('client.detail') }}">
+                                                    <a href="{{ route('store.detail') }}">
                                                         <img class="default-img"
                                                             src="{{ asset('client/assets/imgs/shop/product-10-1.jpg') }}"
                                                             alt="">
@@ -3199,7 +3199,7 @@
                                                 <div class="product-category">
                                                     <a href="shop-grid-right.html">Pet Foods</a>
                                                 </div>
-                                                <h2><a href="{{ route('client.detail') }}">Blue Diamond Almonds Lightly
+                                                <h2><a href="{{ route('store.detail') }}">Blue Diamond Almonds Lightly
                                                         Salted
                                                         Vegetables</a></h2>
                                                 <div class="product-rate-cover">
@@ -3230,7 +3230,7 @@
                                         <div class="product-cart-wrap">
                                             <div class="product-img-action-wrap">
                                                 <div class="product-img product-img-zoom">
-                                                    <a href="{{ route('client.detail') }}">
+                                                    <a href="{{ route('store.detail') }}">
                                                         <img class="default-img"
                                                             src="{{ asset('client/assets/imgs/shop/product-16-1.jpg') }}"
                                                             alt="">
@@ -3253,7 +3253,7 @@
                                                 <div class="product-category">
                                                     <a href="shop-grid-right.html">Hodo Foods</a>
                                                 </div>
-                                                <h2><a href="{{ route('client.detail') }}">Chobani Complete Vanilla
+                                                <h2><a href="{{ route('store.detail') }}">Chobani Complete Vanilla
                                                         Greek
                                                         Yogurt</a></h2>
                                                 <div class="product-rate-cover">
@@ -3284,7 +3284,7 @@
                                         <div class="product-cart-wrap">
                                             <div class="product-img-action-wrap">
                                                 <div class="product-img product-img-zoom">
-                                                    <a href="{{ route('client.detail') }}">
+                                                    <a href="{{ route('store.detail') }}">
                                                         <img class="default-img"
                                                             src="{{ asset('client/assets/imgs/shop/product-7-1.jpg') }}"
                                                             alt="">
@@ -3307,7 +3307,7 @@
                                                 <div class="product-category">
                                                     <a href="shop-grid-right.html">Meats</a>
                                                 </div>
-                                                <h2><a href="{{ route('client.detail') }}">Canada Dry Ginger Ale – 2 L
+                                                <h2><a href="{{ route('store.detail') }}">Canada Dry Ginger Ale – 2 L
                                                         Bottle -
                                                         200ml - 400g</a></h2>
                                                 <div class="product-rate-cover">
@@ -3338,7 +3338,7 @@
                                         <div class="product-cart-wrap">
                                             <div class="product-img-action-wrap">
                                                 <div class="product-img product-img-zoom">
-                                                    <a href="{{ route('client.detail') }}">
+                                                    <a href="{{ route('store.detail') }}">
                                                         <img class="default-img"
                                                             src="{{ asset('client/assets/imgs/shop/product-8-1.jpg') }}"
                                                             alt="">
@@ -3364,7 +3364,7 @@
                                                 <div class="product-category">
                                                     <a href="shop-grid-right.html">Snack</a>
                                                 </div>
-                                                <h2><a href="{{ route('client.detail') }}">Encore Seafoods Stuffed
+                                                <h2><a href="{{ route('store.detail') }}">Encore Seafoods Stuffed
                                                         Alaskan
                                                         Salmon</a></h2>
                                                 <div class="product-rate-cover">
@@ -3395,7 +3395,7 @@
                                         <div class="product-cart-wrap">
                                             <div class="product-img-action-wrap">
                                                 <div class="product-img product-img-zoom">
-                                                    <a href="{{ route('client.detail') }}">
+                                                    <a href="{{ route('store.detail') }}">
                                                         <img class="default-img"
                                                             src="{{ asset('client/assets/imgs/shop/product-9-1.jpg') }}"
                                                             alt="">
@@ -3421,7 +3421,7 @@
                                                 <div class="product-category">
                                                     <a href="shop-grid-right.html">Coffes</a>
                                                 </div>
-                                                <h2><a href="{{ route('client.detail') }}">Gorton’s Beer Battered Fish
+                                                <h2><a href="{{ route('store.detail') }}">Gorton’s Beer Battered Fish
                                                         Fillets
                                                         with soft paper</a></h2>
                                                 <div class="product-rate-cover">
@@ -3452,7 +3452,7 @@
                                         <div class="product-cart-wrap">
                                             <div class="product-img-action-wrap">
                                                 <div class="product-img product-img-zoom">
-                                                    <a href="{{ route('client.detail') }}">
+                                                    <a href="{{ route('store.detail') }}">
                                                         <img class="default-img"
                                                             src="{{ asset('client/assets/imgs/shop/product-10-1.jpg') }}"
                                                             alt="">
@@ -3475,7 +3475,7 @@
                                                 <div class="product-category">
                                                     <a href="shop-grid-right.html">Cream</a>
                                                 </div>
-                                                <h2><a href="{{ route('client.detail') }}">Haagen-Dazs Caramel Cone Ice
+                                                <h2><a href="{{ route('store.detail') }}">Haagen-Dazs Caramel Cone Ice
                                                         Cream
                                                         Ketchup</a></h2>
                                                 <div class="product-rate-cover">
@@ -3523,7 +3523,7 @@
                                 <div class="product-cart-wrap style-2">
                                     <div class="product-img-action-wrap">
                                         <div class="product-img">
-                                            <a href="{{ route('client.detail') }}">
+                                            <a href="{{ route('store.detail') }}">
                                                 <img src="{{ asset('client/assets/imgs/banner/banner-5.png') }}"
                                                     alt="">
                                             </a>
@@ -3534,7 +3534,7 @@
                                             <div class="deals-countdown" data-countdown="2025/03/25 00:00:00"></div>
                                         </div>
                                         <div class="deals-content">
-                                            <h2><a href="{{ route('client.detail') }}">Seeds of Change Organic Quinoa,
+                                            <h2><a href="{{ route('store.detail') }}">Seeds of Change Organic Quinoa,
                                                     Brown</a></h2>
                                             <div class="product-rate-cover">
                                                 <div class="product-rate d-inline-block">
@@ -3564,7 +3564,7 @@
                                 <div class="product-cart-wrap style-2">
                                     <div class="product-img-action-wrap">
                                         <div class="product-img">
-                                            <a href="{{ route('client.detail') }}">
+                                            <a href="{{ route('store.detail') }}">
                                                 <img src="{{ asset('client/assets/imgs/banner/banner-6.png') }}"
                                                     alt="">
                                             </a>
@@ -3575,7 +3575,7 @@
                                             <div class="deals-countdown" data-countdown="2026/04/25 00:00:00"></div>
                                         </div>
                                         <div class="deals-content">
-                                            <h2><a href="{{ route('client.detail') }}">Perdue Simply Smart Organics
+                                            <h2><a href="{{ route('store.detail') }}">Perdue Simply Smart Organics
                                                     Gluten</a>
                                             </h2>
                                             <div class="product-rate-cover">
@@ -3606,7 +3606,7 @@
                                 <div class="product-cart-wrap style-2">
                                     <div class="product-img-action-wrap">
                                         <div class="product-img">
-                                            <a href="{{ route('client.detail') }}">
+                                            <a href="{{ route('store.detail') }}">
                                                 <img src="{{ asset('client/assets/imgs/banner/banner-7.png') }}"
                                                     alt="">
                                             </a>
@@ -3617,7 +3617,7 @@
                                             <div class="deals-countdown" data-countdown="2027/03/25 00:00:00"></div>
                                         </div>
                                         <div class="deals-content">
-                                            <h2><a href="{{ route('client.detail') }}">Signature Wood-Fired Mushroom</a>
+                                            <h2><a href="{{ route('store.detail') }}">Signature Wood-Fired Mushroom</a>
                                             </h2>
                                             <div class="product-rate-cover">
                                                 <div class="product-rate d-inline-block">
@@ -3647,7 +3647,7 @@
                                 <div class="product-cart-wrap style-2">
                                     <div class="product-img-action-wrap">
                                         <div class="product-img">
-                                            <a href="{{ route('client.detail') }}">
+                                            <a href="{{ route('store.detail') }}">
                                                 <img src="{{ asset('client/assets/imgs/banner/banner-8.png') }}"
                                                     alt="">
                                             </a>
@@ -3658,7 +3658,7 @@
                                             <div class="deals-countdown" data-countdown="2025/02/25 00:00:00"></div>
                                         </div>
                                         <div class="deals-content">
-                                            <h2><a href="{{ route('client.detail') }}">Simply Lemonade with Raspberry
+                                            <h2><a href="{{ route('store.detail') }}">Simply Lemonade with Raspberry
                                                     Juice</a>
                                             </h2>
                                             <div class="product-rate-cover">
@@ -3970,13 +3970,13 @@
                         <div class="product-list-small wow fadeIn animated animated animated">
                             <article class="row align-items-center hover-up">
                                 <figure class="col-md-4 mb-0">
-                                    <a href="{{ route('client.detail') }}"><img
+                                    <a href="{{ route('store.detail') }}"><img
                                             src="{{ asset('client/assets/imgs/shop/thumbnail-1.jpg') }}"
                                             alt=""></a>
                                 </figure>
                                 <div class="col-md-8 mb-0">
                                     <h6>
-                                        <a href="{{ route('client.detail') }}">Nestle Original Coffee-Mate Coffee
+                                        <a href="{{ route('store.detail') }}">Nestle Original Coffee-Mate Coffee
                                             Creamer</a>
                                     </h6>
                                     <div class="product-rate-cover">
@@ -3994,13 +3994,13 @@
                             </article>
                             <article class="row align-items-center hover-up">
                                 <figure class="col-md-4 mb-0">
-                                    <a href="{{ route('client.detail') }}"><img
+                                    <a href="{{ route('store.detail') }}"><img
                                             src="{{ asset('client/assets/imgs/shop/thumbnail-2.jpg') }}"
                                             alt=""></a>
                                 </figure>
                                 <div class="col-md-8 mb-0">
                                     <h6>
-                                        <a href="{{ route('client.detail') }}">Nestle Original Coffee-Mate Coffee
+                                        <a href="{{ route('store.detail') }}">Nestle Original Coffee-Mate Coffee
                                             Creamer</a>
                                     </h6>
                                     <div class="product-rate-cover">
@@ -4018,13 +4018,13 @@
                             </article>
                             <article class="row align-items-center hover-up">
                                 <figure class="col-md-4 mb-0">
-                                    <a href="{{ route('client.detail') }}"><img
+                                    <a href="{{ route('store.detail') }}"><img
                                             src="{{ asset('client/assets/imgs/shop/thumbnail-3.jpg') }}"
                                             alt=""></a>
                                 </figure>
                                 <div class="col-md-8 mb-0">
                                     <h6>
-                                        <a href="{{ route('client.detail') }}">Nestle Original Coffee-Mate Coffee
+                                        <a href="{{ route('store.detail') }}">Nestle Original Coffee-Mate Coffee
                                             Creamer</a>
                                     </h6>
                                     <div class="product-rate-cover">
@@ -4048,14 +4048,14 @@
                         <div class="product-list-small wow fadeIn animated animated animated">
                             <article class="row align-items-center hover-up">
                                 <figure class="col-md-4 mb-0">
-                                    <a href="{{ route('client.detail') }}"><img
+                                    <a href="{{ route('store.detail') }}"><img
                                             src="{{ asset('client/assets/imgs/shop/thumbnail-4.jpg') }}"
                                             alt="">
                                     </a>
                                 </figure>
                                 <div class="col-md-8 mb-0">
                                     <h6>
-                                        <a href="{{ route('client.detail') }}">Organic Cage-Free Grade A Large Brown
+                                        <a href="{{ route('store.detail') }}">Organic Cage-Free Grade A Large Brown
                                             Eggs</a>
                                     </h6>
                                     <div class="product-rate-cover">
@@ -4073,13 +4073,13 @@
                             </article>
                             <article class="row align-items-center hover-up">
                                 <figure class="col-md-4 mb-0">
-                                    <a href="{{ route('client.detail') }}"><img
+                                    <a href="{{ route('store.detail') }}"><img
                                             src="{{ asset('client/assets/imgs/shop/thumbnail-5.jpg') }}"
                                             alt=""></a>
                                 </figure>
                                 <div class="col-md-8 mb-0">
                                     <h6>
-                                        <a href="{{ route('client.detail') }}">Seeds of Change Organic Quinoa, Brown, &
+                                        <a href="{{ route('store.detail') }}">Seeds of Change Organic Quinoa, Brown, &
                                             Red
                                             Rice</a>
                                     </h6>
@@ -4098,13 +4098,13 @@
                             </article>
                             <article class="row align-items-center hover-up">
                                 <figure class="col-md-4 mb-0">
-                                    <a href="{{ route('client.detail') }}"><img
+                                    <a href="{{ route('store.detail') }}"><img
                                             src="{{ asset('client/assets/imgs/shop/thumbnail-6.jpg') }}"
                                             alt=""></a>
                                 </figure>
                                 <div class="col-md-8 mb-0">
                                     <h6>
-                                        <a href="{{ route('client.detail') }}">Naturally Flavored Cinnamon Vanilla Light
+                                        <a href="{{ route('store.detail') }}">Naturally Flavored Cinnamon Vanilla Light
                                             Roast
                                             Coffee</a>
                                     </h6>
@@ -4128,13 +4128,13 @@
                         <div class="product-list-small wow fadeIn animated animated animated">
                             <article class="row align-items-center hover-up">
                                 <figure class="col-md-4 mb-0">
-                                    <a href="{{ route('client.detail') }}"><img
+                                    <a href="{{ route('store.detail') }}"><img
                                             src="{{ asset('client/assets/imgs/shop/thumbnail-7.jpg') }}"
                                             alt=""></a>
                                 </figure>
                                 <div class="col-md-8 mb-0">
                                     <h6>
-                                        <a href="{{ route('client.detail') }}">Pepperidge Farm Farmhouse Hearty White
+                                        <a href="{{ route('store.detail') }}">Pepperidge Farm Farmhouse Hearty White
                                             Bread</a>
                                     </h6>
                                     <div class="product-rate-cover">
@@ -4152,13 +4152,13 @@
                             </article>
                             <article class="row align-items-center hover-up">
                                 <figure class="col-md-4 mb-0">
-                                    <a href="{{ route('client.detail') }}"><img
+                                    <a href="{{ route('store.detail') }}"><img
                                             src="{{ asset('client/assets/imgs/shop/thumbnail-8.jpg') }}"
                                             alt=""></a>
                                 </figure>
                                 <div class="col-md-8 mb-0">
                                     <h6>
-                                        <a href="{{ route('client.detail') }}">Organic Frozen Triple Berry Blend</a>
+                                        <a href="{{ route('store.detail') }}">Organic Frozen Triple Berry Blend</a>
                                     </h6>
                                     <div class="product-rate-cover">
                                         <div class="product-rate d-inline-block">
@@ -4175,13 +4175,13 @@
                             </article>
                             <article class="row align-items-center hover-up">
                                 <figure class="col-md-4 mb-0">
-                                    <a href="{{ route('client.detail') }}"><img
+                                    <a href="{{ route('store.detail') }}"><img
                                             src="{{ asset('client/assets/imgs/shop/thumbnail-9.jpg') }}"
                                             alt=""></a>
                                 </figure>
                                 <div class="col-md-8 mb-0">
                                     <h6>
-                                        <a href="{{ route('client.detail') }}">Oroweat Country Buttermilk Bread</a>
+                                        <a href="{{ route('store.detail') }}">Oroweat Country Buttermilk Bread</a>
                                     </h6>
                                     <div class="product-rate-cover">
                                         <div class="product-rate d-inline-block">
@@ -4203,13 +4203,13 @@
                         <div class="product-list-small wow fadeIn animated animated animated">
                             <article class="row align-items-center hover-up">
                                 <figure class="col-md-4 mb-0">
-                                    <a href="{{ route('client.detail') }}"><img
+                                    <a href="{{ route('store.detail') }}"><img
                                             src="{{ asset('client/assets/imgs/shop/thumbnail-10.jpg') }}"
                                             alt=""></a>
                                 </figure>
                                 <div class="col-md-8 mb-0">
                                     <h6>
-                                        <a href="{{ route('client.detail') }}">Foster Farms Takeout Crispy Classic
+                                        <a href="{{ route('store.detail') }}">Foster Farms Takeout Crispy Classic
                                             Buffalo
                                             Wings</a>
                                     </h6>
@@ -4228,13 +4228,13 @@
                             </article>
                             <article class="row align-items-center hover-up">
                                 <figure class="col-md-4 mb-0">
-                                    <a href="{{ route('client.detail') }}"><img
+                                    <a href="{{ route('store.detail') }}"><img
                                             src="{{ asset('client/assets/imgs/shop/thumbnail-11.jpg') }}"
                                             alt=""></a>
                                 </figure>
                                 <div class="col-md-8 mb-0">
                                     <h6>
-                                        <a href="{{ route('client.detail') }}">Angie’s Boomchickapop Sweet & Salty
+                                        <a href="{{ route('store.detail') }}">Angie’s Boomchickapop Sweet & Salty
                                             Kettle
                                             Corn</a>
                                     </h6>
@@ -4253,13 +4253,13 @@
                             </article>
                             <article class="row align-items-center hover-up">
                                 <figure class="col-md-4 mb-0">
-                                    <a href="{{ route('client.detail') }}"><img
+                                    <a href="{{ route('store.detail') }}"><img
                                             src="{{ asset('client/assets/imgs/shop/thumbnail-12.jpg') }}"
                                             alt=""></a>
                                 </figure>
                                 <div class="col-md-8 mb-0">
                                     <h6>
-                                        <a href="{{ route('client.detail') }}">All Natural Italian-Style Chicken
+                                        <a href="{{ route('store.detail') }}">All Natural Italian-Style Chicken
                                             Meatballs</a>
                                     </h6>
                                     <div class="product-rate-cover">

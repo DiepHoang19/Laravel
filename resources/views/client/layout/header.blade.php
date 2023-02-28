@@ -7,8 +7,8 @@
                 <div class="col-xl-3 col-lg-4">
                     <div class="header-info">
                         <ul>
-                            <li><a href="{{ route('client.about') }}">About Us</a></li>
-                            <li><a href="page-account.html">My Account</a></li>
+                            <li><a href="{{ route('page.about') }}">About Us</a></li>
+                            <li><a href="{{ route('authen.manager') }}">My Account</a></li>
                             <li><a href="shop-wishlist.html">Wishlist</a></li>
                             <li><a href="shop-order.html">Order Tracking</a></li>
                         </ul>
@@ -64,7 +64,7 @@
         <div class="container">
             <div class="header-wrap">
                 <div class="logo logo-width-1">
-                    <a href="{{ route('client.index') }}"><img src="{{ asset('client/assets/imgs/theme/logo.svg') }}"
+                    <a href="{{ route('page.index') }}"><img src="{{ asset('client/assets/imgs/theme/logo.svg') }}"
                             alt="logo"></a>
                 </div>
                 <div class="header-right">
@@ -109,14 +109,14 @@
                                 </form>
                             </div>
                             <div class="header-action-icon-2">
-                                <a href="{{ route('client.account') }}">
+                                <a href="{{ route('authen.manager') }}">
                                     <img class="svgInject" alt="Nest"
                                         src="{{ asset('client/assets/imgs/theme/icons/icon-user.svg') }}">
                                 </a>
                                 <span class="lable ml-0">Account</span>
                             </div>
                             <div class="header-action-icon-2">
-                                <a href="{{ route('client.wishlist') }}">
+                                <a href="{{ route('store.wishlist') }}">
                                     <img class="svgInject" alt="Nest"
                                         src="{{ asset('client/assets/imgs/theme/icons/icon-heart.svg') }}">
                                     <span class="pro-count blue">6</span>
@@ -124,7 +124,7 @@
                                 <span class="lable">Wishlist</span>
                             </div>
                             <div class="header-action-icon-2">
-                                <a class="mini-cart-icon" href="{{ route('client.cart') }}">
+                                <a class="mini-cart-icon" href="{{ route('store.shoppingCart') }}">
                                     <img alt="Nest"
                                         src="{{ asset('client/assets/imgs/theme/icons/icon-cart.svg') }}">
                                     <span class="pro-count blue">2</span>
@@ -164,9 +164,9 @@
                                             <h4>Total <span>$4000.00</span></h4>
                                         </div>
                                         <div class="shopping-cart-button">
-                                            <a href="{{ route('client.shoppingcard') }}" class="outline">View
+                                            <a href="{{ route('store.shoppingCart') }}" class="outline">View
                                                 cart</a>
-                                            <a href="{{ route('client.checkout') }}">Checkout</a>
+                                            <a href="{{ route('store.checkout') }}">Checkout</a>
                                         </div>
                                     </div>
                                 </div>
@@ -181,7 +181,7 @@
         <div class="container">
             <div class="header-wrap header-space-between position-relative">
                 <div class="logo logo-width-1 d-block d-lg-none">
-                    <a href="{{ route('client.index') }}">
+                    <a href="{{ route('page.index') }}">
                         <img src="{{ asset('client/assets/imgs/theme/logo.svg') }}" alt="logo">
                     </a>
                 </div>
@@ -284,7 +284,7 @@
                                     </ul>
                                 </li>
                                 <li>
-                                    <a href="{{ route('client.about') }}">About</a>
+                                    <a href="{{ route('page.about') }}">About</a>
                                 </li>
                                 <li><a href="shop-grid-right.html">Shop <i class="fi-rs-angle-down"></i></a>
                                     <ul class="sub-menu">
@@ -368,7 +368,7 @@
                                         </li>
                                     </ul>
                                 </li>
-                                <li><a href="{{ route('client.blog') }}">Blog <i class="fi-rs-angle-down"></i></a>
+                                <li><a href="{{ route('page.blog') }}">Blog <i class="fi-rs-angle-down"></i></a>
                                     <ul class="sub-menu">
                                         <li><a href="blog-category-grid.html">Blog Category Grid</a></li>
                                         <li><a href="blog-category-list.html">Blog Category List</a></li>
@@ -385,11 +385,11 @@
                                 </li>
                                 <li><a href="#">Pages <i class="fi-rs-angle-down"></i></a>
                                     <ul class="sub-menu">
-                                        <li><a href="{{ route('client.about') }}">About Us</a></li>
-                                        <li><a href="{{ route('client.contact') }}">Contact</a></li>
-                                        <li><a href="{{ route('client.account') }}">My Account</a></li>
-                                        <li><a href="{{ route('client.login') }}">Login</a></li>
-                                        <li><a href="{{ route('client.register') }}">Register</a></li>
+                                        <li><a href="{{ route('page.about') }}">About Us</a></li>
+                                        <li><a href="{{ route('page.contact') }}">Contact</a></li>
+                                        <li><a href="{{ route('authen.manager') }}">My Account</a></li>
+                                        <li><a href="{{ route('authen.login') }}">Login</a></li>
+                                        <li><a href="{{ route('authen.register') }}">Register</a></li>
                                         <li><a href="page-purchase-guide.html">Purchase Guide</a></li>
                                         <li><a href="page-privacy-policy.html">Privacy Policy</a></li>
                                         <li><a href="page-terms.html">Terms of Service</a></li>
@@ -397,7 +397,7 @@
                                     </ul>
                                 </li>
                                 <li>
-                                    <a href="{{ route('client.contact') }}">Contact</a>
+                                    <a href="{{ route('page.contact') }}">Contact</a>
                                 </li>
                             </ul>
                         </nav>
@@ -417,7 +417,7 @@
                 <div class="header-action-right d-block d-lg-none">
                     <div class="header-action-2">
                         <div class="header-action-icon-2">
-                            <a href="{{ route('client.wishlist') }}">
+                            <a href="{{ route('store.wishlist') }}">
                                 <img alt="Nest"
                                     src="{{ asset('client/assets/imgs/theme/icons/icon-heart.svg') }}">
                                 <span class="pro-count white">4</span>
@@ -463,8 +463,8 @@
                                         <h4>Total <span>$383.00</span></h4>
                                     </div>
                                     <div class="shopping-cart-button">
-                                        <a href="{{ route('client.shoppingcard') }}">View cart</a>
-                                        <a href="{{ route('client.checkout') }}">Checkout</a>
+                                        <a href="{{ route('store.shoppingCart') }}">View cart</a>
+                                        <a href="{{ route('store.checkout') }}">Checkout</a>
                                     </div>
                                 </div>
                             </div>
@@ -479,7 +479,7 @@
     <div class="mobile-header-wrapper-inner">
         <div class="mobile-header-top">
             <div class="mobile-header-logo">
-                <a href="{{ route('client.index') }}"><img src="{{ asset('client/assets/imgs/theme/logo.svg') }}"
+                <a href="{{ route('page.index') }}"><img src="{{ asset('client/assets/imgs/theme/logo.svg') }}"
                         alt="logo"></a>
             </div>
             <div class="mobile-menu-close close-style-wrap close-style-position-inherit">
@@ -500,9 +500,9 @@
                 <!-- mobile menu start -->
                 <nav>
                     <ul class="mobile-menu font-heading">
-                        <li class="menu-item-has-children"><a href="{{ route('client.index') }}">Home</a>
+                        <li class="menu-item-has-children"><a href="{{ route('page.index') }}">Home</a>
                             <ul class="dropdown">
-                                <li><a href="{{ route('client.index') }}">Home 1</a></li>
+                                <li><a href="{{ route('page.index') }}">Home 1</a></li>
                                 <li><a href="index-2.html">Home 2</a></li>
                                 <li><a href="index-3.html">Home 3</a></li>
                                 <li><a href="index-4.html">Home 4</a></li>
@@ -574,11 +574,11 @@
                         </li>
                         <li><a href="#">Pages <i class="fi-rs-angle-down"></i></a>
                             <ul class="sub-menu">
-                                <li><a href="{{ route('client.about') }}">About Us</a></li>
-                                <li><a href="{{ route('client.contact') }}">Contact</a></li>
-                                <li><a href="{{ route('client.account') }}">My Account</a></li>
-                                <li><a href="{{ route('client.login') }}">Login</a></li>
-                                <li><a href="{{ route('client.register') }}">Register</a></li>
+                                <li><a href="{{ route('page.about') }}">About Us</a></li>
+                                <li><a href="{{ route('page.contact') }}">Contact</a></li>
+                                <li><a href="{{ route('authen.manager') }}">My Account</a></li>
+                                <li><a href="{{ route('authen.login') }}">Login</a></li>
+                                <li><a href="{{ route('authen.register') }}">Register</a></li>
                                 <li><a href="page-purchase-guide.html">Purchase Guide</a></li>
                                 <li><a href="page-privacy-policy.html">Privacy Policy</a></li>
                                 <li><a href="page-terms.html">Terms of Service</a></li>
@@ -599,10 +599,10 @@
             </div>
             <div class="mobile-header-info-wrap">
                 <div class="single-mobile-header-info">
-                    <a href="{{ route('client.contact') }}"><i class="fi-rs-marker"></i> Our location </a>
+                    <a href="{{ route('page.contact') }}"><i class="fi-rs-marker"></i> Our location </a>
                 </div>
                 <div class="single-mobile-header-info">
-                    <a href="{{ route('client.login') }}"><i class="fi-rs-user"></i>Log In / Sign Up </a>
+                    <a href="{{ route('authen.login') }}"><i class="fi-rs-user"></i>Log In / Sign Up </a>
                 </div>
                 <div class="single-mobile-header-info">
                     <a href="#"><i class="fi-rs-headphones"></i>(+01) - 2345 - 6789 </a>

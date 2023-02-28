@@ -4,7 +4,7 @@
         <div class="page-header breadcrumb-wrap">
             <div class="container">
                 <div class="breadcrumb">
-                    <a href="{{ route('client.index') }}" rel="nofollow"><i class="fi-rs-home mr-5"></i>Home</a>
+                    <a href="{{ route('page.index') }}" rel="nofollow"><i class="fi-rs-home mr-5"></i>Home</a>
                     <span></span> Pages
                     <span></span> My Account
                 </div>
@@ -21,7 +21,7 @@
                                         <div class="heading_s1">
                                             <h1 class="mb-5">Create an Account</h1>
                                             <p class="mb-30">Already have an account? <a
-                                                    href="{{ route('client.login') }}">Login</a>
+                                                    href="{{ route('authen.login') }}">Login</a>
                                             </p>
                                         </div>
                                         <form >
