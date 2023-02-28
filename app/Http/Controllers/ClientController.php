@@ -2,13 +2,22 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Product;
 use Illuminate\Http\Request;
 
 class ClientController extends Controller
 {
     public function index()
     {
-        return view('client.home.index',);
+        $products = Product::all();
+        return view('client.home.index', [
+            'products' => $products
+        ]);
+    }
+
+    public function detail()
+    {
+        return view('client.pages.product-detail');
     }
 
     public function shoppingcard()
@@ -54,9 +63,5 @@ class ClientController extends Controller
     public function wishlist()
     {
         return view('client.pages.shop-wishlist');
-    }
-    public function detail()
-    {
-        return view('client.pages.product-detail');
     }
 }

@@ -4,7 +4,7 @@
         <div class="page-header breadcrumb-wrap">
             <div class="container">
                 <div class="breadcrumb">
-                    <a href="index.html" rel="nofollow"><i class="fi-rs-home mr-5"></i>Home</a>
+                    <a href="{{ route('client.index') }}" rel="nofollow"><i class="fi-rs-home mr-5"></i>Home</a>
                     <span></span> Pages
                     <span></span> My Account
                 </div>
@@ -46,7 +46,7 @@
                                                 aria-selected="true"><i class="fi-rs-user mr-10"></i>Account details</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="page-login.html"><i
+                                            <a class="nav-link" href="{{ route('client.login') }}"><i
                                                     class="fi-rs-sign-out mr-10"></i>Logout</a>
                                         </li>
                                     </ul>
@@ -160,7 +160,8 @@
                                                     </div>
                                                     <div class="card-body">
                                                         <address>3522 Interstate<br> 75 Business Spur,<br> Sault Ste.
-                                                            <br>Marie, MI 49783</address>
+                                                            <br>Marie, MI 49783
+                                                        </address>
                                                         <p>New York</p>
                                                         <a href="#" class="btn-small">Edit</a>
                                                     </div>

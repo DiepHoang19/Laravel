@@ -4,7 +4,7 @@
         <div class="page-header breadcrumb-wrap">
             <div class="container">
                 <div class="breadcrumb">
-                    <a href="index.html" rel="nofollow"><i class="fi-rs-home mr-5"></i>Home</a>
+                    <a href="{{ route('client.index') }}" rel="nofollow"><i class="fi-rs-home mr-5"></i>Home</a>
                     <span></span> Pages
                     <span></span> Contact
                 </div>
@@ -53,9 +53,13 @@
             </div>
             <section class="container mb-50 d-none d-md-block">
                 <div class="border-radius-15 overflow-hidden">
-                    <div id='map-panes' class="leaflet-map"></div>
+                    <div id='map-panes' class="leaflet-map">
+
+
+                    </div>
                 </div>
             </section>
+
             <div class="container">
                 <div class="row">
                     <div class="col-xl-10 col-lg-12 m-auto">
@@ -105,8 +109,7 @@
                                         <h2 class="mb-10">Drop Us a Line</h2>
                                         <p class="text-muted mb-30 font-sm">Your email address will not be published.
                                             Required fields are marked *</p>
-                                        <form class="contact-form-style mt-30" id="contact-form" action="#"
-                                            method="post">
+                                        <form class="contact-form-style mt-30" id="contact-form" action="#">
                                             <div class="row">
                                                 <div class="col-lg-6 col-md-6">
                                                     <div class="input-style mb-20">
@@ -141,8 +144,8 @@
                                     </div>
                                 </div>
                                 <div class="col-lg-4 pl-50 d-lg-block d-none">
-                                    <img class="border-radius-15 mt-50" src="{{asset('client/assets/imgs/page/contact-2.png')}}"
-                                        alt="">
+                                    <img class="border-radius-15 mt-50"
+                                        src="{{ asset('client/assets/imgs/page/contact-2.png') }}" alt="">
                                 </div>
                             </div>
                         </section>

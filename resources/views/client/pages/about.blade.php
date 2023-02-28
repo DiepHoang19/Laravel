@@ -1,326 +1,245 @@
 @extends('client.layout.public')
 @section('content')
-    <main class="main">
-        <!-- Start of Page Header -->
-        <div class="page-header">
+    <main class="main pages">
+        <div class="page-header breadcrumb-wrap">
             <div class="container">
-                <h1 class="page-title mb-0">About Us</h1>
+                <div class="breadcrumb">
+                    <a href="index.html" rel="nofollow"><i class="fi-rs-home mr-5"></i>Home</a>
+                    <span></span> Pages
+                    <span></span> About us
+                </div>
             </div>
         </div>
-        <!-- End of Page Header -->
-
-        <!-- Start of Breadcrumb -->
-        <nav class="breadcrumb-nav mb-10 pb-8">
+        <div class="page-content pt-50">
             <div class="container">
-                <ul class="breadcrumb">
-                    <li><a href="demo1.html">Home</a></li>
-                    <li>About Us</li>
-                </ul>
+                <div class="row">
+                    <div class="col-xl-10 col-lg-12 m-auto">
+                        <section class="row align-items-center mb-50">
+                            <div class="col-lg-6">
+                                <img src="{{ asset('client/assets/imgs/page/about-1.png') }}" alt=""
+                                    class="border-radius-15 mb-md-3 mb-lg-0 mb-sm-4">
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="pl-25">
+                                    <h2 class="mb-30">Welcome to Nest</h2>
+                                    <p class="mb-25">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                                        eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                                        Duis aute irure dolor in reprehenderit in voluptate id est laborum.
+                                    </p>
+                                    <p class="mb-50">Ius ferri velit sanctus cu, sed at soleat accusata. Dictas prompta et
+                                        Ut placerat legendos interpre.Donec vitae sapien ut libero venenatis faucibus.
+                                        Nullam quis ante Etiam sit amet orci eget. Quis commodo odio aenean sed adipiscing.
+                                        Turpis massa tincidunt dui ut ornare lectus. Auctor elit sed vulputate mi sit amet.
+                                        Commodo consequat. Duis aute irure dolor in reprehenderit in voluptate id est
+                                        laborum.
+                                    </p>
+                                    <div class="carausel-3-columns-cover position-relative">
+                                        <div id="carausel-3-columns-arrows"></div>
+                                        <div class="carausel-3-columns" id="carausel-3-columns">
+                                            <img src="{{ asset('client/assets/imgs/page/about-2.png') }}" alt="">
+                                            <img src="{{ asset('client/assets/imgs/page/about-3.png') }}" alt="">
+                                            <img src="{{ asset('client/assets/imgs/page/about-4.png') }}" alt="">
+                                            <img src="{{ asset('client/assets/imgs/page/about-2.png') }}" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                        <section class="text-center mb-50">
+                            <h2 class="title style-3 mb-40">What We Provide?</h2>
+                            <div class="row">
+                                <div class="col-lg-4 col-md-6 mb-24">
+                                    <div class="featured-card">
+                                        <img src="{{ asset('client/assets/imgs/theme/icons/icon-1.svg') }}" alt="">
+                                        <h4>Best Prices & Offers</h4>
+                                        <p>There are many variations of passages of Lorem Ipsum available, but the majority
+                                            have suffered alteration in some form</p>
+                                        <a href="#">Read more</a>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4  col-md-6 mb-24">
+                                    <div class="featured-card">
+                                        <img src="{{ asset('client/assets/imgs/theme/icons/icon-2.svg') }}" alt="">
+                                        <h4>Wide Assortment</h4>
+                                        <p>There are many variations of passages of Lorem Ipsum available, but the majority
+                                            have suffered alteration in some form</p>
+                                        <a href="#">Read more</a>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-md-6 mb-24">
+                                    <div class="featured-card">
+                                        <img src="{{ asset('client/assets/imgs/theme/icons/icon-3.svg') }}" alt="">
+                                        <h4>Free Delivery</h4>
+                                        <p>There are many variations of passages of Lorem Ipsum available, but the majority
+                                            have suffered alteration in some form</p>
+                                        <a href="#">Read more</a>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-md-6 mb-24">
+                                    <div class="featured-card">
+                                        <img src="{{ asset('client/assets/imgs/theme/icons/icon-4.svg') }}" alt="">
+                                        <h4>Easy Returns</h4>
+                                        <p>There are many variations of passages of Lorem Ipsum available, but the majority
+                                            have suffered alteration in some form</p>
+                                        <a href="#">Read more</a>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-md-6 mb-24">
+                                    <div class="featured-card">
+                                        <img src="{{ asset('client/assets/imgs/theme/icons/icon-5.svg') }}" alt="">
+                                        <h4>100% Satisfaction</h4>
+                                        <p>There are many variations of passages of Lorem Ipsum available, but the majority
+                                            have suffered alteration in some form</p>
+                                        <a href="#">Read more</a>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-md-6 mb-24">
+                                    <div class="featured-card">
+                                        <img src="{{ asset('client/assets/imgs/theme/icons/icon-6.svg') }}" alt="">
+                                        <h4>Great Daily Deal</h4>
+                                        <p>There are many variations of passages of Lorem Ipsum available, but the majority
+                                            have suffered alteration in some form</p>
+                                        <a href="#">Read more</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                        <section class="row align-items-center mb-50">
+                            <div class="row mb-50 align-items-center">
+                                <div class="col-lg-7 pr-30">
+                                    <img src="{{ asset('client/assets/imgs/page/about-5.png') }}" alt=""
+                                        class=" mb-md-3 mb-lg-0  mb-sm-4">
+                                </div>
+                                <div class="col-lg-5">
+                                    <h4 class="mb-20 text-muted">Our performance</h4>
+                                    <h1 class="heading-1 mb-40">Your Partner for e-commerce grocery solution</h1>
+                                    <p class="mb-30">Ed ut perspiciatis unde omnis iste natus error sit voluptatem
+                                        accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo
+                                        inventore veritatis et quasi architecto </p>
+                                    <p>Pitatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam
+                                        voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-4 pr-30  mb-md-5 mb-lg-0 mb-sm-5">
+                                    <h3 class="mb-30">Who we are</h3>
+                                    <p>Volutpat diam ut venenatis tellus in metus. Nec dui nunc mattis enim ut tellus eros
+                                        donec ac odio orci ultrices in. ellus eros donec ac odio orci ultrices in.</p>
+                                </div>
+                                <div class="col-lg-4 pr-30 mb-md-5 mb-lg-0 mb-sm-5">
+                                    <h3 class="mb-30">Our history</h3>
+                                    <p>Volutpat diam ut venenatis tellus in metus. Nec dui nunc mattis enim ut tellus eros
+                                        donec ac odio orci ultrices in. ellus eros donec ac odio orci ultrices in.</p>
+                                </div>
+                                <div class="col-lg-4">
+                                    <h3 class="mb-30">Our mission</h3>
+                                    <p>Volutpat diam ut venenatis tellus in metus. Nec dui nunc mattis enim ut tellus eros
+                                        donec ac odio orci ultrices in. ellus eros donec ac odio orci ultrices in.</p>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
             </div>
-        </nav>
-        <!-- End of Breadcrumb -->
-
-        <!-- Start of Page Content -->
-        <div class="page-content">
-            <div class="container">
-                <section class="introduce mb-10 pb-10">
-                    <h2 class="title title-center">
-                        We’re Devoted Marketing<br>Consultants Helping Your Business Grow
-                    </h2>
-                    <p class=" mx-auto text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                        tempor
-                        labore et dolore magna aliqua. Venenatis tellu metus</p>
-                    <figure class="br-lg">
-                        <img src="{{ asset('client/assets/images/pages/about_us/1.jpg') }}" alt="Banner" width="1240"
-                            height="540" style="background-color: #D0C1AE;" />
-                    </figure>
-                </section>
-
-                <section class="customer-service mb-7">
-                    <div class="row align-items-center">
-                        <div class="col-md-6 pr-lg-8 mb-8">
-                            <h2 class="title text-left">We Provide Continuous &amp; Kind Service for Customers</h2>
-                            <div class="accordion accordion-simple accordion-plus">
-                                <div class="card border-no">
-                                    <div class="card-header">
-                                        <a href="#collapse3-1" class="collapse">Customer Service</a>
-                                    </div>
-                                    <div class="card-body expanded" id="collapse3-1">
-                                        <p class="mb-0">
-                                            Lorem ipsum dolor sit eiusamet, consectetur adipiscing elit,
-                                            sed do eius mod tempor incididunt ut labore
-                                            et dolore magna aliqua. Venenatis tell
-                                            us in metus vulputate eu scelerisque felis. Vel pretium vulp.
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="card">
-                                    <div class="card-header">
-                                        <a href="#collapse3-2" class="expand">Online Consultation</a>
-                                    </div>
-                                    <div class="card-body collapsed" id="collapse3-2">
-                                        <p class="mb-0">
-                                            Lorem ipsum dolor sit eiusamet, consectetur adipiscing elit,
-                                            sed do eius mod tempor incididunt ut labore
-                                            et dolore magna aliqua. Venenatis tell
-                                            us in metus vulputate eu scelerisque felis. Vel pretium vulp.
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="card">
-                                    <div class="card-header">
-                                        <a href="#collapse3-3" class="expand">Sales Management</a>
-                                    </div>
-                                    <div class="card-body collapsed" id="collapse3-3">
-                                        <p class="mb-0">
-                                            Lorem ipsum dolor sit eiusamet, consectetur adipiscing elit,
-                                            sed do eius mod tempor incididunt ut labore
-                                            et dolore magna aliqua. Venenatis tell
-                                            us in metus vulputate eu scelerisque felis. Vel pretium vulp.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 mb-8">
-                            <figure class="br-lg">
-                                <img src="{{ asset('client/assets/images/pages/about_us/2.jpg') }}" alt="Banner"
-                                    width="610" height="500" style="background-color: #CECECC;" />
-                            </figure>
-                        </div>
+            <section class="container mb-50 d-none d-md-block">
+                <div class="row about-count">
+                    <div class="col-lg-1-5 col-md-6 text-center mb-lg-0 mb-md-5">
+                        <h1 class="heading-1"><span class="count">12</span>+</h1>
+                        <h4>Glorious years</h4>
                     </div>
-                </section>
-
-                <section class="count-section mb-10 pb-5">
-                    <div class="swiper-container swiper-theme"
-                        data-swiper-options="{
-                    'slidesPerView': 1,
-                    'breakpoints': {
-                        '768': {
-                            'slidesPerView': 2
-                        },
-                        '992': {
-                            'slidesPerView': 3
-                        }
-                    }
-                }">
-                        <div class="swiper-wrapper row cols-lg-3 cols-md-2 cols-1">
-                            <div class="swiper-slide counter-wrap">
-                                <div class="counter text-center">
-                                    <span class="count-to" data-to="15">0</span>
-                                    <span>M+</span>
-                                    <h4 class="title title-center">Products For Sale</h4>
-                                    <p>Diam maecenas ultricies mi eget mauris<br>
-                                        Nibh tellus molestie nunc non</p>
-                                </div>
-                            </div>
-                            <div class="swiper-slide counter-wrap">
-                                <div class="counter text-center">
-                                    <span>$</span>
-                                    <span class="count-to" data-to="25">0</span>
-                                    <span>B+</span>
-                                    <h4 class="title title-center">Community Earnings</h4>
-                                    <p>Diam maecenas ultricies mi eget mauris<br>
-                                        Nibh tellus molestie nunc non</p>
-                                </div>
-                            </div>
-                            <div class="swiper-slide counter-wrap">
-                                <div class="counter text-center">
-                                    <span class="count-to" data-to="100">0</span>
-                                    <span>M+</span>
-                                    <h4 class="title title-center">Growing Buyers</h4>
-                                    <p>Diam maecenas ultricies mi eget mauris<br>
-                                        Nibh tellus molestie nunc non</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-pagination"></div>
+                    <div class="col-lg-1-5  col-md-6 text-center">
+                        <h1 class="heading-1"><span class="count">36</span>+</h1>
+                        <h4>Happy clients</h4>
                     </div>
-                </section>
-            </div>
-
-            <section class="boost-section pt-10 pb-10">
-                <div class="container mt-10 mb-9">
-                    <div class="row align-items-center mb-10">
-                        <div class="col-md-6 mb-8">
-                            <figure class="br-lg">
-                                <img src="{{ asset('client/assets/images/pages/about_us/3.jpg') }}" alt="Banner"
-                                    width="610" height="450" style="background-color: #9E9DA2;" />
-                            </figure>
-                        </div>
-                        <div class="col-md-6 pl-lg-8 mb-8">
-                            <h4 class="title text-left">We Boost Our Clients’ Bottom
-                                Line by Optimizing Their Growth Potential</h4>
-                            <p class="mb-6">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                incididunt ut labore et dolore magna aliqua. Venenatis tellus in.
-                                metus vulputate eu scelerisque felis. Vel pretium lectus qua .
-                                Arpis massa. Nunc id cursus metus ididunt ut labore metus vulputate episcing.</p>
-                            <a href="#" class="btn btn-dark btn-rounded">Visit Our Store</a>
-                        </div>
+                    <div class="col-lg-1-5 col-md-6 text-center">
+                        <h1 class="heading-1"><span class="count">58</span>+</h1>
+                        <h4>Projects complete</h4>
                     </div>
-
-                    <div class="awards-wrapper">
-                        <h4 class="title title-center font-weight-bold mb-10 pb-1 ls-25">Awards</h4>
-                        <div class="swiper-container swiper-theme"
-                            data-swiper-options="{
-                        'spaceBetween': 20,
-                        'slidesPerView': 1,
-                        'breakpoints': {
-                            '768': {
-                                'slidesPerView': 2
-                            },
-                            '992': {
-                                'slidesPerView': 3
-                            },
-                            '1200': {
-                                'slidesPerView': 4
-                            }
-                        }
-                    }">
-                            <div class="swiper-wrapper row cols-xl-4 cols-lg-3 cols-md-2 cols-1">
-                                <div class="swiper-slide image-box-wrapper">
-                                    <div class="image-box text-center">
-                                        <figure>
-                                            <img src="{{ asset('client/assets/images/pages/about_us/1.png') }}"
-                                                alt="Award Image" width="109" height="105" />
-                                        </figure>
-                                        <p>Winner Seo Master MAGT<br>
-                                            Smart Start Award 2018</p>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide image-box-wrapper">
-                                    <div class="image-box text-center">
-                                        <figure>
-                                            <img src="{{ asset('client/assets/images/pages/about_us/2.png') }}"
-                                                alt="Award Image" width="109" height="105" />
-                                        </figure>
-                                        <p>Top Social Media Agencies<br>
-                                            Next Partner 2019</p>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide image-box-wrapper mt-3">
-                                    <div class="image-box text-center">
-                                        <figure>
-                                            <img src="{{ asset('client/assets/images/pages/about_us/3.png') }}"
-                                                alt="Award Image" width="109" height="105" />
-                                        </figure>
-                                        <p>5 Fastest Growing Abstract<br>
-                                            Solution Providers 2020</p>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide image-box-wrapper">
-                                    <div class="image-box text-center">
-                                        <figure>
-                                            <img src="{{ asset('client/assets/images/pages/about_us/4.png') }}"
-                                                alt="Award Image" width="109" height="105" />
-                                        </figure>
-                                        <p>National Excellence Agencie<br>
-                                            Award Winner 2021</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-pagination"></div>
-                        </div>
+                    <div class="col-lg-1-5 col-md-6 text-center">
+                        <h1 class="heading-1"><span class="count">24</span>+</h1>
+                        <h4>Team advisor</h4>
+                    </div>
+                    <div class="col-lg-1-5 text-center d-none d-lg-block">
+                        <h1 class="heading-1"><span class="count">26</span>+</h1>
+                        <h4>Products Sale</h4>
                     </div>
                 </div>
             </section>
-
-            <section class="member-section mt-10 pt-9 mb-10 pb-4">
-                <div class="container">
-                    <h4 class="title title-center mb-3">Meet Our Leaders</h4>
-                    <p class="text-center mb-8">Nunc id cursus metus aliquam. Libero id faucibus nisl tincidunt eget.
-                        Aliquam<br>
-                        maecenas ultricies mi eget mauris. Volutpat ac</p>
-                    <div class="swiper-container swiper-theme"
-                        data-swiper-options="{
-                    'spaceBetween': 20,
-                    'slidesPerView': 1,
-                    'breakpoints': {
-                        '576': {
-                            'slidesPerView': 2
-                        },
-                        '768': {
-                            'slidesPerView': 3
-                        },
-                        '992': {
-                            'slidesPerView': 4
-                        }
-                    }
-                }">
-                        <div class="swiper-wrapper row cols-xl-4 cols-lg-3 cols-sm-2 cols-1">
-                            <div class="swiper-slide member-wrap">
-                                <figure class="br-lg">
-                                    <img src="{{ asset('client/assets/images/pages/about_us/4.jpg') }}" alt="Member"
-                                        width="295" height="332" />
-                                    <div class="overlay">
-                                        <div class="social-icons">
-                                            <a href="#" class="social-icon social-facebook w-icon-facebook"></a>
-                                            <a href="#" class="social-icon social-twitter w-icon-twitter"></a>
-                                            <a href="#" class="social-icon social-instagram w-icon-instagram"></a>
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-10 col-lg-12 m-auto">
+                        <section class="mb-50">
+                            <h2 class="title style-3 mb-40 text-center">Our Team</h2>
+                            <div class="row">
+                                <div class="col-lg-4 mb-lg-0 mb-md-5 mb-sm-5">
+                                    <h6 class="mb-5 text-brand">Our Team</h6>
+                                    <h1 class="mb-30">Meet Our Expert Team</h1>
+                                    <p class="mb-30">Proin ullamcorper pretium orci. Donec necscele risque leo. Nam massa
+                                        dolor imperdiet neccon sequata congue idsem. Maecenas malesuada faucibus finibus.
+                                    </p>
+                                    <p class="mb-30">Proin ullamcorper pretium orci. Donec necscele risque leo. Nam massa
+                                        dolor imperdiet neccon sequata congue idsem. Maecenas malesuada faucibus finibus.
+                                    </p>
+                                    <a href="#" class="btn">View All Members</a>
+                                </div>
+                                <div class="col-lg-8">
+                                    <div class="row">
+                                        <div class="col-lg-6 col-md-6">
+                                            <div class="team-card">
+                                                <img src="{{ asset('client/assets/imgs/page/about-6.png') }}"
+                                                    alt="">
+                                                <div class="content text-center">
+                                                    <h4 class="mb-5">H. Merinda</h4>
+                                                    <span>CEO & Co-Founder</span>
+                                                    <div class="social-network mt-20">
+                                                        <a href="#"><img
+                                                                src="{{ asset('client/assets/imgs/theme/icons/icon-facebook-brand.svg') }}"
+                                                                alt=""></a>
+                                                        <a href="#"><img
+                                                                src="{{ asset('client/assets/imgs/theme/icons/icon-twitter-brand.svg') }}"
+                                                                alt=""></a>
+                                                        <a href="#"><img
+                                                                src="{{ asset('client/assets/imgs/theme/icons/icon-instagram-brand.svg') }}"
+                                                                alt=""></a>
+                                                        <a href="#"><img
+                                                                src="{{ asset('client/assets/imgs/theme/icons/icon-youtube-brand.svg') }}"
+                                                                alt=""></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-md-6">
+                                            <div class="team-card">
+                                                <img src="{{ asset('client/assets/imgs/page/about-8.png') }}"
+                                                    alt="">
+                                                <div class="content text-center">
+                                                    <h4 class="mb-5">Dilan Specter</h4>
+                                                    <span>Head Engineer</span>
+                                                    <div class="social-network mt-20">
+                                                        <a href="#"><img
+                                                                src="{{ asset('client/assets/imgs/theme/icons/icon-facebook-brand.svg') }}"
+                                                                alt=""></a>
+                                                        <a href="#"><img
+                                                                src="{{ asset('client/assets/imgs/theme/icons/icon-twitter-brand.svg') }}"
+                                                                alt=""></a>
+                                                        <a href="#"><img
+                                                                src="{{ asset('client/assets/imgs/theme/icons/icon-instagram-brand.svg') }}"
+                                                                alt=""></a>
+                                                        <a href="#"><img
+                                                                src="{{ asset('client/assets/imgs/theme/icons/icon-youtube-brand.svg') }}"
+                                                                alt=""></a>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
-                                </figure>
-                                <div class="member-info text-center">
-                                    <h4 class="member-name">John Doe</h4>
-                                    <p class="text-uppercase">Founder &amp; CEO</p>
                                 </div>
                             </div>
-                            <div class="swiper-slide member-wrap">
-                                <figure class="br-lg">
-                                    <img src="{{ asset('client/assets/images/pages/about_us/5.jpg') }}" alt="Member"
-                                        width="295" height="332" />
-                                    <div class="overlay">
-                                        <div class="social-icons">
-                                            <a href="#" class="social-icon social-facebook w-icon-facebook"></a>
-                                            <a href="#" class="social-icon social-twitter w-icon-twitter"></a>
-                                            <a href="#" class="social-icon social-instagram w-icon-instagram"></a>
-                                        </div>
-                                    </div>
-                                </figure>
-                                <div class="member-info text-center">
-                                    <h4 class="member-name">Jessica Doe</h4>
-                                    <p class="text-uppercase">Marketing</p>
-                                </div>
-                            </div>
-                            <div class="swiper-slide member-wrap">
-                                <figure class="br-lg">
-                                    <img src="{{ asset('client/assets/images/pages/about_us/6.jpg') }}" alt="Member"
-                                        width="295" height="332" />
-                                    <div class="overlay">
-                                        <div class="social-icons">
-                                            <a href="#" class="social-icon social-facebook w-icon-facebook"></a>
-                                            <a href="#" class="social-icon social-twitter w-icon-twitter"></a>
-                                            <a href="#" class="social-icon social-instagram w-icon-instagram"></a>
-                                        </div>
-                                    </div>
-                                </figure>
-                                <div class="member-info text-center">
-                                    <h4 class="member-name">Rick Edward Doe</h4>
-                                    <p class="text-uppercase">Developer</p>
-                                </div>
-                            </div>
-                            <div class="swiper-slide member-wrap">
-                                <figure class="br-lg">
-                                    <img src="{{ asset('client/assets/images/pages/about_us/7.jpg') }}" alt="Member"
-                                        width="295" height="332" />
-                                    <div class="overlay">
-                                        <div class="social-icons">
-                                            <a href="#" class="social-icon social-facebook w-icon-facebook"></a>
-                                            <a href="#" class="social-icon social-twitter w-icon-twitter"></a>
-                                            <a href="#" class="social-icon social-instagram w-icon-instagram"></a>
-                                        </div>
-                                    </div>
-                                </figure>
-                                <div class="member-info text-center">
-                                    <h4 class="member-name">Melinda Wolosky</h4>
-                                    <p class="text-uppercase">Design</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-pagination"></div>
+                        </section>
                     </div>
                 </div>
-            </section>
+            </div>
         </div>
     </main>
 @endsection

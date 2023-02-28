@@ -116,7 +116,7 @@
                                 <span class="lable ml-0">Account</span>
                             </div>
                             <div class="header-action-icon-2">
-                                <a href="{{route('client.wishlist')}}">
+                                <a href="{{ route('client.wishlist') }}">
                                     <img class="svgInject" alt="Nest"
                                         src="{{ asset('client/assets/imgs/theme/icons/icon-heart.svg') }}">
                                     <span class="pro-count blue">6</span>
@@ -164,8 +164,9 @@
                                             <h4>Total <span>$4000.00</span></h4>
                                         </div>
                                         <div class="shopping-cart-button">
-                                            <a href="shop-cart.html" class="outline">View cart</a>
-                                            <a href="shop-checkout.html">Checkout</a>
+                                            <a href="{{ route('client.shoppingcard') }}" class="outline">View
+                                                cart</a>
+                                            <a href="{{ route('client.checkout') }}">Checkout</a>
                                         </div>
                                     </div>
                                 </div>
@@ -416,7 +417,7 @@
                 <div class="header-action-right d-block d-lg-none">
                     <div class="header-action-2">
                         <div class="header-action-icon-2">
-                            <a href="shop-wishlist.html">
+                            <a href="{{ route('client.wishlist') }}">
                                 <img alt="Nest"
                                     src="{{ asset('client/assets/imgs/theme/icons/icon-heart.svg') }}">
                                 <span class="pro-count white">4</span>
@@ -474,3 +475,153 @@
         </div>
     </div>
 </header>
+<div class="mobile-header-active mobile-header-wrapper-style">
+    <div class="mobile-header-wrapper-inner">
+        <div class="mobile-header-top">
+            <div class="mobile-header-logo">
+                <a href="{{ route('client.index') }}"><img src="{{ asset('client/assets/imgs/theme/logo.svg') }}"
+                        alt="logo"></a>
+            </div>
+            <div class="mobile-menu-close close-style-wrap close-style-position-inherit">
+                <button class="close-style search-close">
+                    <i class="icon-top"></i>
+                    <i class="icon-bottom"></i>
+                </button>
+            </div>
+        </div>
+        <div class="mobile-header-content-area">
+            <div class="mobile-search search-style-3 mobile-header-border">
+                <form action="#">
+                    <input type="text" placeholder="Search for items…">
+                    <button type="submit"><i class="fi-rs-search"></i></button>
+                </form>
+            </div>
+            <div class="mobile-menu-wrap mobile-header-border">
+                <!-- mobile menu start -->
+                <nav>
+                    <ul class="mobile-menu font-heading">
+                        <li class="menu-item-has-children"><a href="{{ route('client.index') }}">Home</a>
+                            <ul class="dropdown">
+                                <li><a href="{{ route('client.index') }}">Home 1</a></li>
+                                <li><a href="index-2.html">Home 2</a></li>
+                                <li><a href="index-3.html">Home 3</a></li>
+                                <li><a href="index-4.html">Home 4</a></li>
+                            </ul>
+                        </li>
+                        <li class="menu-item-has-children"><a href="shop-grid-right.html">shop</a>
+                            <ul class="dropdown">
+                                <li><a href="shop-grid-right.html">Shop Grid – Right Sidebar</a></li>
+                                <li><a href="shop-grid-left.html">Shop Grid – Left Sidebar</a></li>
+                                <li><a href="shop-list-right.html">Shop List – Right Sidebar</a></li>
+                                <li><a href="shop-list-left.html">Shop List – Left Sidebar</a></li>
+                                <li><a href="shop-fullwidth.html">Shop - Wide</a></li>
+                                <li class="menu-item-has-children"><a href="#">Single Product</a>
+                                    <ul class="dropdown">
+                                        <li><a href="shop-product-right.html">Product – Right Sidebar</a></li>
+                                        <li><a href="shop-product-left.html">Product – Left Sidebar</a></li>
+                                        <li><a href="shop-product-full.html">Product – No sidebar</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="shop-filter.html">Shop – Filter</a></li>
+                                <li><a href="shop-wishlist.html">Shop – Wishlist</a></li>
+                                <li><a href="shop-cart.html">Shop – Cart</a></li>
+                                <li><a href="shop-checkout.html">Shop – Checkout</a></li>
+                                <li><a href="shop-compare.html">Shop – Compare</a></li>
+                            </ul>
+                        </li>
+                        <li class="menu-item-has-children"><a href="#">Mega menu</a>
+                            <ul class="dropdown">
+                                <li class="menu-item-has-children"><a href="#">Women's Fashion</a>
+                                    <ul class="dropdown">
+                                        <li><a href="shop-product-right.html">Dresses</a></li>
+                                        <li><a href="shop-product-right.html">Blouses & Shirts</a></li>
+                                        <li><a href="shop-product-right.html">Hoodies & Sweatshirts</a></li>
+                                        <li><a href="shop-product-right.html">Women's Sets</a></li>
+                                    </ul>
+                                </li>
+                                <li class="menu-item-has-children"><a href="#">Men's Fashion</a>
+                                    <ul class="dropdown">
+                                        <li><a href="shop-product-right.html">Jackets</a></li>
+                                        <li><a href="shop-product-right.html">Casual Faux Leather</a></li>
+                                        <li><a href="shop-product-right.html">Genuine Leather</a></li>
+                                    </ul>
+                                </li>
+                                <li class="menu-item-has-children"><a href="#">Technology</a>
+                                    <ul class="dropdown">
+                                        <li><a href="shop-product-right.html">Gaming Laptops</a></li>
+                                        <li><a href="shop-product-right.html">Ultraslim Laptops</a></li>
+                                        <li><a href="shop-product-right.html">Tablets</a></li>
+                                        <li><a href="shop-product-right.html">Laptop Accessories</a></li>
+                                        <li><a href="shop-product-right.html">Tablet Accessories</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="menu-item-has-children"><a href="blog-category-fullwidth.html">Blog</a>
+                            <ul class="dropdown">
+                                <li><a href="blog-category-grid.html">Blog Category Grid</a></li>
+                                <li><a href="blog-category-list.html">Blog Category List</a></li>
+                                <li><a href="blog-category-big.html">Blog Category Big</a></li>
+                                <li><a href="blog-category-fullwidth.html">Blog Category Wide</a></li>
+                                <li class="menu-item-has-children"><a href="#">Single Product Layout</a>
+                                    <ul class="dropdown">
+                                        <li><a href="blog-post-left.html">Left Sidebar</a></li>
+                                        <li><a href="blog-post-right.html">Right Sidebar</a></li>
+                                        <li><a href="blog-post-fullwidth.html">No Sidebar</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li><a href="#">Pages <i class="fi-rs-angle-down"></i></a>
+                            <ul class="sub-menu">
+                                <li><a href="{{ route('client.about') }}">About Us</a></li>
+                                <li><a href="{{ route('client.contact') }}">Contact</a></li>
+                                <li><a href="{{ route('client.account') }}">My Account</a></li>
+                                <li><a href="{{ route('client.login') }}">Login</a></li>
+                                <li><a href="{{ route('client.register') }}">Register</a></li>
+                                <li><a href="page-purchase-guide.html">Purchase Guide</a></li>
+                                <li><a href="page-privacy-policy.html">Privacy Policy</a></li>
+                                <li><a href="page-terms.html">Terms of Service</a></li>
+                                <li><a href="page-404.html">404 Page</a></li>
+                            </ul>
+                        </li>
+                        <li class="menu-item-has-children"><a href="#">Language</a>
+                            <ul class="dropdown">
+                                <li><a href="#">English</a></li>
+                                <li><a href="#">French</a></li>
+                                <li><a href="#">German</a></li>
+                                <li><a href="#">Spanish</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+                <!-- mobile menu end -->
+            </div>
+            <div class="mobile-header-info-wrap">
+                <div class="single-mobile-header-info">
+                    <a href="{{ route('client.contact') }}"><i class="fi-rs-marker"></i> Our location </a>
+                </div>
+                <div class="single-mobile-header-info">
+                    <a href="{{ route('client.login') }}"><i class="fi-rs-user"></i>Log In / Sign Up </a>
+                </div>
+                <div class="single-mobile-header-info">
+                    <a href="#"><i class="fi-rs-headphones"></i>(+01) - 2345 - 6789 </a>
+                </div>
+            </div>
+            <div class="mobile-social-icon mb-50">
+                <h6 class="mb-15">Follow Us</h6>
+                <a href="#"><img src="{{ asset('client/assets/imgs/theme/icons/icon-facebook-white.svg') }}"
+                        alt=""></a>
+                <a href="#"><img src="{{ asset('client/assets/imgs/theme/icons/icon-twitter-white.svg') }}"
+                        alt=""></a>
+                <a href="#"><img src="{{ asset('client/assets/imgs/theme/icons/icon-instagram-white.svg') }}"
+                        alt=""></a>
+                <a href="#"><img src="{{ asset('client/assets/imgs/theme/icons/icon-pinterest-white.svg') }}"
+                        alt=""></a>
+                <a href="#"><img src="{{ asset('client/assets/imgs/theme/icons/icon-youtube-white.svg') }}"
+                        alt=""></a>
+            </div>
+            <div class="site-copyright"> Copyright 2021 © Nest. All rights reserved. Powered by AliThemes.</div>
+        </div>
+    </div>
+</div>
