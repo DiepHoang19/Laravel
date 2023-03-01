@@ -56,7 +56,7 @@
                                                                 <div class="form-control-wrap">
                                                                     <select class="js-select" data-search="true"
                                                                         data-sort="false" name="category_id">
-                                                                        <option value="">Select an category</option>
+                                                                        <option value={{ $product->category_id }}>Select an category</option>
                                                                         @foreach ($categories as $category)
                                                                             <option value="{{ $category->id }}"
                                                                                 @selected($product->category_id == $category->id)>

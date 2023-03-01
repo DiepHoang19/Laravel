@@ -83,4 +83,7 @@ Route::prefix('/')->controller(CartController::class)->name('store.')->group(fun
     Route::get('/checkout', 'checkout')->name('checkout');
     Route::get('/shop-wishlist', 'wishlist')->name('wishlist');
     Route::get('/product-detail', 'detail')->name('detail');
+    Route::post('/add-to-cart', 'addToCart')->name('addToCart');
+    Route::get('/remove-cart-item/{id}', 'removeCartItem')->name('removeCartItem');
+    Route::post('/update-cart', 'updateCart')->name('updateCart');
 });

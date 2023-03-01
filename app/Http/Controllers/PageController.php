@@ -15,10 +15,6 @@ class PageController extends Controller
         ]);
     }
 
-  
-
-   
-
     public function blog()
     {
         return view('client.pages.blog');
@@ -33,6 +29,4 @@ class PageController extends Controller
     {
         return view('client.pages.contact-us');
     }
-
-  
 }

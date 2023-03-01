@@ -74,7 +74,7 @@
                             <td class="tb-col tb-col-md"><span>{{ $product->category?->name }}</span></td>
                             <td class="tb-col tb-col-md"><span>{{ $product->sku }}</span></td>
                             <td class="tb-col"><span>{{ $product->quantity }}</span></td>
-                            <td class="tb-col tb-col-md"><span>{{ $product->price }}</span></td>
+                            <td class="tb-col tb-col-md"><span>  {{ number_format($product->price) }} </span></td>
                             <td class="tb-col tb-col-md">
                                 <ul class="rating">
                                     <li class="rating-label checked"><em class="icon ni ni-star-fill"></em></li>

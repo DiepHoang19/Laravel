@@ -6,6 +6,7 @@
     <title>Nest - Multipurpose eCommerce HTML Template</title>
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="description" content="">
+    <meta name="_token" content="{{csrf_token()}}" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta property="og:title" content="">
     <meta property="og:type" content="">
@@ -155,7 +156,7 @@
     <!-- Template  JS -->
     <script src="{{ asset('client/assets/js/main.js') }}"></script>
     <script src="{{ asset('client/assets/js/shop.js') }}"></script>
-
+    @stack('scripts')
 </body>
 
 

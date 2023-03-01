@@ -24,7 +24,7 @@
                                                     href="{{ route('authen.login') }}">Login</a>
                                             </p>
                                         </div>
-                                        <form >
+                                        <form>
                                             <div class="form-group">
                                                 <input type="text" name="username" placeholder="Username">
                                             </div>

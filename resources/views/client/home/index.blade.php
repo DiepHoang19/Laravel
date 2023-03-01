@@ -81,7 +81,7 @@
                                 aria-labelledby="tab-one">
                                 <div class="row product-grid-4">
                                     @foreach ($products as $product)
-                                        <div class="col-lg-1-5 col-md-4 col-12 col-sm-6">
+                                        <div class="col-lg-1-5 col-md-4 col-12 col-sm-6" style="user-select: none">
                                             <div class="product-cart-wrap mb-30" style="height: 90%">
                                                 <div class="product-img-action-wrap">
                                                     <div class="product-img product-img-zoom">
@@ -108,9 +108,9 @@
                                                     </div>
                                                 </div>
                                                 <div class="product-content-wrap">
-                                                    {{-- <div class="product-category">
-                                                        <a href="shop-grid-right.html">Snack</a>
-                                                    </div> --}}
+                                                    <div class="product-category">
+                                                        <a href="shop-grid-right.html">{{ $product->category->name }}</a>
+                                                    </div>
                                                     <h2>
                                                         <a href="{{ route('store.detail') }}">
                                                             {{ $product->name }}
@@ -123,18 +123,26 @@
                                                         </div>
                                                         <span class="font-small ml-5 text-muted"> (4.0)</span>
                                                     </div>
-                                                    {{-- <div>
-                                                        <span class="font-small text-muted">500g</span>
-                                                    </div> --}}
+                                                    <div>
+                                                        <span class="font-small text-muted">SKU:{{ $product->sku }}</span>
+                                                    </div>
                                                     <div class="product-card-bottom">
                                                         <div class="product-price">
-                                                            <span>{{ $product->price }}</span>
+                                                            <span>
+                                                                {{ number_format($product->price) }}
+                                                            </span>
                                                             {{-- <span class="old-price">$32.8</span> --}}
                                                         </div>
-                                                        <div class="add-cart">
-                                                            <a class="add" href="{{ route('store.shoppingCart') }}"><i
-                                                                    class="fi-rs-shopping-cart mr-5"></i>Add </a>
-                                                        </div>
+                                                        <form method="POST" action="{{ route('store.addToCart') }}" class="add-cart">
+                                                            @csrf
+                                                            <input type="hidden" name="product_id" value="{{ $product->id }}" />
+                                                            <input type="hidden" name="quantity" value="1" />
+                                                            <button type="submit" class="add">
+                                                                <i class="fi-rs-shopping-cart mr-5">
+                                                                </i>
+                                                                Add
+                                                            </button>
+                                                        </form>
                                                     </div>
                                                 </div>
                                             </div>

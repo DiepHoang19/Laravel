@@ -210,6 +210,7 @@ return [
 
     'aliases' => Facade::defaultAliases()->merge([
         // 'ExampleClass' => App\Example\ExampleClass::class,
+        'ShoppingCart' => App\Utils\ShoppingCart::class,
     ])->toArray(),
 
 ];
