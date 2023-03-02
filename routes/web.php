@@ -86,6 +86,7 @@ Route::prefix('/')->controller(PageController::class)->name('page.')->group(func
     Route::get('/contact-us', 'contact')->name('contact');
 
     Route::get('/page-success', 'pageSuccess')->name('pageSuccess');
+
 });
 
 Route::prefix('/')->controller(AccountController::class)->name('authen.')->group(function () {

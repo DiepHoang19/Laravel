@@ -11,11 +11,6 @@
                 <p class="text-center">Your order # is: 100000023</p>
                 <p class="text-center">You will receive an order confirmation email with details of your order and a
                     link to track your process.</p>
-                <div>
-                    <div class="btn-group" style="margin-top:50px;">
-                        <a href="#" class="btn btn-lg btn-warning">CONTINUE</a>
-                    </div>
-                </div>
             </div>
         </div>
     </div>

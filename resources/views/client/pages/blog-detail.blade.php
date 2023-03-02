@@ -6,7 +6,7 @@
                 <div class="breadcrumb">
                     <a href="index.html" rel="nofollow"><i class="fi-rs-home mr-5"></i>Home</a>
                     <span></span> <a href="#">Recipes</a>
-                    <span></span> {{$post->title}}
+                    <span></span> {{ $post->title }}
                 </div>
             </div>
         </div>
@@ -21,7 +21,7 @@
                                         <div class="row">
                                             <div class="col-xl-10 col-lg-12 m-auto">
                                                 <h6 class="mb-10"><a href="#">Recipes</a></h6>
-                                                <h2 class="mb-10">{{$post->title}}
+                                                <h2 class="mb-10">{{ $post->title }}
                                                 </h2>
                                                 <div class="single-header-meta">
                                                     <div class="entry-meta meta-1 font-xs mt-15 mb-15">
@@ -54,10 +54,7 @@
                                     <div class="single-content">
                                         <div class="row">
                                             <div class="col-xl-10 col-lg-12 m-auto">
-                                                <p class="single-excerpt">Helping everyone live happier, healthier lives at
-                                                    home through their kitchen. Kitchn is a daily food magazine on the Web
-                                                    celebrating life in the kitchen through home cooking and kitchen
-                                                    intelligence.</p>
+                                                <p class="single-excerpt">{{ $post->content }}</p>
                                                 <p>We've reviewed and ranked all of the best smartwatches on the market
                                                     right now, and we've made a definitive list of the top 10 devices you
                                                     can buy today. One of the 10 picks below may just be your perfect next

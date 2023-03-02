@@ -26,7 +26,6 @@ class PageController extends Controller
     }
 
 
-
     public function blogDetail($id)
     {
         $post = Posts::findOrFail($id);

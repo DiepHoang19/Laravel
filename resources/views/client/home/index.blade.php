@@ -79,8 +79,7 @@
                         </div>
                         <!--End nav-tabs-->
                         <div class="tab-content wow fadeIn animated" id="myTabContent">
-                            <div class="tab-pane fade show active" id="tab-one" role="tabpanel"
-                                aria-labelledby="tab-one">
+                            <div class="tab-pane fade show active" id="tab-one" role="tabpanel" aria-labelledby="tab-one">
                                 <div class="row product-grid-4">
                                     @foreach ($products as $product)
                                         <div class="col-lg-1-5 col-md-4 col-12 col-sm-6" style="user-select: none">
@@ -88,20 +87,22 @@
                                                 <div class="product-img-action-wrap">
                                                     <div class="product-img product-img-zoom">
                                                         <a href="{{ route('store.detail', ['id' => $product->id]) }}">
-                                                            <img class="default-img"
-                                                                src="{{ asset($product->nameImage) }}" alt=""
-                                                                height="180px">
+                                                            <img class="default-img" src="{{ asset($product->nameImage) }}"
+                                                                alt="" height="180px">
                                                             <img class="hover-img" src="{{ asset($product->nameImage) }}"
                                                                 height="180px" alt="">
                                                         </a>
                                                     </div>
                                                     <div class="product-action-1">
                                                         <a aria-label="Add To Wishlist" class="action-btn"
-                                                            href="{{ route('store.wishlist') }}"><i
-                                                                class="fi-rs-heart"></i></a>
-                                                        <a aria-label="Quick view" class="action-btn"
-                                                            data-bs-toggle="modal" data-bs-target="#quickViewModal"><i
-                                                                class="fi-rs-eye"></i></a>
+                                                            href="{{ route('store.wishlist') }}">
+                                                            <i class="fi-rs-heart"></i>
+                                                        </a>
+                                                        <a aria-label="Quick view" class="action-btn" data-bs-toggle="modal"
+                                                            data-bs-target="#quickViewModal">
+                                                            <i class="fi-rs-eye">
+                                                            </i>
+                                                        </a>
                                                     </div>
                                                     <div class="product-badges product-badges-position product-badges-mrg">
                                                         <span class="hot">Hot</span>
@@ -376,15 +377,12 @@
                     <div class="sidebar-widget widget-category-2 mb-30">
                         <h5 class="section-title style-1 mb-30 wow fadeIn animated">Category</h5>
                         <ul>
-                            <li><a href="#"> <img
-                                        src="{{ asset('client/assets/imgs/theme/icons/category-1.svg') }}"
+                            <li><a href="#"> <img src="{{ asset('client/assets/imgs/theme/icons/category-1.svg') }}"
                                         alt="">Milks &
                                     Dairies</a><span class="count">30</span></li>
-                            <li><a href="#"> <img
-                                        src="{{ asset('client/assets/imgs/theme/icons/category-2.svg') }}"
+                            <li><a href="#"> <img src="{{ asset('client/assets/imgs/theme/icons/category-2.svg') }}"
                                         alt="">Clothing</a><span class="count">35</span></li>
-                            <li><a href="#"> <img
-                                        src="{{ asset('client/assets/imgs/theme/icons/category-3.svg') }}"
+                            <li><a href="#"> <img src="{{ asset('client/assets/imgs/theme/icons/category-3.svg') }}"
                                         alt="">Pet
                                     Foods </a><span class="count">42</span></li>
                             <li><a href="#"> <img
@@ -684,8 +682,8 @@
                         <div class="product-list-small wow fadeIn animated animated animated">
                             <article class="row align-items-center hover-up">
                                 <figure class="col-md-4 mb-0">
-                                    <a href="#"><img src="{{ asset('client/assets/imgs/shop/thumbnail-4.jpg') }}"
-                                            alt="">
+                                    <a href="#">
+                                        <img src="{{ asset('client/assets/imgs/shop/thumbnail-4.jpg') }}" alt="">
                                     </a>
                                 </figure>
                                 <div class="col-md-8 mb-0">
@@ -708,8 +706,9 @@
                             </article>
                             <article class="row align-items-center hover-up">
                                 <figure class="col-md-4 mb-0">
-                                    <a href="#"><img src="{{ asset('client/assets/imgs/shop/thumbnail-5.jpg') }}"
-                                            alt=""></a>
+                                    <a href="#">
+                                        <img src="{{ asset('client/assets/imgs/shop/thumbnail-5.jpg') }}" alt="">
+                                    </a>
                                 </figure>
                                 <div class="col-md-8 mb-0">
                                     <h6>
