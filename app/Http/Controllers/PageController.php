@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Blogs;
+use App\Models\Posts;
 use App\Models\Product;
 use Illuminate\Http\Request;
 
@@ -17,7 +19,20 @@ class PageController extends Controller
 
     public function blog()
     {
-        return view('client.pages.blog');
+        $blogs = Posts::all();
+        return view('client.pages.blog', [
+            'blogs' => $blogs
+        ]);
+    }
+
+
+
+    public function blogDetail($id)
+    {
+        $post = Posts::findOrFail($id);
+        return view('client.pages.blog-detail', [
+            'post' => $post
+        ]);
     }
 
     public function about()
@@ -28,5 +43,10 @@ class PageController extends Controller
     public function contact()
     {
         return view('client.pages.contact-us');
+    }
+
+    public function pageSuccess()
+    {
+        return view('client.pages.page-success');
     }
 }

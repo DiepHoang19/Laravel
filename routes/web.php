@@ -7,6 +7,7 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\PageController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProductController;
 
 /*
@@ -55,6 +56,15 @@ Route::prefix('admin')->middleware(['auth', 'verified.custom'])->group(function 
         Route::get('/logout', 'logout')->name('logout');
         Route::get('/profile', 'profile')->name('profile');
     });
+
+    Route::prefix('/posts')->controller(PostController::class)->name('post.')->group(function () {
+        Route::get('/', 'index')->name('index');
+        Route::get('/create', 'create')->name('create');
+        Route::post('/create', 'store')->name('store');
+        Route::get('/edit/{id}', 'edit')->name('edit');
+        Route::get('/trash/{id}', 'trash')->name('trash');
+        Route::post('/update/{id}', 'update')->name('update');
+    });
 });
 
 Route::controller(AuthController::class)->group(function () {
@@ -67,9 +77,15 @@ Route::controller(AuthController::class)->group(function () {
 
 Route::prefix('/')->controller(PageController::class)->name('page.')->group(function () {
     Route::get('/', 'index')->name('index');
+
     Route::get('/blog', 'blog')->name('blog');
+    Route::get('/blog-detail/{id}', 'blogDetail')->name('blogDetail');
+
+
     Route::get('/about-us', 'about')->name('about');
     Route::get('/contact-us', 'contact')->name('contact');
+
+    Route::get('/page-success', 'pageSuccess')->name('pageSuccess');
 });
 
 Route::prefix('/')->controller(AccountController::class)->name('authen.')->group(function () {
@@ -78,12 +94,20 @@ Route::prefix('/')->controller(AccountController::class)->name('authen.')->group
     Route::get('/auth-manager', 'manager')->name('manager');
 });
 
+
+
+
+
 Route::prefix('/')->controller(CartController::class)->name('store.')->group(function () {
     Route::get('/shopping-cart', 'shoppingCart')->name('shoppingCart');
+
     Route::get('/checkout', 'checkout')->name('checkout');
+    Route::post('/checkout', 'postCheckout')->name('postCheckout');
+
     Route::get('/shop-wishlist', 'wishlist')->name('wishlist');
-    Route::get('/product-detail', 'detail')->name('detail');
     Route::post('/add-to-cart', 'addToCart')->name('addToCart');
     Route::get('/remove-cart-item/{id}', 'removeCartItem')->name('removeCartItem');
     Route::post('/update-cart', 'updateCart')->name('updateCart');
+
+    Route::get('/product-detail/{id}', 'detail')->name('detail');
 });

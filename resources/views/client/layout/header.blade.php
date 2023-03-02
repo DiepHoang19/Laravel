@@ -127,7 +127,7 @@
                                 <a class="mini-cart-icon" href="{{ route('store.shoppingCart') }}">
                                     <img alt="Nest"
                                         src="{{ asset('client/assets/imgs/theme/icons/icon-cart.svg') }}">
-                                    <span class="pro-count blue">2</span>
+                                    <span class="pro-count blue">{{ ShoppingCart::getTotalProduct() }}</span>
                                 </a>
                                 <span class="lable">Cart</span>
                                 <div class="cart-dropdown-wrap cart-dropdown-hm2">
@@ -139,14 +139,17 @@
                                             <li>
                                                 <div class="shopping-cart-img">
                                                     <a href="shop-product-right.html"><img alt="Nest"
-                                                            src="{{ $product->thumbnail }}"></a>
+                                                            src="{{ asset($product->thumbnail) }}"></a>
                                                 </div>
                                                 <div class="shopping-cart-title">
                                                     <h4><a href="shop-product-right.html">{{ $product->name }}</a></h4>
-                                                    <h4><span>{{ $product->quantity }} × </span>${{ $product->price }}</h4>
+                                                    <h4><span>{{ $product->quantity }} × </span>${{ $product->price }}
+                                                    </h4>
                                                 </div>
                                                 <div class="shopping-cart-delete">
-                                                    <a href="#"><i class="fi-rs-cross-small"></i></a>
+                                                    <a
+                                                        href="{{ route('store.removeCartItem', ['id' => $product->id]) }}"><i
+                                                            class="fi-rs-cross-small"></i></a>
                                                 </div>
                                             </li>
                                         @endforeach

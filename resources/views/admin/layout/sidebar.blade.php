@@ -63,15 +63,10 @@
                             <li class="nk-menu-item"><a href="{{ route('account.index') }}" class="nk-menu-link"><span
                                         class="nk-menu-text">Account</span></a>
                             </li>
-                            <li class="nk-menu-item"><a href="ecommerce/edit-product.html" class="nk-menu-link"><span
-                                        class="nk-menu-text">Edit Product</span></a>
+                            <li class="nk-menu-item"><a href="{{route('post.index')}}" class="nk-menu-link"><span
+                                        class="nk-menu-text">Posts</span></a>
                             </li>
-                            <li class="nk-menu-item"><a href="ecommerce/add-category.html" class="nk-menu-link"><span
-                                        class="nk-menu-text">Add Category</span></a>
-                            </li>
-                            <li class="nk-menu-item"><a href="ecommerce/edit-category.html" class="nk-menu-link"><span
-                                        class="nk-menu-text">Edit Category</span></a>
-                            </li>
+
                         </ul>
                     </li>
                 </ul>

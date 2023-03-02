@@ -1,5 +1,7 @@
 @extends('client.layout.public')
 @section('content')
+    @if (Session::has('message'))
+    @endif
     <main class="main">
         <div class="page-header breadcrumb-wrap">
             <div class="container">
@@ -21,32 +23,25 @@
                                     <!-- MAIN SLIDES -->
                                     <div class="product-image-slider">
                                         <figure class="border-radius-10">
-                                            <img src="{{ asset('client/assets/imgs/shop/product-16-2.jpg') }}"
-                                                alt="product image ">
+                                            <img src="{{ asset($product->nameImage) }}" alt="product image ">
                                         </figure>
                                         <figure class="border-radius-10">
-                                            <img src="{{ asset('client/assets/imgs/shop/product-16-1.jpg') }}"
-                                                alt="product image">
+                                            <img src="{{ asset($product->nameImage) }}" alt="product image">
                                         </figure>
                                         <figure class="border-radius-10">
-                                            <img src="{{ asset('client/assets/imgs/shop/product-16-3.jpg') }}"
-                                                alt="product image">
+                                            <img src="{{ asset($product->nameImage) }}" alt="product image">
                                         </figure>
                                         <figure class="border-radius-10">
-                                            <img src="{{ asset('client/assets/imgs/shop/product-16-4.jpg') }}"
-                                                alt="product image">
+                                            <img src="{{ asset($product->nameImage) }}" alt="product image">
                                         </figure>
                                         <figure class="border-radius-10">
-                                            <img src="{{ asset('client/assets/imgs/shop/product-16-5.jpg') }}"
-                                                alt="product image">
+                                            <img src="{{ asset($product->nameImage) }}" alt="product image">
                                         </figure>
                                         <figure class="border-radius-10">
-                                            <img src="{{ asset('client/assets/imgs/shop/product-16-6.jpg') }}"
-                                                alt="product image">
+                                            <img src="{{ asset($product->nameImage) }}" alt="product image">
                                         </figure>
                                         <figure class="border-radius-10">
-                                            <img src="{{ asset('client/assets/imgs/shop/product-16-7.jpg') }}"
-                                                alt="product image">
+                                            <img src="{{ asset($product->nameImage) }}" alt="product image">
                                         </figure>
                                     </div>
                                     <!-- THUMBNAILS -->
@@ -82,7 +77,7 @@
                                     <span class="stock-status out-stock">
                                         Sale Off
                                     </span>
-                                    <h2 class="title-detail">Seeds of Change Organic Quinoa, Brown</h2>
+                                    <h2 class="title-detail">{{ $product->name }}</h2>
                                     <div class="product-detail-rating">
                                         <div class="product-rate-cover text-end">
                                             <div class="product-rate d-inline-block">
@@ -94,11 +89,8 @@
                                     </div>
                                     <div class="clearfix product-price-cover">
                                         <div class="product-price primary-color float-left">
-                                            <span class="current-price text-brand">$38</span>
-                                            <span>
-                                                <span class="save-price  font-md color3 ml-15">26% Off</span>
-                                                <span class="old-price font-md ml-15">$52</span>
-                                            </span>
+                                            <span class="current-price text-brand">$
+                                                {{ number_format($product->price) }}</span>
                                         </div>
                                     </div>
                                     <div class="short-desc mb-30">
@@ -119,16 +111,25 @@
                                     <div class="detail-extralink mb-50">
                                         <div class="detail-qty border radius">
                                             <a href="#" class="qty-down"><i class="fi-rs-angle-small-down"></i></a>
-                                            <span class="qty-val">1</span>
+                                            <span class="qty-val cart-item-quantity"
+                                                data-product_id="{{ $product->id }}">{{ $product->quantity }}</span>
                                             <a href="#" class="qty-up"><i class="fi-rs-angle-small-up"></i></a>
                                         </div>
                                         <div class="product-extra-link2">
-                                            <button type="submit" class="button button-add-to-cart"><i
-                                                    class="fi-rs-shopping-cart"></i>Add to cart</button>
-                                            <a aria-label="Add To Wishlist" class="action-btn hover-up"
-                                                href="shop-wishlist.html"><i class="fi-rs-heart"></i></a>
-                                            <a aria-label="Compare" class="action-btn hover-up" href="shop-compare.html"><i
-                                                    class="fi-rs-shuffle"></i></a>
+                                            <form method="POST" action="{{ route('store.addToCart') }}" class="add-cart">
+                                                @csrf
+                                                <input type="hidden" name="product_id" value="{{ $product->id }}" />
+                                                <input type="hidden" name="quantity" value="1" />
+                                                <button type="submit" class="button button-add-to-cart">
+                                                    <i class="fi-rs-shopping-cart">
+                                                    </i>
+                                                    Add to cart
+                                                </button>
+                                                <a aria-label="Add To Wishlist" class="action-btn hover-up"
+                                                    href="shop-wishlist.html"><i class="fi-rs-heart"></i></a>
+                                                <a aria-label="Compare" class="action-btn hover-up"
+                                                    href="shop-compare.html"><i class="fi-rs-shuffle"></i></a>
+                                            </form>
                                         </div>
                                     </div>
                                     <div class="font-xs">
@@ -692,3 +693,53 @@
         </div>
     </main>
 @endsection
+@push('scripts')
+    <script>
+        $(document).ready(function() {
+            $('#updateCart').click(function(e) {
+                e.preventDefault();
+                let products = [];
+
+                $('.cart-item-quantity').each(function() {
+                    products.push({
+                        'id': $(this).data('product_id'),
+                        'quantity': $(this).text()
+                    });
+                });
+
+                $.ajaxSetup({
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content')
+                    }
+                });
+                $.ajax({
+                    type: 'POST',
+                    url: "{{ route('store.updateCart') }}",
+                    data: {
+                        products
+                    },
+                    success: function(data) {
+                        alert('Update success');
+                    }
+                });
+            })
+        })
+
+        @if (Session::has('message'))
+            Toastify({
+                text: "{{ Session::get('message') }}",
+                duration: 1000,
+                destination: "#",
+                newWindow: true,
+                close: true,
+                gravity: "top", // `top` or `bottom`
+                position: "right", // `left`, `center` or `right`
+                stopOnFocus: true, // Prevents dismissing of toast on hover
+                style: {
+                    background: "linear-gradient(to right, #00b09b, #96c93d)",
+                },
+                onClick: function() {} // Callback after click
+            }).showToast();
+        @endif
+    </script>
+@endpush

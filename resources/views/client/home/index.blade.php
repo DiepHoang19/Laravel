@@ -1,5 +1,7 @@
 @extends('client.layout.public')
 @section('content')
+    @if (Session::has('message'))
+    @endif
     <main class="main">
         <div class="container mb-30">
             <div class="row flex-row-reverse">
@@ -85,7 +87,7 @@
                                             <div class="product-cart-wrap mb-30" style="height: 90%">
                                                 <div class="product-img-action-wrap">
                                                     <div class="product-img product-img-zoom">
-                                                        <a href="{{ route('store.detail') }}">
+                                                        <a href="{{ route('store.detail', ['id' => $product->id]) }}">
                                                             <img class="default-img"
                                                                 src="{{ asset($product->nameImage) }}" alt=""
                                                                 height="180px">
@@ -97,8 +99,6 @@
                                                         <a aria-label="Add To Wishlist" class="action-btn"
                                                             href="{{ route('store.wishlist') }}"><i
                                                                 class="fi-rs-heart"></i></a>
-                                                        {{-- <a aria-label="Compare" class="action-btn"
-                                                            href="shop-compare.html"><i class="fi-rs-shuffle"></i></a> --}}
                                                         <a aria-label="Quick view" class="action-btn"
                                                             data-bs-toggle="modal" data-bs-target="#quickViewModal"><i
                                                                 class="fi-rs-eye"></i></a>
@@ -109,10 +109,10 @@
                                                 </div>
                                                 <div class="product-content-wrap">
                                                     <div class="product-category">
-                                                        <a href="shop-grid-right.html">{{ $product->category->name }}</a>
+                                                        <a href="#">{{ $product->category->name }}</a>
                                                     </div>
                                                     <h2>
-                                                        <a href="{{ route('store.detail') }}">
+                                                        <a href="{{ route('store.detail', ['id' => $product->id]) }}">
                                                             {{ $product->name }}
                                                         </a>
                                                     </h2>
@@ -131,13 +131,15 @@
                                                             <span>
                                                                 {{ number_format($product->price) }}
                                                             </span>
-                                                            {{-- <span class="old-price">$32.8</span> --}}
                                                         </div>
-                                                        <form method="POST" action="{{ route('store.addToCart') }}" class="add-cart">
+                                                        <form method="POST" action="{{ route('store.addToCart') }}"
+                                                            class="add-cart">
                                                             @csrf
-                                                            <input type="hidden" name="product_id" value="{{ $product->id }}" />
+                                                            <input type="hidden" name="product_id"
+                                                                value="{{ $product->id }}" />
                                                             <input type="hidden" name="quantity" value="1" />
-                                                            <button type="submit" class="add">
+                                                            <button type="submit" class="add"
+                                                                style="background-color: green">
                                                                 <i class="fi-rs-shopping-cart mr-5">
                                                                 </i>
                                                                 Add
@@ -151,3369 +153,7 @@
                                 </div>
                                 <!--End product-grid-4-->
                             </div>
-                            <!--En tab one-->
-                            <div class="tab-pane fade" id="tab-two" role="tabpanel" aria-labelledby="tab-two">
-                                <div class="row product-grid-4">
-                                    <div class="col-lg-1-5 col-md-4 col-12 col-sm-6">
-                                        <div class="product-cart-wrap mb-30">
-                                            <div class="product-img-action-wrap">
-                                                <div class="product-img product-img-zoom">
-                                                    <a href="{{ route('store.detail') }}">
-                                                        <img class="default-img"
-                                                            src="{{ asset('client/assets/imgs/shop/product-10-1.jpg') }}"
-                                                            alt="">
-                                                        <img class="hover-img"
-                                                            src="{{ asset('client/assets/imgs/shop/product-10-2.jpg') }}"
-                                                            alt="">
-                                                    </a>
-                                                </div>
-                                                <div class="product-action-1">
-                                                    <a aria-label="Add To Wishlist" class="action-btn"
-                                                        href="shop-wishlist.html"><i class="fi-rs-heart"></i></a>
-                                                    <a aria-label="Compare" class="action-btn"
-                                                        href="shop-compare.html"><i class="fi-rs-shuffle"></i></a>
-                                                    <a aria-label="Quick view" class="action-btn" data-bs-toggle="modal"
-                                                        data-bs-target="#quickViewModal"><i class="fi-rs-eye"></i></a>
-                                                </div>
-                                                <div class="product-badges product-badges-position product-badges-mrg">
-                                                    <span class="hot">Hot</span>
-                                                </div>
-                                            </div>
-                                            <div class="product-content-wrap">
-                                                <div class="product-category">
-                                                    <a href="shop-grid-right.html">Snack</a>
-                                                </div>
-                                                <h2><a href="{{ route('store.detail') }}">Seeds of Change Organic Quinoa,
-                                                        Brown, & Red Rice</a></h2>
-                                                <div class="product-rate-cover">
-                                                    <div class="product-rate d-inline-block">
-                                                        <div class="product-rating" style="width:90%">
-                                                        </div>
-                                                    </div>
-                                                    <span class="font-small ml-5 text-muted"> (4.0)</span>
-                                                </div>
-                                                <div>
-                                                    <span class="font-small text-muted">500g</span>
-                                                </div>
-                                                <div class="product-card-bottom">
-                                                    <div class="product-price">
-                                                        <span>$28.85</span>
-                                                        <span class="old-price">$32.8</span>
-                                                    </div>
-                                                    <div class="add-cart">
-                                                        <a class="add" href="shop-cart.html"><i
-                                                                class="fi-rs-shopping-cart mr-5"></i>Add </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!--end product card-->
-                                    <div class="col-lg-1-5 col-md-4 col-12 col-sm-6">
-                                        <div class="product-cart-wrap mb-30">
-                                            <div class="product-img-action-wrap">
-                                                <div class="product-img product-img-zoom">
-                                                    <a href="{{ route('store.detail') }}">
-                                                        <img class="default-img"
-                                                            src="{{ asset('client/assets/imgs/shop/product-12-1.jpg') }}"
-                                                            alt="">
-                                                        <img class="hover-img"
-                                                            src="{{ asset('client/assets/imgs/shop/product-12-2.jpg') }}"
-                                                            alt="">
-                                                    </a>
-                                                </div>
-                                                <div class="product-action-1">
-                                                    <a aria-label="Add To Wishlist" class="action-btn"
-                                                        href="shop-wishlist.html"><i class="fi-rs-heart"></i></a>
-                                                    <a aria-label="Compare" class="action-btn"
-                                                        href="shop-compare.html"><i class="fi-rs-shuffle"></i></a>
-                                                    <a aria-label="Quick view" class="action-btn" data-bs-toggle="modal"
-                                                        data-bs-target="#quickViewModal"><i class="fi-rs-eye"></i></a>
-                                                </div>
-                                                <div class="product-badges product-badges-position product-badges-mrg">
-                                                    <span class="sale">Sale</span>
-                                                </div>
-                                            </div>
-                                            <div class="product-content-wrap">
-                                                <div class="product-category">
-                                                    <a href="shop-grid-right.html">Hodo Foods</a>
-                                                </div>
-                                                <h2><a href="{{ route('store.detail') }}">All Natural Italian-Style
-                                                        Chicken
-                                                        Meatballs</a></h2>
-                                                <div class="product-rate-cover">
-                                                    <div class="product-rate d-inline-block">
-                                                        <div class="product-rating" style="width:80%">
-                                                        </div>
-                                                    </div>
-                                                    <span class="font-small ml-5 text-muted"> (3.5)</span>
-                                                </div>
-                                                <div>
-                                                    <span class="font-small text-muted">60g</span>
-                                                </div>
-                                                <div class="product-card-bottom">
-                                                    <div class="product-price">
-                                                        <span>$52.85</span>
-                                                        <span class="old-price">$55.8</span>
-                                                    </div>
-                                                    <div class="add-cart">
-                                                        <a class="add" href="shop-cart.html"><i
-                                                                class="fi-rs-shopping-cart mr-5"></i>Add </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!--end product card-->
-                                    <div class="col-lg-1-5 col-md-4 col-12 col-sm-6">
-                                        <div class="product-cart-wrap mb-30">
-                                            <div class="product-img-action-wrap">
-                                                <div class="product-img product-img-zoom">
-                                                    <a href="{{ route('store.detail') }}">
-                                                        <img class="default-img"
-                                                            src="{{ asset('client/assets/imgs/shop/product-13-1.jpg') }}"
-                                                            alt="">
-                                                        <img class="hover-img"
-                                                            src="{{ asset('client/assets/imgs/shop/product-13-2.jpg') }}"
-                                                            alt="">
-                                                    </a>
-                                                </div>
-                                                <div class="product-action-1">
-                                                    <a aria-label="Add To Wishlist" class="action-btn"
-                                                        href="shop-wishlist.html"><i class="fi-rs-heart"></i></a>
-                                                    <a aria-label="Compare" class="action-btn"
-                                                        href="shop-compare.html"><i class="fi-rs-shuffle"></i></a>
-                                                    <a aria-label="Quick view" class="action-btn" data-bs-toggle="modal"
-                                                        data-bs-target="#quickViewModal"><i class="fi-rs-eye"></i></a>
-                                                </div>
-                                                <div class="product-badges product-badges-position product-badges-mrg">
-                                                    <span class="new">New</span>
-                                                </div>
-                                            </div>
-                                            <div class="product-content-wrap">
-                                                <div class="product-category">
-                                                    <a href="shop-grid-right.html">Snack</a>
-                                                </div>
-                                                <h2><a href="{{ route('store.detail') }}">Angie’s Boomchickapop Sweet &
-                                                        Salty
-                                                        Kettle Corn</a></h2>
-                                                <div class="product-rate-cover">
-                                                    <div class="product-rate d-inline-block">
-                                                        <div class="product-rating" style="width:85%">
-                                                        </div>
-                                                    </div>
-                                                    <span class="font-small ml-5 text-muted"> (4.0)</span>
-                                                </div>
-                                                <div>
-                                                    <span class="font-small text-muted">70g</span>
-                                                </div>
-                                                <div class="product-card-bottom">
-                                                    <div class="product-price">
-                                                        <span>$48.85</span>
-                                                        <span class="old-price">$52.8</span>
-                                                    </div>
-                                                    <div class="add-cart">
-                                                        <a class="add" href="shop-cart.html"><i
-                                                                class="fi-rs-shopping-cart mr-5"></i>Add </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!--end product card-->
-                                    <div class="col-lg-1-5 col-md-4 col-12 col-sm-6">
-                                        <div class="product-cart-wrap mb-30">
-                                            <div class="product-img-action-wrap">
-                                                <div class="product-img product-img-zoom">
-                                                    <a href="{{ route('store.detail') }}">
-                                                        <img class="default-img"
-                                                            src="{{ asset('client/assets/imgs/shop/product-14-1.jpg') }}"
-                                                            alt="">
-                                                        <img class="hover-img"
-                                                            src="{{ asset('client/assets/imgs/shop/product-14-2.jpg') }}"
-                                                            alt="">
-                                                    </a>
-                                                </div>
-                                                <div class="product-action-1">
-                                                    <a aria-label="Add To Wishlist" class="action-btn"
-                                                        href="shop-wishlist.html"><i class="fi-rs-heart"></i></a>
-                                                    <a aria-label="Compare" class="action-btn"
-                                                        href="shop-compare.html"><i class="fi-rs-shuffle"></i></a>
-                                                    <a aria-label="Quick view" class="action-btn" data-bs-toggle="modal"
-                                                        data-bs-target="#quickViewModal"><i class="fi-rs-eye"></i></a>
-                                                </div>
-                                            </div>
-                                            <div class="product-content-wrap">
-                                                <div class="product-category">
-                                                    <a href="shop-grid-right.html">Vegetables</a>
-                                                </div>
-                                                <h2><a href="{{ route('store.detail') }}">Foster Farms Takeout Crispy
-                                                        Classic
-                                                        Buffalo Wings</a></h2>
-                                                <div class="product-rate-cover">
-                                                    <div class="product-rate d-inline-block">
-                                                        <div class="product-rating" style="width:90%">
-                                                        </div>
-                                                    </div>
-                                                    <span class="font-small ml-5 text-muted"> (4.0)</span>
-                                                </div>
-                                                <div>
-                                                    <span class="font-small text-muted">500g</span>
-                                                </div>
-                                                <div class="product-card-bottom">
-                                                    <div class="product-price">
-                                                        <span>$17.85</span>
-                                                        <span class="old-price">$19.8</span>
-                                                    </div>
-                                                    <div class="add-cart">
-                                                        <a class="add" href="shop-cart.html"><i
-                                                                class="fi-rs-shopping-cart mr-5"></i>Add </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!--end product card-->
-                                    <div class="col-lg-1-5 col-md-4 col-12 col-sm-6">
-                                        <div class="product-cart-wrap mb-30">
-                                            <div class="product-img-action-wrap">
-                                                <div class="product-img product-img-zoom">
-                                                    <a href="{{ route('store.detail') }}">
-                                                        <img class="default-img"
-                                                            src="{{ asset('client/assets/imgs/shop/product-15-1.jpg') }}"
-                                                            alt="">
-                                                        <img class="hover-img"
-                                                            src="{{ asset('client/assets/imgs/shop/product-15-2.jpg') }}"
-                                                            alt="">
-                                                    </a>
-                                                </div>
-                                                <div class="product-action-1">
-                                                    <a aria-label="Add To Wishlist" class="action-btn"
-                                                        href="shop-wishlist.html"><i class="fi-rs-heart"></i></a>
-                                                    <a aria-label="Compare" class="action-btn"
-                                                        href="shop-compare.html"><i class="fi-rs-shuffle"></i></a>
-                                                    <a aria-label="Quick view" class="action-btn" data-bs-toggle="modal"
-                                                        data-bs-target="#quickViewModal"><i class="fi-rs-eye"></i></a>
-                                                </div>
-                                                <div class="product-badges product-badges-position product-badges-mrg">
-                                                    <span class="best">-14%</span>
-                                                </div>
-                                            </div>
-                                            <div class="product-content-wrap">
-                                                <div class="product-category">
-                                                    <a href="shop-grid-right.html">Pet Foods</a>
-                                                </div>
-                                                <h2><a href="{{ route('store.detail') }}">Blue Diamond Almonds Lightly
-                                                        Salted
-                                                        Vegetables</a></h2>
-                                                <div class="product-rate-cover">
-                                                    <div class="product-rate d-inline-block">
-                                                        <div class="product-rating" style="width:90%">
-                                                        </div>
-                                                    </div>
-                                                    <span class="font-small ml-5 text-muted"> (4.0)</span>
-                                                </div>
-                                                <div>
-                                                    <span class="font-small text-muted">500g</span>
-                                                </div>
-                                                <div class="product-card-bottom">
-                                                    <div class="product-price">
-                                                        <span>$23.85</span>
-                                                        <span class="old-price">$25.8</span>
-                                                    </div>
-                                                    <div class="add-cart">
-                                                        <a class="add" href="shop-cart.html"><i
-                                                                class="fi-rs-shopping-cart mr-5"></i>Add </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!--end product card-->
-                                    <div class="col-lg-1-5 col-md-4 col-12 col-sm-6">
-                                        <div class="product-cart-wrap">
-                                            <div class="product-img-action-wrap">
-                                                <div class="product-img product-img-zoom">
-                                                    <a href="{{ route('store.detail') }}">
-                                                        <img class="default-img"
-                                                            src="{{ asset('client/assets/imgs/shop/product-16-1.jpg') }}"
-                                                            alt="">
-                                                        <img class="hover-img"
-                                                            src="{{ asset('client/assets/imgs/shop/product-16-2.jpg') }}"
-                                                            alt="">
-                                                    </a>
-                                                </div>
-                                                <div class="product-action-1">
-                                                    <a aria-label="Add To Wishlist" class="action-btn"
-                                                        href="shop-wishlist.html"><i class="fi-rs-heart"></i></a>
-                                                    <a aria-label="Compare" class="action-btn"
-                                                        href="shop-compare.html"><i class="fi-rs-shuffle"></i></a>
-                                                    <a aria-label="Quick view" class="action-btn" data-bs-toggle="modal"
-                                                        data-bs-target="#quickViewModal"><i class="fi-rs-eye"></i></a>
-                                                </div>
-                                            </div>
-                                            <div class="product-content-wrap">
-                                                <div class="product-category">
-                                                    <a href="shop-grid-right.html">Hodo Foods</a>
-                                                </div>
-                                                <h2><a href="{{ route('store.detail') }}">Chobani Complete Vanilla Greek
-                                                        Yogurt</a></h2>
-                                                <div class="product-rate-cover">
-                                                    <div class="product-rate d-inline-block">
-                                                        <div class="product-rating" style="width:90%">
-                                                        </div>
-                                                    </div>
-                                                    <span class="font-small ml-5 text-muted"> (4.0)</span>
-                                                </div>
-                                                <div>
-                                                    <span class="font-small text-muted">500g</span>
-                                                </div>
-                                                <div class="product-card-bottom">
-                                                    <div class="product-price">
-                                                        <span>$54.85</span>
-                                                        <span class="old-price">$55.8</span>
-                                                    </div>
-                                                    <div class="add-cart">
-                                                        <a class="add" href="shop-cart.html"><i
-                                                                class="fi-rs-shopping-cart mr-5"></i>Add </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!--end product card-->
-                                    <div class="col-lg-1-5 col-md-4 col-12 col-sm-6">
-                                        <div class="product-cart-wrap">
-                                            <div class="product-img-action-wrap">
-                                                <div class="product-img product-img-zoom">
-                                                    <a href="{{ route('store.detail') }}">
-                                                        <img class="default-img"
-                                                            src="{{ asset('client/assets/imgs/shop/product-7-1.jpg') }}"
-                                                            alt="">
-                                                        <img class="hover-img"
-                                                            src="{{ asset('client/assets/imgs/shop/product-7-2.jpg') }}"
-                                                            alt="">
-                                                    </a>
-                                                </div>
-                                                <div class="product-action-1">
-                                                    <a aria-label="Add To Wishlist" class="action-btn"
-                                                        href="shop-wishlist.html"><i class="fi-rs-heart"></i></a>
-                                                    <a aria-label="Compare" class="action-btn"
-                                                        href="shop-compare.html"><i class="fi-rs-shuffle"></i></a>
-                                                    <a aria-label="Quick view" class="action-btn" data-bs-toggle="modal"
-                                                        data-bs-target="#quickViewModal"><i class="fi-rs-eye"></i></a>
-                                                </div>
-                                            </div>
-                                            <div class="product-content-wrap">
-                                                <div class="product-category">
-                                                    <a href="shop-grid-right.html">Meats</a>
-                                                </div>
-                                                <h2><a href="{{ route('store.detail') }}">Canada Dry Ginger Ale – 2 L
-                                                        Bottle -
-                                                        200ml - 400g</a></h2>
-                                                <div class="product-rate-cover">
-                                                    <div class="product-rate d-inline-block">
-                                                        <div class="product-rating" style="width:90%">
-                                                        </div>
-                                                    </div>
-                                                    <span class="font-small ml-5 text-muted"> (4.0)</span>
-                                                </div>
-                                                <div>
-                                                    <span class="font-small text-muted">500g</span>
-                                                </div>
-                                                <div class="product-card-bottom">
-                                                    <div class="product-price">
-                                                        <span>$32.85</span>
-                                                        <span class="old-price">$33.8</span>
-                                                    </div>
-                                                    <div class="add-cart">
-                                                        <a class="add" href="shop-cart.html"><i
-                                                                class="fi-rs-shopping-cart mr-5"></i>Add </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!--end product card-->
-                                    <div class="col-lg-1-5 col-md-4 col-12 col-sm-6">
-                                        <div class="product-cart-wrap">
-                                            <div class="product-img-action-wrap">
-                                                <div class="product-img product-img-zoom">
-                                                    <a href="{{ route('store.detail') }}">
-                                                        <img class="default-img"
-                                                            src="{{ asset('client/assets/imgs/shop/product-8-1.jpg') }}"
-                                                            alt="">
-                                                        <img class="hover-img"
-                                                            src="{{ asset('client/assets/imgs/shop/product-8-2.jpg') }}"
-                                                            alt="">
-                                                    </a>
-                                                </div>
-                                                <div class="product-action-1">
-                                                    <a aria-label="Add To Wishlist" class="action-btn"
-                                                        href="shop-wishlist.html"><i class="fi-rs-heart"></i></a>
-                                                    <a aria-label="Compare" class="action-btn"
-                                                        href="shop-compare.html"><i class="fi-rs-shuffle"></i></a>
-                                                    <a aria-label="Quick view" class="action-btn" data-bs-toggle="modal"
-                                                        data-bs-target="#quickViewModal"><i class="fi-rs-eye"></i></a>
-                                                </div>
-                                                <div class="product-badges product-badges-position product-badges-mrg">
-                                                    <span class="sale">Sale</span>
-                                                </div>
-                                            </div>
-                                            <div class="product-content-wrap">
-                                                <div class="product-category">
-                                                    <a href="shop-grid-right.html">Snack</a>
-                                                </div>
-                                                <h2><a href="{{ route('store.detail') }}">Encore Seafoods Stuffed Alaskan
-                                                        Salmon</a></h2>
-                                                <div class="product-rate-cover">
-                                                    <div class="product-rate d-inline-block">
-                                                        <div class="product-rating" style="width:90%">
-                                                        </div>
-                                                    </div>
-                                                    <span class="font-small ml-5 text-muted"> (4.0)</span>
-                                                </div>
-                                                <div>
-                                                    <span class="font-small text-muted">500g</span>
-                                                </div>
-                                                <div class="product-card-bottom">
-                                                    <div class="product-price">
-                                                        <span>$35.85</span>
-                                                        <span class="old-price">$37.8</span>
-                                                    </div>
-                                                    <div class="add-cart">
-                                                        <a class="add" href="shop-cart.html"><i
-                                                                class="fi-rs-shopping-cart mr-5"></i>Add </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!--end product card-->
-                                    <div class="col-lg-1-5 col-md-4 col-12 col-sm-6">
-                                        <div class="product-cart-wrap">
-                                            <div class="product-img-action-wrap">
-                                                <div class="product-img product-img-zoom">
-                                                    <a href="{{ route('store.detail') }}">
-                                                        <img class="default-img"
-                                                            src="{{ asset('client/assets/imgs/shop/product-9-1.jpg') }}"
-                                                            alt="">
-                                                        <img class="hover-img"
-                                                            src="{{ asset('client/assets/imgs/shop/product-9-2.jpg') }}"
-                                                            alt="">
-                                                    </a>
-                                                </div>
-                                                <div class="product-action-1">
-                                                    <a aria-label="Add To Wishlist" class="action-btn"
-                                                        href="shop-wishlist.html"><i class="fi-rs-heart"></i></a>
-                                                    <a aria-label="Compare" class="action-btn"
-                                                        href="shop-compare.html"><i class="fi-rs-shuffle"></i></a>
-                                                    <a aria-label="Quick view" class="action-btn" data-bs-toggle="modal"
-                                                        data-bs-target="#quickViewModal"><i class="fi-rs-eye"></i></a>
-                                                </div>
-                                                <div class="product-badges product-badges-position product-badges-mrg">
-                                                    <span class="hot">Hot</span>
-                                                </div>
-                                            </div>
-                                            <div class="product-content-wrap">
-                                                <div class="product-category">
-                                                    <a href="shop-grid-right.html">Coffes</a>
-                                                </div>
-                                                <h2><a href="{{ route('store.detail') }}">Gorton’s Beer Battered Fish
-                                                        Fillets
-                                                        with soft paper</a></h2>
-                                                <div class="product-rate-cover">
-                                                    <div class="product-rate d-inline-block">
-                                                        <div class="product-rating" style="width:90%">
-                                                        </div>
-                                                    </div>
-                                                    <span class="font-small ml-5 text-muted"> (4.0)</span>
-                                                </div>
-                                                <div>
-                                                    <span class="font-small text-muted">400g</span>
-                                                </div>
-                                                <div class="product-card-bottom">
-                                                    <div class="product-price">
-                                                        <span>$23.85</span>
-                                                        <span class="old-price">$25.8</span>
-                                                    </div>
-                                                    <div class="add-cart">
-                                                        <a class="add" href="shop-cart.html"><i
-                                                                class="fi-rs-shopping-cart mr-5"></i>Add </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!--end product card-->
-                                    <div class="col-lg-1-5 col-md-4 col-12 col-sm-6 d-none d-xl-block">
-                                        <div class="product-cart-wrap">
-                                            <div class="product-img-action-wrap">
-                                                <div class="product-img product-img-zoom">
-                                                    <a href="{{ route('store.detail') }}">
-                                                        <img class="default-img"
-                                                            src="{{ asset('client/assets/imgs/shop/product-10-1.jpg') }}"
-                                                            alt="">
-                                                        <img class="hover-img"
-                                                            src="{{ asset('client/assets/imgs/shop/product-10-2.jpg') }}"
-                                                            alt="">
-                                                    </a>
-                                                </div>
-                                                <div class="product-action-1">
-                                                    <a aria-label="Add To Wishlist" class="action-btn"
-                                                        href="shop-wishlist.html"><i class="fi-rs-heart"></i></a>
-                                                    <a aria-label="Compare" class="action-btn"
-                                                        href="shop-compare.html"><i class="fi-rs-shuffle"></i></a>
-                                                    <a aria-label="Quick view" class="action-btn" data-bs-toggle="modal"
-                                                        data-bs-target="#quickViewModal"><i class="fi-rs-eye"></i></a>
-                                                </div>
-                                            </div>
-                                            <div class="product-content-wrap">
-                                                <div class="product-category">
-                                                    <a href="shop-grid-right.html">Cream</a>
-                                                </div>
-                                                <h2><a href="{{ route('store.detail') }}">Haagen-Dazs Caramel Cone Ice
-                                                        Cream
-                                                        Ketchup</a></h2>
-                                                <div class="product-rate-cover">
-                                                    <div class="product-rate d-inline-block">
-                                                        <div class="product-rating" style="width:50%">
-                                                        </div>
-                                                    </div>
-                                                    <span class="font-small ml-5 text-muted"> (2.0)</span>
-                                                </div>
-                                                <div>
-                                                    <span class="font-small text-muted">100g</span>
-                                                </div>
-                                                <div class="product-card-bottom">
-                                                    <div class="product-price">
-                                                        <span>$22.85</span>
-                                                        <span class="old-price">$24.8</span>
-                                                    </div>
-                                                    <div class="add-cart">
-                                                        <a class="add" href="shop-cart.html"><i
-                                                                class="fi-rs-shopping-cart mr-5"></i>Add </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!--end product card-->
-                                </div>
-                                <!--End product-grid-4-->
-                            </div>
-                            <!--En tab two-->
-                            <div class="tab-pane fade" id="tab-three" role="tabpanel" aria-labelledby="tab-three">
-                                <div class="row product-grid-4">
-                                    <div class="col-lg-1-5 col-md-4 col-12 col-sm-6">
-                                        <div class="product-cart-wrap mb-30">
-                                            <div class="product-img-action-wrap">
-                                                <div class="product-img product-img-zoom">
-                                                    <a href="{{ route('store.detail') }}">
-                                                        <img class="default-img"
-                                                            src="{{ asset('cient/assets/imgs/shop/product-9-1.jpg') }}"
-                                                            alt="">
-                                                        <img class="hover-img"
-                                                            src="{{ asset('cient/assets/imgs/shop/product-9-2.jpg') }}"
-                                                            alt="">
-                                                    </a>
-                                                </div>
-                                                <div class="product-action-1">
-                                                    <a aria-label="Add To Wishlist" class="action-btn"
-                                                        href="shop-wishlist.html"><i class="fi-rs-heart"></i></a>
-                                                    <a aria-label="Compare" class="action-btn"
-                                                        href="shop-compare.html"><i class="fi-rs-shuffle"></i></a>
-                                                    <a aria-label="Quick view" class="action-btn" data-bs-toggle="modal"
-                                                        data-bs-target="#quickViewModal"><i class="fi-rs-eye"></i></a>
-                                                </div>
-                                                <div class="product-badges product-badges-position product-badges-mrg">
-                                                    <span class="hot">Hot</span>
-                                                </div>
-                                            </div>
-                                            <div class="product-content-wrap">
-                                                <div class="product-category">
-                                                    <a href="shop-grid-right.html">Snack</a>
-                                                </div>
-                                                <h2><a href="{{ route('store.detail') }}">Seeds of Change Organic
-                                                        Quinoa,
-                                                        Brown, & Red Rice</a></h2>
-                                                <div class="product-rate-cover">
-                                                    <div class="product-rate d-inline-block">
-                                                        <div class="product-rating" style="width:90%">
-                                                        </div>
-                                                    </div>
-                                                    <span class="font-small ml-5 text-muted"> (4.0)</span>
-                                                </div>
-                                                <div>
-                                                    <span class="font-small text-muted">500g</span>
-                                                </div>
-                                                <div class="product-card-bottom">
-                                                    <div class="product-price">
-                                                        <span>$28.85</span>
-                                                        <span class="old-price">$32.8</span>
-                                                    </div>
-                                                    <div class="add-cart">
-                                                        <a class="add" href="shop-cart.html"><i
-                                                                class="fi-rs-shopping-cart mr-5"></i>Add </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!--end product card-->
-                                    <div class="col-lg-1-5 col-md-4 col-12 col-sm-6">
-                                        <div class="product-cart-wrap mb-30">
-                                            <div class="product-img-action-wrap">
-                                                <div class="product-img product-img-zoom">
-                                                    <a href="{{ route('store.detail') }}">
-                                                        <img class="default-img"
-                                                            src="{{ asset('client/assets/imgs/shop/product-8-1.jpg') }}"
-                                                            alt="">
-                                                        <img class="hover-img"
-                                                            src="{{ asset('client/assets/imgs/shop/product-8-2.jpg') }}"
-                                                            alt="">
-                                                    </a>
-                                                </div>
-                                                <div class="product-action-1">
-                                                    <a aria-label="Add To Wishlist" class="action-btn"
-                                                        href="shop-wishlist.html"><i class="fi-rs-heart"></i></a>
-                                                    <a aria-label="Compare" class="action-btn"
-                                                        href="shop-compare.html"><i class="fi-rs-shuffle"></i></a>
-                                                    <a aria-label="Quick view" class="action-btn" data-bs-toggle="modal"
-                                                        data-bs-target="#quickViewModal"><i class="fi-rs-eye"></i></a>
-                                                </div>
-                                                <div class="product-badges product-badges-position product-badges-mrg">
-                                                    <span class="sale">Sale</span>
-                                                </div>
-                                            </div>
-                                            <div class="product-content-wrap">
-                                                <div class="product-category">
-                                                    <a href="shop-grid-right.html">Hodo Foods</a>
-                                                </div>
-                                                <h2><a href="{{ route('store.detail') }}">All Natural Italian-Style
-                                                        Chicken
-                                                        Meatballs</a></h2>
-                                                <div class="product-rate-cover">
-                                                    <div class="product-rate d-inline-block">
-                                                        <div class="product-rating" style="width:80%">
-                                                        </div>
-                                                    </div>
-                                                    <span class="font-small ml-5 text-muted"> (3.5)</span>
-                                                </div>
-                                                <div>
-                                                    <span class="font-small text-muted">60g</span>
-                                                </div>
-                                                <div class="product-card-bottom">
-                                                    <div class="product-price">
-                                                        <span>$52.85</span>
-                                                        <span class="old-price">$55.8</span>
-                                                    </div>
-                                                    <div class="add-cart">
-                                                        <a class="add" href="shop-cart.html"><i
-                                                                class="fi-rs-shopping-cart mr-5"></i>Add </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!--end product card-->
-                                    <div class="col-lg-1-5 col-md-4 col-12 col-sm-6">
-                                        <div class="product-cart-wrap mb-30">
-                                            <div class="product-img-action-wrap">
-                                                <div class="product-img product-img-zoom">
-                                                    <a href="{{ route('store.detail') }}">
-                                                        <img class="default-img"
-                                                            src="{{ asset('client/assets/imgs/shop/product-7-1.jpg') }}"
-                                                            alt="">
-                                                        <img class="hover-img"
-                                                            src="{{ asset('client/assets/imgs/shop/product-7-2.jpg') }}"
-                                                            alt="">
-                                                    </a>
-                                                </div>
-                                                <div class="product-action-1">
-                                                    <a aria-label="Add To Wishlist" class="action-btn"
-                                                        href="shop-wishlist.html"><i class="fi-rs-heart"></i></a>
-                                                    <a aria-label="Compare" class="action-btn"
-                                                        href="shop-compare.html"><i class="fi-rs-shuffle"></i></a>
-                                                    <a aria-label="Quick view" class="action-btn" data-bs-toggle="modal"
-                                                        data-bs-target="#quickViewModal"><i class="fi-rs-eye"></i></a>
-                                                </div>
-                                                <div class="product-badges product-badges-position product-badges-mrg">
-                                                    <span class="new">New</span>
-                                                </div>
-                                            </div>
-                                            <div class="product-content-wrap">
-                                                <div class="product-category">
-                                                    <a href="shop-grid-right.html">Snack</a>
-                                                </div>
-                                                <h2><a href="{{ route('store.detail') }}">Angie’s Boomchickapop Sweet &
-                                                        Salty
-                                                        Kettle Corn</a></h2>
-                                                <div class="product-rate-cover">
-                                                    <div class="product-rate d-inline-block">
-                                                        <div class="product-rating" style="width:85%">
-                                                        </div>
-                                                    </div>
-                                                    <span class="font-small ml-5 text-muted"> (4.0)</span>
-                                                </div>
-                                                <div>
-                                                    <span class="font-small text-muted">70g</span>
-                                                </div>
-                                                <div class="product-card-bottom">
-                                                    <div class="product-price">
-                                                        <span>$48.85</span>
-                                                        <span class="old-price">$52.8</span>
-                                                    </div>
-                                                    <div class="add-cart">
-                                                        <a class="add" href="shop-cart.html"><i
-                                                                class="fi-rs-shopping-cart mr-5"></i>Add </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!--end product card-->
-                                    <div class="col-lg-1-5 col-md-4 col-12 col-sm-6">
-                                        <div class="product-cart-wrap mb-30">
-                                            <div class="product-img-action-wrap">
-                                                <div class="product-img product-img-zoom">
-                                                    <a href="{{ route('store.detail') }}">
-                                                        <img class="default-img"
-                                                            src="{{ asset('client/assets/imgs/shop/product-6-1.jpg') }}"
-                                                            alt="">
-                                                        <img class="hover-img"
-                                                            src="{{ asset('client/assets/imgs/shop/product-6-2.jpg') }}"
-                                                            alt="">
-                                                    </a>
-                                                </div>
-                                                <div class="product-action-1">
-                                                    <a aria-label="Add To Wishlist" class="action-btn"
-                                                        href="shop-wishlist.html"><i class="fi-rs-heart"></i></a>
-                                                    <a aria-label="Compare" class="action-btn"
-                                                        href="shop-compare.html"><i class="fi-rs-shuffle"></i></a>
-                                                    <a aria-label="Quick view" class="action-btn" data-bs-toggle="modal"
-                                                        data-bs-target="#quickViewModal"><i class="fi-rs-eye"></i></a>
-                                                </div>
-                                            </div>
-                                            <div class="product-content-wrap">
-                                                <div class="product-category">
-                                                    <a href="shop-grid-right.html">Vegetables</a>
-                                                </div>
-                                                <h2><a href="{{ route('store.detail') }}">Foster Farms Takeout Crispy
-                                                        Classic
-                                                        Buffalo Wings</a></h2>
-                                                <div class="product-rate-cover">
-                                                    <div class="product-rate d-inline-block">
-                                                        <div class="product-rating" style="width:90%">
-                                                        </div>
-                                                    </div>
-                                                    <span class="font-small ml-5 text-muted"> (4.0)</span>
-                                                </div>
-                                                <div>
-                                                    <span class="font-small text-muted">500g</span>
-                                                </div>
-                                                <div class="product-card-bottom">
-                                                    <div class="product-price">
-                                                        <span>$17.85</span>
-                                                        <span class="old-price">$19.8</span>
-                                                    </div>
-                                                    <div class="add-cart">
-                                                        <a class="add" href="shop-cart.html"><i
-                                                                class="fi-rs-shopping-cart mr-5"></i>Add </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!--end product card-->
-                                    <div class="col-lg-1-5 col-md-4 col-12 col-sm-6">
-                                        <div class="product-cart-wrap mb-30">
-                                            <div class="product-img-action-wrap">
-                                                <div class="product-img product-img-zoom">
-                                                    <a href="{{ route('store.detail') }}">
-                                                        <img class="default-img"
-                                                            src="{{ asset('client/assets/imgs/shop/product-5-1.jpg') }}"
-                                                            alt="">
-                                                        <img class="hover-img"
-                                                            src="{{ asset('client/assets/imgs/shop/product-5-2.jpg') }}"
-                                                            alt="">
-                                                    </a>
-                                                </div>
-                                                <div class="product-action-1">
-                                                    <a aria-label="Add To Wishlist" class="action-btn"
-                                                        href="shop-wishlist.html"><i class="fi-rs-heart"></i></a>
-                                                    <a aria-label="Compare" class="action-btn"
-                                                        href="shop-compare.html"><i class="fi-rs-shuffle"></i></a>
-                                                    <a aria-label="Quick view" class="action-btn" data-bs-toggle="modal"
-                                                        data-bs-target="#quickViewModal"><i class="fi-rs-eye"></i></a>
-                                                </div>
-                                                <div class="product-badges product-badges-position product-badges-mrg">
-                                                    <span class="best">-14%</span>
-                                                </div>
-                                            </div>
-                                            <div class="product-content-wrap">
-                                                <div class="product-category">
-                                                    <a href="shop-grid-right.html">Pet Foods</a>
-                                                </div>
-                                                <h2><a href="{{ route('store.detail') }}">Blue Diamond Almonds Lightly
-                                                        Salted
-                                                        Vegetables</a></h2>
-                                                <div class="product-rate-cover">
-                                                    <div class="product-rate d-inline-block">
-                                                        <div class="product-rating" style="width:90%">
-                                                        </div>
-                                                    </div>
-                                                    <span class="font-small ml-5 text-muted"> (4.0)</span>
-                                                </div>
-                                                <div>
-                                                    <span class="font-small text-muted">500g</span>
-                                                </div>
-                                                <div class="product-card-bottom">
-                                                    <div class="product-price">
-                                                        <span>$23.85</span>
-                                                        <span class="old-price">$25.8</span>
-                                                    </div>
-                                                    <div class="add-cart">
-                                                        <a class="add" href="shop-cart.html"><i
-                                                                class="fi-rs-shopping-cart mr-5"></i>Add </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!--end product card-->
-                                    <div class="col-lg-1-5 col-md-4 col-12 col-sm-6">
-                                        <div class="product-cart-wrap">
-                                            <div class="product-img-action-wrap">
-                                                <div class="product-img product-img-zoom">
-                                                    <a href="{{ route('store.detail') }}">
-                                                        <img class="default-img"
-                                                            src="{{ asset('client/assets/imgs/shop/product-4-1.jpg') }}"
-                                                            alt="">
-                                                        <img class="hover-img"
-                                                            src="{{ asset('client/assets/imgs/shop/product-4-2.jpg') }}"
-                                                            alt="">
-                                                    </a>
-                                                </div>
-                                                <div class="product-action-1">
-                                                    <a aria-label="Add To Wishlist" class="action-btn"
-                                                        href="shop-wishlist.html"><i class="fi-rs-heart"></i></a>
-                                                    <a aria-label="Compare" class="action-btn"
-                                                        href="shop-compare.html"><i class="fi-rs-shuffle"></i></a>
-                                                    <a aria-label="Quick view" class="action-btn" data-bs-toggle="modal"
-                                                        data-bs-target="#quickViewModal"><i class="fi-rs-eye"></i></a>
-                                                </div>
-                                            </div>
-                                            <div class="product-content-wrap">
-                                                <div class="product-category">
-                                                    <a href="shop-grid-right.html">Hodo Foods</a>
-                                                </div>
-                                                <h2><a href="{{ route('store.detail') }}">Chobani Complete Vanilla
-                                                        Greek
-                                                        Yogurt</a></h2>
-                                                <div class="product-rate-cover">
-                                                    <div class="product-rate d-inline-block">
-                                                        <div class="product-rating" style="width:90%">
-                                                        </div>
-                                                    </div>
-                                                    <span class="font-small ml-5 text-muted"> (4.0)</span>
-                                                </div>
-                                                <div>
-                                                    <span class="font-small text-muted">500g</span>
-                                                </div>
-                                                <div class="product-card-bottom">
-                                                    <div class="product-price">
-                                                        <span>$54.85</span>
-                                                        <span class="old-price">$55.8</span>
-                                                    </div>
-                                                    <div class="add-cart">
-                                                        <a class="add" href="shop-cart.html"><i
-                                                                class="fi-rs-shopping-cart mr-5"></i>Add </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!--end product card-->
-                                    <div class="col-lg-1-5 col-md-4 col-12 col-sm-6">
-                                        <div class="product-cart-wrap">
-                                            <div class="product-img-action-wrap">
-                                                <div class="product-img product-img-zoom">
-                                                    <a href="{{ route('store.detail') }}">
-                                                        <img class="default-img"
-                                                            src="{{ asset('client/assets/imgs/shop/product-3-1.jpg') }}"
-                                                            alt="">
-                                                        <img class="hover-img"
-                                                            src="{{ asset('client/assets/imgs/shop/product-3-2.jpg') }}"
-                                                            alt="">
-                                                    </a>
-                                                </div>
-                                                <div class="product-action-1">
-                                                    <a aria-label="Add To Wishlist" class="action-btn"
-                                                        href="shop-wishlist.html"><i class="fi-rs-heart"></i></a>
-                                                    <a aria-label="Compare" class="action-btn"
-                                                        href="shop-compare.html"><i class="fi-rs-shuffle"></i></a>
-                                                    <a aria-label="Quick view" class="action-btn" data-bs-toggle="modal"
-                                                        data-bs-target="#quickViewModal"><i class="fi-rs-eye"></i></a>
-                                                </div>
-                                            </div>
-                                            <div class="product-content-wrap">
-                                                <div class="product-category">
-                                                    <a href="shop-grid-right.html">Meats</a>
-                                                </div>
-                                                <h2><a href="{{ route('store.detail') }}">Canada Dry Ginger Ale – 2 L
-                                                        Bottle -
-                                                        200ml - 400g</a></h2>
-                                                <div class="product-rate-cover">
-                                                    <div class="product-rate d-inline-block">
-                                                        <div class="product-rating" style="width:90%">
-                                                        </div>
-                                                    </div>
-                                                    <span class="font-small ml-5 text-muted"> (4.0)</span>
-                                                </div>
-                                                <div>
-                                                    <span class="font-small text-muted">500g</span>
-                                                </div>
-                                                <div class="product-card-bottom">
-                                                    <div class="product-price">
-                                                        <span>$32.85</span>
-                                                        <span class="old-price">$33.8</span>
-                                                    </div>
-                                                    <div class="add-cart">
-                                                        <a class="add" href="shop-cart.html"><i
-                                                                class="fi-rs-shopping-cart mr-5"></i>Add </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!--end product card-->
-                                    <div class="col-lg-1-5 col-md-4 col-12 col-sm-6">
-                                        <div class="product-cart-wrap">
-                                            <div class="product-img-action-wrap">
-                                                <div class="product-img product-img-zoom">
-                                                    <a href="{{ route('store.detail') }}">
-                                                        <img class="default-img"
-                                                            src="{{ asset('client/assets/imgs/shop/product-2-1.jpg') }}"
-                                                            alt="">
-                                                        <img class="hover-img"
-                                                            src="{{ asset('client/assets/imgs/shop/product-2-2.jpg') }}"
-                                                            alt="">
-                                                    </a>
-                                                </div>
-                                                <div class="product-action-1">
-                                                    <a aria-label="Add To Wishlist" class="action-btn"
-                                                        href="shop-wishlist.html"><i class="fi-rs-heart"></i></a>
-                                                    <a aria-label="Compare" class="action-btn"
-                                                        href="shop-compare.html"><i class="fi-rs-shuffle"></i></a>
-                                                    <a aria-label="Quick view" class="action-btn" data-bs-toggle="modal"
-                                                        data-bs-target="#quickViewModal"><i class="fi-rs-eye"></i></a>
-                                                </div>
-                                                <div class="product-badges product-badges-position product-badges-mrg">
-                                                    <span class="sale">Sale</span>
-                                                </div>
-                                            </div>
-                                            <div class="product-content-wrap">
-                                                <div class="product-category">
-                                                    <a href="shop-grid-right.html">Snack</a>
-                                                </div>
-                                                <h2><a href="{{ route('store.detail') }}">Encore Seafoods Stuffed
-                                                        Alaskan
-                                                        Salmon</a></h2>
-                                                <div class="product-rate-cover">
-                                                    <div class="product-rate d-inline-block">
-                                                        <div class="product-rating" style="width:90%">
-                                                        </div>
-                                                    </div>
-                                                    <span class="font-small ml-5 text-muted"> (4.0)</span>
-                                                </div>
-                                                <div>
-                                                    <span class="font-small text-muted">500g</span>
-                                                </div>
-                                                <div class="product-card-bottom">
-                                                    <div class="product-price">
-                                                        <span>$35.85</span>
-                                                        <span class="old-price">$37.8</span>
-                                                    </div>
-                                                    <div class="add-cart">
-                                                        <a class="add" href="shop-cart.html"><i
-                                                                class="fi-rs-shopping-cart mr-5"></i>Add </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!--end product card-->
-                                    <div class="col-lg-1-5 col-md-4 col-12 col-sm-6">
-                                        <div class="product-cart-wrap">
-                                            <div class="product-img-action-wrap">
-                                                <div class="product-img product-img-zoom">
-                                                    <a href="{{ route('store.detail') }}">
-                                                        <img class="default-img"
-                                                            src="{{ asset('client/assets/imgs/shop/product-9-1.jpg') }}"
-                                                            alt="">
-                                                        <img class="hover-img"
-                                                            src="{{ asset('client/assets/imgs/shop/product-9-2.jpg') }}"
-                                                            alt="">
-                                                    </a>
-                                                </div>
-                                                <div class="product-action-1">
-                                                    <a aria-label="Add To Wishlist" class="action-btn"
-                                                        href="shop-wishlist.html"><i class="fi-rs-heart"></i></a>
-                                                    <a aria-label="Compare" class="action-btn"
-                                                        href="shop-compare.html"><i class="fi-rs-shuffle"></i></a>
-                                                    <a aria-label="Quick view" class="action-btn" data-bs-toggle="modal"
-                                                        data-bs-target="#quickViewModal"><i class="fi-rs-eye"></i></a>
-                                                </div>
-                                                <div class="product-badges product-badges-position product-badges-mrg">
-                                                    <span class="hot">Hot</span>
-                                                </div>
-                                            </div>
-                                            <div class="product-content-wrap">
-                                                <div class="product-category">
-                                                    <a href="shop-grid-right.html">Coffes</a>
-                                                </div>
-                                                <h2><a href="{{ route('store.detail') }}">Gorton’s Beer Battered Fish
-                                                        Fillets
-                                                        with soft paper</a></h2>
-                                                <div class="product-rate-cover">
-                                                    <div class="product-rate d-inline-block">
-                                                        <div class="product-rating" style="width:90%">
-                                                        </div>
-                                                    </div>
-                                                    <span class="font-small ml-5 text-muted"> (4.0)</span>
-                                                </div>
-                                                <div>
-                                                    <span class="font-small text-muted">400g</span>
-                                                </div>
-                                                <div class="product-card-bottom">
-                                                    <div class="product-price">
-                                                        <span>$23.85</span>
-                                                        <span class="old-price">$25.8</span>
-                                                    </div>
-                                                    <div class="add-cart">
-                                                        <a class="add" href="shop-cart.html"><i
-                                                                class="fi-rs-shopping-cart mr-5"></i>Add </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!--end product card-->
-                                    <div class="col-lg-1-5 col-md-4 col-12 col-sm-6 d-none d-xl-block">
-                                        <div class="product-cart-wrap">
-                                            <div class="product-img-action-wrap">
-                                                <div class="product-img product-img-zoom">
-                                                    <a href="{{ route('store.detail') }}">
-                                                        <img class="default-img"
-                                                            src="{{ asset('client/assets/imgs/shop/product-1-1.jpg') }}"
-                                                            alt="">
-                                                        <img class="hover-img"
-                                                            src="{{ asset('client/assets/imgs/shop/product-1-2.jpg') }}"
-                                                            alt="">
-                                                    </a>
-                                                </div>
-                                                <div class="product-action-1">
-                                                    <a aria-label="Add To Wishlist" class="action-btn"
-                                                        href="shop-wishlist.html"><i class="fi-rs-heart"></i></a>
-                                                    <a aria-label="Compare" class="action-btn"
-                                                        href="shop-compare.html"><i class="fi-rs-shuffle"></i></a>
-                                                    <a aria-label="Quick view" class="action-btn"
-                                                        data-bs-toggle="modal" data-bs-target="#quickViewModal"><i
-                                                            class="fi-rs-eye"></i></a>
-                                                </div>
-                                            </div>
-                                            <div class="product-content-wrap">
-                                                <div class="product-category">
-                                                    <a href="shop-grid-right.html">Cream</a>
-                                                </div>
-                                                <h2><a href="{{ route('store.detail') }}">Haagen-Dazs Caramel Cone Ice
-                                                        Cream
-                                                        Ketchup</a></h2>
-                                                <div class="product-rate-cover">
-                                                    <div class="product-rate d-inline-block">
-                                                        <div class="product-rating" style="width:50%">
-                                                        </div>
-                                                    </div>
-                                                    <span class="font-small ml-5 text-muted"> (2.0)</span>
-                                                </div>
-                                                <div>
-                                                    <span class="font-small text-muted">100g</span>
-                                                </div>
-                                                <div class="product-card-bottom">
-                                                    <div class="product-price">
-                                                        <span>$22.85</span>
-                                                        <span class="old-price">$24.8</span>
-                                                    </div>
-                                                    <div class="add-cart">
-                                                        <a class="add" href="shop-cart.html"><i
-                                                                class="fi-rs-shopping-cart mr-5"></i>Add </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!--end product card-->
-                                </div>
-                                <!--End product-grid-4-->
-                            </div>
-                            <!--En tab three-->
-                            <div class="tab-pane fade" id="tab-four" role="tabpanel" aria-labelledby="tab-four">
-                                <div class="row product-grid-4">
-                                    <div class="col-lg-1-5 col-md-4 col-12 col-sm-6">
-                                        <div class="product-cart-wrap mb-30">
-                                            <div class="product-img-action-wrap">
-                                                <div class="product-img product-img-zoom">
-                                                    <a href="{{ route('store.detail') }}">
-                                                        <img class="default-img"
-                                                            src="{{ asset('client/assets/imgs/shop/product-6-1.jpg') }}"
-                                                            alt="">
-                                                        <img class="hover-img"
-                                                            src="{{ asset('client/assets/imgs/shop/product-6-2.jpg') }}"
-                                                            alt="">
-                                                    </a>
-                                                </div>
-                                                <div class="product-action-1">
-                                                    <a aria-label="Add To Wishlist" class="action-btn"
-                                                        href="shop-wishlist.html"><i class="fi-rs-heart"></i></a>
-                                                    <a aria-label="Compare" class="action-btn"
-                                                        href="shop-compare.html"><i class="fi-rs-shuffle"></i></a>
-                                                    <a aria-label="Quick view" class="action-btn"
-                                                        data-bs-toggle="modal" data-bs-target="#quickViewModal"><i
-                                                            class="fi-rs-eye"></i></a>
-                                                </div>
-                                                <div class="product-badges product-badges-position product-badges-mrg">
-                                                    <span class="hot">Hot</span>
-                                                </div>
-                                            </div>
-                                            <div class="product-content-wrap">
-                                                <div class="product-category">
-                                                    <a href="shop-grid-right.html">Snack</a>
-                                                </div>
-                                                <h2><a href="{{ route('store.detail') }}">Seeds of Change Organic
-                                                        Quinoa,
-                                                        Brown, & Red Rice</a></h2>
-                                                <div class="product-rate-cover">
-                                                    <div class="product-rate d-inline-block">
-                                                        <div class="product-rating" style="width:90%">
-                                                        </div>
-                                                    </div>
-                                                    <span class="font-small ml-5 text-muted"> (4.0)</span>
-                                                </div>
-                                                <div>
-                                                    <span class="font-small text-muted">500g</span>
-                                                </div>
-                                                <div class="product-card-bottom">
-                                                    <div class="product-price">
-                                                        <span>$28.85</span>
-                                                        <span class="old-price">$32.8</span>
-                                                    </div>
-                                                    <div class="add-cart">
-                                                        <a class="add" href="shop-cart.html"><i
-                                                                class="fi-rs-shopping-cart mr-5"></i>Add </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!--end product card-->
-                                    <div class="col-lg-1-5 col-md-4 col-12 col-sm-6">
-                                        <div class="product-cart-wrap mb-30">
-                                            <div class="product-img-action-wrap">
-                                                <div class="product-img product-img-zoom">
-                                                    <a href="{{ route('store.detail') }}">
-                                                        <img class="default-img"
-                                                            src="{{ asset('client/assets/imgs/shop/product-7-1.jpg') }}"
-                                                            alt="">
-                                                        <img class="hover-img"
-                                                            src="{{ asset('client/assets/imgs/shop/product-7-2.jpg') }}"
-                                                            alt="">
-                                                    </a>
-                                                </div>
-                                                <div class="product-action-1">
-                                                    <a aria-label="Add To Wishlist" class="action-btn"
-                                                        href="shop-wishlist.html"><i class="fi-rs-heart"></i></a>
-                                                    <a aria-label="Compare" class="action-btn"
-                                                        href="shop-compare.html"><i class="fi-rs-shuffle"></i></a>
-                                                    <a aria-label="Quick view" class="action-btn"
-                                                        data-bs-toggle="modal" data-bs-target="#quickViewModal"><i
-                                                            class="fi-rs-eye"></i></a>
-                                                </div>
-                                                <div class="product-badges product-badges-position product-badges-mrg">
-                                                    <span class="sale">Sale</span>
-                                                </div>
-                                            </div>
-                                            <div class="product-content-wrap">
-                                                <div class="product-category">
-                                                    <a href="shop-grid-right.html">Hodo Foods</a>
-                                                </div>
-                                                <h2><a href="{{ route('store.detail') }}">All Natural Italian-Style
-                                                        Chicken
-                                                        Meatballs</a></h2>
-                                                <div class="product-rate-cover">
-                                                    <div class="product-rate d-inline-block">
-                                                        <div class="product-rating" style="width:80%">
-                                                        </div>
-                                                    </div>
-                                                    <span class="font-small ml-5 text-muted"> (3.5)</span>
-                                                </div>
-                                                <div>
-                                                    <span class="font-small text-muted">60g</span>
-                                                </div>
-                                                <div class="product-card-bottom">
-                                                    <div class="product-price">
-                                                        <span>$52.85</span>
-                                                        <span class="old-price">$55.8</span>
-                                                    </div>
-                                                    <div class="add-cart">
-                                                        <a class="add" href="shop-cart.html"><i
-                                                                class="fi-rs-shopping-cart mr-5"></i>Add </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!--end product card-->
-                                    <div class="col-lg-1-5 col-md-4 col-12 col-sm-6">
-                                        <div class="product-cart-wrap mb-30">
-                                            <div class="product-img-action-wrap">
-                                                <div class="product-img product-img-zoom">
-                                                    <a href="{{ route('store.detail') }}">
-                                                        <img class="default-img"
-                                                            src="{{ asset('client/assets/imgs/shop/product-8-1.jpg') }}"
-                                                            alt="">
-                                                        <img class="hover-img"
-                                                            src="{{ asset('client/assets/imgs/shop/product-8-2.jpg') }}"
-                                                            alt="">
-                                                    </a>
-                                                </div>
-                                                <div class="product-action-1">
-                                                    <a aria-label="Add To Wishlist" class="action-btn"
-                                                        href="shop-wishlist.html"><i class="fi-rs-heart"></i></a>
-                                                    <a aria-label="Compare" class="action-btn"
-                                                        href="shop-compare.html"><i class="fi-rs-shuffle"></i></a>
-                                                    <a aria-label="Quick view" class="action-btn"
-                                                        data-bs-toggle="modal" data-bs-target="#quickViewModal"><i
-                                                            class="fi-rs-eye"></i></a>
-                                                </div>
-                                                <div class="product-badges product-badges-position product-badges-mrg">
-                                                    <span class="new">New</span>
-                                                </div>
-                                            </div>
-                                            <div class="product-content-wrap">
-                                                <div class="product-category">
-                                                    <a href="shop-grid-right.html">Snack</a>
-                                                </div>
-                                                <h2><a href="{{ route('store.detail') }}">Angie’s Boomchickapop Sweet &
-                                                        Salty
-                                                        Kettle Corn</a></h2>
-                                                <div class="product-rate-cover">
-                                                    <div class="product-rate d-inline-block">
-                                                        <div class="product-rating" style="width:85%">
-                                                        </div>
-                                                    </div>
-                                                    <span class="font-small ml-5 text-muted"> (4.0)</span>
-                                                </div>
-                                                <div>
-                                                    <span class="font-small text-muted">70g</span>
-                                                </div>
-                                                <div class="product-card-bottom">
-                                                    <div class="product-price">
-                                                        <span>$48.85</span>
-                                                        <span class="old-price">$52.8</span>
-                                                    </div>
-                                                    <div class="add-cart">
-                                                        <a class="add" href="shop-cart.html"><i
-                                                                class="fi-rs-shopping-cart mr-5"></i>Add </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!--end product card-->
-                                    <div class="col-lg-1-5 col-md-4 col-12 col-sm-6">
-                                        <div class="product-cart-wrap mb-30">
-                                            <div class="product-img-action-wrap">
-                                                <div class="product-img product-img-zoom">
-                                                    <a href="{{ route('store.detail') }}">
-                                                        <img class="default-img"
-                                                            src="{{ asset('client/assets/imgs/shop/product-9-1.jpg') }}"
-                                                            alt="">
-                                                        <img class="hover-img"
-                                                            src="{{ asset('client/assets/imgs/shop/product-9-2.jpg') }}"
-                                                            alt="">
-                                                    </a>
-                                                </div>
-                                                <div class="product-action-1">
-                                                    <a aria-label="Add To Wishlist" class="action-btn"
-                                                        href="shop-wishlist.html"><i class="fi-rs-heart"></i></a>
-                                                    <a aria-label="Compare" class="action-btn"
-                                                        href="shop-compare.html"><i class="fi-rs-shuffle"></i></a>
-                                                    <a aria-label="Quick view" class="action-btn"
-                                                        data-bs-toggle="modal" data-bs-target="#quickViewModal"><i
-                                                            class="fi-rs-eye"></i></a>
-                                                </div>
-                                            </div>
-                                            <div class="product-content-wrap">
-                                                <div class="product-category">
-                                                    <a href="shop-grid-right.html">Vegetables</a>
-                                                </div>
-                                                <h2><a href="{{ route('store.detail') }}">Foster Farms Takeout Crispy
-                                                        Classic
-                                                        Buffalo Wings</a></h2>
-                                                <div class="product-rate-cover">
-                                                    <div class="product-rate d-inline-block">
-                                                        <div class="product-rating" style="width:90%">
-                                                        </div>
-                                                    </div>
-                                                    <span class="font-small ml-5 text-muted"> (4.0)</span>
-                                                </div>
-                                                <div>
-                                                    <span class="font-small text-muted">500g</span>
-                                                </div>
-                                                <div class="product-card-bottom">
-                                                    <div class="product-price">
-                                                        <span>$17.85</span>
-                                                        <span class="old-price">$19.8</span>
-                                                    </div>
-                                                    <div class="add-cart">
-                                                        <a class="add" href="shop-cart.html"><i
-                                                                class="fi-rs-shopping-cart mr-5"></i>Add </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!--end product card-->
-                                    <div class="col-lg-1-5 col-md-4 col-12 col-sm-6">
-                                        <div class="product-cart-wrap mb-30">
-                                            <div class="product-img-action-wrap">
-                                                <div class="product-img product-img-zoom">
-                                                    <a href="{{ route('store.detail') }}">
-                                                        <img class="default-img"
-                                                            src="{{ asset('client/assets/imgs/shop/product-4-1.jpg') }}"
-                                                            alt="">
-                                                        <img class="hover-img"
-                                                            src="{{ asset('client/assets/imgs/shop/product-4-2.jpg') }}"
-                                                            alt="">
-                                                    </a>
-                                                </div>
-                                                <div class="product-action-1">
-                                                    <a aria-label="Add To Wishlist" class="action-btn"
-                                                        href="shop-wishlist.html"><i class="fi-rs-heart"></i></a>
-                                                    <a aria-label="Compare" class="action-btn"
-                                                        href="shop-compare.html"><i class="fi-rs-shuffle"></i></a>
-                                                    <a aria-label="Quick view" class="action-btn"
-                                                        data-bs-toggle="modal" data-bs-target="#quickViewModal"><i
-                                                            class="fi-rs-eye"></i></a>
-                                                </div>
-                                                <div class="product-badges product-badges-position product-badges-mrg">
-                                                    <span class="best">-14%</span>
-                                                </div>
-                                            </div>
-                                            <div class="product-content-wrap">
-                                                <div class="product-category">
-                                                    <a href="shop-grid-right.html">Pet Foods</a>
-                                                </div>
-                                                <h2><a href="{{ route('store.detail') }}">Blue Diamond Almonds Lightly
-                                                        Salted
-                                                        Vegetables</a></h2>
-                                                <div class="product-rate-cover">
-                                                    <div class="product-rate d-inline-block">
-                                                        <div class="product-rating" style="width:90%">
-                                                        </div>
-                                                    </div>
-                                                    <span class="font-small ml-5 text-muted"> (4.0)</span>
-                                                </div>
-                                                <div>
-                                                    <span class="font-small text-muted">500g</span>
-                                                </div>
-                                                <div class="product-card-bottom">
-                                                    <div class="product-price">
-                                                        <span>$23.85</span>
-                                                        <span class="old-price">$25.8</span>
-                                                    </div>
-                                                    <div class="add-cart">
-                                                        <a class="add" href="shop-cart.html"><i
-                                                                class="fi-rs-shopping-cart mr-5"></i>Add </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!--end product card-->
-                                    <div class="col-lg-1-5 col-md-4 col-12 col-sm-6">
-                                        <div class="product-cart-wrap mb-30">
-                                            <div class="product-img-action-wrap">
-                                                <div class="product-img product-img-zoom">
-                                                    <a href="{{ route('store.detail') }}">
-                                                        <img class="default-img"
-                                                            src="{{ asset('client/assets/imgs/shop/product-3-1.jpg') }}"
-                                                            alt="">
-                                                        <img class="hover-img"
-                                                            src="{{ asset('client/assets/imgs/shop/product-3-2.jpg') }}"
-                                                            alt="">
-                                                    </a>
-                                                </div>
-                                                <div class="product-action-1">
-                                                    <a aria-label="Add To Wishlist" class="action-btn"
-                                                        href="shop-wishlist.html"><i class="fi-rs-heart"></i></a>
-                                                    <a aria-label="Compare" class="action-btn"
-                                                        href="shop-compare.html"><i class="fi-rs-shuffle"></i></a>
-                                                    <a aria-label="Quick view" class="action-btn"
-                                                        data-bs-toggle="modal" data-bs-target="#quickViewModal"><i
-                                                            class="fi-rs-eye"></i></a>
-                                                </div>
-                                            </div>
-                                            <div class="product-content-wrap">
-                                                <div class="product-category">
-                                                    <a href="shop-grid-right.html">Hodo Foods</a>
-                                                </div>
-                                                <h2><a href="{{ route('store.detail') }}">Chobani Complete Vanilla
-                                                        Greek
-                                                        Yogurt</a></h2>
-                                                <div class="product-rate-cover">
-                                                    <div class="product-rate d-inline-block">
-                                                        <div class="product-rating" style="width:90%">
-                                                        </div>
-                                                    </div>
-                                                    <span class="font-small ml-5 text-muted"> (4.0)</span>
-                                                </div>
-                                                <div>
-                                                    <span class="font-small text-muted">500g</span>
-                                                </div>
-                                                <div class="product-card-bottom">
-                                                    <div class="product-price">
-                                                        <span>$54.85</span>
-                                                        <span class="old-price">$55.8</span>
-                                                    </div>
-                                                    <div class="add-cart">
-                                                        <a class="add" href="shop-cart.html"><i
-                                                                class="fi-rs-shopping-cart mr-5"></i>Add </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!--end product card-->
-                                    <div class="col-lg-1-5 col-md-4 col-12 col-sm-6">
-                                        <div class="product-cart-wrap">
-                                            <div class="product-img-action-wrap">
-                                                <div class="product-img product-img-zoom">
-                                                    <a href="{{ route('store.detail') }}">
-                                                        <img class="default-img"
-                                                            src="{{ asset('client/assets/imgs/shop/product-2-1.jpg') }}"
-                                                            alt="">
-                                                        <img class="hover-img"
-                                                            src="{{ asset('client/assets/imgs/shop/product-2-2.jpg') }}"
-                                                            alt="">
-                                                    </a>
-                                                </div>
-                                                <div class="product-action-1">
-                                                    <a aria-label="Add To Wishlist" class="action-btn"
-                                                        href="shop-wishlist.html"><i class="fi-rs-heart"></i></a>
-                                                    <a aria-label="Compare" class="action-btn"
-                                                        href="shop-compare.html"><i class="fi-rs-shuffle"></i></a>
-                                                    <a aria-label="Quick view" class="action-btn"
-                                                        data-bs-toggle="modal" data-bs-target="#quickViewModal"><i
-                                                            class="fi-rs-eye"></i></a>
-                                                </div>
-                                            </div>
-                                            <div class="product-content-wrap">
-                                                <div class="product-category">
-                                                    <a href="shop-grid-right.html">Meats</a>
-                                                </div>
-                                                <h2><a href="{{ route('store.detail') }}">Canada Dry Ginger Ale – 2 L
-                                                        Bottle -
-                                                        200ml - 400g</a></h2>
-                                                <div class="product-rate-cover">
-                                                    <div class="product-rate d-inline-block">
-                                                        <div class="product-rating" style="width:90%">
-                                                        </div>
-                                                    </div>
-                                                    <span class="font-small ml-5 text-muted"> (4.0)</span>
-                                                </div>
-                                                <div>
-                                                    <span class="font-small text-muted">500g</span>
-                                                </div>
-                                                <div class="product-card-bottom">
-                                                    <div class="product-price">
-                                                        <span>$32.85</span>
-                                                        <span class="old-price">$33.8</span>
-                                                    </div>
-                                                    <div class="add-cart">
-                                                        <a class="add" href="shop-cart.html"><i
-                                                                class="fi-rs-shopping-cart mr-5"></i>Add </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!--end product card-->
-                                    <div class="col-lg-1-5 col-md-4 col-12 col-sm-6">
-                                        <div class="product-cart-wrap">
-                                            <div class="product-img-action-wrap">
-                                                <div class="product-img product-img-zoom">
-                                                    <a href="{{ route('store.detail') }}">
-                                                        <img class="default-img"
-                                                            src="{{ asset('client/assets/imgs/shop/product-1-1.jpg') }}"
-                                                            alt="">
-                                                        <img class="hover-img"
-                                                            src="{{ asset('client/assets/imgs/shop/product-1-2.jpg') }}"
-                                                            alt="">
-                                                    </a>
-                                                </div>
-                                                <div class="product-action-1">
-                                                    <a aria-label="Add To Wishlist" class="action-btn"
-                                                        href="shop-wishlist.html"><i class="fi-rs-heart"></i></a>
-                                                    <a aria-label="Compare" class="action-btn"
-                                                        href="shop-compare.html"><i class="fi-rs-shuffle"></i></a>
-                                                    <a aria-label="Quick view" class="action-btn"
-                                                        data-bs-toggle="modal" data-bs-target="#quickViewModal"><i
-                                                            class="fi-rs-eye"></i></a>
-                                                </div>
-                                                <div class="product-badges product-badges-position product-badges-mrg">
-                                                    <span class="sale">Sale</span>
-                                                </div>
-                                            </div>
-                                            <div class="product-content-wrap">
-                                                <div class="product-category">
-                                                    <a href="shop-grid-right.html">Snack</a>
-                                                </div>
-                                                <h2><a href="{{ route('store.detail') }}">Encore Seafoods Stuffed
-                                                        Alaskan
-                                                        Salmon</a></h2>
-                                                <div class="product-rate-cover">
-                                                    <div class="product-rate d-inline-block">
-                                                        <div class="product-rating" style="width:90%">
-                                                        </div>
-                                                    </div>
-                                                    <span class="font-small ml-5 text-muted"> (4.0)</span>
-                                                </div>
-                                                <div>
-                                                    <span class="font-small text-muted">500g</span>
-                                                </div>
-                                                <div class="product-card-bottom">
-                                                    <div class="product-price">
-                                                        <span>$35.85</span>
-                                                        <span class="old-price">$37.8</span>
-                                                    </div>
-                                                    <div class="add-cart">
-                                                        <a class="add" href="shop-cart.html"><i
-                                                                class="fi-rs-shopping-cart mr-5"></i>Add </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!--end product card-->
-                                    <div class="col-lg-1-5 col-md-4 col-12 col-sm-6">
-                                        <div class="product-cart-wrap">
-                                            <div class="product-img-action-wrap">
-                                                <div class="product-img product-img-zoom">
-                                                    <a href="{{ route('store.detail') }}">
-                                                        <img class="default-img"
-                                                            src="{{ asset('client/assets/imgs/shop/product-11-1.jpg') }}"
-                                                            alt="">
-                                                        <img class="hover-img"
-                                                            src="{{ asset('client/assets/imgs/shop/product-11-2.jpg') }}"
-                                                            alt="">
-                                                    </a>
-                                                </div>
-                                                <div class="product-action-1">
-                                                    <a aria-label="Add To Wishlist" class="action-btn"
-                                                        href="shop-wishlist.html"><i class="fi-rs-heart"></i></a>
-                                                    <a aria-label="Compare" class="action-btn"
-                                                        href="shop-compare.html"><i class="fi-rs-shuffle"></i></a>
-                                                    <a aria-label="Quick view" class="action-btn"
-                                                        data-bs-toggle="modal" data-bs-target="#quickViewModal"><i
-                                                            class="fi-rs-eye"></i></a>
-                                                </div>
-                                                <div class="product-badges product-badges-position product-badges-mrg">
-                                                    <span class="hot">Hot</span>
-                                                </div>
-                                            </div>
-                                            <div class="product-content-wrap">
-                                                <div class="product-category">
-                                                    <a href="shop-grid-right.html">Coffes</a>
-                                                </div>
-                                                <h2><a href="{{ route('store.detail') }}">Gorton’s Beer Battered Fish
-                                                        Fillets
-                                                        with soft paper</a></h2>
-                                                <div class="product-rate-cover">
-                                                    <div class="product-rate d-inline-block">
-                                                        <div class="product-rating" style="width:90%">
-                                                        </div>
-                                                    </div>
-                                                    <span class="font-small ml-5 text-muted"> (4.0)</span>
-                                                </div>
-                                                <div>
-                                                    <span class="font-small text-muted">400g</span>
-                                                </div>
-                                                <div class="product-card-bottom">
-                                                    <div class="product-price">
-                                                        <span>$23.85</span>
-                                                        <span class="old-price">$25.8</span>
-                                                    </div>
-                                                    <div class="add-cart">
-                                                        <a class="add" href="shop-cart.html"><i
-                                                                class="fi-rs-shopping-cart mr-5"></i>Add </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!--end product card-->
-                                    <div class="col-lg-1-5 col-md-4 col-12 col-sm-6 d-none d-xl-block">
-                                        <div class="product-cart-wrap">
-                                            <div class="product-img-action-wrap">
-                                                <div class="product-img product-img-zoom">
-                                                    <a href="{{ route('store.detail') }}">
-                                                        <img class="default-img"
-                                                            src="{{ asset('client/assets/imgs/shop/product-12-1.jpg') }}"
-                                                            alt="">
-                                                        <img class="hover-img"
-                                                            src="{{ asset('client/assets/imgs/shop/product-12-2.jpg') }}"
-                                                            alt="">
-                                                    </a>
-                                                </div>
-                                                <div class="product-action-1">
-                                                    <a aria-label="Add To Wishlist" class="action-btn"
-                                                        href="shop-wishlist.html"><i class="fi-rs-heart"></i></a>
-                                                    <a aria-label="Compare" class="action-btn"
-                                                        href="shop-compare.html"><i class="fi-rs-shuffle"></i></a>
-                                                    <a aria-label="Quick view" class="action-btn"
-                                                        data-bs-toggle="modal" data-bs-target="#quickViewModal"><i
-                                                            class="fi-rs-eye"></i></a>
-                                                </div>
-                                            </div>
-                                            <div class="product-content-wrap">
-                                                <div class="product-category">
-                                                    <a href="shop-grid-right.html">Cream</a>
-                                                </div>
-                                                <h2><a href="{{ route('store.detail') }}">Haagen-Dazs Caramel Cone Ice
-                                                        Cream
-                                                        Ketchup</a></h2>
-                                                <div class="product-rate-cover">
-                                                    <div class="product-rate d-inline-block">
-                                                        <div class="product-rating" style="width:50%">
-                                                        </div>
-                                                    </div>
-                                                    <span class="font-small ml-5 text-muted"> (2.0)</span>
-                                                </div>
-                                                <div>
-                                                    <span class="font-small text-muted">100g</span>
-                                                </div>
-                                                <div class="product-card-bottom">
-                                                    <div class="product-price">
-                                                        <span>$22.85</span>
-                                                        <span class="old-price">$24.8</span>
-                                                    </div>
-                                                    <div class="add-cart">
-                                                        <a class="add" href="shop-cart.html"><i
-                                                                class="fi-rs-shopping-cart mr-5"></i>Add </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!--end product card-->
-                                </div>
-                                <!--End product-grid-4-->
-                            </div>
-                            <!--En tab four-->
-                            <div class="tab-pane fade" id="tab-five" role="tabpanel" aria-labelledby="tab-five">
-                                <div class="row product-grid-4">
-                                    <div class="col-lg-1-5 col-md-4 col-12 col-sm-6">
-                                        <div class="product-cart-wrap mb-30">
-                                            <div class="product-img-action-wrap">
-                                                <div class="product-img product-img-zoom">
-                                                    <a href="{{ route('store.detail') }}">
-                                                        <img class="default-img"
-                                                            src="{{ asset('client/assets/imgs/shop/product-12-1.jpg') }}"
-                                                            alt="">
-                                                        <img class="hover-img"
-                                                            src="{{ asset('client/assets/imgs/shop/product-12-2.jpg') }}"
-                                                            alt="">
-                                                    </a>
-                                                </div>
-                                                <div class="product-action-1">
-                                                    <a aria-label="Add To Wishlist" class="action-btn"
-                                                        href="shop-wishlist.html"><i class="fi-rs-heart"></i></a>
-                                                    <a aria-label="Compare" class="action-btn"
-                                                        href="shop-compare.html"><i class="fi-rs-shuffle"></i></a>
-                                                    <a aria-label="Quick view" class="action-btn"
-                                                        data-bs-toggle="modal" data-bs-target="#quickViewModal"><i
-                                                            class="fi-rs-eye"></i></a>
-                                                </div>
-                                                <div class="product-badges product-badges-position product-badges-mrg">
-                                                    <span class="hot">Hot</span>
-                                                </div>
-                                            </div>
-                                            <div class="product-content-wrap">
-                                                <div class="product-category">
-                                                    <a href="shop-grid-right.html">Snack</a>
-                                                </div>
-                                                <h2><a href="{{ route('store.detail') }}">Seeds of Change Organic
-                                                        Quinoa,
-                                                        Brown, & Red Rice</a></h2>
-                                                <div class="product-rate-cover">
-                                                    <div class="product-rate d-inline-block">
-                                                        <div class="product-rating" style="width:90%">
-                                                        </div>
-                                                    </div>
-                                                    <span class="font-small ml-5 text-muted"> (4.0)</span>
-                                                </div>
-                                                <div>
-                                                    <span class="font-small text-muted">500g</span>
-                                                </div>
-                                                <div class="product-card-bottom">
-                                                    <div class="product-price">
-                                                        <span>$28.85</span>
-                                                        <span class="old-price">$32.8</span>
-                                                    </div>
-                                                    <div class="add-cart">
-                                                        <a class="add" href="shop-cart.html"><i
-                                                                class="fi-rs-shopping-cart mr-5"></i>Add </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!--end product card-->
-                                    <div class="col-lg-1-5 col-md-4 col-12 col-sm-6">
-                                        <div class="product-cart-wrap mb-30">
-                                            <div class="product-img-action-wrap">
-                                                <div class="product-img product-img-zoom">
-                                                    <a href="{{ route('store.detail') }}">
-                                                        <img class="default-img"
-                                                            src="{{ asset('client/assets/imgs/shop/product-13-1.jpg') }}"
-                                                            alt="">
-                                                        <img class="hover-img"
-                                                            src="{{ asset('client/assets/imgs/shop/product-13-2.jpg') }}"
-                                                            alt="">
-                                                    </a>
-                                                </div>
-                                                <div class="product-action-1">
-                                                    <a aria-label="Add To Wishlist" class="action-btn"
-                                                        href="shop-wishlist.html"><i class="fi-rs-heart"></i></a>
-                                                    <a aria-label="Compare" class="action-btn"
-                                                        href="shop-compare.html"><i class="fi-rs-shuffle"></i></a>
-                                                    <a aria-label="Quick view" class="action-btn"
-                                                        data-bs-toggle="modal" data-bs-target="#quickViewModal"><i
-                                                            class="fi-rs-eye"></i></a>
-                                                </div>
-                                                <div class="product-badges product-badges-position product-badges-mrg">
-                                                    <span class="sale">Sale</span>
-                                                </div>
-                                            </div>
-                                            <div class="product-content-wrap">
-                                                <div class="product-category">
-                                                    <a href="shop-grid-right.html">Hodo Foods</a>
-                                                </div>
-                                                <h2><a href="{{ route('store.detail') }}">All Natural Italian-Style
-                                                        Chicken
-                                                        Meatballs</a></h2>
-                                                <div class="product-rate-cover">
-                                                    <div class="product-rate d-inline-block">
-                                                        <div class="product-rating" style="width:80%">
-                                                        </div>
-                                                    </div>
-                                                    <span class="font-small ml-5 text-muted"> (3.5)</span>
-                                                </div>
-                                                <div>
-                                                    <span class="font-small text-muted">60g</span>
-                                                </div>
-                                                <div class="product-card-bottom">
-                                                    <div class="product-price">
-                                                        <span>$52.85</span>
-                                                        <span class="old-price">$55.8</span>
-                                                    </div>
-                                                    <div class="add-cart">
-                                                        <a class="add" href="shop-cart.html"><i
-                                                                class="fi-rs-shopping-cart mr-5"></i>Add </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!--end product card-->
-                                    <div class="col-lg-1-5 col-md-4 col-12 col-sm-6">
-                                        <div class="product-cart-wrap mb-30">
-                                            <div class="product-img-action-wrap">
-                                                <div class="product-img product-img-zoom">
-                                                    <a href="{{ route('store.detail') }}">
-                                                        <img class="default-img"
-                                                            src="{{ asset('client/assets/imgs/shop/product-14-1.jpg') }}"
-                                                            alt="">
-                                                        <img class="hover-img"
-                                                            src="{{ asset('client/assets/imgs/shop/product-14-2.jpg') }}"
-                                                            alt="">
-                                                    </a>
-                                                </div>
-                                                <div class="product-action-1">
-                                                    <a aria-label="Add To Wishlist" class="action-btn"
-                                                        href="shop-wishlist.html"><i class="fi-rs-heart"></i></a>
-                                                    <a aria-label="Compare" class="action-btn"
-                                                        href="shop-compare.html"><i class="fi-rs-shuffle"></i></a>
-                                                    <a aria-label="Quick view" class="action-btn"
-                                                        data-bs-toggle="modal" data-bs-target="#quickViewModal"><i
-                                                            class="fi-rs-eye"></i></a>
-                                                </div>
-                                                <div class="product-badges product-badges-position product-badges-mrg">
-                                                    <span class="new">New</span>
-                                                </div>
-                                            </div>
-                                            <div class="product-content-wrap">
-                                                <div class="product-category">
-                                                    <a href="shop-grid-right.html">Snack</a>
-                                                </div>
-                                                <h2><a href="{{ route('store.detail') }}">Angie’s Boomchickapop Sweet &
-                                                        Salty
-                                                        Kettle Corn</a></h2>
-                                                <div class="product-rate-cover">
-                                                    <div class="product-rate d-inline-block">
-                                                        <div class="product-rating" style="width:85%">
-                                                        </div>
-                                                    </div>
-                                                    <span class="font-small ml-5 text-muted"> (4.0)</span>
-                                                </div>
-                                                <div>
-                                                    <span class="font-small text-muted">70g</span>
-                                                </div>
-                                                <div class="product-card-bottom">
-                                                    <div class="product-price">
-                                                        <span>$48.85</span>
-                                                        <span class="old-price">$52.8</span>
-                                                    </div>
-                                                    <div class="add-cart">
-                                                        <a class="add" href="shop-cart.html"><i
-                                                                class="fi-rs-shopping-cart mr-5"></i>Add </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!--end product card-->
-                                    <div class="col-lg-1-5 col-md-4 col-12 col-sm-6">
-                                        <div class="product-cart-wrap mb-30">
-                                            <div class="product-img-action-wrap">
-                                                <div class="product-img product-img-zoom">
-                                                    <a href="{{ route('store.detail') }}">
-                                                        <img class="default-img"
-                                                            src="{{ asset('client/assets/imgs/shop/product-15-1.jpg') }}"
-                                                            alt="">
-                                                        <img class="hover-img"
-                                                            src="{{ asset('client/assets/imgs/shop/product-15-2.jpg') }}"
-                                                            alt="">
-                                                    </a>
-                                                </div>
-                                                <div class="product-action-1">
-                                                    <a aria-label="Add To Wishlist" class="action-btn"
-                                                        href="shop-wishlist.html"><i class="fi-rs-heart"></i></a>
-                                                    <a aria-label="Compare" class="action-btn"
-                                                        href="shop-compare.html"><i class="fi-rs-shuffle"></i></a>
-                                                    <a aria-label="Quick view" class="action-btn"
-                                                        data-bs-toggle="modal" data-bs-target="#quickViewModal"><i
-                                                            class="fi-rs-eye"></i></a>
-                                                </div>
-                                            </div>
-                                            <div class="product-content-wrap">
-                                                <div class="product-category">
-                                                    <a href="shop-grid-right.html">Vegetables</a>
-                                                </div>
-                                                <h2><a href="{{ route('store.detail') }}">Foster Farms Takeout Crispy
-                                                        Classic
-                                                        Buffalo Wings</a></h2>
-                                                <div class="product-rate-cover">
-                                                    <div class="product-rate d-inline-block">
-                                                        <div class="product-rating" style="width:90%">
-                                                        </div>
-                                                    </div>
-                                                    <span class="font-small ml-5 text-muted"> (4.0)</span>
-                                                </div>
-                                                <div>
-                                                    <span class="font-small text-muted">500g</span>
-                                                </div>
-                                                <div class="product-card-bottom">
-                                                    <div class="product-price">
-                                                        <span>$17.85</span>
-                                                        <span class="old-price">$19.8</span>
-                                                    </div>
-                                                    <div class="add-cart">
-                                                        <a class="add" href="shop-cart.html"><i
-                                                                class="fi-rs-shopping-cart mr-5"></i>Add </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!--end product card-->
-                                    <div class="col-lg-1-5 col-md-4 col-12 col-sm-6">
-                                        <div class="product-cart-wrap mb-30">
-                                            <div class="product-img-action-wrap">
-                                                <div class="product-img product-img-zoom">
-                                                    <a href="{{ route('store.detail') }}">
-                                                        <img class="default-img"
-                                                            src="{{ asset('client/assets/imgs/shop/product-16-1.jpg') }}"
-                                                            alt="">
-                                                        <img class="hover-img"
-                                                            src="{{ asset('client/assets/imgs/shop/product-16-2.jpg') }}"
-                                                            alt="">
-                                                    </a>
-                                                </div>
-                                                <div class="product-action-1">
-                                                    <a aria-label="Add To Wishlist" class="action-btn"
-                                                        href="shop-wishlist.html"><i class="fi-rs-heart"></i></a>
-                                                    <a aria-label="Compare" class="action-btn"
-                                                        href="shop-compare.html"><i class="fi-rs-shuffle"></i></a>
-                                                    <a aria-label="Quick view" class="action-btn"
-                                                        data-bs-toggle="modal" data-bs-target="#quickViewModal"><i
-                                                            class="fi-rs-eye"></i></a>
-                                                </div>
-                                                <div class="product-badges product-badges-position product-badges-mrg">
-                                                    <span class="best">-14%</span>
-                                                </div>
-                                            </div>
-                                            <div class="product-content-wrap">
-                                                <div class="product-category">
-                                                    <a href="shop-grid-right.html">Pet Foods</a>
-                                                </div>
-                                                <h2><a href="{{ route('store.detail') }}">Blue Diamond Almonds Lightly
-                                                        Salted
-                                                        Vegetables</a></h2>
-                                                <div class="product-rate-cover">
-                                                    <div class="product-rate d-inline-block">
-                                                        <div class="product-rating" style="width:90%">
-                                                        </div>
-                                                    </div>
-                                                    <span class="font-small ml-5 text-muted"> (4.0)</span>
-                                                </div>
-                                                <div>
-                                                    <span class="font-small text-muted">500g</span>
-                                                </div>
-                                                <div class="product-card-bottom">
-                                                    <div class="product-price">
-                                                        <span>$23.85</span>
-                                                        <span class="old-price">$25.8</span>
-                                                    </div>
-                                                    <div class="add-cart">
-                                                        <a class="add" href="shop-cart.html"><i
-                                                                class="fi-rs-shopping-cart mr-5"></i>Add </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!--end product card-->
-                                    <div class="col-lg-1-5 col-md-4 col-12 col-sm-6">
-                                        <div class="product-cart-wrap">
-                                            <div class="product-img-action-wrap">
-                                                <div class="product-img product-img-zoom">
-                                                    <a href="{{ route('store.detail') }}">
-                                                        <img class="default-img"
-                                                            src="{{ asset('client/assets/imgs/shop/product-5-1.jpg') }}"
-                                                            alt="">
-                                                        <img class="hover-img"
-                                                            src="{{ asset('client/assets/imgs/shop/product-5-2.jpg') }}"
-                                                            alt="">
-                                                    </a>
-                                                </div>
-                                                <div class="product-action-1">
-                                                    <a aria-label="Add To Wishlist" class="action-btn"
-                                                        href="shop-wishlist.html"><i class="fi-rs-heart"></i></a>
-                                                    <a aria-label="Compare" class="action-btn"
-                                                        href="shop-compare.html"><i class="fi-rs-shuffle"></i></a>
-                                                    <a aria-label="Quick view" class="action-btn"
-                                                        data-bs-toggle="modal" data-bs-target="#quickViewModal"><i
-                                                            class="fi-rs-eye"></i></a>
-                                                </div>
-                                            </div>
-                                            <div class="product-content-wrap">
-                                                <div class="product-category">
-                                                    <a href="shop-grid-right.html">Hodo Foods</a>
-                                                </div>
-                                                <h2><a href="{{ route('store.detail') }}">Chobani Complete Vanilla
-                                                        Greek
-                                                        Yogurt</a></h2>
-                                                <div class="product-rate-cover">
-                                                    <div class="product-rate d-inline-block">
-                                                        <div class="product-rating" style="width:90%">
-                                                        </div>
-                                                    </div>
-                                                    <span class="font-small ml-5 text-muted"> (4.0)</span>
-                                                </div>
-                                                <div>
-                                                    <span class="font-small text-muted">500g</span>
-                                                </div>
-                                                <div class="product-card-bottom">
-                                                    <div class="product-price">
-                                                        <span>$54.85</span>
-                                                        <span class="old-price">$55.8</span>
-                                                    </div>
-                                                    <div class="add-cart">
-                                                        <a class="add" href="shop-cart.html"><i
-                                                                class="fi-rs-shopping-cart mr-5"></i>Add </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!--end product card-->
-                                    <div class="col-lg-1-5 col-md-4 col-12 col-sm-6">
-                                        <div class="product-cart-wrap">
-                                            <div class="product-img-action-wrap">
-                                                <div class="product-img product-img-zoom">
-                                                    <a href="{{ route('store.detail') }}">
-                                                        <img class="default-img"
-                                                            src="{{ asset('client/assets/imgs/shop/product-7-1.jpg') }}"
-                                                            alt="">
-                                                        <img class="hover-img"
-                                                            src="{{ asset('client/assets/imgs/shop/product-7-2.jpg') }}"
-                                                            alt="">
-                                                    </a>
-                                                </div>
-                                                <div class="product-action-1">
-                                                    <a aria-label="Add To Wishlist" class="action-btn"
-                                                        href="shop-wishlist.html"><i class="fi-rs-heart"></i></a>
-                                                    <a aria-label="Compare" class="action-btn"
-                                                        href="shop-compare.html"><i class="fi-rs-shuffle"></i></a>
-                                                    <a aria-label="Quick view" class="action-btn"
-                                                        data-bs-toggle="modal" data-bs-target="#quickViewModal"><i
-                                                            class="fi-rs-eye"></i></a>
-                                                </div>
-                                            </div>
-                                            <div class="product-content-wrap">
-                                                <div class="product-category">
-                                                    <a href="shop-grid-right.html">Meats</a>
-                                                </div>
-                                                <h2><a href="{{ route('store.detail') }}">Canada Dry Ginger Ale – 2 L
-                                                        Bottle -
-                                                        200ml - 400g</a></h2>
-                                                <div class="product-rate-cover">
-                                                    <div class="product-rate d-inline-block">
-                                                        <div class="product-rating" style="width:90%">
-                                                        </div>
-                                                    </div>
-                                                    <span class="font-small ml-5 text-muted"> (4.0)</span>
-                                                </div>
-                                                <div>
-                                                    <span class="font-small text-muted">500g</span>
-                                                </div>
-                                                <div class="product-card-bottom">
-                                                    <div class="product-price">
-                                                        <span>$32.85</span>
-                                                        <span class="old-price">$33.8</span>
-                                                    </div>
-                                                    <div class="add-cart">
-                                                        <a class="add" href="shop-cart.html"><i
-                                                                class="fi-rs-shopping-cart mr-5"></i>Add </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!--end product card-->
-                                    <div class="col-lg-1-5 col-md-4 col-12 col-sm-6">
-                                        <div class="product-cart-wrap">
-                                            <div class="product-img-action-wrap">
-                                                <div class="product-img product-img-zoom">
-                                                    <a href="{{ route('store.detail') }}">
-                                                        <img class="default-img"
-                                                            src="{{ asset('client/assets/imgs/shop/product-8-1.jpg') }}"
-                                                            alt="">
-                                                        <img class="hover-img"
-                                                            src="{{ asset('client/assets/imgs/shop/product-8-2.jpg') }}"
-                                                            alt="">
-                                                    </a>
-                                                </div>
-                                                <div class="product-action-1">
-                                                    <a aria-label="Add To Wishlist" class="action-btn"
-                                                        href="shop-wishlist.html"><i class="fi-rs-heart"></i></a>
-                                                    <a aria-label="Compare" class="action-btn"
-                                                        href="shop-compare.html"><i class="fi-rs-shuffle"></i></a>
-                                                    <a aria-label="Quick view" class="action-btn"
-                                                        data-bs-toggle="modal" data-bs-target="#quickViewModal"><i
-                                                            class="fi-rs-eye"></i></a>
-                                                </div>
-                                                <div class="product-badges product-badges-position product-badges-mrg">
-                                                    <span class="sale">Sale</span>
-                                                </div>
-                                            </div>
-                                            <div class="product-content-wrap">
-                                                <div class="product-category">
-                                                    <a href="shop-grid-right.html">Snack</a>
-                                                </div>
-                                                <h2><a href="{{ route('store.detail') }}">Encore Seafoods Stuffed
-                                                        Alaskan
-                                                        Salmon</a></h2>
-                                                <div class="product-rate-cover">
-                                                    <div class="product-rate d-inline-block">
-                                                        <div class="product-rating" style="width:90%">
-                                                        </div>
-                                                    </div>
-                                                    <span class="font-small ml-5 text-muted"> (4.0)</span>
-                                                </div>
-                                                <div>
-                                                    <span class="font-small text-muted">500g</span>
-                                                </div>
-                                                <div class="product-card-bottom">
-                                                    <div class="product-price">
-                                                        <span>$35.85</span>
-                                                        <span class="old-price">$37.8</span>
-                                                    </div>
-                                                    <div class="add-cart">
-                                                        <a class="add" href="shop-cart.html"><i
-                                                                class="fi-rs-shopping-cart mr-5"></i>Add </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!--end product card-->
-                                    <div class="col-lg-1-5 col-md-4 col-12 col-sm-6">
-                                        <div class="product-cart-wrap">
-                                            <div class="product-img-action-wrap">
-                                                <div class="product-img product-img-zoom">
-                                                    <a href="{{ route('store.detail') }}">
-                                                        <img class="default-img"
-                                                            src="{{ asset('client/assets/imgs/shop/product-9-1.jpg') }}"
-                                                            alt="">
-                                                        <img class="hover-img"
-                                                            src="{{ asset('client/assets/imgs/shop/product-9-2.jpg') }}"
-                                                            alt="">
-                                                    </a>
-                                                </div>
-                                                <div class="product-action-1">
-                                                    <a aria-label="Add To Wishlist" class="action-btn"
-                                                        href="shop-wishlist.html"><i class="fi-rs-heart"></i></a>
-                                                    <a aria-label="Compare" class="action-btn"
-                                                        href="shop-compare.html"><i class="fi-rs-shuffle"></i></a>
-                                                    <a aria-label="Quick view" class="action-btn"
-                                                        data-bs-toggle="modal" data-bs-target="#quickViewModal"><i
-                                                            class="fi-rs-eye"></i></a>
-                                                </div>
-                                                <div class="product-badges product-badges-position product-badges-mrg">
-                                                    <span class="hot">Hot</span>
-                                                </div>
-                                            </div>
-                                            <div class="product-content-wrap">
-                                                <div class="product-category">
-                                                    <a href="shop-grid-right.html">Coffes</a>
-                                                </div>
-                                                <h2><a href="{{ route('store.detail') }}">Gorton’s Beer Battered Fish
-                                                        Fillets
-                                                        with soft paper</a></h2>
-                                                <div class="product-rate-cover">
-                                                    <div class="product-rate d-inline-block">
-                                                        <div class="product-rating" style="width:90%">
-                                                        </div>
-                                                    </div>
-                                                    <span class="font-small ml-5 text-muted"> (4.0)</span>
-                                                </div>
-                                                <div>
-                                                    <span class="font-small text-muted">400g</span>
-                                                </div>
-                                                <div class="product-card-bottom">
-                                                    <div class="product-price">
-                                                        <span>$23.85</span>
-                                                        <span class="old-price">$25.8</span>
-                                                    </div>
-                                                    <div class="add-cart">
-                                                        <a class="add" href="shop-cart.html"><i
-                                                                class="fi-rs-shopping-cart mr-5"></i>Add </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!--end product card-->
-                                    <div class="col-lg-1-5 col-md-4 col-12 col-sm-6 d-none d-xl-block">
-                                        <div class="product-cart-wrap">
-                                            <div class="product-img-action-wrap">
-                                                <div class="product-img product-img-zoom">
-                                                    <a href="{{ route('store.detail') }}">
-                                                        <img class="default-img"
-                                                            src="{{ asset('client/assets/imgs/shop/product-10-1.jpg') }}"
-                                                            alt="">
-                                                        <img class="hover-img"
-                                                            src="{{ asset('client/assets/imgs/shop/product-10-2.jpg') }}"
-                                                            alt="">
-                                                    </a>
-                                                </div>
-                                                <div class="product-action-1">
-                                                    <a aria-label="Add To Wishlist" class="action-btn"
-                                                        href="shop-wishlist.html"><i class="fi-rs-heart"></i></a>
-                                                    <a aria-label="Compare" class="action-btn"
-                                                        href="shop-compare.html"><i class="fi-rs-shuffle"></i></a>
-                                                    <a aria-label="Quick view" class="action-btn"
-                                                        data-bs-toggle="modal" data-bs-target="#quickViewModal"><i
-                                                            class="fi-rs-eye"></i></a>
-                                                </div>
-                                            </div>
-                                            <div class="product-content-wrap">
-                                                <div class="product-category">
-                                                    <a href="shop-grid-right.html">Cream</a>
-                                                </div>
-                                                <h2><a href="{{ route('store.detail') }}">Haagen-Dazs Caramel Cone Ice
-                                                        Cream
-                                                        Ketchup</a></h2>
-                                                <div class="product-rate-cover">
-                                                    <div class="product-rate d-inline-block">
-                                                        <div class="product-rating" style="width:50%">
-                                                        </div>
-                                                    </div>
-                                                    <span class="font-small ml-5 text-muted"> (2.0)</span>
-                                                </div>
-                                                <div>
-                                                    <span class="font-small text-muted">100g</span>
-                                                </div>
-                                                <div class="product-card-bottom">
-                                                    <div class="product-price">
-                                                        <span>$22.85</span>
-                                                        <span class="old-price">$24.8</span>
-                                                    </div>
-                                                    <div class="add-cart">
-                                                        <a class="add" href="shop-cart.html"><i
-                                                                class="fi-rs-shopping-cart mr-5"></i>Add </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!--end product card-->
-                                </div>
-                                <!--End product-grid-4-->
-                            </div>
-                            <!--En tab five-->
-                            <div class="tab-pane fade" id="tab-six" role="tabpanel" aria-labelledby="tab-six">
-                                <div class="row product-grid-4">
-                                    <div class="col-lg-1-5 col-md-4 col-12 col-sm-6">
-                                        <div class="product-cart-wrap mb-30">
-                                            <div class="product-img-action-wrap">
-                                                <div class="product-img product-img-zoom">
-                                                    <a href="{{ route('store.detail') }}">
-                                                        <img class="default-img"
-                                                            src="{{ asset('client/assets/imgs/shop/product-4-1.jpg') }}"
-                                                            alt="">
-                                                        <img class="hover-img"
-                                                            src="{{ asset('client/assets/imgs/shop/product-4-2.jpg') }}"
-                                                            alt="">
-                                                    </a>
-                                                </div>
-                                                <div class="product-action-1">
-                                                    <a aria-label="Add To Wishlist" class="action-btn"
-                                                        href="shop-wishlist.html"><i class="fi-rs-heart"></i></a>
-                                                    <a aria-label="Compare" class="action-btn"
-                                                        href="shop-compare.html"><i class="fi-rs-shuffle"></i></a>
-                                                    <a aria-label="Quick view" class="action-btn"
-                                                        data-bs-toggle="modal" data-bs-target="#quickViewModal"><i
-                                                            class="fi-rs-eye"></i></a>
-                                                </div>
-                                                <div class="product-badges product-badges-position product-badges-mrg">
-                                                    <span class="hot">Hot</span>
-                                                </div>
-                                            </div>
-                                            <div class="product-content-wrap">
-                                                <div class="product-category">
-                                                    <a href="shop-grid-right.html">Snack</a>
-                                                </div>
-                                                <h2><a href="{{ route('store.detail') }}">Seeds of Change Organic
-                                                        Quinoa,
-                                                        Brown, & Red Rice</a></h2>
-                                                <div class="product-rate-cover">
-                                                    <div class="product-rate d-inline-block">
-                                                        <div class="product-rating" style="width:90%">
-                                                        </div>
-                                                    </div>
-                                                    <span class="font-small ml-5 text-muted"> (4.0)</span>
-                                                </div>
-                                                <div>
-                                                    <span class="font-small text-muted">500g</span>
-                                                </div>
-                                                <div class="product-card-bottom">
-                                                    <div class="product-price">
-                                                        <span>$28.85</span>
-                                                        <span class="old-price">$32.8</span>
-                                                    </div>
-                                                    <div class="add-cart">
-                                                        <a class="add" href="shop-cart.html"><i
-                                                                class="fi-rs-shopping-cart mr-5"></i>Add </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!--end product card-->
-                                    <div class="col-lg-1-5 col-md-4 col-12 col-sm-6">
-                                        <div class="product-cart-wrap mb-30">
-                                            <div class="product-img-action-wrap">
-                                                <div class="product-img product-img-zoom">
-                                                    <a href="{{ route('store.detail') }}">
-                                                        <img class="default-img"
-                                                            src="{{ asset('client/assets/imgs/shop/product-6-1.jpg') }}"
-                                                            alt="">
-                                                        <img class="hover-img"
-                                                            src="{{ asset('client/assets/imgs/shop/product-6-2.jpg') }}"
-                                                            alt="">
-                                                    </a>
-                                                </div>
-                                                <div class="product-action-1">
-                                                    <a aria-label="Add To Wishlist" class="action-btn"
-                                                        href="shop-wishlist.html"><i class="fi-rs-heart"></i></a>
-                                                    <a aria-label="Compare" class="action-btn"
-                                                        href="shop-compare.html"><i class="fi-rs-shuffle"></i></a>
-                                                    <a aria-label="Quick view" class="action-btn"
-                                                        data-bs-toggle="modal" data-bs-target="#quickViewModal"><i
-                                                            class="fi-rs-eye"></i></a>
-                                                </div>
-                                                <div class="product-badges product-badges-position product-badges-mrg">
-                                                    <span class="sale">Sale</span>
-                                                </div>
-                                            </div>
-                                            <div class="product-content-wrap">
-                                                <div class="product-category">
-                                                    <a href="shop-grid-right.html">Hodo Foods</a>
-                                                </div>
-                                                <h2><a href="{{ route('store.detail') }}">All Natural Italian-Style
-                                                        Chicken
-                                                        Meatballs</a></h2>
-                                                <div class="product-rate-cover">
-                                                    <div class="product-rate d-inline-block">
-                                                        <div class="product-rating" style="width:80%">
-                                                        </div>
-                                                    </div>
-                                                    <span class="font-small ml-5 text-muted"> (3.5)</span>
-                                                </div>
-                                                <div>
-                                                    <span class="font-small text-muted">60g</span>
-                                                </div>
-                                                <div class="product-card-bottom">
-                                                    <div class="product-price">
-                                                        <span>$52.85</span>
-                                                        <span class="old-price">$55.8</span>
-                                                    </div>
-                                                    <div class="add-cart">
-                                                        <a class="add" href="shop-cart.html"><i
-                                                                class="fi-rs-shopping-cart mr-5"></i>Add </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!--end product card-->
-                                    <div class="col-lg-1-5 col-md-4 col-12 col-sm-6">
-                                        <div class="product-cart-wrap mb-30">
-                                            <div class="product-img-action-wrap">
-                                                <div class="product-img product-img-zoom">
-                                                    <a href="{{ route('store.detail') }}">
-                                                        <img class="default-img"
-                                                            src="{{ asset('client/assets/imgs/shop/product-8-1.jpg') }}"
-                                                            alt="">
-                                                        <img class="hover-img"
-                                                            src="{{ asset('client/assets/imgs/shop/product-8-2.jpg') }}"
-                                                            alt="">
-                                                    </a>
-                                                </div>
-                                                <div class="product-action-1">
-                                                    <a aria-label="Add To Wishlist" class="action-btn"
-                                                        href="shop-wishlist.html"><i class="fi-rs-heart"></i></a>
-                                                    <a aria-label="Compare" class="action-btn"
-                                                        href="shop-compare.html"><i class="fi-rs-shuffle"></i></a>
-                                                    <a aria-label="Quick view" class="action-btn"
-                                                        data-bs-toggle="modal" data-bs-target="#quickViewModal"><i
-                                                            class="fi-rs-eye"></i></a>
-                                                </div>
-                                                <div class="product-badges product-badges-position product-badges-mrg">
-                                                    <span class="new">New</span>
-                                                </div>
-                                            </div>
-                                            <div class="product-content-wrap">
-                                                <div class="product-category">
-                                                    <a href="shop-grid-right.html">Snack</a>
-                                                </div>
-                                                <h2><a href="{{ route('store.detail') }}">Angie’s Boomchickapop Sweet &
-                                                        Salty
-                                                        Kettle Corn</a></h2>
-                                                <div class="product-rate-cover">
-                                                    <div class="product-rate d-inline-block">
-                                                        <div class="product-rating" style="width:85%">
-                                                        </div>
-                                                    </div>
-                                                    <span class="font-small ml-5 text-muted"> (4.0)</span>
-                                                </div>
-                                                <div>
-                                                    <span class="font-small text-muted">70g</span>
-                                                </div>
-                                                <div class="product-card-bottom">
-                                                    <div class="product-price">
-                                                        <span>$48.85</span>
-                                                        <span class="old-price">$52.8</span>
-                                                    </div>
-                                                    <div class="add-cart">
-                                                        <a class="add" href="shop-cart.html"><i
-                                                                class="fi-rs-shopping-cart mr-5"></i>Add </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!--end product card-->
-                                    <div class="col-lg-1-5 col-md-4 col-12 col-sm-6">
-                                        <div class="product-cart-wrap mb-30">
-                                            <div class="product-img-action-wrap">
-                                                <div class="product-img product-img-zoom">
-                                                    <a href="{{ route('store.detail') }}">
-                                                        <img class="default-img"
-                                                            src="{{ asset('client/assets/imgs/shop/product-9-1.jpg') }}"
-                                                            alt="">
-                                                        <img class="hover-img"
-                                                            src="{{ asset('client/assets/imgs/shop/product-9-2.jpg') }}"
-                                                            alt="">
-                                                    </a>
-                                                </div>
-                                                <div class="product-action-1">
-                                                    <a aria-label="Add To Wishlist" class="action-btn"
-                                                        href="shop-wishlist.html"><i class="fi-rs-heart"></i></a>
-                                                    <a aria-label="Compare" class="action-btn"
-                                                        href="shop-compare.html"><i class="fi-rs-shuffle"></i></a>
-                                                    <a aria-label="Quick view" class="action-btn"
-                                                        data-bs-toggle="modal" data-bs-target="#quickViewModal"><i
-                                                            class="fi-rs-eye"></i></a>
-                                                </div>
-                                            </div>
-                                            <div class="product-content-wrap">
-                                                <div class="product-category">
-                                                    <a href="shop-grid-right.html">Vegetables</a>
-                                                </div>
-                                                <h2><a href="{{ route('store.detail') }}">Foster Farms Takeout Crispy
-                                                        Classic
-                                                        Buffalo Wings</a></h2>
-                                                <div class="product-rate-cover">
-                                                    <div class="product-rate d-inline-block">
-                                                        <div class="product-rating" style="width:90%">
-                                                        </div>
-                                                    </div>
-                                                    <span class="font-small ml-5 text-muted"> (4.0)</span>
-                                                </div>
-                                                <div>
-                                                    <span class="font-small text-muted">500g</span>
-                                                </div>
-                                                <div class="product-card-bottom">
-                                                    <div class="product-price">
-                                                        <span>$17.85</span>
-                                                        <span class="old-price">$19.8</span>
-                                                    </div>
-                                                    <div class="add-cart">
-                                                        <a class="add" href="shop-cart.html"><i
-                                                                class="fi-rs-shopping-cart mr-5"></i>Add </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!--end product card-->
-                                    <div class="col-lg-1-5 col-md-4 col-12 col-sm-6">
-                                        <div class="product-cart-wrap mb-30">
-                                            <div class="product-img-action-wrap">
-                                                <div class="product-img product-img-zoom">
-                                                    <a href="{{ route('store.detail') }}">
-                                                        <img class="default-img"
-                                                            src="{{ asset('client/assets/imgs/shop/product-5-1.jpg') }}"
-                                                            alt="">
-                                                        <img class="hover-img"
-                                                            src="{{ asset('client/assets/imgs/shop/product-5-2.jpg') }}"
-                                                            alt="">
-                                                    </a>
-                                                </div>
-                                                <div class="product-action-1">
-                                                    <a aria-label="Add To Wishlist" class="action-btn"
-                                                        href="shop-wishlist.html"><i class="fi-rs-heart"></i></a>
-                                                    <a aria-label="Compare" class="action-btn"
-                                                        href="shop-compare.html"><i class="fi-rs-shuffle"></i></a>
-                                                    <a aria-label="Quick view" class="action-btn"
-                                                        data-bs-toggle="modal" data-bs-target="#quickViewModal"><i
-                                                            class="fi-rs-eye"></i></a>
-                                                </div>
-                                                <div class="product-badges product-badges-position product-badges-mrg">
-                                                    <span class="best">-14%</span>
-                                                </div>
-                                            </div>
-                                            <div class="product-content-wrap">
-                                                <div class="product-category">
-                                                    <a href="shop-grid-right.html">Pet Foods</a>
-                                                </div>
-                                                <h2><a href="{{ route('store.detail') }}">Blue Diamond Almonds Lightly
-                                                        Salted
-                                                        Vegetables</a></h2>
-                                                <div class="product-rate-cover">
-                                                    <div class="product-rate d-inline-block">
-                                                        <div class="product-rating" style="width:90%">
-                                                        </div>
-                                                    </div>
-                                                    <span class="font-small ml-5 text-muted"> (4.0)</span>
-                                                </div>
-                                                <div>
-                                                    <span class="font-small text-muted">500g</span>
-                                                </div>
-                                                <div class="product-card-bottom">
-                                                    <div class="product-price">
-                                                        <span>$23.85</span>
-                                                        <span class="old-price">$25.8</span>
-                                                    </div>
-                                                    <div class="add-cart">
-                                                        <a class="add" href="shop-cart.html"><i
-                                                                class="fi-rs-shopping-cart mr-5"></i>Add </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!--end product card-->
-                                    <div class="col-lg-1-5 col-md-4 col-12 col-sm-6">
-                                        <div class="product-cart-wrap">
-                                            <div class="product-img-action-wrap">
-                                                <div class="product-img product-img-zoom">
-                                                    <a href="{{ route('store.detail') }}">
-                                                        <img class="default-img"
-                                                            src="{{ asset('client/assets/imgs/shop/product-6-1.jpg') }}"
-                                                            alt="">
-                                                        <img class="hover-img"
-                                                            src="{{ asset('client/assets/imgs/shop/product-6-2.jpg') }}"
-                                                            alt="">
-                                                    </a>
-                                                </div>
-                                                <div class="product-action-1">
-                                                    <a aria-label="Add To Wishlist" class="action-btn"
-                                                        href="shop-wishlist.html"><i class="fi-rs-heart"></i></a>
-                                                    <a aria-label="Compare" class="action-btn"
-                                                        href="shop-compare.html"><i class="fi-rs-shuffle"></i></a>
-                                                    <a aria-label="Quick view" class="action-btn"
-                                                        data-bs-toggle="modal" data-bs-target="#quickViewModal"><i
-                                                            class="fi-rs-eye"></i></a>
-                                                </div>
-                                            </div>
-                                            <div class="product-content-wrap">
-                                                <div class="product-category">
-                                                    <a href="shop-grid-right.html">Hodo Foods</a>
-                                                </div>
-                                                <h2><a href="{{ route('store.detail') }}">Chobani Complete Vanilla
-                                                        Greek
-                                                        Yogurt</a></h2>
-                                                <div class="product-rate-cover">
-                                                    <div class="product-rate d-inline-block">
-                                                        <div class="product-rating" style="width:90%">
-                                                        </div>
-                                                    </div>
-                                                    <span class="font-small ml-5 text-muted"> (4.0)</span>
-                                                </div>
-                                                <div>
-                                                    <span class="font-small text-muted">500g</span>
-                                                </div>
-                                                <div class="product-card-bottom">
-                                                    <div class="product-price">
-                                                        <span>$54.85</span>
-                                                        <span class="old-price">$55.8</span>
-                                                    </div>
-                                                    <div class="add-cart">
-                                                        <a class="add" href="shop-cart.html"><i
-                                                                class="fi-rs-shopping-cart mr-5"></i>Add </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!--end product card-->
-                                    <div class="col-lg-1-5 col-md-4 col-12 col-sm-6">
-                                        <div class="product-cart-wrap">
-                                            <div class="product-img-action-wrap">
-                                                <div class="product-img product-img-zoom">
-                                                    <a href="{{ route('store.detail') }}">
-                                                        <img class="default-img"
-                                                            src="{{ asset('client/assets/imgs/shop/product-7-1.jpg') }}"
-                                                            alt="">
-                                                        <img class="hover-img"
-                                                            src="{{ asset('client/assets/imgs/shop/product-7-2.jpg') }}"
-                                                            alt="">
-                                                    </a>
-                                                </div>
-                                                <div class="product-action-1">
-                                                    <a aria-label="Add To Wishlist" class="action-btn"
-                                                        href="shop-wishlist.html"><i class="fi-rs-heart"></i></a>
-                                                    <a aria-label="Compare" class="action-btn"
-                                                        href="shop-compare.html"><i class="fi-rs-shuffle"></i></a>
-                                                    <a aria-label="Quick view" class="action-btn"
-                                                        data-bs-toggle="modal" data-bs-target="#quickViewModal"><i
-                                                            class="fi-rs-eye"></i></a>
-                                                </div>
-                                            </div>
-                                            <div class="product-content-wrap">
-                                                <div class="product-category">
-                                                    <a href="shop-grid-right.html">Meats</a>
-                                                </div>
-                                                <h2><a href="{{ route('store.detail') }}">Canada Dry Ginger Ale – 2 L
-                                                        Bottle -
-                                                        200ml - 400g</a></h2>
-                                                <div class="product-rate-cover">
-                                                    <div class="product-rate d-inline-block">
-                                                        <div class="product-rating" style="width:90%">
-                                                        </div>
-                                                    </div>
-                                                    <span class="font-small ml-5 text-muted"> (4.0)</span>
-                                                </div>
-                                                <div>
-                                                    <span class="font-small text-muted">500g</span>
-                                                </div>
-                                                <div class="product-card-bottom">
-                                                    <div class="product-price">
-                                                        <span>$32.85</span>
-                                                        <span class="old-price">$33.8</span>
-                                                    </div>
-                                                    <div class="add-cart">
-                                                        <a class="add" href="shop-cart.html"><i
-                                                                class="fi-rs-shopping-cart mr-5"></i>Add </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!--end product card-->
-                                    <div class="col-lg-1-5 col-md-4 col-12 col-sm-6">
-                                        <div class="product-cart-wrap">
-                                            <div class="product-img-action-wrap">
-                                                <div class="product-img product-img-zoom">
-                                                    <a href="{{ route('store.detail') }}">
-                                                        <img class="default-img"
-                                                            src="{{ asset('client/assets/imgs/shop/product-8-1.jpg') }}"
-                                                            alt="">
-                                                        <img class="hover-img"
-                                                            src="{{ asset('client/assets/imgs/shop/product-8-2.jpg') }}"
-                                                            alt="">
-                                                    </a>
-                                                </div>
-                                                <div class="product-action-1">
-                                                    <a aria-label="Add To Wishlist" class="action-btn"
-                                                        href="shop-wishlist.html"><i class="fi-rs-heart"></i></a>
-                                                    <a aria-label="Compare" class="action-btn"
-                                                        href="shop-compare.html"><i class="fi-rs-shuffle"></i></a>
-                                                    <a aria-label="Quick view" class="action-btn"
-                                                        data-bs-toggle="modal" data-bs-target="#quickViewModal"><i
-                                                            class="fi-rs-eye"></i></a>
-                                                </div>
-                                                <div class="product-badges product-badges-position product-badges-mrg">
-                                                    <span class="sale">Sale</span>
-                                                </div>
-                                            </div>
-                                            <div class="product-content-wrap">
-                                                <div class="product-category">
-                                                    <a href="shop-grid-right.html">Snack</a>
-                                                </div>
-                                                <h2><a href="{{ route('store.detail') }}">Encore Seafoods Stuffed
-                                                        Alaskan
-                                                        Salmon</a></h2>
-                                                <div class="product-rate-cover">
-                                                    <div class="product-rate d-inline-block">
-                                                        <div class="product-rating" style="width:90%">
-                                                        </div>
-                                                    </div>
-                                                    <span class="font-small ml-5 text-muted"> (4.0)</span>
-                                                </div>
-                                                <div>
-                                                    <span class="font-small text-muted">500g</span>
-                                                </div>
-                                                <div class="product-card-bottom">
-                                                    <div class="product-price">
-                                                        <span>$35.85</span>
-                                                        <span class="old-price">$37.8</span>
-                                                    </div>
-                                                    <div class="add-cart">
-                                                        <a class="add" href="shop-cart.html"><i
-                                                                class="fi-rs-shopping-cart mr-5"></i>Add </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!--end product card-->
-                                    <div class="col-lg-1-5 col-md-4 col-12 col-sm-6">
-                                        <div class="product-cart-wrap">
-                                            <div class="product-img-action-wrap">
-                                                <div class="product-img product-img-zoom">
-                                                    <a href="{{ route('store.detail') }}">
-                                                        <img class="default-img"
-                                                            src="{{ asset('client/assets/imgs/shop/product-9-1.jpg') }}"
-                                                            alt="">
-                                                        <img class="hover-img"
-                                                            src="{{ asset('client/assets/imgs/shop/product-9-2.jpg') }}"
-                                                            alt="">
-                                                    </a>
-                                                </div>
-                                                <div class="product-action-1">
-                                                    <a aria-label="Add To Wishlist" class="action-btn"
-                                                        href="shop-wishlist.html"><i class="fi-rs-heart"></i></a>
-                                                    <a aria-label="Compare" class="action-btn"
-                                                        href="shop-compare.html"><i class="fi-rs-shuffle"></i></a>
-                                                    <a aria-label="Quick view" class="action-btn"
-                                                        data-bs-toggle="modal" data-bs-target="#quickViewModal"><i
-                                                            class="fi-rs-eye"></i></a>
-                                                </div>
-                                                <div class="product-badges product-badges-position product-badges-mrg">
-                                                    <span class="hot">Hot</span>
-                                                </div>
-                                            </div>
-                                            <div class="product-content-wrap">
-                                                <div class="product-category">
-                                                    <a href="shop-grid-right.html">Coffes</a>
-                                                </div>
-                                                <h2><a href="{{ route('store.detail') }}">Gorton’s Beer Battered Fish
-                                                        Fillets
-                                                        with soft paper</a></h2>
-                                                <div class="product-rate-cover">
-                                                    <div class="product-rate d-inline-block">
-                                                        <div class="product-rating" style="width:90%">
-                                                        </div>
-                                                    </div>
-                                                    <span class="font-small ml-5 text-muted"> (4.0)</span>
-                                                </div>
-                                                <div>
-                                                    <span class="font-small text-muted">400g</span>
-                                                </div>
-                                                <div class="product-card-bottom">
-                                                    <div class="product-price">
-                                                        <span>$23.85</span>
-                                                        <span class="old-price">$25.8</span>
-                                                    </div>
-                                                    <div class="add-cart">
-                                                        <a class="add" href="shop-cart.html"><i
-                                                                class="fi-rs-shopping-cart mr-5"></i>Add </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!--end product card-->
-                                    <div class="col-lg-1-5 col-md-4 col-12 col-sm-6 d-none d-xl-block">
-                                        <div class="product-cart-wrap">
-                                            <div class="product-img-action-wrap">
-                                                <div class="product-img product-img-zoom">
-                                                    <a href="{{ route('store.detail') }}">
-                                                        <img class="default-img"
-                                                            src="{{ asset('client/assets/imgs/shop/product-10-1.jpg') }}"
-                                                            alt="">
-                                                        <img class="hover-img"
-                                                            src="{{ asset('client/assets/imgs/shop/product-10-2.jpg') }}"
-                                                            alt="">
-                                                    </a>
-                                                </div>
-                                                <div class="product-action-1">
-                                                    <a aria-label="Add To Wishlist" class="action-btn"
-                                                        href="shop-wishlist.html"><i class="fi-rs-heart"></i></a>
-                                                    <a aria-label="Compare" class="action-btn"
-                                                        href="shop-compare.html"><i class="fi-rs-shuffle"></i></a>
-                                                    <a aria-label="Quick view" class="action-btn"
-                                                        data-bs-toggle="modal" data-bs-target="#quickViewModal"><i
-                                                            class="fi-rs-eye"></i></a>
-                                                </div>
-                                            </div>
-                                            <div class="product-content-wrap">
-                                                <div class="product-category">
-                                                    <a href="shop-grid-right.html">Cream</a>
-                                                </div>
-                                                <h2><a href="{{ route('store.detail') }}">Haagen-Dazs Caramel Cone Ice
-                                                        Cream
-                                                        Ketchup</a></h2>
-                                                <div class="product-rate-cover">
-                                                    <div class="product-rate d-inline-block">
-                                                        <div class="product-rating" style="width:50%">
-                                                        </div>
-                                                    </div>
-                                                    <span class="font-small ml-5 text-muted"> (2.0)</span>
-                                                </div>
-                                                <div>
-                                                    <span class="font-small text-muted">100g</span>
-                                                </div>
-                                                <div class="product-card-bottom">
-                                                    <div class="product-price">
-                                                        <span>$22.85</span>
-                                                        <span class="old-price">$24.8</span>
-                                                    </div>
-                                                    <div class="add-cart">
-                                                        <a class="add" href="shop-cart.html"><i
-                                                                class="fi-rs-shopping-cart mr-5"></i>Add </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!--end product card-->
-                                </div>
-                                <!--End product-grid-4-->
-                            </div>
-                            <!--En tab six-->
-                            <div class="tab-pane fade" id="tab-seven" role="tabpanel" aria-labelledby="tab-seven">
-                                <div class="row product-grid-4">
-                                    <div class="col-lg-1-5 col-md-4 col-12 col-sm-6">
-                                        <div class="product-cart-wrap mb-30">
-                                            <div class="product-img-action-wrap">
-                                                <div class="product-img product-img-zoom">
-                                                    <a href="{{ route('store.detail') }}">
-                                                        <img class="default-img"
-                                                            src="{{ asset('client/assets/imgs/shop/product-5-1.jpg') }}"
-                                                            alt="">
-                                                        <img class="hover-img"
-                                                            src="{{ asset('client/assets/imgs/shop/product-5-2.jpg') }}"
-                                                            alt="">
-                                                    </a>
-                                                </div>
-                                                <div class="product-action-1">
-                                                    <a aria-label="Add To Wishlist" class="action-btn"
-                                                        href="shop-wishlist.html"><i class="fi-rs-heart"></i></a>
-                                                    <a aria-label="Compare" class="action-btn"
-                                                        href="shop-compare.html"><i class="fi-rs-shuffle"></i></a>
-                                                    <a aria-label="Quick view" class="action-btn"
-                                                        data-bs-toggle="modal" data-bs-target="#quickViewModal"><i
-                                                            class="fi-rs-eye"></i></a>
-                                                </div>
-                                                <div class="product-badges product-badges-position product-badges-mrg">
-                                                    <span class="hot">Hot</span>
-                                                </div>
-                                            </div>
-                                            <div class="product-content-wrap">
-                                                <div class="product-category">
-                                                    <a href="shop-grid-right.html">Snack</a>
-                                                </div>
-                                                <h2><a href="{{ route('store.detail') }}">Seeds of Change Organic
-                                                        Quinoa,
-                                                        Brown, & Red Rice</a></h2>
-                                                <div class="product-rate-cover">
-                                                    <div class="product-rate d-inline-block">
-                                                        <div class="product-rating" style="width:90%">
-                                                        </div>
-                                                    </div>
-                                                    <span class="font-small ml-5 text-muted"> (4.0)</span>
-                                                </div>
-                                                <div>
-                                                    <span class="font-small text-muted">500g</span>
-                                                </div>
-                                                <div class="product-card-bottom">
-                                                    <div class="product-price">
-                                                        <span>$28.85</span>
-                                                        <span class="old-price">$32.8</span>
-                                                    </div>
-                                                    <div class="add-cart">
-                                                        <a class="add" href="shop-cart.html"><i
-                                                                class="fi-rs-shopping-cart mr-5"></i>Add </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!--end product card-->
-                                    <div class="col-lg-1-5 col-md-4 col-12 col-sm-6">
-                                        <div class="product-cart-wrap mb-30">
-                                            <div class="product-img-action-wrap">
-                                                <div class="product-img product-img-zoom">
-                                                    <a href="{{ route('store.detail') }}">
-                                                        <img class="default-img"
-                                                            src="{{ asset('client/assets/imgs/shop/product-3-1.jpg') }}"
-                                                            alt="">
-                                                        <img class="hover-img"
-                                                            src="{{ asset('client/assets/imgs/shop/product-3-2.jpg') }}"
-                                                            alt="">
-                                                    </a>
-                                                </div>
-                                                <div class="product-action-1">
-                                                    <a aria-label="Add To Wishlist" class="action-btn"
-                                                        href="shop-wishlist.html"><i class="fi-rs-heart"></i></a>
-                                                    <a aria-label="Compare" class="action-btn"
-                                                        href="shop-compare.html"><i class="fi-rs-shuffle"></i></a>
-                                                    <a aria-label="Quick view" class="action-btn"
-                                                        data-bs-toggle="modal" data-bs-target="#quickViewModal"><i
-                                                            class="fi-rs-eye"></i></a>
-                                                </div>
-                                                <div class="product-badges product-badges-position product-badges-mrg">
-                                                    <span class="sale">Sale</span>
-                                                </div>
-                                            </div>
-                                            <div class="product-content-wrap">
-                                                <div class="product-category">
-                                                    <a href="shop-grid-right.html">Hodo Foods</a>
-                                                </div>
-                                                <h2><a href="{{ route('store.detail') }}">All Natural Italian-Style
-                                                        Chicken
-                                                        Meatballs</a></h2>
-                                                <div class="product-rate-cover">
-                                                    <div class="product-rate d-inline-block">
-                                                        <div class="product-rating" style="width:80%">
-                                                        </div>
-                                                    </div>
-                                                    <span class="font-small ml-5 text-muted"> (3.5)</span>
-                                                </div>
-                                                <div>
-                                                    <span class="font-small text-muted">60g</span>
-                                                </div>
-                                                <div class="product-card-bottom">
-                                                    <div class="product-price">
-                                                        <span>$52.85</span>
-                                                        <span class="old-price">$55.8</span>
-                                                    </div>
-                                                    <div class="add-cart">
-                                                        <a class="add" href="shop-cart.html"><i
-                                                                class="fi-rs-shopping-cart mr-5"></i>Add </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!--end product card-->
-                                    <div class="col-lg-1-5 col-md-4 col-12 col-sm-6">
-                                        <div class="product-cart-wrap mb-30">
-                                            <div class="product-img-action-wrap">
-                                                <div class="product-img product-img-zoom">
-                                                    <a href="{{ route('store.detail') }}">
-                                                        <img class="default-img"
-                                                            src="{{ asset('client/assets/imgs/shop/product-7-1.jpg') }}"
-                                                            alt="">
-                                                        <img class="hover-img"
-                                                            src="{{ asset('client/assets/imgs/shop/product-7-2.jpg') }}"
-                                                            alt="">
-                                                    </a>
-                                                </div>
-                                                <div class="product-action-1">
-                                                    <a aria-label="Add To Wishlist" class="action-btn"
-                                                        href="shop-wishlist.html"><i class="fi-rs-heart"></i></a>
-                                                    <a aria-label="Compare" class="action-btn"
-                                                        href="shop-compare.html"><i class="fi-rs-shuffle"></i></a>
-                                                    <a aria-label="Quick view" class="action-btn"
-                                                        data-bs-toggle="modal" data-bs-target="#quickViewModal"><i
-                                                            class="fi-rs-eye"></i></a>
-                                                </div>
-                                                <div class="product-badges product-badges-position product-badges-mrg">
-                                                    <span class="new">New</span>
-                                                </div>
-                                            </div>
-                                            <div class="product-content-wrap">
-                                                <div class="product-category">
-                                                    <a href="shop-grid-right.html">Snack</a>
-                                                </div>
-                                                <h2><a href="{{ route('store.detail') }}">Angie’s Boomchickapop Sweet &
-                                                        Salty
-                                                        Kettle Corn</a></h2>
-                                                <div class="product-rate-cover">
-                                                    <div class="product-rate d-inline-block">
-                                                        <div class="product-rating" style="width:85%">
-                                                        </div>
-                                                    </div>
-                                                    <span class="font-small ml-5 text-muted"> (4.0)</span>
-                                                </div>
-                                                <div>
-                                                    <span class="font-small text-muted">70g</span>
-                                                </div>
-                                                <div class="product-card-bottom">
-                                                    <div class="product-price">
-                                                        <span>$48.85</span>
-                                                        <span class="old-price">$52.8</span>
-                                                    </div>
-                                                    <div class="add-cart">
-                                                        <a class="add" href="shop-cart.html"><i
-                                                                class="fi-rs-shopping-cart mr-5"></i>Add </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!--end product card-->
-                                    <div class="col-lg-1-5 col-md-4 col-12 col-sm-6">
-                                        <div class="product-cart-wrap mb-30">
-                                            <div class="product-img-action-wrap">
-                                                <div class="product-img product-img-zoom">
-                                                    <a href="{{ route('store.detail') }}">
-                                                        <img class="default-img"
-                                                            src="{{ asset('client/assets/imgs/shop/product-9-1.jpg') }}"
-                                                            alt="">
-                                                        <img class="hover-img"
-                                                            src="{{ asset('client/assets/imgs/shop/product-9-2.jpg') }}"
-                                                            alt="">
-                                                    </a>
-                                                </div>
-                                                <div class="product-action-1">
-                                                    <a aria-label="Add To Wishlist" class="action-btn"
-                                                        href="shop-wishlist.html"><i class="fi-rs-heart"></i></a>
-                                                    <a aria-label="Compare" class="action-btn"
-                                                        href="shop-compare.html"><i class="fi-rs-shuffle"></i></a>
-                                                    <a aria-label="Quick view" class="action-btn"
-                                                        data-bs-toggle="modal" data-bs-target="#quickViewModal"><i
-                                                            class="fi-rs-eye"></i></a>
-                                                </div>
-                                            </div>
-                                            <div class="product-content-wrap">
-                                                <div class="product-category">
-                                                    <a href="shop-grid-right.html">Vegetables</a>
-                                                </div>
-                                                <h2><a href="{{ route('store.detail') }}">Foster Farms Takeout Crispy
-                                                        Classic
-                                                        Buffalo Wings</a></h2>
-                                                <div class="product-rate-cover">
-                                                    <div class="product-rate d-inline-block">
-                                                        <div class="product-rating" style="width:90%">
-                                                        </div>
-                                                    </div>
-                                                    <span class="font-small ml-5 text-muted"> (4.0)</span>
-                                                </div>
-                                                <div>
-                                                    <span class="font-small text-muted">500g</span>
-                                                </div>
-                                                <div class="product-card-bottom">
-                                                    <div class="product-price">
-                                                        <span>$17.85</span>
-                                                        <span class="old-price">$19.8</span>
-                                                    </div>
-                                                    <div class="add-cart">
-                                                        <a class="add" href="shop-cart.html"><i
-                                                                class="fi-rs-shopping-cart mr-5"></i>Add </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!--end product card-->
-                                    <div class="col-lg-1-5 col-md-4 col-12 col-sm-6">
-                                        <div class="product-cart-wrap mb-30">
-                                            <div class="product-img-action-wrap">
-                                                <div class="product-img product-img-zoom">
-                                                    <a href="{{ route('store.detail') }}">
-                                                        <img class="default-img"
-                                                            src="{{ asset('client/assets/imgs/shop/product-10-1.jpg') }}"
-                                                            alt="">
-                                                        <img class="hover-img"
-                                                            src="{{ asset('client/assets/imgs/shop/product-10-2.jpg') }}"
-                                                            alt="">
-                                                    </a>
-                                                </div>
-                                                <div class="product-action-1">
-                                                    <a aria-label="Add To Wishlist" class="action-btn"
-                                                        href="shop-wishlist.html"><i class="fi-rs-heart"></i></a>
-                                                    <a aria-label="Compare" class="action-btn"
-                                                        href="shop-compare.html"><i class="fi-rs-shuffle"></i></a>
-                                                    <a aria-label="Quick view" class="action-btn"
-                                                        data-bs-toggle="modal" data-bs-target="#quickViewModal"><i
-                                                            class="fi-rs-eye"></i></a>
-                                                </div>
-                                                <div class="product-badges product-badges-position product-badges-mrg">
-                                                    <span class="best">-14%</span>
-                                                </div>
-                                            </div>
-                                            <div class="product-content-wrap">
-                                                <div class="product-category">
-                                                    <a href="shop-grid-right.html">Pet Foods</a>
-                                                </div>
-                                                <h2><a href="{{ route('store.detail') }}">Blue Diamond Almonds Lightly
-                                                        Salted
-                                                        Vegetables</a></h2>
-                                                <div class="product-rate-cover">
-                                                    <div class="product-rate d-inline-block">
-                                                        <div class="product-rating" style="width:90%">
-                                                        </div>
-                                                    </div>
-                                                    <span class="font-small ml-5 text-muted"> (4.0)</span>
-                                                </div>
-                                                <div>
-                                                    <span class="font-small text-muted">500g</span>
-                                                </div>
-                                                <div class="product-card-bottom">
-                                                    <div class="product-price">
-                                                        <span>$23.85</span>
-                                                        <span class="old-price">$25.8</span>
-                                                    </div>
-                                                    <div class="add-cart">
-                                                        <a class="add" href="shop-cart.html"><i
-                                                                class="fi-rs-shopping-cart mr-5"></i>Add </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!--end product card-->
-                                    <div class="col-lg-1-5 col-md-4 col-12 col-sm-6">
-                                        <div class="product-cart-wrap">
-                                            <div class="product-img-action-wrap">
-                                                <div class="product-img product-img-zoom">
-                                                    <a href="{{ route('store.detail') }}">
-                                                        <img class="default-img"
-                                                            src="{{ asset('client/assets/imgs/shop/product-16-1.jpg') }}"
-                                                            alt="">
-                                                        <img class="hover-img"
-                                                            src="{{ asset('client/assets/imgs/shop/product-16-2.jpg') }}"
-                                                            alt="">
-                                                    </a>
-                                                </div>
-                                                <div class="product-action-1">
-                                                    <a aria-label="Add To Wishlist" class="action-btn"
-                                                        href="shop-wishlist.html"><i class="fi-rs-heart"></i></a>
-                                                    <a aria-label="Compare" class="action-btn"
-                                                        href="shop-compare.html"><i class="fi-rs-shuffle"></i></a>
-                                                    <a aria-label="Quick view" class="action-btn"
-                                                        data-bs-toggle="modal" data-bs-target="#quickViewModal"><i
-                                                            class="fi-rs-eye"></i></a>
-                                                </div>
-                                            </div>
-                                            <div class="product-content-wrap">
-                                                <div class="product-category">
-                                                    <a href="shop-grid-right.html">Hodo Foods</a>
-                                                </div>
-                                                <h2><a href="{{ route('store.detail') }}">Chobani Complete Vanilla
-                                                        Greek
-                                                        Yogurt</a></h2>
-                                                <div class="product-rate-cover">
-                                                    <div class="product-rate d-inline-block">
-                                                        <div class="product-rating" style="width:90%">
-                                                        </div>
-                                                    </div>
-                                                    <span class="font-small ml-5 text-muted"> (4.0)</span>
-                                                </div>
-                                                <div>
-                                                    <span class="font-small text-muted">500g</span>
-                                                </div>
-                                                <div class="product-card-bottom">
-                                                    <div class="product-price">
-                                                        <span>$54.85</span>
-                                                        <span class="old-price">$55.8</span>
-                                                    </div>
-                                                    <div class="add-cart">
-                                                        <a class="add" href="shop-cart.html"><i
-                                                                class="fi-rs-shopping-cart mr-5"></i>Add </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!--end product card-->
-                                    <div class="col-lg-1-5 col-md-4 col-12 col-sm-6">
-                                        <div class="product-cart-wrap">
-                                            <div class="product-img-action-wrap">
-                                                <div class="product-img product-img-zoom">
-                                                    <a href="{{ route('store.detail') }}">
-                                                        <img class="default-img"
-                                                            src="{{ asset('client/assets/imgs/shop/product-7-1.jpg') }}"
-                                                            alt="">
-                                                        <img class="hover-img"
-                                                            src="{{ asset('client/assets/imgs/shop/product-7-2.jpg') }}"
-                                                            alt="">
-                                                    </a>
-                                                </div>
-                                                <div class="product-action-1">
-                                                    <a aria-label="Add To Wishlist" class="action-btn"
-                                                        href="shop-wishlist.html"><i class="fi-rs-heart"></i></a>
-                                                    <a aria-label="Compare" class="action-btn"
-                                                        href="shop-compare.html"><i class="fi-rs-shuffle"></i></a>
-                                                    <a aria-label="Quick view" class="action-btn"
-                                                        data-bs-toggle="modal" data-bs-target="#quickViewModal"><i
-                                                            class="fi-rs-eye"></i></a>
-                                                </div>
-                                            </div>
-                                            <div class="product-content-wrap">
-                                                <div class="product-category">
-                                                    <a href="shop-grid-right.html">Meats</a>
-                                                </div>
-                                                <h2><a href="{{ route('store.detail') }}">Canada Dry Ginger Ale – 2 L
-                                                        Bottle -
-                                                        200ml - 400g</a></h2>
-                                                <div class="product-rate-cover">
-                                                    <div class="product-rate d-inline-block">
-                                                        <div class="product-rating" style="width:90%">
-                                                        </div>
-                                                    </div>
-                                                    <span class="font-small ml-5 text-muted"> (4.0)</span>
-                                                </div>
-                                                <div>
-                                                    <span class="font-small text-muted">500g</span>
-                                                </div>
-                                                <div class="product-card-bottom">
-                                                    <div class="product-price">
-                                                        <span>$32.85</span>
-                                                        <span class="old-price">$33.8</span>
-                                                    </div>
-                                                    <div class="add-cart">
-                                                        <a class="add" href="shop-cart.html"><i
-                                                                class="fi-rs-shopping-cart mr-5"></i>Add </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!--end product card-->
-                                    <div class="col-lg-1-5 col-md-4 col-12 col-sm-6">
-                                        <div class="product-cart-wrap">
-                                            <div class="product-img-action-wrap">
-                                                <div class="product-img product-img-zoom">
-                                                    <a href="{{ route('store.detail') }}">
-                                                        <img class="default-img"
-                                                            src="{{ asset('client/assets/imgs/shop/product-8-1.jpg') }}"
-                                                            alt="">
-                                                        <img class="hover-img"
-                                                            src="{{ asset('client/assets/imgs/shop/product-8-2.jpg') }}"
-                                                            alt="">
-                                                    </a>
-                                                </div>
-                                                <div class="product-action-1">
-                                                    <a aria-label="Add To Wishlist" class="action-btn"
-                                                        href="shop-wishlist.html"><i class="fi-rs-heart"></i></a>
-                                                    <a aria-label="Compare" class="action-btn"
-                                                        href="shop-compare.html"><i class="fi-rs-shuffle"></i></a>
-                                                    <a aria-label="Quick view" class="action-btn"
-                                                        data-bs-toggle="modal" data-bs-target="#quickViewModal"><i
-                                                            class="fi-rs-eye"></i></a>
-                                                </div>
-                                                <div class="product-badges product-badges-position product-badges-mrg">
-                                                    <span class="sale">Sale</span>
-                                                </div>
-                                            </div>
-                                            <div class="product-content-wrap">
-                                                <div class="product-category">
-                                                    <a href="shop-grid-right.html">Snack</a>
-                                                </div>
-                                                <h2><a href="{{ route('store.detail') }}">Encore Seafoods Stuffed
-                                                        Alaskan
-                                                        Salmon</a></h2>
-                                                <div class="product-rate-cover">
-                                                    <div class="product-rate d-inline-block">
-                                                        <div class="product-rating" style="width:90%">
-                                                        </div>
-                                                    </div>
-                                                    <span class="font-small ml-5 text-muted"> (4.0)</span>
-                                                </div>
-                                                <div>
-                                                    <span class="font-small text-muted">500g</span>
-                                                </div>
-                                                <div class="product-card-bottom">
-                                                    <div class="product-price">
-                                                        <span>$35.85</span>
-                                                        <span class="old-price">$37.8</span>
-                                                    </div>
-                                                    <div class="add-cart">
-                                                        <a class="add" href="shop-cart.html"><i
-                                                                class="fi-rs-shopping-cart mr-5"></i>Add </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!--end product card-->
-                                    <div class="col-lg-1-5 col-md-4 col-12 col-sm-6">
-                                        <div class="product-cart-wrap">
-                                            <div class="product-img-action-wrap">
-                                                <div class="product-img product-img-zoom">
-                                                    <a href="{{ route('store.detail') }}">
-                                                        <img class="default-img"
-                                                            src="{{ asset('client/assets/imgs/shop/product-9-1.jpg') }}"
-                                                            alt="">
-                                                        <img class="hover-img"
-                                                            src="{{ asset('client/assets/imgs/shop/product-9-2.jpg') }}"
-                                                            alt="">
-                                                    </a>
-                                                </div>
-                                                <div class="product-action-1">
-                                                    <a aria-label="Add To Wishlist" class="action-btn"
-                                                        href="shop-wishlist.html"><i class="fi-rs-heart"></i></a>
-                                                    <a aria-label="Compare" class="action-btn"
-                                                        href="shop-compare.html"><i class="fi-rs-shuffle"></i></a>
-                                                    <a aria-label="Quick view" class="action-btn"
-                                                        data-bs-toggle="modal" data-bs-target="#quickViewModal"><i
-                                                            class="fi-rs-eye"></i></a>
-                                                </div>
-                                                <div class="product-badges product-badges-position product-badges-mrg">
-                                                    <span class="hot">Hot</span>
-                                                </div>
-                                            </div>
-                                            <div class="product-content-wrap">
-                                                <div class="product-category">
-                                                    <a href="shop-grid-right.html">Coffes</a>
-                                                </div>
-                                                <h2><a href="{{ route('store.detail') }}">Gorton’s Beer Battered Fish
-                                                        Fillets
-                                                        with soft paper</a></h2>
-                                                <div class="product-rate-cover">
-                                                    <div class="product-rate d-inline-block">
-                                                        <div class="product-rating" style="width:90%">
-                                                        </div>
-                                                    </div>
-                                                    <span class="font-small ml-5 text-muted"> (4.0)</span>
-                                                </div>
-                                                <div>
-                                                    <span class="font-small text-muted">400g</span>
-                                                </div>
-                                                <div class="product-card-bottom">
-                                                    <div class="product-price">
-                                                        <span>$23.85</span>
-                                                        <span class="old-price">$25.8</span>
-                                                    </div>
-                                                    <div class="add-cart">
-                                                        <a class="add" href="shop-cart.html"><i
-                                                                class="fi-rs-shopping-cart mr-5"></i>Add </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!--end product card-->
-                                    <div class="col-lg-1-5 col-md-4 col-12 col-sm-6 d-none d-xl-block">
-                                        <div class="product-cart-wrap">
-                                            <div class="product-img-action-wrap">
-                                                <div class="product-img product-img-zoom">
-                                                    <a href="{{ route('store.detail') }}">
-                                                        <img class="default-img"
-                                                            src="{{ asset('client/assets/imgs/shop/product-10-1.jpg') }}"
-                                                            alt="">
-                                                        <img class="hover-img"
-                                                            src="{{ asset('client/assets/imgs/shop/product-10-2.jpg') }}"
-                                                            alt="">
-                                                    </a>
-                                                </div>
-                                                <div class="product-action-1">
-                                                    <a aria-label="Add To Wishlist" class="action-btn"
-                                                        href="shop-wishlist.html"><i class="fi-rs-heart"></i></a>
-                                                    <a aria-label="Compare" class="action-btn"
-                                                        href="shop-compare.html"><i class="fi-rs-shuffle"></i></a>
-                                                    <a aria-label="Quick view" class="action-btn"
-                                                        data-bs-toggle="modal" data-bs-target="#quickViewModal"><i
-                                                            class="fi-rs-eye"></i></a>
-                                                </div>
-                                            </div>
-                                            <div class="product-content-wrap">
-                                                <div class="product-category">
-                                                    <a href="shop-grid-right.html">Cream</a>
-                                                </div>
-                                                <h2><a href="{{ route('store.detail') }}">Haagen-Dazs Caramel Cone Ice
-                                                        Cream
-                                                        Ketchup</a></h2>
-                                                <div class="product-rate-cover">
-                                                    <div class="product-rate d-inline-block">
-                                                        <div class="product-rating" style="width:50%">
-                                                        </div>
-                                                    </div>
-                                                    <span class="font-small ml-5 text-muted"> (2.0)</span>
-                                                </div>
-                                                <div>
-                                                    <span class="font-small text-muted">100g</span>
-                                                </div>
-                                                <div class="product-card-bottom">
-                                                    <div class="product-price">
-                                                        <span>$22.85</span>
-                                                        <span class="old-price">$24.8</span>
-                                                    </div>
-                                                    <div class="add-cart">
-                                                        <a class="add" href="shop-cart.html"><i
-                                                                class="fi-rs-shopping-cart mr-5"></i>Add </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!--end product card-->
-                                </div>
-                                <!--End product-grid-4-->
-                            </div>
-                            <!--En tab seven-->
+                            {{-- Tab product --}}
                         </div>
                         <!--End tab-content-->
                     </section>
@@ -3521,7 +161,7 @@
                     <section class="section-padding pb-5">
                         <div class="section-title">
                             <h3 class="">Deals Of The Day</h3>
-                            <a class="show-all" href="shop-grid-right.html">
+                            <a class="show-all" href="#">
                                 All Deals
                                 <i class="fi-rs-angle-right"></i>
                             </a>
@@ -3531,7 +171,7 @@
                                 <div class="product-cart-wrap style-2">
                                     <div class="product-img-action-wrap">
                                         <div class="product-img">
-                                            <a href="{{ route('store.detail') }}">
+                                            <a href="#">
                                                 <img src="{{ asset('client/assets/imgs/banner/banner-5.png') }}"
                                                     alt="">
                                             </a>
@@ -3542,7 +182,7 @@
                                             <div class="deals-countdown" data-countdown="2025/03/25 00:00:00"></div>
                                         </div>
                                         <div class="deals-content">
-                                            <h2><a href="{{ route('store.detail') }}">Seeds of Change Organic Quinoa,
+                                            <h2><a href="#">Seeds of Change Organic Quinoa,
                                                     Brown</a></h2>
                                             <div class="product-rate-cover">
                                                 <div class="product-rate d-inline-block">
@@ -3572,7 +212,7 @@
                                 <div class="product-cart-wrap style-2">
                                     <div class="product-img-action-wrap">
                                         <div class="product-img">
-                                            <a href="{{ route('store.detail') }}">
+                                            <a href="#">
                                                 <img src="{{ asset('client/assets/imgs/banner/banner-6.png') }}"
                                                     alt="">
                                             </a>
@@ -3583,7 +223,7 @@
                                             <div class="deals-countdown" data-countdown="2026/04/25 00:00:00"></div>
                                         </div>
                                         <div class="deals-content">
-                                            <h2><a href="{{ route('store.detail') }}">Perdue Simply Smart Organics
+                                            <h2><a href="#">Perdue Simply Smart Organics
                                                     Gluten</a>
                                             </h2>
                                             <div class="product-rate-cover">
@@ -3614,7 +254,7 @@
                                 <div class="product-cart-wrap style-2">
                                     <div class="product-img-action-wrap">
                                         <div class="product-img">
-                                            <a href="{{ route('store.detail') }}">
+                                            <a href="#">
                                                 <img src="{{ asset('client/assets/imgs/banner/banner-7.png') }}"
                                                     alt="">
                                             </a>
@@ -3625,7 +265,7 @@
                                             <div class="deals-countdown" data-countdown="2027/03/25 00:00:00"></div>
                                         </div>
                                         <div class="deals-content">
-                                            <h2><a href="{{ route('store.detail') }}">Signature Wood-Fired Mushroom</a>
+                                            <h2><a href="#">Signature Wood-Fired Mushroom</a>
                                             </h2>
                                             <div class="product-rate-cover">
                                                 <div class="product-rate d-inline-block">
@@ -3655,7 +295,7 @@
                                 <div class="product-cart-wrap style-2">
                                     <div class="product-img-action-wrap">
                                         <div class="product-img">
-                                            <a href="{{ route('store.detail') }}">
+                                            <a href="#">
                                                 <img src="{{ asset('client/assets/imgs/banner/banner-8.png') }}"
                                                     alt="">
                                             </a>
@@ -3666,7 +306,7 @@
                                             <div class="deals-countdown" data-countdown="2025/02/25 00:00:00"></div>
                                         </div>
                                         <div class="deals-content">
-                                            <h2><a href="{{ route('store.detail') }}">Simply Lemonade with Raspberry
+                                            <h2><a href="#">Simply Lemonade with Raspberry
                                                     Juice</a>
                                             </h2>
                                             <div class="product-rate-cover">
@@ -3685,7 +325,7 @@
                                                     <span class="old-price">$16.8</span>
                                                 </div>
                                                 <div class="add-cart">
-                                                    <a class="add" href="shop-cart.html"><i
+                                                    <a class="add" href="#"><i
                                                             class="fi-rs-shopping-cart mr-5"></i>Add </a>
                                                 </div>
                                             </div>
@@ -3703,7 +343,7 @@
                                     <img src="{{ asset('client/assets/imgs/banner/banner-1.png') }}" alt="">
                                     <div class="banner-text">
                                         <h4>Everyday Fresh & <br>Clean with Our<br> Products</h4>
-                                        <a href="shop-grid-right.html" class="btn btn-xs">Shop Now <i
+                                        <a href="#" class="btn btn-xs">Shop Now <i
                                                 class="fi-rs-arrow-small-right"></i></a>
                                     </div>
                                 </div>
@@ -3713,7 +353,7 @@
                                     <img src="{{ asset('client/assets/imgs/banner/banner-2.png') }}" alt="">
                                     <div class="banner-text">
                                         <h4>Make your Breakfast<br> Healthy and Easy</h4>
-                                        <a href="shop-grid-right.html" class="btn btn-xs">Shop Now <i
+                                        <a href="#" class="btn btn-xs">Shop Now <i
                                                 class="fi-rs-arrow-small-right"></i></a>
                                     </div>
                                 </div>
@@ -3723,7 +363,7 @@
                                     <img src="{{ asset('client/assets/imgs/banner/banner-3.png') }}" alt="">
                                     <div class="banner-text">
                                         <h4>The best Organic <br>Products Online</h4>
-                                        <a href="shop-grid-right.html" class="btn btn-xs">Shop Now <i
+                                        <a href="#" class="btn btn-xs">Shop Now <i
                                                 class="fi-rs-arrow-small-right"></i></a>
                                     </div>
                                 </div>
@@ -3736,22 +376,22 @@
                     <div class="sidebar-widget widget-category-2 mb-30">
                         <h5 class="section-title style-1 mb-30 wow fadeIn animated">Category</h5>
                         <ul>
-                            <li><a href="shop-grid-right.html"> <img
+                            <li><a href="#"> <img
                                         src="{{ asset('client/assets/imgs/theme/icons/category-1.svg') }}"
                                         alt="">Milks &
                                     Dairies</a><span class="count">30</span></li>
-                            <li><a href="shop-grid-right.html"> <img
+                            <li><a href="#"> <img
                                         src="{{ asset('client/assets/imgs/theme/icons/category-2.svg') }}"
                                         alt="">Clothing</a><span class="count">35</span></li>
-                            <li><a href="shop-grid-right.html"> <img
+                            <li><a href="#"> <img
                                         src="{{ asset('client/assets/imgs/theme/icons/category-3.svg') }}"
                                         alt="">Pet
                                     Foods </a><span class="count">42</span></li>
-                            <li><a href="shop-grid-right.html"> <img
+                            <li><a href="#"> <img
                                         src="{{ asset('client/assets/imgs/theme/icons/category-4.svg') }}"
                                         alt="">Baking
                                     material</a><span class="count">68</span></li>
-                            <li><a href="shop-grid-right.html"> <img
+                            <li><a href="#"> <img
                                         src="{{ asset('client/assets/imgs/theme/icons/category-5.svg') }}"
                                         alt="">Fresh
                                     Fruit</a><span class="count">87</span></li>
@@ -3808,8 +448,8 @@
                                 </div>
                             </div>
                         </div>
-                        <a href="shop-grid-right.html" class="btn btn-sm btn-default"><i
-                                class="fi-rs-filter mr-5"></i> Fillter</a>
+                        <a href="#" class="btn btn-sm btn-default"><i class="fi-rs-filter mr-5"></i>
+                            Fillter</a>
                     </div>
                     <!-- Product sidebar Widget -->
                     <div class="sidebar-widget product-sidebar  mb-30 p-30 bg-grey border-radius-10">
@@ -3867,7 +507,7 @@
                 <div class="section-title">
                     <div class="title">
                         <h3>Shop by Categories </h3>
-                        <a class="show-all" href="shop-grid-right.html">
+                        <a class="show-all" href="#">
                             All Categories
                             <i class="fi-rs-angle-right"></i>
                         </a>
@@ -3879,91 +519,82 @@
                     <div class="carausel-8-columns" id="carausel-8-columns">
                         <div class="card-1">
                             <figure class=" img-hover-scale overflow-hidden">
-                                <a href="shop-grid-right.html"><img
-                                        src="{{ asset('client/assets/imgs/theme/icons/category-1') }}.svg"
+                                <a href="#"><img src="{{ asset('client/assets/imgs/theme/icons/category-1') }}.svg"
                                         alt=""></a>
                             </figure>
-                            <h6><a href="shop-grid-right.html">Milks and <br>Dairies</a></h6>
+                            <h6><a href="#">Milks and <br>Dairies</a></h6>
                         </div>
                         <div class="card-1">
                             <figure class=" img-hover-scale overflow-hidden">
-                                <a href="shop-grid-right.html"><img
-                                        src="{{ asset('client/assets/imgs/theme/icons/category-2') }}.svg"
+                                <a href="#"><img src="{{ asset('client/assets/imgs/theme/icons/category-2') }}.svg"
                                         alt=""></a>
                             </figure>
-                            <h6><a href="shop-grid-right.html">Wines & <br> Alcohol</a></h6>
+                            <h6><a href="#">Wines & <br> Alcohol</a></h6>
                         </div>
                         <div class="card-1">
                             <figure class=" img-hover-scale overflow-hidden">
-                                <a href="shop-grid-right.html"><img
-                                        src="{{ asset('client/assets/imgs/theme/icons/category-3') }}.svg"
+                                <a href="#"><img src="{{ asset('client/assets/imgs/theme/icons/category-3') }}.svg"
                                         alt=""></a>
                             </figure>
-                            <h6><a href="shop-grid-right.html">Clothing & <br>Beauty</a></h6>
+                            <h6><a href="#">Clothing & <br>Beauty</a></h6>
                         </div>
                         <div class="card-1">
                             <figure class=" img-hover-scale overflow-hidden">
-                                <a href="shop-grid-right.html"><img
-                                        src="{{ asset('client/assets/imgs/theme/icons/category-4') }}.svg"
+                                <a href="#"><img src="{{ asset('client/assets/imgs/theme/icons/category-4') }}.svg"
                                         alt=""></a>
                             </figure>
-                            <h6><a href="shop-grid-right.html">Pet Foods <br>& Toy</a></h6>
+                            <h6><a href="#">Pet Foods <br>& Toy</a></h6>
                         </div>
                         <div class="card-1">
                             <figure class=" img-hover-scale overflow-hidden">
-                                <a href="shop-grid-right.html"><img
-                                        src="{{ asset('client/assets/imgs/theme/icons/category-5') }}.svg"
+                                <a href="#"><img src="{{ asset('client/assets/imgs/theme/icons/category-5') }}.svg"
                                         alt=""></a>
                             </figure>
-                            <h6><a href="shop-grid-right.html">Packaged <br>fast food</a></h6>
+                            <h6><a href="#">Packaged <br>fast food</a></h6>
                         </div>
                         <div class="card-1">
                             <figure class=" img-hover-scale overflow-hidden">
-                                <a href="shop-grid-right.html"><img
-                                        src="{{ asset('client/assets/imgs/theme/icons/category-6') }}.svg"
+                                <a href="#"><img src="{{ asset('client/assets/imgs/theme/icons/category-6') }}.svg"
                                         alt=""></a>
                             </figure>
-                            <h6><a href="shop-grid-right.html">Baking <br>material</a></h6>
+                            <h6><a href="#">Baking <br>material</a></h6>
                         </div>
                         <div class="card-1">
                             <figure class=" img-hover-scale overflow-hidden">
-                                <a href="shop-grid-right.html"><img
-                                        src="{{ asset('client/assets/imgs/theme/icons/category-7') }}.svg"
+                                <a href="#"><img src="{{ asset('client/assets/imgs/theme/icons/category-7') }}.svg"
                                         alt=""></a>
                             </figure>
-                            <h6><a href="shop-grid-right.html">Vegetables <br>& tubers</a></h6>
+                            <h6><a href="#">Vegetables <br>& tubers</a></h6>
                         </div>
                         <div class="card-1">
                             <figure class=" img-hover-scale overflow-hidden">
-                                <a href="shop-grid-right.html"><img
-                                        src="{{ asset('client/assets/imgs/theme/icons/category-8') }}.svg"
+                                <a href="#"><img src="{{ asset('client/assets/imgs/theme/icons/category-8') }}.svg"
                                         alt=""></a>
                             </figure>
-                            <h6><a href="shop-grid-right.html">Fresh <br>Seafood</a></h6>
+                            <h6><a href="#">Fresh <br>Seafood</a></h6>
                         </div>
                         <div class="card-1">
                             <figure class=" img-hover-scale overflow-hidden">
-                                <a href="shop-grid-right.html"><img
-                                        src="{{ asset('client/assets/imgs/theme/icons/category-9') }}.svg"
+                                <a href="#"><img src="{{ asset('client/assets/imgs/theme/icons/category-9') }}.svg"
                                         alt=""></a>
                             </figure>
-                            <h6><a href="shop-grid-right.html">Noodles <br>Rice</a></h6>
+                            <h6><a href="#">Noodles <br>Rice</a></h6>
                         </div>
                         <div class="card-1">
                             <figure class=" img-hover-scale overflow-hidden">
-                                <a href="shop-grid-right.html"><img
+                                <a href="#"><img
                                         src="{{ asset('client/assets/imgs/theme/icons/category-10') }}.svg"
                                         alt=""></a>
                             </figure>
-                            <h6><a href="shop-grid-right.html">Fastfood</a></h6>
+                            <h6><a href="#">Fastfood</a></h6>
                         </div>
                         <div class="card-1">
                             <figure class=" img-hover-scale overflow-hidden">
-                                <a href="shop-grid-right.html"><img
+                                <a href="#"><img
                                         src="{{ asset('client/assets/imgs/theme/icons/category-11') }}.svg"
                                         alt=""></a>
                             </figure>
-                            <h6><a href="shop-grid-right.html">Ice cream</a></h6>
+                            <h6><a href="#">Ice cream</a></h6>
                         </div>
                     </div>
                 </div>
@@ -3978,13 +609,12 @@
                         <div class="product-list-small wow fadeIn animated animated animated">
                             <article class="row align-items-center hover-up">
                                 <figure class="col-md-4 mb-0">
-                                    <a href="{{ route('store.detail') }}"><img
-                                            src="{{ asset('client/assets/imgs/shop/thumbnail-1.jpg') }}"
+                                    <a href="#"><img src="{{ asset('client/assets/imgs/shop/thumbnail-1.jpg') }}"
                                             alt=""></a>
                                 </figure>
                                 <div class="col-md-8 mb-0">
                                     <h6>
-                                        <a href="{{ route('store.detail') }}">Nestle Original Coffee-Mate Coffee
+                                        <a href="#">Nestle Original Coffee-Mate Coffee
                                             Creamer</a>
                                     </h6>
                                     <div class="product-rate-cover">
@@ -4002,13 +632,12 @@
                             </article>
                             <article class="row align-items-center hover-up">
                                 <figure class="col-md-4 mb-0">
-                                    <a href="{{ route('store.detail') }}"><img
-                                            src="{{ asset('client/assets/imgs/shop/thumbnail-2.jpg') }}"
+                                    <a href="#"><img src="{{ asset('client/assets/imgs/shop/thumbnail-2.jpg') }}"
                                             alt=""></a>
                                 </figure>
                                 <div class="col-md-8 mb-0">
                                     <h6>
-                                        <a href="{{ route('store.detail') }}">Nestle Original Coffee-Mate Coffee
+                                        <a href="#">Nestle Original Coffee-Mate Coffee
                                             Creamer</a>
                                     </h6>
                                     <div class="product-rate-cover">
@@ -4026,13 +655,12 @@
                             </article>
                             <article class="row align-items-center hover-up">
                                 <figure class="col-md-4 mb-0">
-                                    <a href="{{ route('store.detail') }}"><img
-                                            src="{{ asset('client/assets/imgs/shop/thumbnail-3.jpg') }}"
+                                    <a href="#"><img src="{{ asset('client/assets/imgs/shop/thumbnail-3.jpg') }}"
                                             alt=""></a>
                                 </figure>
                                 <div class="col-md-8 mb-0">
                                     <h6>
-                                        <a href="{{ route('store.detail') }}">Nestle Original Coffee-Mate Coffee
+                                        <a href="#">Nestle Original Coffee-Mate Coffee
                                             Creamer</a>
                                     </h6>
                                     <div class="product-rate-cover">
@@ -4056,14 +684,13 @@
                         <div class="product-list-small wow fadeIn animated animated animated">
                             <article class="row align-items-center hover-up">
                                 <figure class="col-md-4 mb-0">
-                                    <a href="{{ route('store.detail') }}"><img
-                                            src="{{ asset('client/assets/imgs/shop/thumbnail-4.jpg') }}"
+                                    <a href="#"><img src="{{ asset('client/assets/imgs/shop/thumbnail-4.jpg') }}"
                                             alt="">
                                     </a>
                                 </figure>
                                 <div class="col-md-8 mb-0">
                                     <h6>
-                                        <a href="{{ route('store.detail') }}">Organic Cage-Free Grade A Large Brown
+                                        <a href="#">Organic Cage-Free Grade A Large Brown
                                             Eggs</a>
                                     </h6>
                                     <div class="product-rate-cover">
@@ -4081,13 +708,12 @@
                             </article>
                             <article class="row align-items-center hover-up">
                                 <figure class="col-md-4 mb-0">
-                                    <a href="{{ route('store.detail') }}"><img
-                                            src="{{ asset('client/assets/imgs/shop/thumbnail-5.jpg') }}"
+                                    <a href="#"><img src="{{ asset('client/assets/imgs/shop/thumbnail-5.jpg') }}"
                                             alt=""></a>
                                 </figure>
                                 <div class="col-md-8 mb-0">
                                     <h6>
-                                        <a href="{{ route('store.detail') }}">Seeds of Change Organic Quinoa, Brown, &
+                                        <a href="#">Seeds of Change Organic Quinoa, Brown, &
                                             Red
                                             Rice</a>
                                     </h6>
@@ -4106,13 +732,12 @@
                             </article>
                             <article class="row align-items-center hover-up">
                                 <figure class="col-md-4 mb-0">
-                                    <a href="{{ route('store.detail') }}"><img
-                                            src="{{ asset('client/assets/imgs/shop/thumbnail-6.jpg') }}"
+                                    <a href="#"><img src="{{ asset('client/assets/imgs/shop/thumbnail-6.jpg') }}"
                                             alt=""></a>
                                 </figure>
                                 <div class="col-md-8 mb-0">
                                     <h6>
-                                        <a href="{{ route('store.detail') }}">Naturally Flavored Cinnamon Vanilla Light
+                                        <a href="#">Naturally Flavored Cinnamon Vanilla Light
                                             Roast
                                             Coffee</a>
                                     </h6>
@@ -4136,13 +761,12 @@
                         <div class="product-list-small wow fadeIn animated animated animated">
                             <article class="row align-items-center hover-up">
                                 <figure class="col-md-4 mb-0">
-                                    <a href="{{ route('store.detail') }}"><img
-                                            src="{{ asset('client/assets/imgs/shop/thumbnail-7.jpg') }}"
+                                    <a href="#"><img src="{{ asset('client/assets/imgs/shop/thumbnail-7.jpg') }}"
                                             alt=""></a>
                                 </figure>
                                 <div class="col-md-8 mb-0">
                                     <h6>
-                                        <a href="{{ route('store.detail') }}">Pepperidge Farm Farmhouse Hearty White
+                                        <a href="#">Pepperidge Farm Farmhouse Hearty White
                                             Bread</a>
                                     </h6>
                                     <div class="product-rate-cover">
@@ -4160,13 +784,12 @@
                             </article>
                             <article class="row align-items-center hover-up">
                                 <figure class="col-md-4 mb-0">
-                                    <a href="{{ route('store.detail') }}"><img
-                                            src="{{ asset('client/assets/imgs/shop/thumbnail-8.jpg') }}"
+                                    <a href="#"><img src="{{ asset('client/assets/imgs/shop/thumbnail-8.jpg') }}"
                                             alt=""></a>
                                 </figure>
                                 <div class="col-md-8 mb-0">
                                     <h6>
-                                        <a href="{{ route('store.detail') }}">Organic Frozen Triple Berry Blend</a>
+                                        <a href="#">Organic Frozen Triple Berry Blend</a>
                                     </h6>
                                     <div class="product-rate-cover">
                                         <div class="product-rate d-inline-block">
@@ -4183,13 +806,12 @@
                             </article>
                             <article class="row align-items-center hover-up">
                                 <figure class="col-md-4 mb-0">
-                                    <a href="{{ route('store.detail') }}"><img
-                                            src="{{ asset('client/assets/imgs/shop/thumbnail-9.jpg') }}"
+                                    <a href="#"><img src="{{ asset('client/assets/imgs/shop/thumbnail-9.jpg') }}"
                                             alt=""></a>
                                 </figure>
                                 <div class="col-md-8 mb-0">
                                     <h6>
-                                        <a href="{{ route('store.detail') }}">Oroweat Country Buttermilk Bread</a>
+                                        <a href="#">Oroweat Country Buttermilk Bread</a>
                                     </h6>
                                     <div class="product-rate-cover">
                                         <div class="product-rate d-inline-block">
@@ -4211,13 +833,12 @@
                         <div class="product-list-small wow fadeIn animated animated animated">
                             <article class="row align-items-center hover-up">
                                 <figure class="col-md-4 mb-0">
-                                    <a href="{{ route('store.detail') }}"><img
-                                            src="{{ asset('client/assets/imgs/shop/thumbnail-10.jpg') }}"
+                                    <a href="#"><img src="{{ asset('client/assets/imgs/shop/thumbnail-10.jpg') }}"
                                             alt=""></a>
                                 </figure>
                                 <div class="col-md-8 mb-0">
                                     <h6>
-                                        <a href="{{ route('store.detail') }}">Foster Farms Takeout Crispy Classic
+                                        <a href="#">Foster Farms Takeout Crispy Classic
                                             Buffalo
                                             Wings</a>
                                     </h6>
@@ -4236,13 +857,12 @@
                             </article>
                             <article class="row align-items-center hover-up">
                                 <figure class="col-md-4 mb-0">
-                                    <a href="{{ route('store.detail') }}"><img
-                                            src="{{ asset('client/assets/imgs/shop/thumbnail-11.jpg') }}"
+                                    <a href="#"><img src="{{ asset('client/assets/imgs/shop/thumbnail-11.jpg') }}"
                                             alt=""></a>
                                 </figure>
                                 <div class="col-md-8 mb-0">
                                     <h6>
-                                        <a href="{{ route('store.detail') }}">Angie’s Boomchickapop Sweet & Salty
+                                        <a href="#">Angie’s Boomchickapop Sweet & Salty
                                             Kettle
                                             Corn</a>
                                     </h6>
@@ -4261,13 +881,12 @@
                             </article>
                             <article class="row align-items-center hover-up">
                                 <figure class="col-md-4 mb-0">
-                                    <a href="{{ route('store.detail') }}"><img
-                                            src="{{ asset('client/assets/imgs/shop/thumbnail-12.jpg') }}"
+                                    <a href="#"><img src="{{ asset('client/assets/imgs/shop/thumbnail-12.jpg') }}"
                                             alt=""></a>
                                 </figure>
                                 <div class="col-md-8 mb-0">
                                     <h6>
-                                        <a href="{{ route('store.detail') }}">All Natural Italian-Style Chicken
+                                        <a href="#">All Natural Italian-Style Chicken
                                             Meatballs</a>
                                     </h6>
                                     <div class="product-rate-cover">
@@ -4291,3 +910,28 @@
         <!--End 4 columns-->
     </main>
 @endsection
+@push('scripts')
+    <script>
+        $(document).ready(function() {
+
+        })
+
+
+        @if (Session::has('message'))
+            Toastify({
+                text: "{{ Session::get('message') }}",
+                duration: 1000,
+                destination: "#",
+                newWindow: true,
+                close: true,
+                gravity: "top", // `top` or `bottom`
+                position: "right", // `left`, `center` or `right`
+                stopOnFocus: true, // Prevents dismissing of toast on hover
+                style: {
+                    background: "linear-gradient(to right, #00b09b, #96c93d)",
+                },
+                onClick: function() {} // Callback after click
+            }).showToast();
+        @endif
+    </script>
+@endpush

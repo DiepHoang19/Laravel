@@ -64,6 +64,16 @@ class ShoppingCart
         return true;
     }
 
+    public static function getTotalProduct()
+    {
+        $totalProduct = 0;
+        $items = Session::get(self::SHOPPING_CART) ?? [];
+        foreach ($items as $key => $item) {
+            $totalProduct += $item->quantity;
+        }
+        return $totalProduct;
+    }
+    
     public static  function updateItems($products)
     {
         $cartItems = Session::get(self::SHOPPING_CART) ?? [];

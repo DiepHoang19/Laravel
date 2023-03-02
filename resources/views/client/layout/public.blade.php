@@ -6,7 +6,7 @@
     <title>Nest - Multipurpose eCommerce HTML Template</title>
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="description" content="">
-    <meta name="_token" content="{{csrf_token()}}" />
+    <meta name="_token" content="{{ csrf_token() }}" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta property="og:title" content="">
     <meta property="og:type" content="">
@@ -16,6 +16,8 @@
     <link rel="shortcut icon" type="image/x-icon" href="{{ asset('client/assets/imgs/theme/favicon.svg') }}">
     <!-- Template CSS -->
     <link rel="stylesheet" href="{{ asset('client/assets/css/mainc619.css?v=1.0') }}">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+ 
 </head>
 
 
@@ -156,6 +158,7 @@
     <!-- Template  JS -->
     <script src="{{ asset('client/assets/js/main.js') }}"></script>
     <script src="{{ asset('client/assets/js/shop.js') }}"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
     @stack('scripts')
 </body>
 

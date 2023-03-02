@@ -10,7 +10,7 @@
                         class="btn btn-sm btn-icon btn-zoom navbar-toggle d-sm-none"><em
                             class="icon ni ni-menu-right"></em></button><button
                         class="btn btn-md btn-icon btn-zoom navbar-toggle d-none d-sm-inline-flex"><em
-                            class="icon ni ni-menu-right"></em></button></div><a href="index.html" class="logo-link">
+                            class="icon ni ni-menu-right"></em></button></div><a href="#" class="logo-link">
                     <div class="logo-wrap"><svg class="logo-svg" viewBox="0 0 174 34" fill="none"
                             xmlns="http://www.w3.org/2000/svg">
                             <g class="logo-text">
@@ -46,7 +46,7 @@
                     <li class="nk-nav-item has-sub"><a href="#" class="nk-nav-link nk-nav-toggle"><span
                                 class="nk-nav-text">Dashboards</span></a>
                         <ul class="nk-nav-sub nk-nav-sub-lg">
-                            <li class="nk-nav-item"><a href="index.html" class="nk-nav-link bg-primary-soft-hover">
+                            <li class="nk-nav-item"><a href="#" class="nk-nav-link bg-primary-soft-hover">
                                     <div class="media-group flex-grow-1">
                                         <div
                                             class="media media-md media-middle media-border text-bg-primary-soft-outline">

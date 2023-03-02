@@ -14,16 +14,12 @@
                         </div>
                         <div class="col-xl-9 text-end d-none d-xl-block">
                             <ul class="tags-list">
-                                <li class="hover-up"><a href="blog-category-grid.html"><i
-                                            class="fi-rs-cross mr-10"></i>Shopping</a></li>
-                                <li class="hover-up active"><a href="blog-category-grid.html"><i
-                                            class="fi-rs-cross mr-10"></i>Recips</a></li>
-                                <li class="hover-up"><a href="blog-category-grid.html"><i
-                                            class="fi-rs-cross mr-10"></i>Kitchen</a></li>
-                                <li class="hover-up"><a href="blog-category-grid.html"><i
-                                            class="fi-rs-cross mr-10"></i>News</a></li>
-                                <li class="hover-up mr-0"><a href="blog-category-grid.html"><i
-                                            class="fi-rs-cross mr-10"></i>Food</a></li>
+                                <li class="hover-up"><a href="#"><i class="fi-rs-cross mr-10"></i>Shopping</a></li>
+                                <li class="hover-up active"><a href="#"><i class="fi-rs-cross mr-10"></i>Recips</a>
+                                </li>
+                                <li class="hover-up"><a href="#"><i class="fi-rs-cross mr-10"></i>Kitchen</a></li>
+                                <li class="hover-up"><a href="#"><i class="fi-rs-cross mr-10"></i>News</a></li>
+                                <li class="hover-up mr-0"><a href="#"><i class="fi-rs-cross mr-10"></i>Food</a></li>
                             </ul>
                         </div>
                     </div>
@@ -83,224 +79,31 @@
                             </div>
                         </div>
                         <div class="loop-grid loop-list pr-30 mb-50">
-                            <article class="wow fadeIn animated hover-up mb-30 animated">
-                                <div class="post-thumb"
-                                    style="background-image: url({{ asset('client/assets/imgs/blog/blog-1.png') }});">
-                                    <div class="entry-meta">
-                                        <a class="entry-meta meta-2" href="blog-category-grid.html"><i
-                                                class="fi-rs-play-alt"></i></a>
-                                    </div>
-                                </div>
-                                <div class="entry-content-2 pl-50">
-                                    <h3 class="post-title mb-20">
-                                        <a href="blog-post-right.html">9 Tasty Ideas That Will Inspire You to Grow a Home
-                                            Herb Garden Today</a>
-                                    </h3>
-                                    <p class="post-exerpt mb-40">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                                        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-                                        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                                        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
-                                        dolore eu fugiat nulla pariatur. </p>
-                                    <div class="entry-meta meta-1 font-xs color-grey mt-10 pb-10">
-                                        <div>
-                                            <span class="post-on">25 April 2021</span>
-                                            <span class="hit-count has-dot">126k Views</span>
+                            @foreach ($blogs as $blog)
+                                <article class="wow fadeIn animated hover-up mb-30 animated">
+                                    <div class="post-thumb" style="background-image: url({{ asset($blog->thumbnail) }});">
+                                        <div class="entry-meta">
+                                            <a class="entry-meta meta-2" href="#"><i class="fi-rs-play-alt"></i></a>
                                         </div>
-                                        <a href="blog-post-right.html" class="text-brand font-heading font-weight-bold">Read
-                                            more <i class="fi-rs-arrow-right"></i></a>
                                     </div>
-                                </div>
-                            </article>
-                            <article class="wow fadeIn animated hover-up mb-30 animated">
-                                <div class="post-thumb"
-                                    style="background-image: url({{ asset('client/assets/imgs/blog/blog-2.png') }});">
-                                </div>
-                                <div class="entry-content-2 pl-50">
-                                    <h3 class="post-title mb-20">
-                                        <a href="blog-post-right.html">The Easy Italian Chicken Dinner I Make Over and Over
-                                            Again</a>
-                                    </h3>
-                                    <p class="post-exerpt mb-40">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                                        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-                                        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                                        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
-                                        dolore eu fugiat nulla pariatur. </p>
-                                    <div class="entry-meta meta-1 font-xs color-grey mt-10 pb-10">
-                                        <div>
-                                            <span class="post-on">25 April 2021</span>
-                                            <span class="hit-count has-dot">126k Views</span>
+                                    <div class="entry-content-2 pl-50">
+                                        <h3 class="post-title mb-20">
+                                            <a
+                                                href="{{ route('page.blogDetail', ['id' => $blog->id]) }}">{{ $blog->title }}</a>
+                                        </h3>
+                                        <p class="post-exerpt mb-40">{{ $blog->content }} </p>
+                                        <div class="entry-meta meta-1 font-xs color-grey mt-10 pb-10">
+                                            <div>
+                                                <span class="post-on">25 April 2021</span>
+                                                <span class="hit-count has-dot">126k Views</span>
+                                            </div>
+                                            <a href="{{ route('page.blogDetail', ['id' => $blog->id]) }}"
+                                                class="text-brand font-heading font-weight-bold">Read
+                                                more <i class="fi-rs-arrow-right"></i></a>
                                         </div>
-                                        <a href="blog-post-right.html" class="text-brand font-heading font-weight-bold">Read
-                                            more <i class="fi-rs-arrow-right"></i></a>
                                     </div>
-                                </div>
-                            </article>
-                            <article class="wow fadeIn animated hover-up mb-30 animated">
-                                <div class="post-thumb"
-                                    style="background-image: url({{ asset('client/assets/imgs/blog/blog-3.png') }});">
-                                    <div class="entry-meta">
-                                        <a class="entry-meta meta-2" href="blog-category-grid.html"><i
-                                                class="fi-rs-picture"></i></a>
-                                    </div>
-                                </div>
-                                <div class="entry-content-2 pl-50">
-                                    <h3 class="post-title mb-20">
-                                        <a href="blog-post-right.html">I Tried 38 Different Bottles of Mustard — These Are
-                                            the Ones I’ll Buy Again</a>
-                                    </h3>
-                                    <p class="post-exerpt mb-40">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                                        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-                                        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                                        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
-                                        dolore eu fugiat nulla pariatur. </p>
-                                    <div class="entry-meta meta-1 font-xs color-grey mt-10 pb-10">
-                                        <div>
-                                            <span class="post-on">25 April 2021</span>
-                                            <span class="hit-count has-dot">126k Views</span>
-                                        </div>
-                                        <a href="blog-post-right.html"
-                                            class="text-brand font-heading font-weight-bold">Read more <i
-                                                class="fi-rs-arrow-right"></i></a>
-                                    </div>
-                                </div>
-                            </article>
-                            <article class="wow fadeIn animated hover-up mb-30 animated">
-                                <div class="post-thumb"
-                                    style="background-image: url({{ asset('client/assets/imgs/blog/blog-4.png') }});">
-                                    <div class="entry-meta">
-                                        <a class="entry-meta meta-2" href="blog-category-grid.html"><i
-                                                class="fi-rs-play-alt"></i></a>
-                                    </div>
-                                </div>
-                                <div class="entry-content-2 pl-50">
-                                    <h3 class="post-title mb-20">
-                                        <a href="blog-post-right.html">How I Prep a Week of Absolutely Simple Summer Meals
-                                            in Just 1 Hour</a>
-                                    </h3>
-                                    <p class="post-exerpt mb-40">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                                        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-                                        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                                        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
-                                        dolore eu fugiat nulla pariatur. </p>
-                                    <div class="entry-meta meta-1 font-xs color-grey mt-10 pb-10">
-                                        <div>
-                                            <span class="post-on">25 April 2021</span>
-                                            <span class="hit-count has-dot">126k Views</span>
-                                        </div>
-                                        <a href="blog-post-right.html"
-                                            class="text-brand font-heading font-weight-bold">Read more <i
-                                                class="fi-rs-arrow-right"></i></a>
-                                    </div>
-                                </div>
-                            </article>
-                            <article class="wow fadeIn animated hover-up mb-30 animated">
-                                <div class="post-thumb"
-                                    style="background-image: url({{ asset('client/assets/imgs/blog/blog-5.png') }});">
-                                    <div class="entry-meta">
-                                        <a class="entry-meta meta-2" href="blog-category-grid.html"><i
-                                                class="fi-rs-heart"></i></a>
-                                    </div>
-                                </div>
-                                <div class="entry-content-2 pl-50">
-                                    <h3 class="post-title mb-20">
-                                        <a href="blog-post-right.html">Jenny Rosenstrach Has a Game Plan for the Weekday
-                                            Vegetarian</a>
-                                    </h3>
-                                    <p class="post-exerpt mb-40">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                                        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-                                        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                                        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
-                                        dolore eu fugiat nulla pariatur. </p>
-                                    <div class="entry-meta meta-1 font-xs color-grey mt-10 pb-10">
-                                        <div>
-                                            <span class="post-on">25 April 2021</span>
-                                            <span class="hit-count has-dot">126k Views</span>
-                                        </div>
-                                        <a href="blog-post-right.html"
-                                            class="text-brand font-heading font-weight-bold">Read more <i
-                                                class="fi-rs-arrow-right"></i></a>
-                                    </div>
-                                </div>
-                            </article>
-                            <article class="wow fadeIn animated hover-up mb-30 animated">
-                                <div class="post-thumb"
-                                    style="background-image: url({{ asset('client/assets/imgs/blog/blog-6.png') }});">
-                                </div>
-                                <div class="entry-content-2 pl-50">
-                                    <h3 class="post-title mb-20">
-                                        <a href="blog-post-right.html">Prime Day Is Here and These Are the Best Kitchen
-                                            Deals to Shop ASAP</a>
-                                    </h3>
-                                    <p class="post-exerpt mb-40">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                                        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-                                        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                                        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
-                                        dolore eu fugiat nulla pariatur. </p>
-                                    <div class="entry-meta meta-1 font-xs color-grey mt-10 pb-10">
-                                        <div>
-                                            <span class="post-on">25 April 2021</span>
-                                            <span class="hit-count has-dot">126k Views</span>
-                                        </div>
-                                        <a href="blog-post-right.html"
-                                            class="text-brand font-heading font-weight-bold">Read more <i
-                                                class="fi-rs-arrow-right"></i></a>
-                                    </div>
-                                </div>
-                            </article>
-                            <article class="wow fadeIn animated hover-up mb-30 animated">
-                                <div class="post-thumb"
-                                    style="background-image: url({{ asset('client/assets/imgs/blog/blog-1.png') }});">
-                                </div>
-                                <div class="entry-content-2 pl-50">
-                                    <h3 class="post-title mb-20">
-                                        <a href="blog-post-right.html">9 Tasty Ideas That Will Inspire You to Grow a Home
-                                            Herb Garden Today</a>
-                                    </h3>
-                                    <p class="post-exerpt mb-40">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                                        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-                                        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                                        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
-                                        dolore eu fugiat nulla pariatur. </p>
-                                    <div class="entry-meta meta-1 font-xs color-grey mt-10 pb-10">
-                                        <div>
-                                            <span class="post-on">25 April 2021</span>
-                                            <span class="hit-count has-dot">126k Views</span>
-                                        </div>
-                                        <a href="blog-post-right.html"
-                                            class="text-brand font-heading font-weight-bold">Read more <i
-                                                class="fi-rs-arrow-right"></i></a>
-                                    </div>
-                                </div>
-                            </article>
-                            <article class="wow fadeIn animated hover-up mb-30 animated">
-                                <div class="post-thumb"
-                                    style="background-image: url({{ asset('client/assets/imgs/blog/blog-7.png') }});">
-                                    <div class="entry-meta">
-                                        <a class="entry-meta meta-2" href="blog-category-grid.html"><i
-                                                class="fi-rs-headset"></i></a>
-                                    </div>
-                                </div>
-                                <div class="entry-content-2 pl-50">
-                                    <h3 class="post-title mb-20">
-                                        <a href="blog-post-right.html">How I Prep a Week of Absolutely Simple Summer Meals
-                                            in Just 1 Hour</a>
-                                    </h3>
-                                    <p class="post-exerpt mb-40">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                                        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-                                        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                                        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
-                                        dolore eu fugiat nulla pariatur. </p>
-                                    <div class="entry-meta meta-1 font-xs color-grey mt-10 pb-10">
-                                        <div>
-                                            <span class="post-on">25 April 2021</span>
-                                            <span class="hit-count has-dot">126k Views</span>
-                                        </div>
-                                        <a href="blog-post-right.html"
-                                            class="text-brand font-heading font-weight-bold">Read more <i
-                                                class="fi-rs-arrow-right"></i></a>
-                                    </div>
-                                </div>
-                            </article>
+                                </article>
+                            @endforeach
                         </div>
                         <div class="pagination-area mt-15 mb-sm-5 mb-lg-0">
                             <nav aria-label="Page navigation example">
