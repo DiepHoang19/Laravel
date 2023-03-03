@@ -62,7 +62,7 @@
                                         <img src="{{ asset($post->thumbnail) }}" alt="product">
                                     </div>
                                     <div class="media-text">
-                                        <a href="{{ route('product.edit', ['id' => $post->id]) }}"
+                                        <a href="{{ route('post.edit', ['id' => $post->id]) }}"
                                             class="title">{{ $post->title }}</a>
                                     </div>
                                 </div>

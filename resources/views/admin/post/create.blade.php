@@ -54,20 +54,24 @@
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                        <div class="col-lg-12">
-                                                            <div class="form-group"><label for="productname"
-                                                                    class="form-label">Content</label>
-                                                                <div class="form-control-wrap">
-                                                                    <input type="text" class="form-control"
-                                                                        id="productname" placeholder="Content"
-                                                                        name="content">
-                                                                    @error('content')
-                                                                        <div class="alert alert-danger mt-1 mb-1">
-                                                                            {{ $message }}
-                                                                        </div>
-                                                                    @enderror
+
+                                                        <div class="form-group col-md-12">
+                                                            <label>Content</label>
+                                                            <textarea name="content" class="form-control " id="editor">
+                                                            </textarea>
+                                                            @error('content')
+                                                                <div class="alert alert-danger mt-1 mb-1">
+                                                                    {{ $message }}
                                                                 </div>
-                                                            </div>
+                                                            @enderror
+                                                            <script>
+                                                                ClassicEditor
+                                                                    .create(document.querySelector('#editor'))
+                                                                    .catch(error => {
+                                                                        console.error(error);
+                                                                    });
+                                                            </script>
+                                                            
                                                         </div>
                                                     </div>
                                                 </div>
@@ -184,3 +188,4 @@
         </div>
     </div>
 @endsection
+

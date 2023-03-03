@@ -86,7 +86,6 @@ Route::prefix('/')->controller(PageController::class)->name('page.')->group(func
     Route::get('/contact-us', 'contact')->name('contact');
 
     Route::get('/page-success', 'pageSuccess')->name('pageSuccess');
-
 });
 
 Route::prefix('/')->controller(AccountController::class)->name('authen.')->group(function () {
@@ -94,10 +93,6 @@ Route::prefix('/')->controller(AccountController::class)->name('authen.')->group
     Route::get('/auth-login', 'login')->name('login');
     Route::get('/auth-manager', 'manager')->name('manager');
 });
-
-
-
-
 
 Route::prefix('/')->controller(CartController::class)->name('store.')->group(function () {
     Route::get('/shopping-cart', 'shoppingCart')->name('shoppingCart');

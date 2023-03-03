@@ -128,7 +128,7 @@ class AuthController extends Controller
     public function edit($id)
     {
         $account = User::findOrFail($id);
-        return view('user-manager.edit', [
+        return view('admin.user-manager.edit', [
             'account' => $account,
         ]);
     }

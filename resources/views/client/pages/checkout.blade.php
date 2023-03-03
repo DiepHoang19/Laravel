@@ -72,7 +72,7 @@
                     </div>
                     <div class="row">
                         <h4 class="mb-30">Billing Details</h4>
-                        <form method="POST" action="#">
+                        <form method="POST" action="{{ route('store.postCheckout') }}">
                             @csrf
                             <div class="row">
                                 <div class="form-group col-lg-6">
@@ -117,39 +117,38 @@
                                 <h4 class="mb-30">Payment</h4>
                                 <div class="payment_option">
                                     <div class="custome-radio">
-                                        <input class="form-check-input" type="radio" name="payment_method"
-                                            id="exampleRadios3" checked="">
+                                        <input type="hidden" name="payment_method" />
+                                        <input class="form-check-input payment-method-input" type="radio"
+                                            id="exampleRadios3" data-payment_method="Bank Transfer"
+                                            name="payment-method-input">
 
                                         <label class="form-check-label" for="exampleRadios3" data-bs-toggle="collapse"
                                             data-target="#bankTranfer" aria-controls="bankTranfer">Direct Bank
                                             Transfer</label>
                                     </div>
                                     <div class="custome-radio">
-                                        <input class="form-check-input" type="radio" name="payment_method"
-                                            id="exampleRadios4" checked="">
-                                        @error('payment_method')
-                                            <div class="alert alert-danger mt-1 mb-1">
-                                                {{ $message }}
-                                            </div>
-                                        @enderror
+                                        <input class="form-check-input payment-method-input" type="radio"
+                                            id="exampleRadios4" data-payment_method="Cash on delivery"
+                                            name="payment-method-input">
                                         <label class="form-check-label" for="exampleRadios4" data-bs-toggle="collapse"
                                             data-target="#checkPayment" aria-controls="checkPayment">Cash on
                                             delivery</label>
                                     </div>
                                     <div class="custome-radio">
-                                        <input class="form-check-input" type="radio" name="payment_method"
-                                            id="exampleRadios5" checked="">
-                                        @error('payment_method')
-                                            <div class="alert alert-danger mt-1 mb-1">
-                                                {{ $message }}
-                                            </div>
-                                        @enderror
+                                        <input class="form-check-input payment-method-input" type="radio"
+                                            id="exampleRadios5" data-payment_method="Online Gateway"
+                                            name="payment-method-input">
                                         <label class="form-check-label" for="exampleRadios5" data-bs-toggle="collapse"
-                                            data-target="#paypal" aria-controls="paypal">Online Getway</label>
+                                            data-target="#paypal" aria-controls="paypal">Online Gateway</label>
                                     </div>
+                                    @error('payment_method')
+                                        <div class="alert alert-danger mt-1 mb-1">
+                                            {{ $message }}
+                                        </div>
+                                    @enderror
 
                                 </div>
-                               
+
                                 <div class="payment-logo d-flex">
                                     <img class="mr-15"
                                         src="{{ asset('client/assets/imgs/theme/icons/payment-paypal.svg') }}"
@@ -188,7 +187,8 @@
                                                     src="{{ asset($product->thumbnail) }}" alt="#"></td>
                                             <td>
                                                 <h6 class="w-160 mb-5">
-                                                    <a href="#" class="text-heading">
+                                                    <a href="{{ route('store.detail', ['id' => $product->id]) }}"
+                                                        class="text-heading">
                                                         {{ $product->name }}
                                                     </a>
                                                 </h6>
@@ -219,3 +219,15 @@
         </div>
     </main>
 @endsection
+@push('scripts')
+    <script>
+        $(document).ready(function() {
+            $('.payment-method-input').change(function() {
+                if ($(this).is(':checked')) {
+                    const paymentMethod = $(this).data('payment_method');
+                    $('input[name=payment_method]').val(paymentMethod);
+                }
+            })
+        })
+    </script>
+@endpush

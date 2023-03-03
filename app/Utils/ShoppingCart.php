@@ -89,4 +89,9 @@ class ShoppingCart
         Session::put(self::SHOPPING_CART, $cartItems);
         return true;
     }
+
+    public static function clearAll()
+    {
+        Session::forget(self::SHOPPING_CART);
+    }
 }

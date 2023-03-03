@@ -50,16 +50,18 @@
                                                                 </div>
                                                             </div>
                                                         </div>
+
                                                         <div class="col-lg-12">
-                                                            <div class="form-group"><label for="baseprice"
-                                                                    class="form-label">Price</label>
+                                                            <div class="form-group"><label for="productname"
+                                                                    class="form-label">Content</label>
                                                                 <div class="form-control-wrap">
                                                                     <input type="text" class="form-control"
-                                                                        id="baseprice" placeholder="Content"
+                                                                        id="productname" placeholder="Content"
                                                                         value="{{ $post->content }}" name="content">
                                                                 </div>
                                                             </div>
                                                         </div>
+                                                        
                                                     </div>
                                                 </div>
                                             </div>

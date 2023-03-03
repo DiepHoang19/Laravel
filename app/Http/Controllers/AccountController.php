@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Order;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class AccountController extends Controller
 {
@@ -16,6 +18,10 @@ class AccountController extends Controller
     }
     public function manager()
     {
-        return view("client.auth.account-manager");
+        $orders = Order::whereUserId(Auth::id())->withCount('items')->paginate(15);
+        return view("client.auth.account-manager", [
+            'orders' => $orders
+        ]);
     }
+
 }

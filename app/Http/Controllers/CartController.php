@@ -4,9 +4,12 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\CheckoutRequest;
 use App\Models\Order;
+use App\Models\OrderItem;
 use App\Models\Product;
 use App\Utils\ShoppingCart;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class CartController extends Controller
 {
@@ -24,14 +27,37 @@ class CartController extends Controller
 
     public function postCheckout(CheckoutRequest $request)
     {
-        $order = Order::create([
-            'customer' => $request->customer,
-            'email' => $request->email,
-            'address' => $request->address,
-            'phone_number' => $request->phone_number,
-            'note' => $request->note,
-            'payment_method' => $request->payment_method,
-        ]);
+        DB::beginTransaction();
+        try {
+            $order = Order::create([
+                'customer' => $request->customer,
+                'email' => $request->email,
+                'address' => $request->address,
+                'phone_number' => $request->phone_number,
+                'note' => $request->note,
+                'payment_method' => $request->payment_method,
+                'user_id' => Auth::check() ? Auth::id() : 0,
+                // 'sub_total' => ShoppingCart::getTotal(),
+            ]);
+
+            $cartItems = ShoppingCart::getAll();
+            foreach ($cartItems as $cartItem) {
+                OrderItem::create([
+                    'order_id' => $order->id,
+                    'product_id' => $cartItem->id,
+                    'price' => $cartItem->price,
+                    'quantity' => $cartItem->quantity,
+                ]);
+            }
+
+            ShoppingCart::clearAll();
+            DB::commit();
+        } catch (\Exception $e) {
+            DB::rollBack();
+            return redirect()->route('page.pageSuccess')->with([
+                'error' => "Order failed!"
+            ]);
+        }
 
 
         return redirect()->route('page.pageSuccess')->with([
