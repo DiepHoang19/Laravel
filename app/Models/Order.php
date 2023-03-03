@@ -17,6 +17,7 @@ class Order extends Model
         'note',
         'payment_method',
         'user_id',
+        'sub_total'
     ];
 
     public function items()

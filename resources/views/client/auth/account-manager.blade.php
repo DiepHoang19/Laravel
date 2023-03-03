@@ -46,7 +46,7 @@
                                                 aria-selected="true"><i class="fi-rs-user mr-10"></i>Account details</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="{{ route('authen.login') }}"><i
+                                            <a class="nav-link" href="{{ route('authen.authLogout') }}"><i
                                                     class="fi-rs-sign-out mr-10"></i>Logout</a>
                                         </li>
                                     </ul>
@@ -58,7 +58,7 @@
                                         aria-labelledby="dashboard-tab">
                                         <div class="card">
                                             <div class="card-header">
-                                                <h3 class="mb-0">Hello Rosie! </h3>
+                                                <h3 class="mb-0">Hello {{ $user = Auth::user()->name }} !</h3>
                                             </div>
                                             <div class="card-body">
                                                 <p>From your account dashboard. you can easily check &amp; view your <a
@@ -98,12 +98,11 @@
                                                                     <td>{{ $order->address }}</td>
                                                                     <td>{{ $order->note }}</td>
                                                                     <td>{{ $order->items_count }}</td>
-                                                                    <td>{{ $order->totalMoney() }}</td>
+                                                                    <td>{{ $order->sub_total }}</td>
                                                                     <td><a href="#" class="btn-small d-block">View</a>
                                                                     </td>
                                                                 </tr>
                                                             @endforeach
-
                                                         </tbody>
                                                     </table>
                                                 </div>

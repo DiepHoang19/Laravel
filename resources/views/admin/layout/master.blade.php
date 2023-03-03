@@ -32,10 +32,8 @@
         </div>
     </div>
 </body>
-<script src="{{ asset('admin/assets/js/bundle.js') }}">
-    < /> <
-    script src = "{{ asset('admin/assets/js/scripts.js') }}" >
-</script>
+<script src="{{ asset('admin/assets/js/bundle.js') }}"></script>
+<script src="{{ asset('admin/assets/js/scripts.js') }}"></script>
 <div class="offcanvas offcanvas-end offcanvas-size-lg" id="notificationOffcanvas">
     <div class="offcanvas-header border-bottom border-light">
         <h5 class="offcanvas-title" id="offcanvasTopLabel">Recent Notification</h5><button type="button"

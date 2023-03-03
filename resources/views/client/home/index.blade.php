@@ -79,7 +79,8 @@
                         </div>
                         <!--End nav-tabs-->
                         <div class="tab-content wow fadeIn animated" id="myTabContent">
-                            <div class="tab-pane fade show active" id="tab-one" role="tabpanel" aria-labelledby="tab-one">
+                            <div class="tab-pane fade show active" id="tab-one" role="tabpanel"
+                                aria-labelledby="tab-one">
                                 <div class="row product-grid-4">
                                     @foreach ($products as $product)
                                         <div class="col-lg-1-5 col-md-4 col-12 col-sm-6" style="user-select: none">
@@ -87,8 +88,9 @@
                                                 <div class="product-img-action-wrap">
                                                     <div class="product-img product-img-zoom">
                                                         <a href="{{ route('store.detail', ['id' => $product->id]) }}">
-                                                            <img class="default-img" src="{{ asset($product->nameImage) }}"
-                                                                alt="" height="180px">
+                                                            <img class="default-img"
+                                                                src="{{ asset($product->nameImage) }}" alt=""
+                                                                height="180px">
                                                             <img class="hover-img" src="{{ asset($product->nameImage) }}"
                                                                 height="180px" alt="">
                                                         </a>
@@ -98,8 +100,8 @@
                                                             href="{{ route('store.wishlist') }}">
                                                             <i class="fi-rs-heart"></i>
                                                         </a>
-                                                        <a aria-label="Quick view" class="action-btn" data-bs-toggle="modal"
-                                                            data-bs-target="#quickViewModal">
+                                                        <a aria-label="Quick view" class="action-btn"
+                                                            data-bs-toggle="modal" data-bs-target="#quickViewModal">
                                                             <i class="fi-rs-eye">
                                                             </i>
                                                         </a>
@@ -377,12 +379,15 @@
                     <div class="sidebar-widget widget-category-2 mb-30">
                         <h5 class="section-title style-1 mb-30 wow fadeIn animated">Category</h5>
                         <ul>
-                            <li><a href="#"> <img src="{{ asset('client/assets/imgs/theme/icons/category-1.svg') }}"
+                            <li><a href="#"> <img
+                                        src="{{ asset('client/assets/imgs/theme/icons/category-1.svg') }}"
                                         alt="">Milks &
                                     Dairies</a><span class="count">30</span></li>
-                            <li><a href="#"> <img src="{{ asset('client/assets/imgs/theme/icons/category-2.svg') }}"
+                            <li><a href="#"> <img
+                                        src="{{ asset('client/assets/imgs/theme/icons/category-2.svg') }}"
                                         alt="">Clothing</a><span class="count">35</span></li>
-                            <li><a href="#"> <img src="{{ asset('client/assets/imgs/theme/icons/category-3.svg') }}"
+                            <li><a href="#"> <img
+                                        src="{{ asset('client/assets/imgs/theme/icons/category-3.svg') }}"
                                         alt="">Pet
                                     Foods </a><span class="count">42</span></li>
                             <li><a href="#"> <img
@@ -912,25 +917,22 @@
 @push('scripts')
     <script>
         $(document).ready(function() {
-
+            @if (Session::has('message'))
+                Toastify({
+                    text: "{{ Session::get('message') }}",
+                    duration: 1000,
+                    destination: "#",
+                    newWindow: true,
+                    close: true,
+                    gravity: "top", // `top` or `bottom`
+                    position: "right", // `left`, `center` or `right`
+                    stopOnFocus: true, // Prevents dismissing of toast on hover
+                    style: {
+                        background: "linear-gradient(to right, #00b09b, #96c93d)",
+                    },
+                    onClick: function() {} // Callback after click
+                }).showToast();
+            @endif
         })
-
-
-        @if (Session::has('message'))
-            Toastify({
-                text: "{{ Session::get('message') }}",
-                duration: 1000,
-                destination: "#",
-                newWindow: true,
-                close: true,
-                gravity: "top", // `top` or `bottom`
-                position: "right", // `left`, `center` or `right`
-                stopOnFocus: true, // Prevents dismissing of toast on hover
-                style: {
-                    background: "linear-gradient(to right, #00b09b, #96c93d)",
-                },
-                onClick: function() {} // Callback after click
-            }).showToast();
-        @endif
     </script>
 @endpush

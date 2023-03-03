@@ -7,6 +7,7 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\PageController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\OrderController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProductController;
 
@@ -65,6 +66,10 @@ Route::prefix('admin')->middleware(['auth', 'verified.custom'])->group(function 
         Route::get('/trash/{id}', 'trash')->name('trash');
         Route::post('/update/{id}', 'update')->name('update');
     });
+
+    Route::prefix('/orders')->controller(OrderController::class)->name('order.')->group(function () {
+        Route::get('/', 'index')->name('index');
+    });
 });
 
 Route::controller(AuthController::class)->group(function () {
@@ -90,7 +95,12 @@ Route::prefix('/')->controller(PageController::class)->name('page.')->group(func
 
 Route::prefix('/')->controller(AccountController::class)->name('authen.')->group(function () {
     Route::get('/auth-register', 'register')->name('register');
+    Route::post('/post-register', 'postRegister')->name('postRegister');
+
     Route::get('/auth-login', 'login')->name('login');
+    Route::post('/post-login-auth', 'postLoginAuth')->name('postLoginAuth');
+
+    Route::get('/auth-logout', 'authLogout')->name('authLogout');
     Route::get('/auth-manager', 'manager')->name('manager');
 });
 

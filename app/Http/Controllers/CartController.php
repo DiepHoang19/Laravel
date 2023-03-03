@@ -37,7 +37,7 @@ class CartController extends Controller
                 'note' => $request->note,
                 'payment_method' => $request->payment_method,
                 'user_id' => Auth::check() ? Auth::id() : 0,
-                // 'sub_total' => ShoppingCart::getTotal(),
+                'sub_total' => ShoppingCart::getTotal(),
             ]);
 
             $cartItems = ShoppingCart::getAll();

@@ -141,6 +141,8 @@ class AuthController extends Controller
         ]);
         return redirect()->route('account.index');
     }
+
+
     public function trash($id)
     {
         $account = User::findOrFail($id)->delete();

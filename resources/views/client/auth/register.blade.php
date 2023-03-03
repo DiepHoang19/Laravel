@@ -1,5 +1,7 @@
 @extends('client.layout.public')
 @section('content')
+    @if (Session::has('message'))
+    @endif
     <main class="main pages">
         <div class="page-header breadcrumb-wrap">
             <div class="container">
@@ -24,29 +26,33 @@
                                                     href="{{ route('authen.login') }}">Login</a>
                                             </p>
                                         </div>
-                                        <form>
+                                        <form action="{{ route('authen.postRegister') }}" method="POST">
+                                            @csrf
                                             <div class="form-group">
-                                                <input type="text" name="username" placeholder="Username">
+                                                <input type="text" name="name" placeholder="Username"
+                                                    value="{{ old('name') }}">
+                                                @error('name')
+                                                    <div class="alert alert-danger mt-1 mb-1">
+                                                        {{ $message }}
+                                                    </div>
+                                                @enderror
                                             </div>
                                             <div class="form-group">
-                                                <input type="text" name="email" placeholder="Email">
+                                                <input type="text" name="email" placeholder="Email"
+                                                    value="{{ old('email') }}">
+                                                @error('email')
+                                                    <div class="alert alert-danger mt-1 mb-1">
+                                                        {{ $message }}
+                                                    </div>
+                                                @enderror
                                             </div>
                                             <div class="form-group">
                                                 <input type="password" name="password" placeholder="Password">
-                                            </div>
-                                            <div class="form-group">
-                                                <input type="password" name="password" placeholder="Confirm password">
-                                            </div>
-                                            <div class="login_footer form-group">
-                                                <div class="chek-form">
-                                                    <input type="text" name="email" placeholder="Security code *">
-                                                </div>
-                                                <span class="security-code">
-                                                    <b class="text-new">8</b>
-                                                    <b class="text-hot">6</b>
-                                                    <b class="text-sale">7</b>
-                                                    <b class="text-best">5</b>
-                                                </span>
+                                                @error('password')
+                                                    <div class="alert alert-danger mt-1 mb-1">
+                                                        {{ $message }}
+                                                    </div>
+                                                @enderror
                                             </div>
                                             <div class="login_footer form-group mb-50">
                                                 <div class="chek-form">
@@ -57,8 +63,8 @@
                                                                 agree to terms &amp; Policy.</span></label>
                                                     </div>
                                                 </div>
-                                                <a href="page-privacy-policy.html"><i
-                                                        class="fi-rs-book-alt mr-5 text-muted"></i>Lean more</a>
+                                                <a href="#"><i class="fi-rs-book-alt mr-5 text-muted"></i>Lean
+                                                    more</a>
                                             </div>
                                             <div class="form-group mb-30">
                                                 <button type="submit"
@@ -98,3 +104,25 @@
         </div>
     </main>
 @endsection
+@push('scripts')
+    <script>
+        $(document).ready(function() {
+            @if (Session::has('message'))
+                Toastify({
+                    text: "{{ Session::get('message') }}",
+                    duration: 1000,
+                    destination: "#",
+                    newWindow: true,
+                    close: true,
+                    gravity: "top", // `top` or `bottom`
+                    position: "right", // `left`, `center` or `right`
+                    stopOnFocus: true, // Prevents dismissing of toast on hover
+                    style: {
+                        background: "linear-gradient(to right, #00b09b, #96c93d)",
+                    },
+                    onClick: function() {} // Callback after click
+                }).showToast();
+            @endif
+        })
+    </script>
+@endpush

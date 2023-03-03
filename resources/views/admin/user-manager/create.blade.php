@@ -45,8 +45,7 @@
                                                                     class="form-label">username</label>
                                                                 <div class="form-control-wrap">
                                                                     <input type="text" class="form-control"
-                                                                        id="productname" placeholder="Category Name"
-                                                                        name="name">
+                                                                        id="productname" placeholder="Name" name="name">
                                                                     @error('name')
                                                                         <div class="alert alert-danger mt-1 mb-1">
                                                                             {{ $message }}
@@ -60,8 +59,7 @@
                                                                     class="form-label">email</label>
                                                                 <div class="form-control-wrap">
                                                                     <input type="text" class="form-control"
-                                                                        id="productname" placeholder="Category Name"
-                                                                        name="email">
+                                                                        id="productname" placeholder="Email" name="email">
                                                                     @error('email')
                                                                         <div class="alert alert-danger mt-1 mb-1">
                                                                             {{ $message }}
@@ -75,7 +73,7 @@
                                                                     class="form-label">password</label>
                                                                 <div class="form-control-wrap">
                                                                     <input type="password" class="form-control"
-                                                                        id="productname" placeholder="Category Name"
+                                                                        id="productname" placeholder="Password"
                                                                         name="password">
                                                                     @error('password')
                                                                         <div class="alert alert-danger mt-1 mb-1">
