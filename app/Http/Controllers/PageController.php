@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\Blogs;
+use App\Models\Comment;
 use App\Models\Posts;
 use App\Models\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class PageController extends Controller
 {
@@ -30,9 +32,11 @@ class PageController extends Controller
     {
         $post = Posts::findOrFail($id);
         return view('client.pages.blog-detail', [
-            'post' => $post
+            'post' => $post,
         ]);
     }
+
+
 
     public function about()
     {

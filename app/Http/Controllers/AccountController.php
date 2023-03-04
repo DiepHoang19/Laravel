@@ -54,8 +54,7 @@ class AccountController extends Controller
     public function manager()
     {
         $orders = Order::whereUserId(Auth::id())->withCount('items')->paginate(15);
-        $user = Auth::user()->name;
-        // dd($user);
+        $user = Auth::user()->name ?? '';
         return view("client.auth.account-manager", [
             'orders' => $orders,
             'user' => $user,

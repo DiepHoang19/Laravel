@@ -4,6 +4,7 @@ use App\Http\Controllers\AccountController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\CommentController;
 use App\Http\Controllers\PageController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
@@ -116,4 +117,8 @@ Route::prefix('/')->controller(CartController::class)->name('store.')->group(fun
     Route::post('/update-cart', 'updateCart')->name('updateCart');
 
     Route::get('/product-detail/{id}', 'detail')->name('detail');
+});
+
+Route::prefix('/')->controller(CommentController::class)->name('comment.')->group(function () {
+    Route::post('/post-comment', 'postComment')->name('postComment');
 });

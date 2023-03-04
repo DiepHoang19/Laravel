@@ -338,7 +338,8 @@
                                             class="img-thumbnail">
                                     </div>
                                     <div class="media-text">
-                                        <div class="lead-text">{{ $user = Auth::user()->name }}</div><span class="sub-text">Owner &
+                                        <div class="lead-text">{{ $user = Auth::user()->name }}</div><span
+                                            class="sub-text">Owner &
                                             Founder</span>
                                     </div>
                                 </div>

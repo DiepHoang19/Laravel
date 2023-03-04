@@ -117,42 +117,22 @@
                                                         </ul>
                                                     </div>
                                                 </div>
-                                                <!--Author box-->
-                                                <div
-                                                    class="author-bio p-30 mt-50 border-radius-15 bg-white wow fadeIn animated">
-                                                    <div class="author-image mb-30">
-                                                        <a href="author.html"><img
-                                                                src="{{ asset('client/assets/imgs/blog/author-1.png') }}"
-                                                                alt="" class="avatar"></a>
-                                                        <div class="author-infor">
-                                                            <h5 class="mb-5">Barbara Cartland</h5>
-                                                            <p class="mb-0 text-muted font-xs">
-                                                                <span class="mr-10">306 posts</span>
-                                                                <span class="has-dot">Since 2012</span>
-                                                            </p>
-                                                        </div>
-                                                    </div>
-                                                    <div class="author-des">
-                                                        <p>Hi there, I am a veteran food blogger sharing my daily all kinds
-                                                            of healthy and fresh recipes. I find inspiration in nature, on
-                                                            the streets and almost everywhere. Lorem ipsum dolor sit amet,
-                                                            consectetur adipiscing elit. Amet id enim, libero sit. Est donec
-                                                            lobortis cursus amet, cras elementum libero</p>
-                                                    </div>
-                                                </div>
-                                                <!--Comment form-->
                                                 <div class="comment-form">
                                                     <h3 class="mb-15">Leave a Comment</h3>
                                                     <div class="product-rate d-inline-block mb-30">
                                                     </div>
                                                     <div class="row">
                                                         <div class="col-lg-9 col-md-12">
-                                                            <form class="form-contact comment_form mb-50" action="#"
+                                                            <form class="form-contact comment_form mb-50"
+                                                                action="{{ route('comment.postComment') }}" method="POST"
                                                                 id="commentForm">
+                                                                @csrf
                                                                 <div class="row">
                                                                     <div class="col-12">
                                                                         <div class="form-group">
-                                                                            <textarea class="form-control w-100" name="comment" id="comment" cols="30" rows="9"
+                                                                            <input name="post_id" type="hidden"
+                                                                                value="{{ $post->id }}" />
+                                                                            <textarea class="form-control w-100" name="body" id="comment" cols="30" rows="9"
                                                                                 placeholder="Write Comment"></textarea>
                                                                         </div>
                                                                     </div>
@@ -170,13 +150,7 @@
                                                                                 placeholder="Email">
                                                                         </div>
                                                                     </div>
-                                                                    <div class="col-12">
-                                                                        <div class="form-group">
-                                                                            <input class="form-control" name="website"
-                                                                                id="website" type="text"
-                                                                                placeholder="Website">
-                                                                        </div>
-                                                                    </div>
+
                                                                 </div>
                                                                 <div class="form-group">
                                                                     <button type="submit"
@@ -187,119 +161,52 @@
                                                             <div class="comments-area">
                                                                 <h3 class="mb-30">Comments</h3>
                                                                 <div class="comment-list">
-                                                                    <div
-                                                                        class="single-comment justify-content-between d-flex mb-30">
-                                                                        <div class="user justify-content-between d-flex">
-                                                                            <div class="thumb text-center">
-                                                                                <img src="{{ asset('client/assets/imgs/blog/author-2.png') }}"
-                                                                                    alt="">
-                                                                                <a href="#"
-                                                                                    class="font-heading text-brand">Sienna</a>
-                                                                            </div>
-                                                                            <div class="desc">
-                                                                                <div
-                                                                                    class="d-flex justify-content-between mb-10">
-                                                                                    <div class="d-flex align-items-center">
-                                                                                        <span
-                                                                                            class="font-xs text-muted">December
-                                                                                            4, 2021 at 3:12 pm </span>
-                                                                                    </div>
+                                                                    @foreach ($post->comments()->get() as $comment)
+                                                                        <div
+                                                                            class="single-comment justify-content-between d-flex mb-30">
+                                                                            <div
+                                                                                class="user justify-content-between d-flex">
+                                                                                <div class="thumb text-center">
+                                                                                    <img src="assets/imgs/blog/author-2.png"
+                                                                                        alt="">
+                                                                                    <a href="#"
+                                                                                        class="font-heading text-brand">Sienna</a>
+                                                                                </div>
+                                                                                <div class="desc">
                                                                                     <div
-                                                                                        class="product-rate d-inline-block">
-                                                                                        <div class="product-rating"
-                                                                                            style="width:80%">
+                                                                                        class="d-flex justify-content-between mb-10">
+                                                                                        <div
+                                                                                            class="d-flex align-items-center">
+                                                                                            <span
+                                                                                                class="font-xs text-muted">December
+                                                                                                4, 2021 at 3:12 pm </span>
+                                                                                        </div>
+                                                                                        <div
+                                                                                            class="product-rate d-inline-block">
+                                                                                            <div class="product-rating"
+                                                                                                style="width:80%">
+                                                                                            </div>
                                                                                         </div>
                                                                                     </div>
+                                                                                    <p class="mb-10">
+                                                                                        {{ $comment->body }}
+                                                                                        <a href="#"
+                                                                                            class="reply">Reply</a>
+                                                                                    </p>
                                                                                 </div>
-                                                                                <p class="mb-10">Lorem ipsum dolor sit
-                                                                                    amet, consectetur adipisicing elit.
-                                                                                    Delectus, suscipit exercitationem
-                                                                                    accusantium obcaecati quos voluptate
-                                                                                    nesciunt facilis itaque modi commodi
-                                                                                    dignissimos sequi repudiandae minus ab
-                                                                                    deleniti totam officia id incidunt? <a
-                                                                                        href="#"
-                                                                                        class="reply">Reply</a></p>
                                                                             </div>
                                                                         </div>
-                                                                    </div>
-                                                                    <div
-                                                                        class="single-comment justify-content-between d-flex mb-30 ml-30">
-                                                                        <div class="user justify-content-between d-flex">
-                                                                            <div class="thumb text-center">
-                                                                                <img src="{{ asset('client/assets/imgs/blog/author-3.png') }}"
-                                                                                    alt="">
-                                                                                <a href="#"
-                                                                                    class="font-heading text-brand">Brenna</a>
-                                                                            </div>
-                                                                            <div class="desc">
-                                                                                <div
-                                                                                    class="d-flex justify-content-between mb-10">
-                                                                                    <div class="d-flex align-items-center">
-                                                                                        <span
-                                                                                            class="font-xs text-muted">December
-                                                                                            4, 2021 at 3:12 pm </span>
-                                                                                    </div>
-                                                                                    <div
-                                                                                        class="product-rate d-inline-block">
-                                                                                        <div class="product-rating"
-                                                                                            style="width:80%">
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </div>
-                                                                                <p class="mb-10">Lorem ipsum dolor sit
-                                                                                    amet, consectetur adipisicing elit.
-                                                                                    Delectus, suscipit exercitationem
-                                                                                    accusantium obcaecati quos voluptate
-                                                                                    nesciunt facilis itaque modi commodi
-                                                                                    dignissimos sequi repudiandae minus ab
-                                                                                    deleniti totam officia id incidunt? <a
-                                                                                        href="#"
-                                                                                        class="reply">Reply</a></p>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div
-                                                                        class="single-comment justify-content-between d-flex">
-                                                                        <div class="user justify-content-between d-flex">
-                                                                            <div class="thumb text-center">
-                                                                                <img src="{{ asset('client/assets/imgs/blog/author-4.png') }}"
-                                                                                    alt="">
-                                                                                <a href="#"
-                                                                                    class="font-heading text-brand">Gemma</a>
-                                                                            </div>
-                                                                            <div class="desc">
-                                                                                <div
-                                                                                    class="d-flex justify-content-between mb-10">
-                                                                                    <div class="d-flex align-items-center">
-                                                                                        <span
-                                                                                            class="font-xs text-muted">December
-                                                                                            4, 2021 at 3:12 pm </span>
-                                                                                    </div>
-                                                                                    <div
-                                                                                        class="product-rate d-inline-block">
-                                                                                        <div class="product-rating"
-                                                                                            style="width:80%">
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </div>
-                                                                                <p class="mb-10">Lorem ipsum dolor sit
-                                                                                    amet, consectetur adipisicing elit.
-                                                                                    Delectus, suscipit exercitationem
-                                                                                    accusantium obcaecati quos voluptate
-                                                                                    nesciunt facilis itaque modi commodi
-                                                                                    dignissimos sequi repudiandae minus ab
-                                                                                    deleniti totam officia id incidunt? <a
-                                                                                        href="#"
-                                                                                        class="reply">Reply</a></p>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
+                                                                    @endforeach
+
                                                                 </div>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
+
+
+
+
                                             </div>
                                         </div>
                                     </div>

@@ -13,4 +13,9 @@ class Posts extends Model
         'content',
         'thumbnail'
     ];
+
+    public function comments()
+    {
+        return $this->hasMany(Comment::class, 'post_id', 'id');
+    }
 }

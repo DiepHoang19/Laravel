@@ -58,7 +58,7 @@
                                         aria-labelledby="dashboard-tab">
                                         <div class="card">
                                             <div class="card-header">
-                                                <h3 class="mb-0">Hello {{ $user = Auth::user()->name }} !</h3>
+                                                <h3 class="mb-0">Hello {{ $user = Auth::user()->name ?? '' }} !</h3>
                                             </div>
                                             <div class="card-body">
                                                 <p>From your account dashboard. you can easily check &amp; view your <a
