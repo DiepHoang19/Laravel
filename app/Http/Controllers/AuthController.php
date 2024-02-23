@@ -69,7 +69,8 @@ class AuthController extends Controller
             'verify_code' => $verifyCode,
             'send_verify_at' => Carbon::now(),
         ]);
-        Mail::to($user->email)->send(new SendVerifyCode($user));
+        // tắt gửi thông báo xác thực tài khoản qua gmail
+        // Mail::to($user->email)->send(new SendVerifyCode($user));
         return redirect()->route('login')->with([
             'status', 'Great! You have successfully register',
             'verify_alert' => 'Please check your email to verify account !'
